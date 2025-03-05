@@ -1,0 +1,12 @@
+{
+  "singleQuote": true,
+  "trailingComma": "es5",
+  "semi": true,
+  "bracketSpacing": true,
+  "pluginSearchDirs": false,
+  "plugins": ["prettier-plugin-organize-imports"],
+  "tailwindConfig": "./tailwind.config.ts",
+  "tailwindStylesheet": "./src/app/styles/index.css",
+  "tailwindPreserveWhitespace": true,
+  "printWidth": 80
+}

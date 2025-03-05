@@ -1,0 +1,1 @@
+export { routerPaths } from "./routerPaths";
