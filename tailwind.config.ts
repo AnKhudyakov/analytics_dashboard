@@ -12,7 +12,7 @@ export default {
         secondary: '#fff',
       },
       fontFamily: {
-        sans: ['Inter', 'sans-serif'],
+        sans: ['Mona Sans', 'sans-serif'],
       },
     },
   },

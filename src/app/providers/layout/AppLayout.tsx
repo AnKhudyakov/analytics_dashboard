@@ -1,8 +1,9 @@
 import { Outlet } from 'react-router-dom';
 
 import { FC } from 'react';
+import { Sidebar } from 'widgets/sidebar';
 import {
-  Header,
+  //Header,
   Layout,
   LayoutBody,
   LayoutHeader,
@@ -14,11 +15,12 @@ interface IProps {}
 export const AppLayout: FC<IProps> = () => {
   return (
     <Layout>
-      <Header>
+      {/* <Header>
         <LayoutHeader></LayoutHeader>
-      </Header>
+      </Header> */}
       <LayoutBody>
         <LayoutMain>
+          <Sidebar />
           <Outlet />
         </LayoutMain>
       </LayoutBody>

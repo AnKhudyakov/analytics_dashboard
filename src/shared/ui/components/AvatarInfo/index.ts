@@ -1,0 +1,1 @@
+export { AvatarInfo } from './AvatarInfo';

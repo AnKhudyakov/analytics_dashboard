@@ -1,5 +1,21 @@
 @import 'tailwindcss';
 
+@theme {
+  --color-primary-dark: #081028;
+  --color-secordary-dark: #0b1739;
+  --color-secordary-500: #343B4F;
+  --color-neutral-100: #fff;
+  --color-neutral-200: #d9e1fa;
+  --color-neutral-300: #d1dbf9;
+  --color-neutral-400: #aeb9e1;
+  --color-neutral-500: #7e89ac;
+  --color-neutral-600: #37446b;
+  --color-neutral-700: #212c4d;
+  --color-neutral-800: #081028;
+  --drop-shadow-3: 0 8px 28px rgba(1, 5, 11, 0.3);
+  --font-sans: "Mona Sans", sans-serif;
+}
+
 h1 {
   @apply text-2xl;
 }

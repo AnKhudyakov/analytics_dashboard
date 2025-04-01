@@ -15,5 +15,5 @@ function requireStringEnvVar(name: string) {
 
 export const config = {
   apiKey: requireStringEnvVar('VITE_API_KEY'),
-  backendUrl: requireStringEnvVar('VITE_REST_URL'),
+  backendUrl: requireStringEnvVar('VITE_API_URL'),
 };

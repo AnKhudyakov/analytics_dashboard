@@ -29,12 +29,6 @@ VITE_API_KEY=<API KEY>
 
 ## Running the app
 
-With local backend
-
-```
-npm run start:localdev
-```
-
 With dev backend
 
 ```
@@ -49,12 +43,6 @@ npm run start:prod
 
 ## Building the app
 
-With local backend
-
-```
-npm run build-localdev
-```
-
 With dev backend
 
 ```
@@ -68,12 +56,6 @@ npm run build-prod
 ```
 
 ## Includes
-
-### deploy to gh-pages [workflow](.github/workflows/pages.yml)
-
-Allows to deploy spa project to github pages via github action
-
-Please adjust `VITE_BASE_URL` in [.env](.env) to fit your repo name
 
 ### [storybook](https://storybook.js.org/)
 
