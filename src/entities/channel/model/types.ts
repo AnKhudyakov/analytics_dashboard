@@ -1,31 +1,20 @@
+import { PageInfo, Snippet } from 'shared/api/types';
+
 export interface ChannelsResponse {
   items: Channel[];
-  prevPageToken?: string
+  prevPageToken?: string;
   nextPageToken?: string;
   pageInfo: PageInfo;
 }
 
-export interface PageInfo {
-  totalResults: number;
-  resultsPerPage: number;
-}
-
 export interface Channel {
-  id: string;
+  id: { channelId: string };
   etag: string;
-  snippet: {
-    categoryId: string;
-    channelTitle: string;
-    tags: string[];
-    thumbnails: {
-      default: { url: string };
-    };
-    title: string;
-  };
+  snippet: Snippet;
   statistics: {
-    favoriteCount: string;
+    subscriberCount: string;
     viewCount: string;
-    commentCount: string;
-    likeCount: string;
+    hiddenSubscriberCount: string;
+    videoCount: string;
   };
 }

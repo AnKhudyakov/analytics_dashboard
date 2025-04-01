@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { ChangeEvent, FC } from 'react';
 import { SearchProps } from './Search.def';
 import { Container, Input, SearchIcon } from './Search.styles';
 

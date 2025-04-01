@@ -25,5 +25,5 @@ export const TableBody = tw.tbody`
 `;
 
 export const TableCell = tw.td`
-  p-3 text-gray-700
+  p-3 text-gray-700 align-middle text-start
 `;

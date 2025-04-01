@@ -5,9 +5,9 @@ export const Title = tw.h1`
 `;
 
 export const Subtitle = tw.h2`
-  font-semibold text-gray-800
+  font-semibold
 `;
 
 export const Body = tw.p`
-  font-semibold text-gray-800
+  font-semibold
 `;

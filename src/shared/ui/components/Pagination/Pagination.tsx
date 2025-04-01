@@ -1,3 +1,5 @@
+import { useEffect, useState } from 'react';
+import { hoverEffect } from 'shared/ui/effects';
 import { Icons } from 'shared/ui/icons';
 import { PaginationProps } from './Pagination.def';
 import {
@@ -7,7 +9,6 @@ import {
   PaginationInfo,
   RowsPerPageSelect,
 } from './Pagination.styles';
-import { useEffect, useState } from 'react';
 
 export const Pagination: React.FC<PaginationProps> = ({
   count,
@@ -55,6 +56,7 @@ export const Pagination: React.FC<PaginationProps> = ({
           </label>
           <RowsPerPageSelect
             id="rows-per-page"
+            className={hoverEffect}
             value={rowsPerPage}
             onChange={handleRowsPerPageChange}
           >
@@ -64,11 +66,19 @@ export const Pagination: React.FC<PaginationProps> = ({
           </RowsPerPageSelect>
         </div>
         <div className="flex items-center space-x-2">
-          <ArrowButton onClick={handlePrevClick} disabled={!prev}>
-            <Icons.arrowLeft width={14} height={14}/>
+          <ArrowButton
+            onClick={handlePrevClick}
+            disabled={!prev}
+            className={hoverEffect}
+          >
+            <Icons.arrowLeft width={14} height={14} />
           </ArrowButton>
-          <ArrowButton onClick={handleNextClick} disabled={!next}>
-          <Icons.arrowRight width={14} height={14}/>
+          <ArrowButton
+            onClick={handleNextClick}
+            disabled={!next}
+            className={hoverEffect}
+          >
+            <Icons.arrowRight width={14} height={14} />
           </ArrowButton>
         </div>
       </PaginationControls>
