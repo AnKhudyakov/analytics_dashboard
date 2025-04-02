@@ -55,7 +55,7 @@ export const ChannelsPage = () => {
         <ChannelsContent>
           <List
             data={formatChannels(statsData.items)}
-            empty={<EmptyList text="No channels find" />}
+            empty={<EmptyList text="No channels found" />}
           />
           <Pagination
             count={statsData.pageInfo.totalResults}

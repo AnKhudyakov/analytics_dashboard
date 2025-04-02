@@ -6,7 +6,7 @@ export const Input = tw.input`
 `;
 
 export const Container = tw.div`
-  relative w-full
+  relative w-full max-w-88
 `;
 
 export const SearchIcon = tw(Icons.search)`

@@ -1,0 +1,102 @@
+import { Meta, StoryObj } from '@storybook/react';
+import { formatChannels } from 'pages/Channels/lib/helpers';
+import { EmptyList } from '../EmptyList';
+import { List } from './List';
+
+const meta: Meta<typeof List> = {
+  title: 'Shared/List',
+  component: List,
+};
+
+export default meta;
+type Story = StoryObj<typeof List>;
+
+export const Default: Story = {
+  args: {
+    data: formatChannels([
+      {
+        etag: '8-kNABqR9jp8Qrs576Aeeg6vUbo',
+        id: 'UCdqp0KK_Io7TwK5cJMBvB0Q',
+        snippet: {
+          title: 'WhistlinDiesel',
+          thumbnails: {
+            default: {
+              url: 'https://yt3.ggpht.com/0Yzi87lZa_XLsbkrJOC1YRIOS6NWeE9NHO3n8awdpkpLXVApsS2IHCo8D5l8crmpTvZyCYsiAWw=s88-c-k-c0x00ffffff-no-rj',
+            },
+          },
+        },
+        statistics: {
+          viewCount: '1231086570',
+          subscriberCount: '9400000',
+          hiddenSubscriberCount: false,
+          videoCount: '146',
+        },
+      },
+      {
+        etag: 'IiNlHKjUK7Sr6PcgtKrpNIhFjq4',
+        id: 'UCbaGn5VkOVlcRgIWAHcrJKA',
+        snippet: {
+          title: 'Cut',
+          thumbnails: {
+            default: {
+              url: 'https://yt3.ggpht.com/myz3VVBEmgMiHNRZ_YHf1YQxIZjbclajOop-r1fb937YvnD1Dd-eI3cOwlJGhYaub0y4lReD=s88-c-k-c0x00ffffff-no-rj',
+            },
+          },
+          country: 'US',
+        },
+        statistics: {
+          viewCount: '5885428933',
+          subscriberCount: '12200000',
+          hiddenSubscriberCount: false,
+          videoCount: '2362',
+        },
+      },
+      {
+        etag: 'k6stIZrR2vPrFsE4aQG1JJW9h24',
+        id: 'UCdI8evszfZvyAl2UVCypkTA',
+        snippet: {
+          title: 'MileyCyrusVEVO',
+          thumbnails: {
+            default: {
+              url: 'https://yt3.ggpht.com/z3AOStrEznwieoK8HCfHi9nNQiPUiycJMEDYwZ5ufnaIS8YQRMj-X8lZpwtMnBsv89kcVUwewA=s88-c-k-c0x00ffffff-no-rj',
+            },
+          },
+        },
+        statistics: {
+          viewCount: '7243910021',
+          subscriberCount: '9980000',
+          hiddenSubscriberCount: false,
+          videoCount: '146',
+        },
+      },
+      {
+        etag: 'wJN-sUtt20nGMgATGcuzIx10RDQ',
+        id: 'UCKbNOpmhmwBuJXXMYOg_txA',
+        snippet: {
+          title: 'GQ Sports',
+          thumbnails: {
+            default: {
+              url: 'https://yt3.ggpht.com/Mio_Ry-JCBLkiFFP8du93kPILw7xVQOq7gsA4hvq_ElkQvjhWkHTQ0EpQXuuE1cChSpXqZw6b48=s88-c-k-c0x00ffffff-no-rj',
+            },
+          },
+
+          country: 'US',
+        },
+        statistics: {
+          viewCount: '735106428',
+          subscriberCount: '1570000',
+          hiddenSubscriberCount: false,
+          videoCount: '792',
+        },
+      },
+    ]),
+    empty: <EmptyList />,
+  },
+};
+
+export const Empty: Story = {
+  args: {
+    data: formatChannels([]),
+    empty: <EmptyList text={'No items found'} />,
+  },
+};

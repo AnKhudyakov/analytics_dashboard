@@ -12,8 +12,6 @@ import {
 } from './List.styles';
 
 export const List: FC<ListProps> = ({ data, empty }) => {
-  if (!data.count) return empty;
-
   return (
     <TableContainer>
       <Table>
@@ -25,15 +23,23 @@ export const List: FC<ListProps> = ({ data, empty }) => {
           </TableRow>
         </TableHead>
         <TableBody>
-          {Array.from({ length: data.count }).map((_, rowIndex) => (
-            <TableRow key={rowIndex} className={hoverEffect}>
-              {data.items.map((col) => (
-                <TableCell key={`${col.title}-${rowIndex}`}>
-                  {col.values[rowIndex]}
-                </TableCell>
-              ))}
+          {data.count ? (
+            Array.from({ length: data.count }).map((_, rowIndex) => (
+              <TableRow key={rowIndex} className={hoverEffect}>
+                {data.items.map((col) => (
+                  <TableCell key={`${col.title}-${rowIndex}`}>
+                    {col.values[rowIndex]}
+                  </TableCell>
+                ))}
+              </TableRow>
+            ))
+          ) : (
+            <TableRow className="text-center">
+              <TableCell colSpan={data.items.length} className="text-center">
+                {empty}
+              </TableCell>
             </TableRow>
-          ))}
+          )}
         </TableBody>
       </Table>
     </TableContainer>

@@ -11,7 +11,7 @@ export const ChannelsHeader: FC<AnalyticsHeaderProps> = ({
   const handleSearch = (e: ChangeEvent<HTMLInputElement>) => {
     const search = e.target.value;
     if (!search) return;
-    //setSearch(search);
+    setSearch(search);
   };
 
   return (

@@ -8,13 +8,13 @@ export interface ChannelsResponse {
 }
 
 export interface Channel {
-  id: { channelId: string };
+  id: string ;
   etag: string;
   snippet: Snippet;
   statistics: {
     subscriberCount: string;
     viewCount: string;
-    hiddenSubscriberCount: string;
+    hiddenSubscriberCount: boolean;
     videoCount: string;
   };
 }
