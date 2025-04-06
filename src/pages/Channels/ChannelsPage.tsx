@@ -13,6 +13,7 @@ export const ChannelsPage = () => {
     statsData,
     isLoading,
     error,
+    search,
     setSearch,
     setPage,
     rowsPerPage,
@@ -23,7 +24,11 @@ export const ChannelsPage = () => {
 
   return (
     <Container>
-      <ChannelsHeader content="Top 50 Channels" setSearch={setSearch} />
+      <ChannelsHeader
+        content="Top 50 Channels"
+        search={search}
+        setSearch={setSearch}
+      />
       {error || !statsData ? (
         <Error text="Error data loading" />
       ) : (

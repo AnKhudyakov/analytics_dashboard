@@ -14,7 +14,7 @@ export const ChannelAnalyticsPage = () => {
 
   if (isLoading) return <Loader />;
   if (error || !data) return <Error text="Error data loading" />;
-  const channel = data?.items[0];
+  const channel = data;
 
   return (
     <Container>

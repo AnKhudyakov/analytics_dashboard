@@ -1,5 +1,8 @@
 import { EmptyList } from 'shared/ui/components/EmptyList';
+import { Error } from 'shared/ui/components/Error';
 import { List } from 'shared/ui/components/List';
+import { Loader } from 'shared/ui/components/Loader';
+import { PageHeader } from 'shared/ui/components/PageHeader';
 import { Pagination } from 'shared/ui/components/Pagination';
 import {
   ChannelsContent,
@@ -9,7 +12,6 @@ import {
 } from './VideosPage.styles';
 import { formatVideos } from './lib/helpers';
 import { useVideosData } from './lib/hooks';
-import { PageHeader } from 'shared/ui/components/PageHeader';
 
 export const VideosPage = () => {
   const {
@@ -22,17 +24,21 @@ export const VideosPage = () => {
     setRowsPerPage,
   } = useVideosData();
 
+  if (isLoading) return <Loader />;
+
   return (
     <Container>
       <PageHeader content="Videos" setSearch={setSearch} />
       {isLoading && <LoadingText>Loading...</LoadingText>}
       {error && <ErrorText>Error data loading</ErrorText>}
-      {filteredData && (
+      {error || !filteredData ? (
+        <Error text="Error data loading" />
+      ) : (
         <ChannelsContent>
           <List
             data={formatVideos(filteredData.items)}
             empty={<EmptyList text="No videos found" />}
-            viewPath={"/videos"}
+            viewPath={'/videos'}
           />
           <Pagination
             count={filteredData.pageInfo.totalResults}

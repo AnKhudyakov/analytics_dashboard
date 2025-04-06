@@ -1,4 +1,4 @@
-import { ChannelAnalyticsResponse } from "entities/channel/model/types";
+import { ChannelAnalyticsResponse } from 'entities/channel/model/types';
 
 export const channelAnatytics: ChannelAnalyticsResponse = {
   pageInfo: {
@@ -84,5 +84,3 @@ export const channelAnatytics: ChannelAnalyticsResponse = {
     },
   ],
 };
-
-

@@ -6,11 +6,11 @@ import { Header } from './ChannelsHeader.styles';
 
 export const ChannelsHeader: FC<AnalyticsHeaderProps> = ({
   content,
+  search,
   setSearch,
 }) => {
   const handleSearch = (e: ChangeEvent<HTMLInputElement>) => {
     const search = e.target.value;
-    if (!search) return;
     setSearch(search);
   };
 
@@ -18,7 +18,7 @@ export const ChannelsHeader: FC<AnalyticsHeaderProps> = ({
     <Header>
       <Typography variant="title">{content}</Typography>
       <div className="max-w-350">
-        <Input onChange={handleSearch} search />
+        <Input value={search} onChange={handleSearch} search />
       </div>
     </Header>
   );
