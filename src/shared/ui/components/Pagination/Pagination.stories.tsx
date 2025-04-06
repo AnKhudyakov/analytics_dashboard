@@ -6,8 +6,6 @@ const meta: Meta<typeof Pagination> = {
   component: Pagination,
   args: {
     count: 5000,
-    next: ' ',
-    prev: ' ',
     rowsPerPage: 10,
   },
 };
@@ -18,8 +16,6 @@ type Story = StoryObj<typeof Pagination>;
 export const Default: Story = {
   args: {
     count: 5000,
-    next: ' ',
-    prev: ' ',
     rowsPerPage: 10,
   },
 };

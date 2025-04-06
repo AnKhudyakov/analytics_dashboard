@@ -1,22 +1,38 @@
 import { AppLayout } from 'app/providers/layout';
+import { ChannelAnalyticsPage } from 'pages/ChannelAnalytics/ChannelAnalyticsPage';
 import { ChannelsPage } from 'pages/Channels';
+import { VideosPage } from 'pages/Videos';
+import { LoginPage } from 'pages/Login';
 import {
-  createHashRouter,
+  createBrowserRouter,
   createRoutesFromElements,
+  Navigate,
   Route,
   RouterProvider,
 } from 'react-router-dom';
-
 import { routerPaths } from 'shared/constants';
+import { isAuthenticated } from 'shared/lib/helpers/helpers';
 
-export const AppRouter = () => {
-  const routes = createRoutesFromElements(
-    <Route path={routerPaths.MAIN_PATH} element={<AppLayout />}>
-      <Route index element={<ChannelsPage></ChannelsPage>} />
-    </Route>
-  );
+interface IProps {}
 
-  const router = createHashRouter(routes, {});
+export const PrivateRoute = () => {
+  return isAuthenticated() ? <AppLayout /> : <Navigate to="/login" />;
+};
+
+const routes = createRoutesFromElements(
+  <>
+  <Route path={routerPaths.LOGIN_PATH} element={<LoginPage />} />
+  <Route path={routerPaths.MAIN_PATH} element={<PrivateRoute/>}>
+    <Route index element={<></>} />
+    <Route path={routerPaths.CHANNELS_PATH} element={<ChannelsPage />} />
+    <Route path={routerPaths.CHANNEL_PATH} element={<ChannelAnalyticsPage />} />
+    <Route path={routerPaths.VIDEOS_PATH} element={<VideosPage />} />
+  </Route>
+  </>
+);
+
+export const AppRouter: React.FC<IProps> = () => {
+  const router = createBrowserRouter(routes, {});
 
   return <RouterProvider router={router} />;
 };

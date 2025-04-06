@@ -17,5 +17,5 @@ export const RowsPerPageSelect = tw.select`
 `;
 
 export const ArrowButton = tw.button`
-  text-gray-700 p-2 focus:outline-none rounded-sm bg-secordary-dark
+  text-neutral-400 p-2 focus:outline-none rounded-sm bg-secordary-dark disabled:bg-neutral-700
 `;

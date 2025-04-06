@@ -1,33 +1,27 @@
 import { Channel } from 'entities/channel/model/types';
+import { config } from 'shared/config';
+import { formatStatistic } from 'shared/lib/helpers/helpers';
 import { AvatarInfo } from 'shared/ui/components/AvatarInfo';
 import { Icons } from 'shared/ui/icons';
 
 export const formatChannels = (data: Channel[] | undefined) => ({
   count: data?.length || 0,
+  ids: data?.map((el) => el.id) || [],
   items: [
     {
       title: 'Name',
       values:
         data?.map((el) => (
           <AvatarInfo
-            key={el.id.channelId}
-            src={el.snippet.thumbnails.default.url}
+            key={el.id}
+            src={`${config.backendUrl}/proxy-image?url=${encodeURIComponent(el.snippet.thumbnails.default.url)}`}
             alt={el.snippet.title}
             name={el.snippet.title}
           />
         )) || [],
     },
-    {
-      title: 'Subscribers',
-      values:
-        data?.map((el) => Number(el.statistics.subscriberCount) || 'No data') ||
-        [],
-    },
-    {
-      title: 'Views',
-      values:
-        data?.map((el) => Number(el.statistics.viewCount) || 'No data') || [],
-    },
+    { title: 'Subscribers', values: formatStatistic(data, 'subscriberCount') },
+    { title: 'Views', values: formatStatistic(data, 'viewCount') },
     {
       title: 'Hidden Subscriber',
       values:
@@ -39,10 +33,6 @@ export const formatChannels = (data: Channel[] | undefined) => ({
           )
         ) || [],
     },
-    {
-      title: 'Videos',
-      values:
-        data?.map((el) => Number(el.statistics.videoCount) || 'No data') || [],
-    },
+    { title: 'Videos', values: formatStatistic(data, 'videoCount') },
   ],
 });

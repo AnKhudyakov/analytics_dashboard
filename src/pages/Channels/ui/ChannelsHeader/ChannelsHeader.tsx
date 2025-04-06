@@ -1,5 +1,5 @@
 import { ChangeEvent, FC } from 'react';
-import { Search } from 'shared/ui/components/Search';
+import { Input } from 'shared/ui/components/Input';
 import { Typography } from 'shared/ui/components/Typography';
 import { AnalyticsHeaderProps } from './ChannelsHeader.def';
 import { Header } from './ChannelsHeader.styles';
@@ -18,7 +18,7 @@ export const ChannelsHeader: FC<AnalyticsHeaderProps> = ({
     <Header>
       <Typography variant="title">{content}</Typography>
       <div className="max-w-350">
-        <Search onChange={handleSearch} />
+        <Input onChange={handleSearch} search />
       </div>
     </Header>
   );

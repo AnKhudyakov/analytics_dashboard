@@ -1,5 +1,4 @@
 import { Outlet } from 'react-router-dom';
-
 import { FC } from 'react';
 import { Sidebar } from 'widgets/sidebar';
 import {

@@ -1,10 +1,10 @@
-import { api } from 'shared/api';
+import { youtubeApi } from 'shared/api';
 import { VideosResponse } from './types';
 
-export const videoApi = api.injectEndpoints({
+export const videoApi = youtubeApi.injectEndpoints({
   endpoints: (builder) => ({
     searchVideos: builder.query<VideosResponse, string>({
-      query: (query: string) => ({
+      query: (query) => ({
         url: '/search',
         params: {
           part: 'snippet',
@@ -15,22 +15,31 @@ export const videoApi = api.injectEndpoints({
       }),
     }),
 
-    getTrendingVideos: builder.query<
-      VideosResponse,
-      {
-        pageToken: string;
-        rowsPerPage: number;
-      }
-    >({
-      query: ({ pageToken, rowsPerPage }) => ({
-        url: 'videos',
+    getVideosStats: builder.query<VideosResponse, string>({
+      query: (videoIds) => ({
+        url: '/videos',
         params: {
           part: 'snippet,statistics',
-          chart: 'mostPopular',
-          regionCode: 'US',
-          maxResults: rowsPerPage,
-          key: import.meta.env.VITE_YOUTUBE_API_KEY,
-          pageToken,
+          id: videoIds,
+        },
+      }),
+    }),
+
+    getTrendingVideos: builder.query<
+      VideosResponse,
+      { page: number; limit: number }
+    >({
+      query: ({ page, limit }) => ({
+        url: '/videos',
+        params: {
+          page,
+          limit,
+          // part: 'snippet,statistics',
+          // chart: 'mostPopular',
+          // regionCode: 'US',
+          // maxResults: rowsPerPage,
+          // key: import.meta.env.VITE_YOUTUBE_API_KEY,
+          // pageToken,
         },
       }),
     }),

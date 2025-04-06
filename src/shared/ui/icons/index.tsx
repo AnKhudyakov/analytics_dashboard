@@ -1,9 +1,13 @@
 import {
+  ArrowFallIcon,
+  ArrowGrowIcon,
   ArrowLeftIcon,
   ArrowRightIcon,
+  ExitIcon,
   HomeIcon,
   NoIcon,
   SearchIcon,
+  SpinnerIcon,
   YesIcon,
 } from './Icons';
 
@@ -14,4 +18,8 @@ export const Icons = {
   arrowRight: ArrowRightIcon,
   yesIcon: YesIcon,
   noIcon: NoIcon,
+  spinner: SpinnerIcon,
+  arrowGrow: ArrowGrowIcon,
+  arrowFall: ArrowFallIcon,
+  exitIcon: ExitIcon,
 };

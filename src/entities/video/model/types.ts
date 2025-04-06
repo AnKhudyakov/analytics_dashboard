@@ -4,6 +4,7 @@ export interface Video {
   id: string;
   etag: string;
   snippet: Snippet;
+  kind?: string;
   statistics: {
     favoriteCount: string;
     viewCount: string;
@@ -18,15 +19,3 @@ export interface VideosResponse {
   nextPageToken?: string;
   pageInfo: PageInfo;
 }
-
-// export interface SearchChannel {
-//   id: { channelId: string };
-//   etag: string;
-//   snippet: Snippet;
-//   statistics: {
-//     favoriteCount: string;
-//     viewCount: string;
-//     commentCount: string;
-//     likeCount: string;
-//   };
-// }

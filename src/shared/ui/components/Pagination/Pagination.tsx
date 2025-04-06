@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { FC, useEffect, useState } from 'react';
 import { hoverEffect } from 'shared/ui/effects';
 import { Icons } from 'shared/ui/icons';
 import { PaginationProps } from './Pagination.def';
@@ -10,11 +10,9 @@ import {
   RowsPerPageSelect,
 } from './Pagination.styles';
 
-export const Pagination: React.FC<PaginationProps> = ({
+export const Pagination: FC<PaginationProps> = ({
   count,
-  next,
-  prev,
-  setPageToken,
+  setPage,
   rowsPerPage,
   setRowsPerPage,
 }) => {
@@ -23,16 +21,16 @@ export const Pagination: React.FC<PaginationProps> = ({
   const endIndex = Math.min(currentPage * rowsPerPage, count);
 
   const handlePrevClick = () => {
-    if (prev) {
+    if (currentPage > 1) {
       setCurrentPage((prev) => Math.max(prev - 1, 1));
-      setPageToken(prev);
+      setPage((prev) => prev - 1);
     }
   };
 
   const handleNextClick = () => {
-    if (next) {
+    if (currentPage < Math.round(count / rowsPerPage)) {
       setCurrentPage((prev) => prev + 1);
-      setPageToken(next);
+      setPage((prev) => prev + 1);
     }
   };
 
@@ -65,20 +63,20 @@ export const Pagination: React.FC<PaginationProps> = ({
             <option value={50}>50</option>
           </RowsPerPageSelect>
         </div>
-        <div className="flex items-center space-x-2">
+        <div className="flex items-center gap-2">
           <ArrowButton
             onClick={handlePrevClick}
-            disabled={!prev}
+            disabled={currentPage === 1}
             className={hoverEffect}
           >
-            <Icons.arrowLeft width={14} height={14} />
+            <Icons.arrowLeft width={14} height={14}/>
           </ArrowButton>
           <ArrowButton
             onClick={handleNextClick}
-            disabled={!next}
+            disabled={currentPage === Math.round(count / rowsPerPage)}
             className={hoverEffect}
           >
-            <Icons.arrowRight width={14} height={14} />
+            <Icons.arrowRight width={14} height={14}/>
           </ArrowButton>
         </div>
       </PaginationControls>

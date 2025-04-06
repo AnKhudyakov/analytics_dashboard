@@ -1,4 +1,5 @@
 import { FC } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { hoverEffect } from 'shared/ui/effects';
 import { ListProps } from './List.def';
 import {
@@ -11,7 +12,9 @@ import {
   TableRow,
 } from './List.styles';
 
-export const List: FC<ListProps> = ({ data, empty }) => {
+export const List: FC<ListProps> = ({ data, empty, viewPath }) => {
+  const navigate = useNavigate();
+
   return (
     <TableContainer>
       <Table>
@@ -25,9 +28,16 @@ export const List: FC<ListProps> = ({ data, empty }) => {
         <TableBody>
           {data.count ? (
             Array.from({ length: data.count }).map((_, rowIndex) => (
-              <TableRow key={rowIndex} className={hoverEffect}>
-                {data.items.map((col) => (
-                  <TableCell key={`${col.title}-${rowIndex}`}>
+              <TableRow
+                key={rowIndex}
+                className={hoverEffect}
+                onClick={() => navigate(`${viewPath}/${data.ids[rowIndex]}`)}
+              >
+                {data.items.map((col, index) => (
+                  <TableCell
+                    key={`${col.title}-${rowIndex}`}
+                    //className={!index ? 'text-white' : ''}
+                  >
                     {col.values[rowIndex]}
                   </TableCell>
                 ))}

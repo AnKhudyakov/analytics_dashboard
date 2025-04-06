@@ -1,8 +1,8 @@
 import { FC } from 'react';
-import { ITypographyProps } from './Typography.def';
+import { TypographyProps } from './Typography.def';
 import { Body, Subtitle, Title } from './Typography.styles';
 
-export const Typography: FC<ITypographyProps> = ({
+export const Typography: FC<TypographyProps> = ({
   variant = 'body',
   className,
   children,

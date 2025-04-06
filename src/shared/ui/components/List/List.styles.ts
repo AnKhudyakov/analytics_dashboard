@@ -9,7 +9,7 @@ export const Table = tw.table`
 `;
 
 export const TableHead = tw.thead`
-  bg-secordary-dark sticky top-0
+  bg-secordary-dark sticky top-0 drop-shadow-lg
 `;
 
 export const TableRow = tw.tr`
@@ -17,7 +17,7 @@ export const TableRow = tw.tr`
 `;
 
 export const TableHeader = tw.th`
-  p-3 text-left font-semibold text-gray-700 uppercase
+  p-3 text-left font-semibold text-white
 `;
 
 export const TableBody = tw.tbody`
@@ -25,5 +25,5 @@ export const TableBody = tw.tbody`
 `;
 
 export const TableCell = tw.td`
-  p-3 text-gray-700 align-middle text-start
+  p-3 text-neutral-400 align-middle text-start
 `;

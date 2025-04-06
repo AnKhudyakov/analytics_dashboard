@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 
-export interface ITypographyProps {
+export interface TypographyProps {
   variant?: 'body' | 'title' | 'subtitle';
   className?: string;
   children: ReactNode;

@@ -63,13 +63,13 @@ export const ArrowLeftIcon: FC<React.SVGProps<SVGSVGElement>> = ({
   >
     <path
       d="M6.68555 2.4268L1.75004 7.36231L6.68555 12.2978"
-      stroke="#7E89AC"
+      stroke="#fff"
       strokeLinecap="round"
       strokeLinejoin="round"
     />
     <path
       d="M1.75005 7.36231L12.25 7.3623"
-      stroke="#7E89AC"
+      stroke="#fff"
       strokeLinecap="round"
       strokeLinejoin="round"
     />
@@ -91,13 +91,13 @@ export const ArrowRightIcon: FC<React.SVGProps<SVGSVGElement>> = ({
   >
     <path
       d="M7.31445 2.4268L12.25 7.36231L7.31445 12.2978"
-      stroke="#7E89AC"
+      stroke="#fff"
       strokeLinecap="round"
       strokeLinejoin="round"
     />
     <path
       d="M12.2499 7.36231L1.75 7.3623"
-      stroke="#7E89AC"
+      stroke="#fff"
       strokeLinecap="round"
       strokeLinejoin="round"
     />
@@ -164,6 +164,146 @@ export const NoIcon: FC<React.SVGProps<SVGSVGElement>> = ({
     <path
       d="M20.9773 5.27273V14H19.9545L15.1989 7.14773H15.1136V14H14.0568V5.27273H15.0795L19.8523 12.142H19.9375V5.27273H20.9773ZM25.6147 14.1364C25.0238 14.1364 24.5053 13.9957 24.0593 13.7145C23.6161 13.4332 23.2695 13.0398 23.0195 12.5341C22.7724 12.0284 22.6488 11.4375 22.6488 10.7614C22.6488 10.0795 22.7724 9.48437 23.0195 8.97585C23.2695 8.46733 23.6161 8.07244 24.0593 7.79119C24.5053 7.50994 25.0238 7.36932 25.6147 7.36932C26.2056 7.36932 26.7227 7.50994 27.1658 7.79119C27.6119 8.07244 27.9585 8.46733 28.2056 8.97585C28.4556 9.48437 28.5806 10.0795 28.5806 10.7614C28.5806 11.4375 28.4556 12.0284 28.2056 12.5341C27.9585 13.0398 27.6119 13.4332 27.1658 13.7145C26.7227 13.9957 26.2056 14.1364 25.6147 14.1364ZM25.6147 13.233C26.0636 13.233 26.4329 13.1179 26.7227 12.8878C27.0124 12.6577 27.2269 12.3551 27.3661 11.9801C27.5053 11.6051 27.5749 11.1989 27.5749 10.7614C27.5749 10.3239 27.5053 9.91619 27.3661 9.53835C27.2269 9.16051 27.0124 8.85511 26.7227 8.62216C26.4329 8.3892 26.0636 8.27273 25.6147 8.27273C25.1658 8.27273 24.7965 8.3892 24.5067 8.62216C24.217 8.85511 24.0025 9.16051 23.8633 9.53835C23.7241 9.91619 23.6545 10.3239 23.6545 10.7614C23.6545 11.1989 23.7241 11.6051 23.8633 11.9801C24.0025 12.3551 24.217 12.6577 24.5067 12.8878C24.7965 13.1179 25.1658 13.233 25.6147 13.233Z"
       fill="#FF5A65"
+    />
+  </svg>
+);
+
+export const SpinnerIcon: FC<React.SVGProps<SVGSVGElement>> = ({
+  width,
+  height,
+  className,
+}) => (
+  <svg
+    aria-hidden="true"
+    width={width}
+    height={height}
+    className={className}
+    viewBox="0 0 100 101"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z"
+      fill="currentColor"
+    />
+    <path
+      d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z"
+      fill="currentFill"
+    />
+  </svg>
+);
+
+export const ArrowGrowIcon: FC<React.SVGProps<SVGSVGElement>> = ({
+  width,
+  height,
+  className,
+}) => (
+  <svg
+    width={width}
+    height={height}
+    className={className}
+    viewBox="0 0 9 9"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M1.74748 7.01025L7.08081 1.67692"
+      stroke="#14CA74"
+      strokeWidth="0.8"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M7.08081 6.70508V1.67679H2.05253"
+      stroke="#14CA74"
+      strokeWidth="0.8"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
+
+export const ArrowFallIcon: FC<React.SVGProps<SVGSVGElement>> = ({
+  width,
+  height,
+  className,
+}) => (
+  <svg
+    width={width}
+    height={height}
+    className={className}
+    viewBox="0 0 9 9"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M2.26001 1.67692L7.59334 7.01025"
+      stroke="#FF5A65"
+      strokeWidth="0.8"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M2.56506 7.01025L7.59335 7.01025L7.59335 1.98197"
+      stroke="#FF5A65"
+      strokeWidth="0.8"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
+
+export const ExitIcon: FC<React.SVGProps<SVGSVGElement>> = ({
+  width,
+  height,
+  className,
+}) => (
+  <svg
+    width={width}
+    height={height}
+    className={className}
+    viewBox="0 0 40 40"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <rect
+      x="0.5"
+      y="0.5"
+      width="39"
+      height="39"
+      rx="6"
+      ry="6"
+      fill="currentColor"
+    />
+    <rect
+      x="0.5"
+      y="0.5"
+      width="39"
+      height="39"
+      rx="6"
+      ry="6"
+      stroke="#626C77"
+    />
+    <path
+      d="M18 26H15.3333C14.9797 26 14.6406 25.8595 14.3905 25.6095C14.1405 25.3594 14 25.0203 14 24.6667V15.3333C14 14.9797 14.1405 14.6406 14.3905 14.3905C14.6406 14.1405 14.9797 14 15.3333 14H18"
+      stroke="#fff"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M22.6665 23.3327L25.9998 19.9993L22.6665 16.666"
+      stroke="#fff"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M26 20H18"
+      stroke="#fff"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
   </svg>
 );

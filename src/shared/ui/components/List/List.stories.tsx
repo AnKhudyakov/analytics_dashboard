@@ -2,10 +2,18 @@ import { Meta, StoryObj } from '@storybook/react';
 import { formatChannels } from 'pages/Channels/lib/helpers';
 import { EmptyList } from '../EmptyList';
 import { List } from './List';
+import { MemoryRouter } from 'react-router-dom';
 
 const meta: Meta<typeof List> = {
   title: 'Shared/List',
   component: List,
+  decorators: [
+    (Story) => (
+      <MemoryRouter>
+        <Story />
+      </MemoryRouter>
+    ),
+  ],
 };
 
 export default meta;
@@ -19,8 +27,16 @@ export const Default: Story = {
         id: 'UCdqp0KK_Io7TwK5cJMBvB0Q',
         snippet: {
           title: 'WhistlinDiesel',
+          description: 'Join us for a closer look at Nintendo Switch 2',
+          customUrl: '@starwars',
           thumbnails: {
             default: {
+              url: 'https://yt3.ggpht.com/0Yzi87lZa_XLsbkrJOC1YRIOS6NWeE9NHO3n8awdpkpLXVApsS2IHCo8D5l8crmpTvZyCYsiAWw=s88-c-k-c0x00ffffff-no-rj',
+            },
+            medium: {
+              url: 'https://yt3.ggpht.com/0Yzi87lZa_XLsbkrJOC1YRIOS6NWeE9NHO3n8awdpkpLXVApsS2IHCo8D5l8crmpTvZyCYsiAWw=s88-c-k-c0x00ffffff-no-rj',
+            },
+            high: {
               url: 'https://yt3.ggpht.com/0Yzi87lZa_XLsbkrJOC1YRIOS6NWeE9NHO3n8awdpkpLXVApsS2IHCo8D5l8crmpTvZyCYsiAWw=s88-c-k-c0x00ffffff-no-rj',
             },
           },
@@ -37,8 +53,16 @@ export const Default: Story = {
         id: 'UCbaGn5VkOVlcRgIWAHcrJKA',
         snippet: {
           title: 'Cut',
+          customUrl: '@starwars',
+          description: 'Join us for a closer look at Nintendo Switch 2',
           thumbnails: {
             default: {
+              url: 'https://yt3.ggpht.com/myz3VVBEmgMiHNRZ_YHf1YQxIZjbclajOop-r1fb937YvnD1Dd-eI3cOwlJGhYaub0y4lReD=s88-c-k-c0x00ffffff-no-rj',
+            },
+            medium: {
+              url: 'https://yt3.ggpht.com/myz3VVBEmgMiHNRZ_YHf1YQxIZjbclajOop-r1fb937YvnD1Dd-eI3cOwlJGhYaub0y4lReD=s88-c-k-c0x00ffffff-no-rj',
+            },
+            high: {
               url: 'https://yt3.ggpht.com/myz3VVBEmgMiHNRZ_YHf1YQxIZjbclajOop-r1fb937YvnD1Dd-eI3cOwlJGhYaub0y4lReD=s88-c-k-c0x00ffffff-no-rj',
             },
           },
@@ -56,8 +80,16 @@ export const Default: Story = {
         id: 'UCdI8evszfZvyAl2UVCypkTA',
         snippet: {
           title: 'MileyCyrusVEVO',
+          customUrl: '@starwars',
+          description: 'Join us for a closer look at Nintendo Switch 2',
           thumbnails: {
             default: {
+              url: 'https://yt3.ggpht.com/z3AOStrEznwieoK8HCfHi9nNQiPUiycJMEDYwZ5ufnaIS8YQRMj-X8lZpwtMnBsv89kcVUwewA=s88-c-k-c0x00ffffff-no-rj',
+            },
+            medium: {
+              url: 'https://yt3.ggpht.com/z3AOStrEznwieoK8HCfHi9nNQiPUiycJMEDYwZ5ufnaIS8YQRMj-X8lZpwtMnBsv89kcVUwewA=s88-c-k-c0x00ffffff-no-rj',
+            },
+            high: {
               url: 'https://yt3.ggpht.com/z3AOStrEznwieoK8HCfHi9nNQiPUiycJMEDYwZ5ufnaIS8YQRMj-X8lZpwtMnBsv89kcVUwewA=s88-c-k-c0x00ffffff-no-rj',
             },
           },
@@ -74,8 +106,16 @@ export const Default: Story = {
         id: 'UCKbNOpmhmwBuJXXMYOg_txA',
         snippet: {
           title: 'GQ Sports',
+          customUrl: '@starwars',
+          description: 'Join us for a closer look at Nintendo Switch 2',
           thumbnails: {
             default: {
+              url: 'https://yt3.ggpht.com/Mio_Ry-JCBLkiFFP8du93kPILw7xVQOq7gsA4hvq_ElkQvjhWkHTQ0EpQXuuE1cChSpXqZw6b48=s88-c-k-c0x00ffffff-no-rj',
+            },
+            medium: {
+              url: 'https://yt3.ggpht.com/Mio_Ry-JCBLkiFFP8du93kPILw7xVQOq7gsA4hvq_ElkQvjhWkHTQ0EpQXuuE1cChSpXqZw6b48=s88-c-k-c0x00ffffff-no-rj',
+            },
+            high: {
               url: 'https://yt3.ggpht.com/Mio_Ry-JCBLkiFFP8du93kPILw7xVQOq7gsA4hvq_ElkQvjhWkHTQ0EpQXuuE1cChSpXqZw6b48=s88-c-k-c0x00ffffff-no-rj',
             },
           },

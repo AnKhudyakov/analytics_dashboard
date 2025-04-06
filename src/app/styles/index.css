@@ -4,6 +4,9 @@
   --color-primary-dark: #081028;
   --color-secordary-dark: #0b1739;
   --color-secordary-500: #343b4f;
+  --color-secondary-2: #8951ff;
+  --color-secondary-3: #21c3fc;
+  --color-secondary-4: #3C87E9;
   --color-neutral-100: #fff;
   --color-neutral-200: #d9e1fa;
   --color-neutral-300: #d1dbf9;
@@ -12,8 +15,14 @@
   --color-neutral-600: #37446b;
   --color-neutral-700: #212c4d;
   --color-neutral-800: #081028;
+  --color-custom-1: rgba(185, 248, 207, 0.2);
+  --color-custom-2: rgba(185, 248, 207, 0.3);
+  --color-custom-3: rgba(251, 44, 54, 0.2);
+  --color-custom-4: rgba(251, 44, 54, 0.3);
   --drop-shadow-3: 0 8px 28px rgba(1, 5, 11, 0.3);
   --font-sans: 'Mona Sans', sans-serif;
+  --text-base: 0.75rem;
+  --animation-spin-slow: spin 2s infinite linear;
 }
 
 body {
@@ -36,4 +45,25 @@ h3 {
 
 p {
   @apply text-base;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  border: 1px solid var(--color-secordary-500);
+  -webkit-text-fill-color: var(--color-neutral-400) !important;
+  -webkit-box-shadow: 0 0 0px 1000px var(--color-secordary-dark) inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  -webkit-text-fill-color: var(--color-neutral-400);
 }

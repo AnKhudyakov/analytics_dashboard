@@ -1,6 +1,7 @@
+import { NavLink } from 'react-router-dom';
 import tw from 'tailwind-styled-components';
 
-export const Item = tw.a`
+export const Item = tw(NavLink)`
   flex items-center gap-3 px-4 py-2 rounded-sm text-neutral-400 hover:cursor-pointer max-w-66
-  ${(p) => (p.$active ? 'bg-secordary-dark text-white' : '')}
+  [&.active]:bg-secordary-dark [&.active]:text-white
 `;

@@ -1,3 +1,7 @@
 export const routerPaths = {
-  MAIN_PATH: "/",
+  MAIN_PATH: '/',
+  CHANNELS_PATH: '/channels',
+  VIDEOS_PATH: '/videos',
+  CHANNEL_PATH: '/channels/:channelId',
+  LOGIN_PATH: "/login"
 };

@@ -1,10 +1,14 @@
-import { api } from 'shared/api';
-import { ChannelsResponse } from './types';
+import { youtubeApi } from 'shared/api';
+import {
+  ChannelAnalyticsResponse,
+  ChannelsResponse,
+  ChannelStats,
+} from './types';
 
-export const channelApi = api.injectEndpoints({
+export const channelApi = youtubeApi.injectEndpoints({
   endpoints: (builder) => ({
     searchChannels: builder.query<ChannelsResponse, string>({
-      query: (query: string) => ({
+      query: (query) => ({
         url: '/search',
         params: {
           part: 'snippet',
@@ -15,12 +19,39 @@ export const channelApi = api.injectEndpoints({
       }),
     }),
 
-    getChannelsStats: builder.query<ChannelsResponse, string>({
-      query: (channelIds: string) => ({
+    getChannels: builder.query<
+      ChannelsResponse,
+      { page: number; limit: number }
+    >({
+      query: ({ page, limit }) => ({
         url: '/channels',
         params: {
-          part: 'snippet,statistics',
-          id: channelIds,
+          page,
+          limit,
+          //part: 'snippet,statistics',
+          //id: channelIds,
+        },
+      }),
+    }),
+
+    getChannelAnalytics: builder.query<
+      ChannelAnalyticsResponse,
+      string | undefined
+    >({
+      query: (channelId) => ({
+        url: `/channels/analytics`,
+        params: {
+          //part: 'snippet,statistics,brandingSettings,contentDetails,contentOwnerDetails,localizations,status,topicDetails',
+          id: channelId,
+        },
+      }),
+    }),
+
+    getChannelStats: builder.query<ChannelStats[], string | undefined>({
+      query: (channelId) => ({
+        url: `/channels/stats`,
+        params: {
+          id: channelId,
         },
       }),
     }),
@@ -28,3 +59,24 @@ export const channelApi = api.injectEndpoints({
 
   overrideExisting: false,
 });
+
+// export const channelAnalyticsApi = rapidApi.injectEndpoints({
+//   endpoints: (builder) => ({
+//     getChannelDetailStats: builder.query<ChannelStats[], string | undefined>({
+//       query: (username) => ({
+//         url: `/channel_stats`,
+//         params: {
+//           username,
+//           range: 'alltime',
+//           groupBy: 'daily',
+//           sortOrder: 'ASC',
+//           withRevenue: 'true',
+//           withEvents: 'false',
+//           withBreakdown: 'false',
+//           withToday: 'false',
+//         },
+//       }),
+//     }),
+//   }),
+//   overrideExisting: false,
+// });

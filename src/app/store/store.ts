@@ -1,13 +1,15 @@
 import { configureStore } from '@reduxjs/toolkit';
-import { channelApi } from 'entities/channel/model/api';
-
+import { rapidApi, youtubeApi } from 'shared/api/';
 
 export const store = configureStore({
   reducer: {
-    [channelApi.reducerPath]: channelApi.reducer,
+    [rapidApi.reducerPath]: rapidApi.reducer,
+    [youtubeApi.reducerPath]: youtubeApi.reducer,
   },
   middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware().concat(channelApi.middleware),
+    getDefaultMiddleware()
+      .concat(rapidApi.middleware)
+      .concat(youtubeApi.middleware),
 });
 
 export type RootState = ReturnType<typeof store.getState>;

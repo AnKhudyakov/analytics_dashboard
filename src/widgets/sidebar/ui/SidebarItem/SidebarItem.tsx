@@ -13,7 +13,7 @@ export const SidebarItem: FC<SidebarItemProps> = ({
   const isActive = location.pathname === to;
 
   return (
-    <Item to={to} $active={isActive} className={hoverEffect}>
+    <Item to={to} className={hoverEffect}>
       {icon}
       <span>{label}</span>
     </Item>
