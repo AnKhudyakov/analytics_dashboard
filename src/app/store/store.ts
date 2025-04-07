@@ -1,14 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit';
-import { rapidApi, youtubeApi } from 'shared/api/';
+import { youtubeApi } from 'shared/api/';
 
 export const store = configureStore({
   reducer: {
-    [rapidApi.reducerPath]: rapidApi.reducer,
     [youtubeApi.reducerPath]: youtubeApi.reducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware()
-      .concat(rapidApi.middleware)
       .concat(youtubeApi.middleware),
 });
 
