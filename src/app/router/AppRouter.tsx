@@ -25,7 +25,10 @@ const routes = createRoutesFromElements(
     <Route path={routerPaths.LOGIN_PATH} element={<LoginPage />} />
     <Route path="*" element={<NotFoundPage />} />
     <Route path={routerPaths.MAIN_PATH} element={<PrivateRoute />}>
-      <Route index element={<></>} />
+      <Route
+        index
+        element={<Navigate to={routerPaths.CHANNELS_PATH} replace />}
+      />
       <Route path={routerPaths.CHANNELS_PATH} element={<ChannelsPage />} />
       <Route
         path={routerPaths.CHANNEL_PATH}
