@@ -25,8 +25,6 @@ export const ChannelsPage = () => {
     setSortOrder,
   } = useChannelsData();
 
-  if (isLoading) return <Loader />;
-
   return (
     <Container>
       <ChannelsHeader
@@ -34,32 +32,38 @@ export const ChannelsPage = () => {
         search={search}
         setSearch={setSearch}
       />
-      {error ? (
-        <Error text="No data loading" />
+      {isLoading ? (
+        <Loader />
       ) : (
-        <ChannelsContent>
-          <List
-            data={formatChannels(statsData?.items)}
-            empty={<EmptyList text="No channels found" />}
-            viewPath="/channels"
-            onSort={(column) => {
-              if (column === sortBy) {
-                setSortOrder((prev) => (prev === 'asc' ? 'desc' : 'asc'));
-              } else {
-                setSortBy(column as keyof typeof ColumnChannel);
-                setSortOrder('asc');
-              }
-            }}
-            sortBy={sortBy}
-            sortOrder={sortOrder}
-          />
-          <Pagination
-            count={statsData?.pageInfo?.totalResults}
-            setPage={setPage}
-            rowsPerPage={rowsPerPage}
-            setRowsPerPage={setRowsPerPage}
-          />
-        </ChannelsContent>
+        <>
+          {error ? (
+            <Error text="No data loading" />
+          ) : (
+            <ChannelsContent>
+              <List
+                data={formatChannels(statsData?.items)}
+                empty={<EmptyList text="No channels found" />}
+                viewPath="/channels"
+                onSort={(column) => {
+                  if (column === sortBy) {
+                    setSortOrder((prev) => (prev === 'asc' ? 'desc' : 'asc'));
+                  } else {
+                    setSortBy(column as keyof typeof ColumnChannel);
+                    setSortOrder('asc');
+                  }
+                }}
+                sortBy={sortBy}
+                sortOrder={sortOrder}
+              />
+              <Pagination
+                count={statsData?.pageInfo?.totalResults}
+                setPage={setPage}
+                rowsPerPage={rowsPerPage}
+                setRowsPerPage={setRowsPerPage}
+              />
+            </ChannelsContent>
+          )}
+        </>
       )}
     </Container>
   );

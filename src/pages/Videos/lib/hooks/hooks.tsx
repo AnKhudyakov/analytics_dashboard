@@ -45,6 +45,7 @@ export const useVideosData = () => {
     filteredData,
     isLoading: isLoading || isSearching,
     error: error || searchError,
+    search,
     setSearch,
     setPage,
     rowsPerPage,
