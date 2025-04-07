@@ -75,3 +75,22 @@ export interface ChannelStats {
   dayOfWeek: string; // День недели (например, "FRIDAY")
   isToday: boolean; // Флаг, указывающий, является ли эта запись сегодняшним днем
 }
+
+export interface ChannelsDTO {
+  page: number;
+  limit: number;
+  sortBy: string;
+  sortOrder: 'desc' | 'asc';
+}
+
+export interface ChannelsSearchDTO extends ChannelsDTO {
+  search: string;
+}
+
+export enum ColumnChannel {
+  name = 'Name',
+  subscriberCount = 'Subscribers',
+  viewCount = 'Views',
+  hiddenSubscriberCount = 'Hidden Subscriber',
+  videoCount = 'Videos',
+}

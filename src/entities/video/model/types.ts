@@ -19,3 +19,22 @@ export interface VideosResponse {
   nextPageToken?: string;
   pageInfo: PageInfo;
 }
+
+export interface VideosDTO {
+  page: number;
+  limit: number;
+  sortBy: string;
+  sortOrder: 'desc' | 'asc';
+}
+
+export interface VideosSearchDTO extends VideosDTO {
+  search: string;
+}
+
+export enum ColumnVideo {
+  name = 'Name',
+  likeCount = 'Likes',
+  viewCount = 'Views',
+  commentCount = 'Comments',
+  favoriteCount = 'Favorites',
+}

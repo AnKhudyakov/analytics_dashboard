@@ -11,7 +11,7 @@ import {
 } from './Pagination.styles';
 
 export const Pagination: FC<PaginationProps> = ({
-  count,
+  count = 0,
   setPage,
   rowsPerPage,
   setRowsPerPage,

@@ -307,3 +307,53 @@ export const ExitIcon: FC<React.SVGProps<SVGSVGElement>> = ({
     />
   </svg>
 );
+
+export const SortDESCIcon: FC<React.SVGProps<SVGSVGElement>> = ({
+  width,
+  height,
+  className,
+}) => (
+  <svg
+    width={width}
+    height={height}
+    className={className}
+    viewBox="0 0 8 9"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <g opacity="0.8">
+      <path
+        d="M2 3.76172L4 5.76172L6 3.76172"
+        stroke="#fff"
+        stroke-width="0.8"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </g>
+  </svg>
+);
+
+export const SortASCIcon: FC<React.SVGProps<SVGSVGElement>> = ({
+  width,
+  height,
+  className,
+}) => (
+  <svg
+    width={width}
+    height={height}
+    className={className}
+    viewBox="0 0 8 9"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <g opacity="0.8">
+      <path
+        d="M6 5.09375L4 3.09375L2 5.09375"
+        stroke="#fff"
+        stroke-width="0.8"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </g>
+  </svg>
+);

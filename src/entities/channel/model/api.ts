@@ -1,37 +1,35 @@
 import { youtubeApi } from 'shared/api';
 import {
   ChannelAnalytics,
+  ChannelsDTO,
   ChannelsResponse,
+  ChannelsSearchDTO,
   ChannelStats,
 } from './types';
 
 export const channelApi = youtubeApi.injectEndpoints({
   endpoints: (builder) => ({
-    searchChannels: builder.query<
-      ChannelsResponse,
-      { search: string; page: number; limit: number }
-    >({
-      query: ({ search, page, limit }) => ({
+    searchChannels: builder.query<ChannelsResponse, ChannelsSearchDTO>({
+      query: ({ search, page, limit, sortBy, sortOrder }) => ({
         url: '/channels/search',
         params: {
-          search: search,
+          search,
           page,
           limit,
+          sortBy,
+          sortOrder,
         },
       }),
     }),
 
-    getChannels: builder.query<
-      ChannelsResponse,
-      { page: number; limit: number }
-    >({
-      query: ({ page, limit }) => ({
+    getChannels: builder.query<ChannelsResponse, ChannelsDTO>({
+      query: ({ page, limit, sortBy, sortOrder }) => ({
         url: '/channels',
         params: {
           page,
           limit,
-          //part: 'snippet,statistics',
-          //id: channelIds,
+          sortBy,
+          sortOrder,
         },
       }),
     }),
@@ -40,7 +38,6 @@ export const channelApi = youtubeApi.injectEndpoints({
       query: (channelId) => ({
         url: `/channels/analytics`,
         params: {
-          //part: 'snippet,statistics,brandingSettings,contentDetails,contentOwnerDetails,localizations,status,topicDetails',
           id: channelId,
         },
       }),

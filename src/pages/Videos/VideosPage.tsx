@@ -12,6 +12,7 @@ import {
 } from './VideosPage.styles';
 import { formatVideos } from './lib/helpers';
 import { useVideosData } from './lib/hooks';
+import { ColumnVideo } from 'entities/video/model/types';
 
 export const VideosPage = () => {
   const {
@@ -22,6 +23,10 @@ export const VideosPage = () => {
     setPage,
     rowsPerPage,
     setRowsPerPage,
+    sortBy,
+    setSortBy,
+    sortOrder,
+    setSortOrder,
   } = useVideosData();
 
   if (isLoading) return <Loader />;
@@ -39,6 +44,16 @@ export const VideosPage = () => {
             data={formatVideos(filteredData.items)}
             empty={<EmptyList text="No videos found" />}
             viewPath={'/videos'}
+            onSort={(column) => {
+              if (column === sortBy) {
+                setSortOrder((prev) => (prev === 'asc' ? 'desc' : 'asc'));
+              } else {
+                setSortBy(column as keyof typeof ColumnVideo);
+                setSortOrder('asc');
+              }
+            }}
+            sortBy={sortBy}
+            sortOrder={sortOrder}
           />
           <Pagination
             count={filteredData.pageInfo.totalResults}

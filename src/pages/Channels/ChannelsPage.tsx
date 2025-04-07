@@ -1,3 +1,4 @@
+import { ColumnChannel } from 'entities/channel/model/types';
 import { EmptyList } from 'shared/ui/components/EmptyList';
 import { Error } from 'shared/ui/components/Error';
 import { List } from 'shared/ui/components/List';
@@ -18,6 +19,10 @@ export const ChannelsPage = () => {
     setPage,
     rowsPerPage,
     setRowsPerPage,
+    sortBy,
+    setSortBy,
+    sortOrder,
+    setSortOrder,
   } = useChannelsData();
 
   if (isLoading) return <Loader />;
@@ -29,17 +34,27 @@ export const ChannelsPage = () => {
         search={search}
         setSearch={setSearch}
       />
-      {error || !statsData ? (
-        <Error text="Error data loading" />
+      {error ? (
+        <Error text="No data loading" />
       ) : (
         <ChannelsContent>
           <List
-            data={formatChannels(statsData.items)}
+            data={formatChannels(statsData?.items)}
             empty={<EmptyList text="No channels found" />}
             viewPath="/channels"
+            onSort={(column) => {
+              if (column === sortBy) {
+                setSortOrder((prev) => (prev === 'asc' ? 'desc' : 'asc'));
+              } else {
+                setSortBy(column as keyof typeof ColumnChannel);
+                setSortOrder('asc');
+              }
+            }}
+            sortBy={sortBy}
+            sortOrder={sortOrder}
           />
           <Pagination
-            count={statsData.pageInfo.totalResults}
+            count={statsData?.pageInfo?.totalResults}
             setPage={setPage}
             rowsPerPage={rowsPerPage}
             setRowsPerPage={setRowsPerPage}

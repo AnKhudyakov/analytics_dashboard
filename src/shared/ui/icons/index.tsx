@@ -7,6 +7,8 @@ import {
   HomeIcon,
   NoIcon,
   SearchIcon,
+  SortASCIcon,
+  SortDESCIcon,
   SpinnerIcon,
   YesIcon,
 } from './Icons';
@@ -22,4 +24,6 @@ export const Icons = {
   arrowGrow: ArrowGrowIcon,
   arrowFall: ArrowFallIcon,
   exitIcon: ExitIcon,
+  sortASC: SortASCIcon,
+  sortDESC: SortDESCIcon
 };

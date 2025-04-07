@@ -1,4 +1,5 @@
 import { Video } from 'entities/video';
+import { ColumnVideo } from 'entities/video/model/types';
 import { config } from 'shared/config';
 import { formatStatistic } from 'shared/lib/helpers/helpers';
 import { AvatarInfo } from 'shared/ui/components/AvatarInfo';
@@ -6,22 +7,19 @@ import { AvatarInfo } from 'shared/ui/components/AvatarInfo';
 export const formatVideos = (data: Video[] | undefined) => ({
   count: data?.length || 0,
   ids: data?.map((el) => el.id) || [],
-  items: [
-    {
-      title: 'Name',
+  items: Object.entries(ColumnVideo).map(([key, title]) => ({
+      title,
+      key: key as keyof typeof ColumnVideo,
       values:
-        data?.map((el) => (
-          <AvatarInfo
-            key={el.id}
-            src={`${config.backendUrl}/proxy-image?url=${encodeURIComponent(el.snippet.thumbnails.default.url)}`}
-            alt={el.snippet.title}
-            name={el.snippet.title}
-          />
-        )) || [],
-    },
-    { title: 'Likes', values: formatStatistic(data, 'likeCount') },
-    { title: 'Views', values: formatStatistic(data, 'viewCount') },
-    { title: 'Comments', values: formatStatistic(data, 'commentCount') },
-    { title: 'Favorites', values: formatStatistic(data, 'favoriteCount') },
-  ],
-});
+        key === 'name'
+          ? data?.map((el) => (
+              <AvatarInfo
+                key={el.id}
+                src={`${config.backendUrl}/proxy-image?url=${encodeURIComponent(el.snippet.thumbnails.default.url)}`}
+                alt={el.snippet.title}
+                name={el.snippet.title}
+              />
+            )) || []
+          : formatStatistic(data, key as keyof Video['statistics']),
+    })),
+ });

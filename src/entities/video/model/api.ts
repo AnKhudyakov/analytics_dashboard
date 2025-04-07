@@ -1,16 +1,17 @@
 import { youtubeApi } from 'shared/api';
-import { VideosResponse } from './types';
+import { VideosDTO, VideosResponse, VideosSearchDTO } from './types';
 
 export const videoApi = youtubeApi.injectEndpoints({
   endpoints: (builder) => ({
-    searchVideos: builder.query<VideosResponse, string>({
-      query: (query) => ({
-        url: '/search',
+    searchVideos: builder.query<VideosResponse, VideosSearchDTO>({
+      query: ({ search, page, limit, sortBy, sortOrder }) => ({
+        url: 'videos/search',
         params: {
-          part: 'snippet',
-          type: 'video',
-          q: query,
-          maxResults: 10,
+          search,
+          page,
+          limit,
+          sortBy,
+          sortOrder,
         },
       }),
     }),
@@ -25,21 +26,14 @@ export const videoApi = youtubeApi.injectEndpoints({
       }),
     }),
 
-    getTrendingVideos: builder.query<
-      VideosResponse,
-      { page: number; limit: number }
-    >({
-      query: ({ page, limit }) => ({
+    getTrendingVideos: builder.query<VideosResponse, VideosDTO>({
+      query: ({ page, limit, sortBy, sortOrder }) => ({
         url: '/videos',
         params: {
           page,
           limit,
-          // part: 'snippet,statistics',
-          // chart: 'mostPopular',
-          // regionCode: 'US',
-          // maxResults: rowsPerPage,
-          // key: import.meta.env.VITE_YOUTUBE_API_KEY,
-          // pageToken,
+          sortBy,
+          sortOrder,
         },
       }),
     }),

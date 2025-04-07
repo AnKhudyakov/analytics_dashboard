@@ -17,7 +17,11 @@ export const TableRow = tw.tr`
 `;
 
 export const TableHeader = tw.th`
-  p-3 text-left font-semibold text-white
+  p-3 text-left font-semibold text-white w-1/5
+`;
+
+export const HeaderContent = tw.th`
+  flex items-center gap-2
 `;
 
 export const TableBody = tw.tbody`

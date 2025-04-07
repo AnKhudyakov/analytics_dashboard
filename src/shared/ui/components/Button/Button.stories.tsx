@@ -1,4 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
+import { Loader } from '../Loader';
 import { Button } from './Button';
 
 const meta: Meta<typeof Button> = {
@@ -11,6 +12,23 @@ type Story = StoryObj<typeof Button>;
 
 export const Default: Story = {
   args: {
+    children: 'Click',
     onClick: (e) => console.log('Button click'),
+  },
+};
+
+export const Disabled: Story = {
+  args: {
+    children: 'Click',
+    onClick: (e) => console.log('Button click'),
+    disabled: true,
+  },
+};
+
+export const Loading: Story = {
+  args: {
+    children: <Loader width={20} height={20} />,
+    onClick: (e) => console.log('Button click'),
+    disabled: true,
   },
 };
