@@ -4,6 +4,7 @@ export const formatMetric = (
   data: ChannelStats[],
   field: keyof ChannelStats
 ): string => {
+  if (!data.length) return 'No data';
   const lastMetric = data[data.length - 1];
   const metric = lastMetric[field];
   const formatMetric = Number(metric);

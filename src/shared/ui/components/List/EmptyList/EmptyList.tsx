@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { Typography } from '../Typography';
+import { Typography } from 'shared/ui/components/Typography';
 import { EmptyListProps } from './EmptyList.def';
 import { Container } from './EmptyList.styles';
 

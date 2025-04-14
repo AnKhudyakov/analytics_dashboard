@@ -1,11 +1,11 @@
 import { Meta, StoryObj } from '@storybook/react';
 import { formatChannels } from 'pages/Channels/lib/helpers';
 import { MemoryRouter } from 'react-router-dom';
-import { List } from './List';
+import { ListItem } from './ListItem';
 
-const meta: Meta<typeof List> = {
-  title: 'Shared/List',
-  component: List,
+const meta: Meta<typeof ListItem> = {
+  title: 'Shared/ListItem',
+  component: ListItem,
   decorators: [
     (Story) => (
       <MemoryRouter>
@@ -16,11 +16,11 @@ const meta: Meta<typeof List> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof List>;
+type Story = StoryObj<typeof ListItem>;
 
 export const Default: Story = {
   args: {
-    data: formatChannels([
+    items: formatChannels([
       {
         etag: '8-kNABqR9jp8Qrs576Aeeg6vUbo',
         id: 'UCdqp0KK_Io7TwK5cJMBvB0Q',
@@ -128,14 +128,12 @@ export const Default: Story = {
           videoCount: '792',
         },
       },
-    ]),
-    emptyText: '',
+    ]).items,
   },
 };
 
 export const Empty: Story = {
   args: {
-    data: formatChannels([]),
-    emptyText: 'No items found',
+    items: formatChannels([]).items,
   },
 };

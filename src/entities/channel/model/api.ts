@@ -1,4 +1,5 @@
 import { youtubeApi } from 'shared/api';
+import { encodeFilters } from 'shared/lib/helpers';
 import {
   ChannelAnalytics,
   ChannelsDTO,
@@ -10,7 +11,7 @@ import {
 export const channelApi = youtubeApi.injectEndpoints({
   endpoints: (builder) => ({
     searchChannels: builder.query<ChannelsResponse, ChannelsSearchDTO>({
-      query: ({ search, page, limit, sortBy, sortOrder }) => ({
+      query: ({ search, page, limit, sortBy, sortOrder, filters }) => ({
         url: '/channels/search',
         params: {
           search,
@@ -18,18 +19,20 @@ export const channelApi = youtubeApi.injectEndpoints({
           limit,
           sortBy,
           sortOrder,
+          filters: encodeFilters(filters),
         },
       }),
     }),
 
     getChannels: builder.query<ChannelsResponse, ChannelsDTO>({
-      query: ({ page, limit, sortBy, sortOrder }) => ({
+      query: ({ page, limit, sortBy, sortOrder, filters }) => ({
         url: '/channels',
         params: {
           page,
           limit,
           sortBy,
           sortOrder,
+          filters: encodeFilters(filters),
         },
       }),
     }),

@@ -1,4 +1,4 @@
-import { PageInfo, Snippet } from 'shared/api/types';
+import { Filters, PageInfo, Snippet } from 'shared/api/types';
 
 export interface ChannelsResponse {
   items: Channel[];
@@ -61,19 +61,19 @@ export interface ChannelAnalytics extends Channel {
 
 export interface ChannelStats {
   id: string;
-  insertedAt: string; // Дата и время вставки записи (ISO строка)
-  subscriberCount: number; // Общее количество подписчиков
-  subscriberCountDelta: number; // Изменение количества подписчиков за день
-  viewCount: number; // Общее количество просмотров
-  viewCountDelta: number; // Изменение количества просмотров за день
-  videoCount: number; // Общее количество видео
-  videoCountDelta: number; // Изменение количества видео за день
-  date: string; // Дата записи (ISO строка)
-  estimatedLowRevenueUsd: number; // Минимальная оценка дохода в USD
-  estimatedHighRevenueUsd: number; // Максимальная оценка дохода в USD
-  estimatedRevenueUsd: number; // Средняя оценка дохода в USD
-  dayOfWeek: string; // День недели (например, "FRIDAY")
-  isToday: boolean; // Флаг, указывающий, является ли эта запись сегодняшним днем
+  insertedAt: string;
+  subscriberCount: number;
+  subscriberCountDelta: number;
+  viewCount: number;
+  viewCountDelta: number;
+  videoCount: number;
+  videoCountDelta: number;
+  date: string;
+  estimatedLowRevenueUsd: number;
+  estimatedHighRevenueUsd: number;
+  estimatedRevenueUsd: number;
+  dayOfWeek: string;
+  isToday: boolean;
 }
 
 export interface ChannelsDTO {
@@ -81,6 +81,7 @@ export interface ChannelsDTO {
   limit: number;
   sortBy: string;
   sortOrder: 'desc' | 'asc';
+  filters: Filters;
 }
 
 export interface ChannelsSearchDTO extends ChannelsDTO {

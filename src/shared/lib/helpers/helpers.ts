@@ -1,6 +1,8 @@
 import { Channel } from 'entities/channel';
 import { Video } from 'entities/video';
 import { jwtDecode } from 'jwt-decode';
+import { Filters } from 'shared/api/types';
+import { ListItem } from 'shared/ui/components/List/ListItem/ListItem.def';
 
 export const isAuthenticated = (): boolean => {
   const token = localStorage.getItem('token');
@@ -60,4 +62,19 @@ export const transformField = (
     },
     {} as Record<string, number>
   );
+};
+
+export const createFilters = (data: ListItem[]) =>
+  data.reduce(
+    (acc, obj) => {
+      const key = obj.key;
+      acc[key] = false;
+      return acc;
+    },
+    {} as { [key: string]: boolean }
+  );
+
+export const encodeFilters = (filters: Filters) => {
+  const json = JSON.stringify(filters);
+  return btoa(json); // to base64
 };

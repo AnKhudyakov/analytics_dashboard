@@ -1,4 +1,4 @@
-import { formatDate } from 'shared/lib/helpers/helpers';
+import { formatDate } from 'shared/lib/helpers';
 
 export const CustomDateTick = ({ x, y, payload }: any) => {
   const date = formatDate(payload.value);

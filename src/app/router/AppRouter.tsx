@@ -12,7 +12,7 @@ import {
   RouterProvider,
 } from 'react-router-dom';
 import { routerPaths } from 'shared/constants';
-import { isAuthenticated } from 'shared/lib/helpers/helpers';
+import { isAuthenticated } from 'shared/lib/helpers';
 
 interface IProps {}
 

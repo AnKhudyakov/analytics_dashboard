@@ -28,7 +28,7 @@ export const Pagination: FC<PaginationProps> = ({
   };
 
   const handleNextClick = () => {
-    if (currentPage < Math.round(count / rowsPerPage)) {
+    if (currentPage < Math.ceil(count / rowsPerPage)) {
       setCurrentPage((prev) => prev + 1);
       setPage((prev) => prev + 1);
     }
@@ -73,7 +73,7 @@ export const Pagination: FC<PaginationProps> = ({
           </ArrowButton>
           <ArrowButton
             onClick={handleNextClick}
-            disabled={currentPage === Math.round(count / rowsPerPage)}
+            disabled={currentPage === Math.ceil(count / rowsPerPage)}
             className={hoverEffect}
           >
             <Icons.arrowRight width={14} height={14}/>

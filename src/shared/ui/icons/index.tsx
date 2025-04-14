@@ -3,13 +3,16 @@ import {
   ArrowGrowIcon,
   ArrowLeftIcon,
   ArrowRightIcon,
+  CheckedIcon,
   ExitIcon,
+  FilterIcon,
   HomeIcon,
   NoIcon,
   SearchIcon,
   SortASCIcon,
   SortDESCIcon,
   SpinnerIcon,
+  UncheckedIcon,
   YesIcon,
 } from './Icons';
 
@@ -23,7 +26,10 @@ export const Icons = {
   spinner: SpinnerIcon,
   arrowGrow: ArrowGrowIcon,
   arrowFall: ArrowFallIcon,
-  exitIcon: ExitIcon,
+  exit: ExitIcon,
   sortASC: SortASCIcon,
-  sortDESC: SortDESCIcon
+  sortDESC: SortDESCIcon,
+  filter: FilterIcon,
+  checked: CheckedIcon,
+  unchecked: UncheckedIcon,
 };

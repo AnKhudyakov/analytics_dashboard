@@ -14,7 +14,7 @@ export const FlexContainer = tw.div`
   flex gap-1 justify-between
 `;
 
-export const ExitIcon = tw(Icons.exitIcon)`
+export const ExitIcon = tw(Icons.exit)`
   fill-secordary-dark hover:fill-neutral-700 overflow-hidden rounded-3
   transition-colors
 `;

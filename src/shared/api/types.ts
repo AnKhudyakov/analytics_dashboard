@@ -35,3 +35,15 @@ interface Thumbnail {
   width?: number;
   height?: number;
 }
+
+export interface Filters extends Record<string, Filter | null> {}
+
+export interface Filter {
+  filterType?: 'range' | 'checkbox';
+  filterValue?: boolean | RangeValue;
+}
+
+export interface RangeValue {
+  valueFrom?: number;
+  valueTo?: number;
+}

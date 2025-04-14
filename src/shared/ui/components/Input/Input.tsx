@@ -1,6 +1,12 @@
 import { FC } from 'react';
 import { InputProps } from './Input.def';
-import { Container, SearchIcon, StyledInput } from './Input.styles';
+import {
+  Container,
+  SearchIcon,
+  StyledInput,
+  StyledSearchInput,
+} from './Input.styles';
+import { CheckboxInput } from './CheckboxInput';
 
 export const Input: FC<InputProps> = ({
   type = 'text',
@@ -8,10 +14,20 @@ export const Input: FC<InputProps> = ({
   placeholder = 'Search for...',
   ...props
 }) => {
+  const Tag = search
+    ? StyledSearchInput
+    : type === 'checkbox'
+      ? CheckboxInput
+      : StyledInput;
+
   return (
     <Container>
       {search && <SearchIcon width={16} height={15} />}
-      <StyledInput {...props} type={type} placeholder={placeholder} />
+      <Tag
+        {...props}
+        type={type}
+        placeholder={placeholder}
+      />
     </Container>
   );
 };

@@ -325,9 +325,9 @@ export const SortDESCIcon: FC<React.SVGProps<SVGSVGElement>> = ({
       <path
         d="M2 3.76172L4 5.76172L6 3.76172"
         stroke="#fff"
-        stroke-width="0.8"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="0.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </g>
   </svg>
@@ -350,10 +350,100 @@ export const SortASCIcon: FC<React.SVGProps<SVGSVGElement>> = ({
       <path
         d="M6 5.09375L4 3.09375L2 5.09375"
         stroke="#fff"
-        stroke-width="0.8"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="0.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </g>
+  </svg>
+);
+
+export const FilterIcon: FC<React.SVGProps<SVGSVGElement>> = ({
+  width,
+  height,
+  className,
+}) => (
+  <svg
+    width={width}
+    height={height}
+    className={className}
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M20.3648 8.76471H4.48245C4.24844 8.76471 4.02401 8.67174 3.85853 8.50627C3.69306 8.3408 3.6001 8.11637 3.6001 7.88235C3.6001 7.64834 3.69306 7.42391 3.85853 7.25844C4.02401 7.09296 4.24844 7 4.48245 7H20.3648C20.5988 7 20.8232 7.09296 20.9887 7.25844C21.1542 7.42391 21.2472 7.64834 21.2472 7.88235C21.2472 8.11637 21.1542 8.3408 20.9887 8.50627C20.8232 8.67174 20.5988 8.76471 20.3648 8.76471ZM17.4236 12.8824H7.42363C7.18961 12.8824 6.96518 12.7894 6.79971 12.6239C6.63424 12.4584 6.54127 12.234 6.54127 12C6.54127 11.766 6.63424 11.5416 6.79971 11.3761C6.96518 11.2106 7.18961 11.1176 7.42363 11.1176H17.4236C17.6576 11.1176 17.8821 11.2106 18.0475 11.3761C18.213 11.5416 18.306 11.766 18.306 12C18.306 12.234 18.213 12.4584 18.0475 12.6239C17.8821 12.7894 17.6576 12.8824 17.4236 12.8824ZM13.8942 17H10.953C10.719 17 10.4946 16.907 10.3291 16.7416C10.1636 16.5761 10.0707 16.3517 10.0707 16.1176C10.0707 15.8836 10.1636 15.6592 10.3291 15.4937C10.4946 15.3283 10.719 15.2353 10.953 15.2353H13.8942C14.1282 15.2353 14.3527 15.3283 14.5181 15.4937C14.6836 15.6592 14.7766 15.8836 14.7766 16.1176C14.7766 16.3517 14.6836 16.5761 14.5181 16.7416C14.3527 16.907 14.1282 17 13.8942 17Z"
+      fill="currentColor"
+    />
+  </svg>
+);
+
+export const CheckedIcon: FC<React.SVGProps<SVGSVGElement>> = ({
+  width,
+  height,
+  className,
+}) => (
+  <svg
+    width={width}
+    height={height}
+    className={className}
+    viewBox="0 0 12 13"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <rect
+      x="0.3"
+      y="0.89375"
+      width="11.4"
+      height="11.4"
+      rx="1.7"
+      fill="#AEB9E1"
+      stroke="#AEB9E1"
+      strokeWidth="0.6"
+    />
+    <g clip-path="url(#clip0_4978_58540)">
+      <path
+        d="M3.80176 6.92189L5.11378 8.23392L8.39384 4.95386"
+        stroke="white"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </g>
+    <defs>
+      <clipPath id="clip0_4978_58540">
+        <rect
+          width="5.6"
+          height="5.6"
+          fill="white"
+          transform="translate(3.29785 3.79395)"
+        />
+      </clipPath>
+    </defs>
+  </svg>
+);
+
+export const UncheckedIcon: FC<React.SVGProps<SVGSVGElement>> = ({
+  width,
+  height,
+  className,
+}) => (
+  <svg
+    width={width}
+    height={height}
+    className={className}
+    viewBox="0 0 12 13"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <rect
+      x="0.2"
+      y="0.79375"
+      width="11.6"
+      height="11.6"
+      rx="1.8"
+      fill="#0B1739"
+      stroke="#7E89AC"
+      strokeWidth="0.4"
+    />
   </svg>
 );

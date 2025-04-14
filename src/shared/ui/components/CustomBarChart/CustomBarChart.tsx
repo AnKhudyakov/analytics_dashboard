@@ -8,7 +8,7 @@ import {
   XAxis,
   YAxis,
 } from 'recharts';
-import { formatAxis, transformField } from 'shared/lib/helpers/helpers';
+import { formatAxis, transformField } from 'shared/lib/helpers';
 import { CustomDateTick } from 'shared/ui/components/CustomDateTick';
 import { CustomBarChartProps } from './CustomBarChart.def';
 

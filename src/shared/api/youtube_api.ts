@@ -29,6 +29,8 @@ export const baseQueryWithAuth: BaseQueryFn<
   if (result.error && result.error.status === 401) {
     // expire token
     localStorage.removeItem('token');
+    console.log("Invalid Token, redirect:",routerPaths.LOGIN_PATH, window.location.pathname);
+
     if (window.location.pathname !== routerPaths.LOGIN_PATH) {
       window.location.href = routerPaths.LOGIN_PATH;
     }

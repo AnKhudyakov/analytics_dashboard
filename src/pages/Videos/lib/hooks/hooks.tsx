@@ -4,6 +4,7 @@ import {
 } from 'entities/video';
 import { ColumnVideo } from 'entities/video/model/types';
 import { useState } from 'react';
+import { Filters } from 'shared/api/types';
 import { useDebounce } from 'shared/lib/hooks/useDebounce';
 
 export const useVideosData = () => {
@@ -12,6 +13,8 @@ export const useVideosData = () => {
   const [search, setSearch] = useState('');
   const [sortBy, setSortBy] = useState<keyof typeof ColumnVideo>('name');
   const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('asc');
+  const [filters, setFilters] = useState<Filters>({});
+
   const debouncedSearch = useDebounce(search, 1000);
 
   const {
@@ -19,7 +22,14 @@ export const useVideosData = () => {
     isLoading: isSearching,
     error: searchError,
   } = useSearchVideosQuery(
-    { search: debouncedSearch, page, limit: rowsPerPage, sortBy, sortOrder },
+    {
+      search: debouncedSearch,
+      page,
+      limit: rowsPerPage,
+      sortBy,
+      sortOrder,
+      filters,
+    },
     {
       skip: debouncedSearch.length < 1,
       refetchOnMountOrArgChange: true,
@@ -32,6 +42,7 @@ export const useVideosData = () => {
       limit: rowsPerPage,
       sortBy,
       sortOrder,
+      filters,
     },
     {
       skip: search.length > 1,
@@ -54,5 +65,7 @@ export const useVideosData = () => {
     sortOrder,
     setSortBy,
     setSortOrder,
+    filters,
+    setFilters,
   };
 };

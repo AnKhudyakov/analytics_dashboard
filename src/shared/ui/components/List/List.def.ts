@@ -1,18 +1,15 @@
-import { ColumnChannel } from 'entities/channel/model/types';
-import { ColumnVideo } from 'entities/video/model/types';
 import { ReactNode } from 'react';
+import { Filters } from 'shared/api/types';
+import { ListItem } from './ListItem/ListItem.def';
 
 export interface ListProps {
   data: { items: ListItem[]; count: number; ids: string[] };
-  empty: ReactNode;
+  isLoading: boolean;
+  emptyText: string;
   viewPath: string;
   onSort?: (column: string) => void;
   sortBy?: string | null;
   sortOrder?: 'asc' | 'desc';
-}
-
-export interface ListItem {
-  title: ColumnChannel | ColumnVideo;
-  key: keyof typeof ColumnChannel | keyof typeof ColumnVideo;
-  values: (string | number | ReactNode)[];
+  filters: Filters;
+  onFilter: (updatedFilters: Filters) => void;
 }

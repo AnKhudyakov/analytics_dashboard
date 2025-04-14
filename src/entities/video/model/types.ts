@@ -1,4 +1,4 @@
-import { PageInfo, Snippet } from 'shared/api/types';
+import { Filters, PageInfo, Snippet } from 'shared/api/types';
 
 export interface Video {
   id: string;
@@ -25,6 +25,7 @@ export interface VideosDTO {
   limit: number;
   sortBy: string;
   sortOrder: 'desc' | 'asc';
+  filters: Filters;
 }
 
 export interface VideosSearchDTO extends VideosDTO {
