@@ -15,7 +15,7 @@ export const List: FC<ListProps> = ({
 }) => {
   return (
     <TableContainer>
-      <Table $loading={isLoading || error}>
+      <Table $loading={isLoading || error || !data.count}>
         <TableHead>
           <ListHeader cols={data.items} {...props} />
         </TableHead>
@@ -27,6 +27,7 @@ export const List: FC<ListProps> = ({
             data={data}
             emptyText={emptyText}
             viewPath={viewPath}
+            onFilter={props.onFilter}
           />
         </TableBody>
       </Table>

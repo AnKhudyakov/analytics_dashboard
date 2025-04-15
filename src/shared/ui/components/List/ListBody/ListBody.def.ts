@@ -1,3 +1,4 @@
+import { Filters } from 'shared/api/types';
 import { ListItem } from '../ListItem/ListItem.def';
 
 export interface ListBodyProps {
@@ -11,4 +12,5 @@ export interface ListBodyProps {
   };
   viewPath: string;
   emptyText?: string;
+  onFilter: (updatedFilters: Filters) => void;
 }

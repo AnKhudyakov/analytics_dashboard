@@ -25,7 +25,7 @@ export const ChannelAnalyticsPage = () => {
       {error || !channel ? (
         <Card className="py-10">
           <Error
-            text="Error data loading"
+            text="Error loading data"
             onError={() => refetch()}
             disabled={isFetching}
           />

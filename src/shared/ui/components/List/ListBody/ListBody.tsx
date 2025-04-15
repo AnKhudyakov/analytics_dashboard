@@ -13,6 +13,7 @@ export const ListBody: FC<ListBodyProps> = ({
   data,
   viewPath,
   emptyText,
+  onFilter,
 }) => {
   const colSpan = data.items.length;
 
@@ -28,7 +29,7 @@ export const ListBody: FC<ListBodyProps> = ({
     return (
       <RowWrapper colSpan={colSpan}>
         <Error
-          text="Error data loading"
+          text="Error loading data"
           onError={onError}
           disabled={isLoading}
         />
@@ -39,7 +40,7 @@ export const ListBody: FC<ListBodyProps> = ({
   if (!data.count) {
     return (
       <RowWrapper colSpan={colSpan}>
-        <EmptyList text={emptyText} />
+        <EmptyList text={emptyText} onClear={() => onFilter({})} />
       </RowWrapper>
     );
   }
