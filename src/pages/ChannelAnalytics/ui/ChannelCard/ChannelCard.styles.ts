@@ -18,7 +18,7 @@ export const FlexContainer = tw(Container)`
 `;
 
 export const Banner = tw.img`
-  w-full h-full object-cover max-w-200 rounded-l-lg max-h-80
+  w-full object-cover max-w-200 rounded-l-lg max-h-80 h-70
 `;
 
 export const Avatar = tw.img`

@@ -44,6 +44,7 @@ export const Default: Story = {
           videoCount: 1515,
           hiddenSubscriberCount: false,
         },
+        stats: [],
         id: 'UCK9_x1DImhU-eolIay5rb2Q',
       },
       {
@@ -68,6 +69,7 @@ export const Default: Story = {
           videoCount: 1221,
           hiddenSubscriberCount: false,
         },
+        stats: [],
         id: 'UC0076UMUgEng8HORUw_MYHA',
       },
       {
@@ -93,6 +95,7 @@ export const Default: Story = {
           videoCount: 66,
           hiddenSubscriberCount: false,
         },
+        stats: [],
         id: 'UCkYmTGlYylzEtKbr42e8OfA',
       },
     ]),

@@ -1,3 +1,5 @@
+import { ChannelStats } from "entities/channel/model/types";
+
 export interface ChannelAnalyticsProps {
-  username: string | undefined;
+  analytics: ChannelStats[];
 }

@@ -18,6 +18,7 @@ export interface Channel {
     hiddenSubscriberCount: boolean;
     videoCount: number;
   };
+  stats: ChannelStats[];
 }
 
 export interface ChannelAnalyticsResponse {

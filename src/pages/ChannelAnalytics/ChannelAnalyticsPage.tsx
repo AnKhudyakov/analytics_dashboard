@@ -1,7 +1,7 @@
 import { useGetChannelAnalyticsQuery } from 'entities/channel';
 import { useParams } from 'react-router-dom';
 import { Error } from 'shared/ui/components/Error';
-import { Loader } from 'shared/ui/components/Loader';
+import { ChannelAnalyticsSkeleton } from './ChannelAnalytics.skeleton';
 import { Container } from './ChannelAnalyticsPage.styles';
 import { ChannelAnalytics } from './ui/ChannelAnalytics';
 import { ChannelCard } from './ui/ChannelCard';
@@ -12,7 +12,7 @@ export const ChannelAnalyticsPage = () => {
     skip: Boolean(!channelId),
   });
 
-  if (isLoading) return <Loader />;
+  if (isLoading) return <ChannelAnalyticsSkeleton />;
   if (error || !data) return <Error text="Error data loading" />;
   const channel = data;
 
@@ -25,7 +25,7 @@ export const ChannelAnalyticsPage = () => {
         banner={channel.brandingSettings?.image?.bannerExternalUrl}
         customUrl={channel.snippet.customUrl}
       />
-      <ChannelAnalytics username={channel.snippet.customUrl} />
+      <ChannelAnalytics analytics={channel.stats} />
     </Container>
   );
 };

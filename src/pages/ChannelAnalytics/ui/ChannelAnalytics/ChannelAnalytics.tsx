@@ -9,18 +9,9 @@ import { Error } from 'shared/ui/components/Error';
 import { Loader } from 'shared/ui/components/Loader';
 import { MetricInfo } from 'shared/ui/components/MetricInfo';
 import { ChannelAnalyticsProps } from './ChannelAnalytics.def';
-import { channelDetailAnalytics } from './ChannelAnalytics.mother';
 import { Container, Divider, FlexContainer } from './ChannelAnalytics.styles';
 
-export const ChannelAnalytics: FC<ChannelAnalyticsProps> = ({ username }) => {
-  const { channelId } = useParams<{ channelId: string }>();
-  const { data, isLoading, error } = useGetChannelStatsQuery(channelId, {
-    skip: Boolean(!channelId),
-  });
-
-  if (isLoading) return <Loader />;
-  if (error || !data) return <Error text="Error data loading" />;
-  const analytics = data || channelDetailAnalytics;
+export const ChannelAnalytics: FC<ChannelAnalyticsProps> = ({analytics}) => {
 
   return (
     <>

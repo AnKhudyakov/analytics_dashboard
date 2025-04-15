@@ -1,4 +1,5 @@
 import React from 'react';
+import { config } from 'shared/config';
 import { Card } from 'shared/ui/components/Card';
 import { Typography } from 'shared/ui/components/Typography';
 import { ChannelCardProps } from './ChannelCard.def';
@@ -10,7 +11,6 @@ import {
   InfoWrapper,
   TitleLink,
 } from './ChannelCard.styles';
-import { config } from 'shared/config';
 
 export const ChannelCard: React.FC<ChannelCardProps> = ({
   title,
@@ -23,12 +23,18 @@ export const ChannelCard: React.FC<ChannelCardProps> = ({
     <Card flex>
       {banner && (
         <BannerWrapper>
-          <Banner src={`${config.backendUrl}/proxy-image?url=${encodeURIComponent(banner)}`} alt="Banner" />
+          <Banner
+            src={`${config.backendUrl}/proxy-image?url=${encodeURIComponent(banner)}`}
+            alt="Banner"
+          />
         </BannerWrapper>
       )}
       <Container>
         <InfoWrapper>
-          <Avatar src={`${config.backendUrl}/proxy-image?url=${encodeURIComponent(avatar)}`} alt={title} />
+          <Avatar
+            src={`${config.backendUrl}/proxy-image?url=${encodeURIComponent(avatar)}`}
+            alt={title}
+          />
           <div>
             <TitleLink
               href={`https://www.youtube.com/${customUrl}`}
@@ -37,7 +43,9 @@ export const ChannelCard: React.FC<ChannelCardProps> = ({
             >
               <Typography variant="subtitle">{title}</Typography>
             </TitleLink>
-            <Typography variant="body">{description}</Typography>
+            <Typography variant="body" className="line-clamp-7">
+              {description}
+            </Typography>
           </div>
         </InfoWrapper>
       </Container>
