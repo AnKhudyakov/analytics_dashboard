@@ -5,5 +5,5 @@ export const Body = tw.p`
 `;
 
 export const Container = tw.div`
-  w-full text-center py-6
+  w-full text-center h-full flex flex-col justify-center items-center gap-6
 `;

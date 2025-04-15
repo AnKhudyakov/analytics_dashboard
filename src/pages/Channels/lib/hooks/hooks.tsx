@@ -19,6 +19,7 @@ export const useChannelsData = () => {
     isLoading: isSearching,
     isFetching: isFetchingSearch,
     error: searchError,
+    refetch: research,
   } = useSearchChannelsQuery(
     {
       search: debouncedSearch,
@@ -34,12 +35,7 @@ export const useChannelsData = () => {
     }
   );
 
-  const {
-    data,
-    isLoading,
-    isFetching,
-    error,
-  } = useGetChannelsQuery(
+  const { data, isLoading, isFetching, error, refetch } = useGetChannelsQuery(
     { page, limit: rowsPerPage, sortBy, sortOrder, filters },
     {
       skip: search.length > 1,
@@ -65,5 +61,6 @@ export const useChannelsData = () => {
     setSortOrder,
     filters,
     setFilters,
+    refetch: search ? research : refetch,
   };
 };

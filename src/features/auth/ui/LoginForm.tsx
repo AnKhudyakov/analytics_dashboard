@@ -3,11 +3,12 @@ import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import { useLoginMutation } from 'shared/api/auth_api';
 import { Button } from 'shared/ui/components/Button';
+import { ButtonLoader } from 'shared/ui/components/ButtonLoader';
 import { Card } from 'shared/ui/components/Card';
 import { Input } from 'shared/ui/components/Input';
 import { Typography } from 'shared/ui/components/Typography';
 import { validationSchema } from '../lib/helpers';
-import { ButtonLoader, Empty, ErrorText, Form } from './LoginForm.styles';
+import { Empty, ErrorText, Form } from './LoginForm.styles';
 
 export const LoginForm = () => {
   const [login, { isLoading, error }] = useLoginMutation();

@@ -1,5 +1,4 @@
 import { ColumnChannel } from 'entities/channel/model/types';
-import { Error } from 'shared/ui/components/Error';
 import { List } from 'shared/ui/components/List';
 import { Pagination } from 'shared/ui/components/Pagination';
 import { ChannelsContent, Container } from './ChannelsPage.styles';
@@ -23,6 +22,7 @@ export const ChannelsPage = () => {
     setSortOrder,
     filters,
     setFilters,
+    refetch,
   } = useChannelsData();
 
   return (
@@ -32,38 +32,36 @@ export const ChannelsPage = () => {
         search={search}
         setSearch={setSearch}
       />
-      {error ? (
-        <Error text="No data loading" />
-      ) : (
-        <ChannelsContent>
-          <List
-            data={formatChannels(statsData?.items)}
-            isLoading={isLoading}
-            emptyText="No channels found"
-            viewPath="/channels"
-            onSort={(column) => {
-              if (column === sortBy) {
-                setSortOrder((prev) => (prev === 'asc' ? 'desc' : 'asc'));
-              } else {
-                setSortBy(column as keyof typeof ColumnChannel);
-                setSortOrder('asc');
-              }
-            }}
-            sortBy={sortBy}
-            sortOrder={sortOrder}
-            filters={filters}
-            onFilter={(newFilters) => {
-              setFilters(newFilters);
-            }}
-          />
-          <Pagination
-            count={statsData?.pageInfo?.totalResults}
-            setPage={setPage}
-            rowsPerPage={rowsPerPage}
-            setRowsPerPage={setRowsPerPage}
-          />
-        </ChannelsContent>
-      )}
+      <ChannelsContent>
+        <List
+          data={formatChannels(statsData?.items)}
+          isLoading={isLoading}
+          error={!!error}
+          onError={() => refetch()}
+          emptyText="No channels found"
+          viewPath="/channels"
+          onSort={(column) => {
+            if (column === sortBy) {
+              setSortOrder((prev) => (prev === 'asc' ? 'desc' : 'asc'));
+            } else {
+              setSortBy(column as keyof typeof ColumnChannel);
+              setSortOrder('asc');
+            }
+          }}
+          sortBy={sortBy}
+          sortOrder={sortOrder}
+          filters={filters}
+          onFilter={(newFilters) => {
+            setFilters(newFilters);
+          }}
+        />
+        <Pagination
+          count={statsData?.pageInfo?.totalResults}
+          setPage={setPage}
+          rowsPerPage={rowsPerPage}
+          setRowsPerPage={setRowsPerPage}
+        />
+      </ChannelsContent>
     </Container>
   );
 };

@@ -20,7 +20,9 @@ export const useVideosData = () => {
   const {
     data: searchData,
     isLoading: isSearching,
+    isFetching: isFetchingSearch,
     error: searchError,
+    refetch: research,
   } = useSearchVideosQuery(
     {
       search: debouncedSearch,
@@ -36,25 +38,26 @@ export const useVideosData = () => {
     }
   );
 
-  const { data, isLoading, error } = useGetTrendingVideosQuery(
-    {
-      page,
-      limit: rowsPerPage,
-      sortBy,
-      sortOrder,
-      filters,
-    },
-    {
-      skip: search.length > 1,
-      refetchOnMountOrArgChange: true,
-    }
-  );
+  const { data, isLoading, isFetching, error, refetch } =
+    useGetTrendingVideosQuery(
+      {
+        page,
+        limit: rowsPerPage,
+        sortBy,
+        sortOrder,
+        filters,
+      },
+      {
+        skip: search.length > 1,
+        refetchOnMountOrArgChange: true,
+      }
+    );
 
   const filteredData = searchData ? searchData : data;
 
   return {
     filteredData,
-    isLoading: isLoading || isSearching,
+    isLoading: isLoading || isSearching || isFetchingSearch || isFetching,
     error: error || searchError,
     search,
     setSearch,
@@ -67,5 +70,6 @@ export const useVideosData = () => {
     setSortOrder,
     filters,
     setFilters,
+    refetch: search ? research : refetch,
   };
 };
