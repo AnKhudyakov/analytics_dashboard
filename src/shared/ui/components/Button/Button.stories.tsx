@@ -24,11 +24,3 @@ export const Disabled: Story = {
     disabled: true,
   },
 };
-
-export const Loading: Story = {
-  args: {
-    children: <Loader width={20} height={20} />,
-    onClick: (e) => console.log('Button click'),
-    disabled: true,
-  },
-};

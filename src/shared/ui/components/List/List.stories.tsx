@@ -22,114 +22,93 @@ export const Default: Story = {
   args: {
     data: formatChannels([
       {
-        etag: '8-kNABqR9jp8Qrs576Aeeg6vUbo',
-        id: 'UCdqp0KK_Io7TwK5cJMBvB0Q',
         snippet: {
-          title: 'WhistlinDiesel',
-          description: 'Join us for a closer look at Nintendo Switch 2',
-          customUrl: '@starwars',
           thumbnails: {
             default: {
-              url: 'https://yt3.ggpht.com/0Yzi87lZa_XLsbkrJOC1YRIOS6NWeE9NHO3n8awdpkpLXVApsS2IHCo8D5l8crmpTvZyCYsiAWw=s88-c-k-c0x00ffffff-no-rj',
+              url: 'https://yt3.ggpht.com/XzHYAV8TQJrS9_WrRNWkIOYkkO9dQEfpwoqq3SkRALzuuBKLI9mKTIfHhuWypyI9fqPVR7Wm=s88-c-k-c0x00ffffff-no-rj',
             },
             medium: {
-              url: 'https://yt3.ggpht.com/0Yzi87lZa_XLsbkrJOC1YRIOS6NWeE9NHO3n8awdpkpLXVApsS2IHCo8D5l8crmpTvZyCYsiAWw=s88-c-k-c0x00ffffff-no-rj',
+              url: 'https://yt3.ggpht.com/XzHYAV8TQJrS9_WrRNWkIOYkkO9dQEfpwoqq3SkRALzuuBKLI9mKTIfHhuWypyI9fqPVR7Wm=s240-c-k-c0x00ffffff-no-rj',
             },
             high: {
-              url: 'https://yt3.ggpht.com/0Yzi87lZa_XLsbkrJOC1YRIOS6NWeE9NHO3n8awdpkpLXVApsS2IHCo8D5l8crmpTvZyCYsiAWw=s88-c-k-c0x00ffffff-no-rj',
+              url: 'https://yt3.ggpht.com/XzHYAV8TQJrS9_WrRNWkIOYkkO9dQEfpwoqq3SkRALzuuBKLI9mKTIfHhuWypyI9fqPVR7Wm=s800-c-k-c0x00ffffff-no-rj',
             },
           },
+          title: 'ACG',
+          description:
+            'https://www.youtube.com/channel/UCK9_x1DImhU-eolIay5rb2Q/?sub_confirmation=1\nI try to create the best, most accurate video game reviews for video games on youtube.\nWalking the Walk game critiques, video game reviews, video game previews, developer round tables, weekly game news website https://www.acgamer.net/\nhttps://opencritic.com/outlet/310/acg\nHome to the best gaming podcast.\n\nAngryCentaurGaming or ACG and Karak running it, is a popular YouTube channel focused on providing high-quality gaming content and reviews. With over 1.2m subscribers and a strong presence in the gaming community, the channel has gained a reputation for in-depth analysis and entertaining personality thorough and analytical approach to reviewing games..\nSome of the key gaming videos include:\n- Game reviews\n- Gaming news\n- Gaming commentary\n- Gaming opinion pieces\n- Expert analysis\nhttps://teespring.com/stores/acg\nhttps://www.patreon.com/AngryCentaurGaming \nThe Best Videogame review channel on youtube \n',
         },
         statistics: {
-          viewCount: '1231086570',
-          subscriberCount: '9400000',
+          viewCount: 208187467,
+          subscriberCount: 1210000,
+          videoCount: 1515,
           hiddenSubscriberCount: false,
-          videoCount: '146',
         },
+        id: 'UCK9_x1DImhU-eolIay5rb2Q',
       },
       {
-        etag: 'IiNlHKjUK7Sr6PcgtKrpNIhFjq4',
-        id: 'UCbaGn5VkOVlcRgIWAHcrJKA',
         snippet: {
-          title: 'Cut',
-          customUrl: '@starwars',
-          description: 'Join us for a closer look at Nintendo Switch 2',
           thumbnails: {
             default: {
-              url: 'https://yt3.ggpht.com/myz3VVBEmgMiHNRZ_YHf1YQxIZjbclajOop-r1fb937YvnD1Dd-eI3cOwlJGhYaub0y4lReD=s88-c-k-c0x00ffffff-no-rj',
+              url: 'https://yt3.ggpht.com/vLWO1tajYHyFJ3lGkcMxKMayA-ZNUqCUYj5bOO8TWhNVL7EV-bjxmguUkZ3B2dMsAtZYir8r=s88-c-k-c0x00ffffff-no-rj',
             },
             medium: {
-              url: 'https://yt3.ggpht.com/myz3VVBEmgMiHNRZ_YHf1YQxIZjbclajOop-r1fb937YvnD1Dd-eI3cOwlJGhYaub0y4lReD=s88-c-k-c0x00ffffff-no-rj',
+              url: 'https://yt3.ggpht.com/vLWO1tajYHyFJ3lGkcMxKMayA-ZNUqCUYj5bOO8TWhNVL7EV-bjxmguUkZ3B2dMsAtZYir8r=s240-c-k-c0x00ffffff-no-rj',
             },
             high: {
-              url: 'https://yt3.ggpht.com/myz3VVBEmgMiHNRZ_YHf1YQxIZjbclajOop-r1fb937YvnD1Dd-eI3cOwlJGhYaub0y4lReD=s88-c-k-c0x00ffffff-no-rj',
+              url: 'https://yt3.ggpht.com/vLWO1tajYHyFJ3lGkcMxKMayA-ZNUqCUYj5bOO8TWhNVL7EV-bjxmguUkZ3B2dMsAtZYir8r=s800-c-k-c0x00ffffff-no-rj',
             },
           },
-          country: 'US',
+          title: 'Ariana Grande - Topic',
+          description: '',
         },
         statistics: {
-          viewCount: '5885428933',
-          subscriberCount: '12200000',
+          viewCount: 4511822685,
+          subscriberCount: 394000,
+          videoCount: 1221,
           hiddenSubscriberCount: false,
-          videoCount: '2362',
         },
+        id: 'UC0076UMUgEng8HORUw_MYHA',
       },
       {
-        etag: 'k6stIZrR2vPrFsE4aQG1JJW9h24',
-        id: 'UCdI8evszfZvyAl2UVCypkTA',
         snippet: {
-          title: 'MileyCyrusVEVO',
-          customUrl: '@starwars',
-          description: 'Join us for a closer look at Nintendo Switch 2',
           thumbnails: {
             default: {
-              url: 'https://yt3.ggpht.com/z3AOStrEznwieoK8HCfHi9nNQiPUiycJMEDYwZ5ufnaIS8YQRMj-X8lZpwtMnBsv89kcVUwewA=s88-c-k-c0x00ffffff-no-rj',
+              url: 'https://yt3.ggpht.com/1BC_7gkxYihrtRMjahs_YF0tDizM5pARExKwHYyeOqZ0VMRxmu9sBURcYYa5FA4n_qJF_KluKQ=s88-c-k-c0x00ffffff-no-rj',
             },
             medium: {
-              url: 'https://yt3.ggpht.com/z3AOStrEznwieoK8HCfHi9nNQiPUiycJMEDYwZ5ufnaIS8YQRMj-X8lZpwtMnBsv89kcVUwewA=s88-c-k-c0x00ffffff-no-rj',
+              url: 'https://yt3.ggpht.com/1BC_7gkxYihrtRMjahs_YF0tDizM5pARExKwHYyeOqZ0VMRxmu9sBURcYYa5FA4n_qJF_KluKQ=s240-c-k-c0x00ffffff-no-rj',
             },
             high: {
-              url: 'https://yt3.ggpht.com/z3AOStrEznwieoK8HCfHi9nNQiPUiycJMEDYwZ5ufnaIS8YQRMj-X8lZpwtMnBsv89kcVUwewA=s88-c-k-c0x00ffffff-no-rj',
+              url: 'https://yt3.ggpht.com/1BC_7gkxYihrtRMjahs_YF0tDizM5pARExKwHYyeOqZ0VMRxmu9sBURcYYa5FA4n_qJF_KluKQ=s800-c-k-c0x00ffffff-no-rj',
             },
           },
+          title: 'BLOKEST',
+          description:
+            'professional lego set dropper 🔥, certified lego brick layer 🥶. I want to make the most fun and engaging LEGO videos possible.\n\nbusiness email: blokest@delkatalents.com\n',
         },
         statistics: {
-          viewCount: '7243910021',
-          subscriberCount: '9980000',
+          viewCount: 86698855,
+          subscriberCount: 430000,
+          videoCount: 66,
           hiddenSubscriberCount: false,
-          videoCount: '146',
         },
-      },
-      {
-        etag: 'wJN-sUtt20nGMgATGcuzIx10RDQ',
-        id: 'UCKbNOpmhmwBuJXXMYOg_txA',
-        snippet: {
-          title: 'GQ Sports',
-          customUrl: '@starwars',
-          description: 'Join us for a closer look at Nintendo Switch 2',
-          thumbnails: {
-            default: {
-              url: 'https://yt3.ggpht.com/Mio_Ry-JCBLkiFFP8du93kPILw7xVQOq7gsA4hvq_ElkQvjhWkHTQ0EpQXuuE1cChSpXqZw6b48=s88-c-k-c0x00ffffff-no-rj',
-            },
-            medium: {
-              url: 'https://yt3.ggpht.com/Mio_Ry-JCBLkiFFP8du93kPILw7xVQOq7gsA4hvq_ElkQvjhWkHTQ0EpQXuuE1cChSpXqZw6b48=s88-c-k-c0x00ffffff-no-rj',
-            },
-            high: {
-              url: 'https://yt3.ggpht.com/Mio_Ry-JCBLkiFFP8du93kPILw7xVQOq7gsA4hvq_ElkQvjhWkHTQ0EpQXuuE1cChSpXqZw6b48=s88-c-k-c0x00ffffff-no-rj',
-            },
-          },
-
-          country: 'US',
-        },
-        statistics: {
-          viewCount: '735106428',
-          subscriberCount: '1570000',
-          hiddenSubscriberCount: false,
-          videoCount: '792',
-        },
+        id: 'UCkYmTGlYylzEtKbr42e8OfA',
       },
     ]),
+    isLoading: false,
     emptyText: '',
+    viewPath: '',
+    onSort: () => {},
+    onFilter: () => {},
+  },
+};
+
+export const Loading: Story = {
+  args: {
+    data: formatChannels([]),
+    isLoading: true,
+    emptyText: 'No items found',
   },
 };
 

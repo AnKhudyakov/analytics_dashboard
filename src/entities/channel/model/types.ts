@@ -8,15 +8,15 @@ export interface ChannelsResponse {
 }
 
 export interface Channel {
-  etag: string;
+  etag?: string;
   id: string;
   kind?: string;
   snippet: Snippet;
   statistics: {
-    subscriberCount: string;
-    viewCount: string;
+    subscriberCount: number;
+    viewCount: number;
     hiddenSubscriberCount: boolean;
-    videoCount: string;
+    videoCount: number;
   };
 }
 

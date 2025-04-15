@@ -17,11 +17,11 @@ export const RangePopup: FC<RangePopupProps> = ({
   const popupRef = useRef<HTMLElement>(null);
 
   const [valueFrom, setValueFrom] = useInitialRangeFilterValue(
-    filters[filterKey],
+    filters?.[filterKey],
     'valueFrom'
   );
   const [valueTo, setValueTo] = useInitialRangeFilterValue(
-    filters[filterKey],
+    filters?.[filterKey],
     'valueTo'
   );
 

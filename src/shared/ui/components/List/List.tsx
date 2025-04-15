@@ -62,7 +62,7 @@ export const List: FC<ListProps> = ({
                       <FilterIcon
                         width={24}
                         height={24}
-                        hasFilter={!!filters[col.key]}
+                        hasFilter={!!filters?.[col.key]}
                       />
                     </Button>
                   )}

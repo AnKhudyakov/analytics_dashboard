@@ -1,6 +1,13 @@
 import { FC } from 'react';
 
-import { LoaderContainer, StyledLoader } from './Loader.styles';
+import {
+  Dot,
+  DotAfter,
+  DotInner,
+  LoaderContainer,
+  LoaderText,
+  LoaderWrapper,
+} from './Loader.styles';
 
 export const Loader: FC<{ width?: number; height?: number }> = ({
   width = 80,
@@ -8,10 +15,21 @@ export const Loader: FC<{ width?: number; height?: number }> = ({
 }) => {
   return (
     <LoaderContainer>
-      <div role="status">
-        <StyledLoader width={width} height={height} />
-        <span className="sr-only">Loading...</span>
-      </div>
+      <LoaderWrapper>
+        {Array.from({ length: 12 }).map((_, i) => (
+          <Dot
+            key={i}
+            className={`origin-center
+              z-[${Math.abs(6 - i)}]
+              animation-delay-${i}
+              dot-transform-${i}`}
+          >
+            <DotInner className={`animation-delay-${i}`} />
+            <DotAfter className={`animation-delay-${i}`} />
+          </Dot>
+        ))}
+        <LoaderText>Loading…</LoaderText>
+      </LoaderWrapper>
     </LoaderContainer>
   );
 };

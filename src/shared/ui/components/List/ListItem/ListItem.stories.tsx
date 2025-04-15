@@ -41,10 +41,10 @@ export const Default: Story = {
           },
         },
         statistics: {
-          viewCount: '1231086570',
-          subscriberCount: '9400000',
+          viewCount: 1231086570,
+          subscriberCount: 9400000,
           hiddenSubscriberCount: false,
-          videoCount: '146',
+          videoCount: 146,
         },
       },
       {
@@ -68,10 +68,10 @@ export const Default: Story = {
           country: 'US',
         },
         statistics: {
-          viewCount: '5885428933',
-          subscriberCount: '12200000',
+          viewCount: 5885428933,
+          subscriberCount: 12200000,
           hiddenSubscriberCount: false,
-          videoCount: '2362',
+          videoCount: 2362,
         },
       },
       {
@@ -94,10 +94,10 @@ export const Default: Story = {
           },
         },
         statistics: {
-          viewCount: '7243910021',
-          subscriberCount: '9980000',
+          viewCount: 7243910021,
+          subscriberCount: 9980000,
           hiddenSubscriberCount: false,
-          videoCount: '146',
+          videoCount: 146,
         },
       },
       {
@@ -122,10 +122,10 @@ export const Default: Story = {
           country: 'US',
         },
         statistics: {
-          viewCount: '735106428',
-          subscriberCount: '1570000',
+          viewCount: 735106428,
+          subscriberCount: 1570000,
           hiddenSubscriberCount: false,
-          videoCount: '792',
+          videoCount: 792,
         },
       },
     ]).items,

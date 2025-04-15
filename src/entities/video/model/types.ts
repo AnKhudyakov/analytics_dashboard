@@ -6,10 +6,10 @@ export interface Video {
   snippet: Snippet;
   kind?: string;
   statistics: {
-    favoriteCount: string;
-    viewCount: string;
-    commentCount: string;
-    likeCount: string;
+    favoriteCount: number;
+    viewCount: number;
+    commentCount: number;
+    likeCount: number;
   };
 }
 

@@ -18,7 +18,7 @@ export const CheckboxPopup: FC<CheckboxPopupProps> = ({
   const popupRef = useRef<HTMLElement>(null);
 
   const [selected, setSelected] = useInitialCheckboxFilterValue(
-    filters[filterKey]
+    filters?.[filterKey]
   );
 
   const handleApply = () => {

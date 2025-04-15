@@ -7,8 +7,7 @@ import { Card } from 'shared/ui/components/Card';
 import { Input } from 'shared/ui/components/Input';
 import { Typography } from 'shared/ui/components/Typography';
 import { validationSchema } from '../lib/helpers';
-import { Empty, ErrorText, Form } from './LoginForm.styles';
-import { Loader } from 'shared/ui/components/Loader';
+import { ButtonLoader, Empty, ErrorText, Form } from './LoginForm.styles';
 
 export const LoginForm = () => {
   const [login, { isLoading, error }] = useLoginMutation();
@@ -36,11 +35,7 @@ export const LoginForm = () => {
     <Card className="max-w-100 drop-shadow-3">
       <Form onSubmit={handleSubmit(onSubmit)}>
         <Typography variant="subtitle">Login</Typography>
-        <Input
-          type="text"
-          placeholder="Username"
-          {...register('username')}
-        />
+        <Input type="text" placeholder="Username" {...register('username')} />
         {errors.username ? (
           <ErrorText>{errors.username.message}</ErrorText>
         ) : (
@@ -58,7 +53,7 @@ export const LoginForm = () => {
         )}
         {error ? <ErrorText>Incorrect login</ErrorText> : <Empty />}
         <Button type="submit" disabled={isLoading}>
-          {isLoading ? <Loader width={20} height={20}/> : 'Login'}
+          {isLoading ? <ButtonLoader width={20} height={20} /> : 'Login'}
         </Button>
       </Form>
     </Card>
