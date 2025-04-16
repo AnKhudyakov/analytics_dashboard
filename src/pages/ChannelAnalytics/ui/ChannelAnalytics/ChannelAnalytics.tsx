@@ -15,7 +15,7 @@ export const ChannelAnalytics: FC<ChannelAnalyticsProps> = ({analytics}) => {
 
   return (
     <>
-      <Card flex>
+      <Card className='sm:flex '>
         <Container>
           <MetricInfo
             title="Videos"

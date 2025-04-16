@@ -4,7 +4,7 @@ import { Pagination } from 'shared/ui/components/Pagination';
 import { ChannelsContent, Container } from './ChannelsPage.styles';
 import { formatChannels } from './lib/helpers';
 import { useChannelsData } from './lib/hooks';
-import { ChannelsHeader } from './ui/ChannelsHeader';
+import { PageHeader } from 'shared/ui/components/PageHeader';
 
 export const ChannelsPage = () => {
   const {
@@ -27,7 +27,7 @@ export const ChannelsPage = () => {
 
   return (
     <Container>
-      <ChannelsHeader
+      <PageHeader
         content="Top 50 Channels"
         search={search}
         setSearch={setSearch}

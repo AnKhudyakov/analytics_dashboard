@@ -33,7 +33,7 @@ export const LoginForm = () => {
   };
 
   return (
-    <Card className="max-w-100 drop-shadow-3">
+    <Card className="max-w-100 drop-shadow-sidebar">
       <Form onSubmit={handleSubmit(onSubmit)}>
         <Typography variant="subtitle">Login</Typography>
         <Input type="text" placeholder="Username" {...register('username')} />

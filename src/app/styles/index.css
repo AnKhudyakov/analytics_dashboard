@@ -19,7 +19,10 @@
   --color-custom-2: rgba(185, 248, 207, 0.3);
   --color-custom-3: rgba(251, 44, 54, 0.2);
   --color-custom-4: rgba(251, 44, 54, 0.3);
-  --drop-shadow-3: 0 8px 28px rgba(1, 5, 11, 0.3);
+  --drop-shadow-sidebar: 0 8px 28px rgba(1, 5, 11, 0.3);
+  --drop-shadow-msidebar: 0 8px 3px rgba(1, 5, 11, 0.8);
+  --shadow-msidebar: 0 8px 28px rgba(1, 5, 11, 0.3);
+  --drop-shadow-button: 0 8px 3px rgba(1, 5, 11, 0.7);
   --font-sans: 'Mona Sans', sans-serif;
   --text-base: 0.75rem;
   --animation-spin-slow: spin 2s infinite linear;

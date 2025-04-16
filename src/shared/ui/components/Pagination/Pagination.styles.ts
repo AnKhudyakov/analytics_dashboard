@@ -1,7 +1,7 @@
 import tw from 'tailwind-styled-components';
 
 export const PaginationContainer = tw.div`
-  flex justify-between items-center w-full p-4
+  flex justify-between items-center w-full p-2 sm:p-4
 `;
 
 export const PaginationInfo = tw.div`

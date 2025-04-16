@@ -29,20 +29,42 @@ export const SearchIcon: FC<React.SVGProps<SVGSVGElement>> = ({
 );
 
 export const HomeIcon: FC<React.SVGProps<SVGSVGElement>> = ({
-  width,
-  height,
+  width = 20,
+  height = 20,
   className,
 }) => (
   <svg
     width={width}
     height={height}
     className={className}
-    viewBox="0 0 15 15"
+    viewBox="0 0 24 24"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
     <path
-      d="M0.0683594 6.83355C0.0683594 6.41283 0.249846 6.01216 0.567115 5.73244L6.07891 0.872996C6.643 0.375668 7.49372 0.375668 8.05781 0.872996L13.5696 5.73244C13.8869 6.01216 14.0684 6.41283 14.0684 6.83355V13.0259C14.0684 13.84 13.4021 14.5 12.5802 14.5H1.55656C0.73465 14.5 0.0683594 13.84 0.0683594 13.0259V6.83355Z"
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M15.1727 3.31095C13.3285 1.7969 10.6715 1.7969 8.82732 3.31095L3.46186 7.71593C2.53641 8.47571 2 9.61012 2 10.8075V18.0001C2 20.2092 3.79086 22.0001 6 22.0001H18C20.2091 22.0001 22 20.2092 22 18.0001V10.8075C22 9.61012 21.4636 8.47571 20.5381 7.71593L15.1727 3.31095Z"
+      fill="#D1DBF9"
+    />
+  </svg>
+);
+
+export const VideosIcon: FC<React.SVGProps<SVGSVGElement>> = ({
+  width = 20,
+  height = 20,
+  className,
+}) => (
+  <svg
+    width={width}
+    height={height}
+    className={className}
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M16.19 2H7.81C4.17 2 2 4.17 2 7.81V16.18C2 19.83 4.17 22 7.81 22H16.18C19.82 22 21.99 19.83 21.99 16.19V7.81C22 4.17 19.83 2 16.19 2ZM14.66 13.73L13.38 14.47L12.1 15.21C10.45 16.16 9.1 15.38 9.1 13.48V12V10.52C9.1 8.61 10.45 7.84 12.1 8.79L13.38 9.53L14.66 10.27C16.31 11.22 16.31 12.78 14.66 13.73Z"
       fill="#D1DBF9"
     />
   </svg>
@@ -253,6 +275,36 @@ export const ArrowFallIcon: FC<React.SVGProps<SVGSVGElement>> = ({
   </svg>
 );
 
+export const MenuIcon: FC<React.SVGProps<SVGSVGElement>> = ({
+  width = 25,
+  height = 25,
+}) => (
+  <svg
+    width={width}
+    height={height}
+    className="text-white hover:text-neutral-500 hover:cursor-pointer"
+    viewBox="0 -5 32 32"
+    version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <g id="icons" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
+      <g
+        id="ui-gambling-website-lined-icnos-casinoshunter"
+        transform="translate(-2294.000000, -159.000000)"
+        fill="currentColor"
+        fillRule="nonzero"
+      >
+        <g id="1" transform="translate(1350.000000, 120.000000)">
+          <path
+            d="M974,57 C975.104569,57 976,57.8954305 976,59 C976,60.1045695 975.104569,61 974,61 L946,61 C944.895431,61 944,60.1045695 944,59 C944,57.8954305 944.895431,57 946,57 L974,57 Z M974,48 C975.104569,48 976,48.8954305 976,50 C976,51.1045695 975.104569,52 974,52 L946,52 C944.895431,52 944,51.1045695 944,50 C944,48.8954305 944.895431,48 946,48 L974,48 Z M974,39 C975.104569,39 976,39.8954305 976,41 C976,42.1045695 975.104569,43 974,43 L946,43 C944.895431,43 944,42.1045695 944,41 C944,39.8954305 944.895431,39 946,39 L974,39 Z"
+            id="menu"
+          ></path>
+        </g>
+      </g>
+    </g>
+  </svg>
+);
+
 export const ExitIcon: FC<React.SVGProps<SVGSVGElement>> = ({
   width,
   height,
@@ -282,7 +334,7 @@ export const ExitIcon: FC<React.SVGProps<SVGSVGElement>> = ({
       height="39"
       rx="6"
       ry="6"
-      stroke="#626C77"
+      stroke="#343b4f"
     />
     <path
       d="M18 26H15.3333C14.9797 26 14.6406 25.8595 14.3905 25.6095C14.1405 25.3594 14 25.0203 14 24.6667V15.3333C14 14.9797 14.1405 14.6406 14.3905 14.3905C14.6406 14.1405 14.9797 14 15.3333 14H18"
@@ -444,6 +496,35 @@ export const UncheckedIcon: FC<React.SVGProps<SVGSVGElement>> = ({
       fill="#0B1739"
       stroke="#7E89AC"
       strokeWidth="0.4"
+    />
+  </svg>
+);
+
+export const CloseIcon: FC<React.SVGProps<SVGSVGElement>> = ({
+  width = 18,
+  height = 18,
+}) => (
+  <svg
+    width={width}
+    height={height}
+    className="text-white hover:text-neutral-500 hover:cursor-pointer"
+    viewBox="0 0 13 13"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M2.05762 10.8039L11.0576 1.80389"
+      stroke="currentColor"
+      strokeWidth="1.4"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M11.0576 10.8039L2.05762 1.80389"
+      stroke="currentColor"
+      strokeWidth="1.4"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
   </svg>
 );

@@ -4,21 +4,25 @@ import {
   ArrowLeftIcon,
   ArrowRightIcon,
   CheckedIcon,
+  CloseIcon,
   ExitIcon,
   FilterIcon,
   HomeIcon,
+  MenuIcon,
   NoIcon,
   SearchIcon,
   SortASCIcon,
   SortDESCIcon,
   SpinnerIcon,
   UncheckedIcon,
+  VideosIcon,
   YesIcon,
 } from './Icons';
 
 export const Icons = {
   search: SearchIcon,
   home: HomeIcon,
+  videos: VideosIcon,
   arrowLeft: ArrowLeftIcon,
   arrowRight: ArrowRightIcon,
   yesIcon: YesIcon,
@@ -32,4 +36,6 @@ export const Icons = {
   filter: FilterIcon,
   checked: CheckedIcon,
   unchecked: UncheckedIcon,
+  menu: MenuIcon,
+  close: CloseIcon
 };

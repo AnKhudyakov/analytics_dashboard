@@ -26,7 +26,7 @@ const Template: StoryFn<SidebarItemProps> = (args) => <SidebarItem {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
-  icon: <Icons.home width={14} height={14} />,
+  icon: <Icons.home />,
   label: 'Channels',
   to: '/',
 };

@@ -14,7 +14,7 @@ export const HeaderContent = tw.div`
 `;
 
 export const HeaderTitle = tw.div`
-  hover:cursor-pointer hover:text-secordary-500 transition-all
+  hover:cursor-pointer hover:text-secordary-500 transition-colors
 `;
 
 interface FilterIconProps {
@@ -22,6 +22,6 @@ interface FilterIconProps {
 }
 
 export const FilterIcon = tw(Icons.filter)<FilterIconProps>`
-  hover:text-neutral-500 text-white hover:cursor-pointer transition-all
+  hover:text-neutral-500 text-white hover:cursor-pointer transition-colors
   ${({ hasFilter }) => !hasFilter && `text-secordary-500`}
 `;

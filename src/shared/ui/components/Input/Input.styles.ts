@@ -11,7 +11,7 @@ export const StyledInput = tw.input`
 `;
 
 export const Container = tw.div`
-  relative w-full max-w-88
+  relative w-full sm:max-w-88
 `;
 
 export const SearchIcon = tw(Icons.search)`

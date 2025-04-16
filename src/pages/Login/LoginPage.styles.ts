@@ -1,7 +1,7 @@
 import tw from 'tailwind-styled-components';
 
 export const Container = tw.div`
-  p-10 bg-neutral-800 min-h-screen text-neutral-100 w-full flex justify-center items-center
+  p-6 sm:p-10 bg-neutral-800 min-h-screen text-neutral-100 w-full flex justify-center items-center
 `;
 
 export const LoadingText = tw.p`
