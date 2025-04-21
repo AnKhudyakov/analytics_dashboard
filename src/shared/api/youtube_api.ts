@@ -6,12 +6,12 @@ import type {
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 import { config } from 'shared/config';
 import { routerPaths } from 'shared/constants';
+import { getToken, removeToken } from 'shared/lib/helpers';
 
 const baseQuery = fetchBaseQuery({
   baseUrl: config.backendUrl,
   prepareHeaders: (headers, { getState }) => {
-    const token = localStorage.getItem('token');
-
+    const token = getToken()
     if (token) {
       headers.set('authorization', `Bearer ${token}`);
     }
@@ -28,8 +28,12 @@ export const baseQueryWithAuth: BaseQueryFn<
 
   if (result.error && result.error.status === 401) {
     // expire token
-    localStorage.removeItem('token');
-    console.log("Invalid Token, redirect:",routerPaths.LOGIN_PATH, window.location.pathname);
+    removeToken()
+    console.log(
+      'Invalid Token, redirect:',
+      routerPaths.LOGIN_PATH,
+      window.location.pathname
+    );
 
     if (window.location.pathname !== routerPaths.LOGIN_PATH) {
       window.location.href = routerPaths.LOGIN_PATH;

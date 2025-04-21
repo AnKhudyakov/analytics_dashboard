@@ -47,3 +47,14 @@ export interface RangeValue {
   valueFrom?: number;
   valueTo?: number;
 }
+
+export interface Login {
+  username: string;
+  password: string;
+}
+
+export interface Signup {
+  username: string;
+  email: string;
+  password: string;
+}

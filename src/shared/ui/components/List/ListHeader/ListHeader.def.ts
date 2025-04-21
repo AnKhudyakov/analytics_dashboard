@@ -1,7 +1,7 @@
 import { Filters } from 'shared/api/types';
 import { ListItem } from '../ListItem/ListItem.def';
 
-export interface IListHeaderProps {
+export interface ListHeaderProps {
   cols: ListItem[];
   onSort?: (column: string) => void;
   sortBy?: string | null;

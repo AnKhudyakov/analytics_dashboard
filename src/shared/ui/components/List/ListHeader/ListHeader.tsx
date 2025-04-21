@@ -3,7 +3,7 @@ import { createFilters } from 'shared/lib/helpers';
 import { Button } from 'shared/ui/components/Button';
 import { FilterPopup } from 'shared/ui/components/FilterPopup';
 import { Icons } from 'shared/ui/icons';
-import { IListHeaderProps } from './ListHeader.def';
+import { ListHeaderProps } from './ListHeader.def';
 import {
   FilterIcon,
   HeaderContent,
@@ -12,7 +12,7 @@ import {
   TableHeader,
 } from './ListHeader.styles';
 
-export const ListHeader: FC<IListHeaderProps> = ({
+export const ListHeader: FC<ListHeaderProps> = ({
   cols,
   onSort,
   sortBy,

@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
+import { removeToken } from 'shared/lib/helpers';
 import { Button } from 'shared/ui/components/Button';
 import { ButtonExit } from 'shared/ui/components/ButtonExit';
 import { Typography } from 'shared/ui/components/Typography';
@@ -18,7 +19,7 @@ export const MobileSidebar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleExit = () => {
-    localStorage.removeItem('token');
+    removeToken();
     navigate('/login');
   };
 
@@ -55,16 +56,8 @@ export const MobileSidebar = () => {
             <Icons.close />
           </Button>
         </div>
-        <SidebarItem
-          to="/channels"
-          icon={<Icons.home />}
-          label="Каналы"
-        />
-        <SidebarItem
-          to="/videos"
-          icon={<Icons.videos />}
-          label="Видео"
-        />
+        <SidebarItem to="/channels" icon={<Icons.home />} label="Каналы" />
+        <SidebarItem to="/videos" icon={<Icons.videos />} label="Видео" />
       </Container>
     </>
   );

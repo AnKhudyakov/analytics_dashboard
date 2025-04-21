@@ -3,6 +3,7 @@ import { ChannelAnalyticsPage } from 'pages/ChannelAnalytics/ChannelAnalyticsPag
 import { ChannelsPage } from 'pages/Channels';
 import { LoginPage } from 'pages/Login';
 import { NotFoundPage } from 'pages/NotFoundPage';
+import { SignupPage } from 'pages/SignupPage';
 import { VideosPage } from 'pages/Videos';
 import {
   createHashRouter,
@@ -14,7 +15,7 @@ import {
 import { routerPaths } from 'shared/constants';
 import { isAuthenticated } from 'shared/lib/helpers';
 
-interface IProps {}
+interface AppRouterProps {}
 
 export const PrivateRoute = () => {
   return isAuthenticated() ? <AppLayout /> : <Navigate to="/login" />;
@@ -23,6 +24,7 @@ export const PrivateRoute = () => {
 const routes = createRoutesFromElements(
   <>
     <Route path={routerPaths.LOGIN_PATH} element={<LoginPage />} />
+    <Route path={routerPaths.SIGNUP_PATH} element={<SignupPage />} />
     <Route path="*" element={<NotFoundPage />} />
     <Route path={routerPaths.MAIN_PATH} element={<PrivateRoute />}>
       <Route
@@ -39,7 +41,7 @@ const routes = createRoutesFromElements(
   </>
 );
 
-export const AppRouter: React.FC<IProps> = () => {
+export const AppRouter: React.FC<AppRouterProps> = () => {
   const router = createHashRouter(routes, {});
 
   return <RouterProvider router={router} />;

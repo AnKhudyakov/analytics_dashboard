@@ -5,17 +5,19 @@ import {
   CustomCheckboxInput,
   CustomCheckboxWrapper,
 } from './CheckboxInput.styles';
+import { Typography } from '../../Typography';
 
-interface ICheckboxInputProps extends InputHTMLAttributes<HTMLInputElement> {}
+interface CheckboxInputProps extends InputHTMLAttributes<HTMLInputElement> {}
 
-export const CheckboxInput: FC<ICheckboxInputProps> = (props) => {
+export const CheckboxInput: FC<CheckboxInputProps> = (props) => {
+
   return (
     <CustomCheckboxWrapper>
-      <CustomCheckboxInput type="checkbox" {...props} />
+      <CustomCheckboxInput {...props} />
       <CustomCheckboxIcon>
         {props.checked ? <Icons.checked /> : <Icons.unchecked />}
       </CustomCheckboxIcon>
-      {props.placeholder && <span>{props.placeholder}</span>}
+      {props.placeholder && <Typography variant='body'>{props.placeholder}</Typography>}
     </CustomCheckboxWrapper>
   );
 };

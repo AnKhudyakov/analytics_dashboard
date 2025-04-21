@@ -1,9 +1,5 @@
+import { Login, Signup } from './types';
 import { youtubeApi } from './youtube_api';
-
-export interface Login {
-  username: string;
-  password: string;
-}
 
 export const authApi = youtubeApi.injectEndpoints({
   endpoints: (build) => ({
@@ -14,8 +10,15 @@ export const authApi = youtubeApi.injectEndpoints({
         body: { username, password },
       }),
     }),
+    signup: build.mutation<void, Signup>({
+      query: ({ username, email, password }) => ({
+        url: `/signup`,
+        method: 'POST',
+        body: { username, email, password },
+      }),
+    }),
   }),
   overrideExisting: false,
 });
 
-export const { useLoginMutation } = authApi;
+export const { useLoginMutation, useSignupMutation } = authApi;

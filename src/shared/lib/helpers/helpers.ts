@@ -4,21 +4,28 @@ import { jwtDecode } from 'jwt-decode';
 import { Filters } from 'shared/api/types';
 import { ListItem } from 'shared/ui/components/List/ListItem/ListItem.def';
 
+export const getToken = () =>
+  sessionStorage.getItem('token') || localStorage.getItem('token');
+export const removeToken = () => {
+  sessionStorage.removeItem('token');
+  localStorage.removeItem('token');
+};
+
 export const isAuthenticated = (): boolean => {
-  const token = localStorage.getItem('token');
+  const token = getToken();
 
   if (!token) return false;
 
   try {
     const { exp } = jwtDecode(token);
     if (!exp || Date.now() >= exp * 1000) {
-      localStorage.removeItem('token');
+      removeToken()
       return false;
     }
     return true;
   } catch (error) {
     // invalid token
-    localStorage.removeItem('token');
+    removeToken()
     return false;
   }
 };

@@ -1,7 +1,9 @@
 import React, { PropsWithChildren } from 'react';
 
-interface IProps extends PropsWithChildren {}
+interface AppContextProviderProps extends PropsWithChildren {}
 
-export const AppContextProvider: React.FC<IProps> = ({ children }) => {
+export const AppContextProvider: React.FC<AppContextProviderProps> = ({
+  children,
+}) => {
   return <>{children}</>;
 };

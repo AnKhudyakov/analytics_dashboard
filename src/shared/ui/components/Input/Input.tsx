@@ -1,16 +1,19 @@
 import { FC } from 'react';
+import { CheckboxInput } from './CheckboxInput';
 import { InputProps } from './Input.def';
 import {
   Container,
+  EndButtonIcon,
   SearchIcon,
   StyledInput,
   StyledSearchInput,
 } from './Input.styles';
-import { CheckboxInput } from './CheckboxInput';
 
 export const Input: FC<InputProps> = ({
   type = 'text',
   search,
+  endIcon,
+  onEndIconClick,
   placeholder = 'Search for...',
   ...props
 }) => {
@@ -27,7 +30,13 @@ export const Input: FC<InputProps> = ({
         {...props}
         type={type}
         placeholder={placeholder}
+        className={endIcon ? 'pr-10' : ''}
       />
+      {endIcon && (
+        <EndButtonIcon type="button" icon onClick={onEndIconClick}>
+          {endIcon}
+        </EndButtonIcon>
+      )}
     </Container>
   );
 };

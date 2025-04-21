@@ -1,9 +1,10 @@
-import { ChangeEvent, InputHTMLAttributes } from 'react';
+import { ChangeEvent, InputHTMLAttributes, ReactNode } from 'react';
 
 export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   type?: string;
   search?: boolean;
+  endIcon?: ReactNode;
+  onEndIconClick?: () => void;
   placeholder?: string;
-  value?: string | number;
   onChange: (e: ChangeEvent<HTMLInputElement>) => void;
 }

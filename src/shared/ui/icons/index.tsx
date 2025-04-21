@@ -7,10 +7,12 @@ import {
   CloseIcon,
   ExitIcon,
   FilterIcon,
+  HidePasswordIcon,
   HomeIcon,
   MenuIcon,
   NoIcon,
   SearchIcon,
+  ShowPasswordIcon,
   SortASCIcon,
   SortDESCIcon,
   SpinnerIcon,
@@ -37,5 +39,7 @@ export const Icons = {
   checked: CheckedIcon,
   unchecked: UncheckedIcon,
   menu: MenuIcon,
-  close: CloseIcon
+  close: CloseIcon,
+  showPassword: ShowPasswordIcon,
+  hidePassword: HidePasswordIcon
 };

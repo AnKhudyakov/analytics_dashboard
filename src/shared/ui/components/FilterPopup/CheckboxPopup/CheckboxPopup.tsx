@@ -7,7 +7,7 @@ import { Button } from 'shared/ui/components/Button';
 import { Input } from 'shared/ui/components/Input';
 import { hoverEffect } from 'shared/ui/effects';
 import { CheckboxPopupProps } from './CheckboxPopup.def';
-import { Container, FilterRow, Footer, Label } from './CheckboxPopup.styles';
+import { Container, FilterRow, Footer } from './CheckboxPopup.styles';
 
 export const CheckboxPopup: FC<CheckboxPopupProps> = ({
   filterKey,
@@ -44,15 +44,13 @@ export const CheckboxPopup: FC<CheckboxPopupProps> = ({
     <Container ref={popupRef}>
       <FilterRow>
         {BOOLEAN_FILTER_OPTIONS.map(({ label, value }) => (
-          <Label key={value}>
-            <Input
-              type="checkbox"
-              placeholder=""
-              checked={value === selected ? true : false}
-              onChange={() => setSelected(value)}
-            />
-            {label}
-          </Label>
+          <Input
+            key={label}
+            type="checkbox"
+            placeholder={label}
+            checked={value === selected ? true : false}
+            onChange={() => setSelected(value)}
+          />
         ))}
       </FilterRow>
       <Footer>

@@ -1,5 +1,6 @@
 import { FC } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { removeToken } from 'shared/lib/helpers';
 import { ButtonExit } from 'shared/ui/components/ButtonExit';
 import { Typography } from 'shared/ui/components/Typography';
 import { Icons } from 'shared/ui/icons';
@@ -13,7 +14,7 @@ export const Sidebar: FC<SidebarProps> = () => {
   const navigate = useNavigate();
 
   const handleExit = () => {
-    localStorage.removeItem('token');
+    removeToken();
     navigate('/login');
   };
 

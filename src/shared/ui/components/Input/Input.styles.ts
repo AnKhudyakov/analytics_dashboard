@@ -1,9 +1,10 @@
+import { Button } from 'shared/ui/components/Button';
 import { Icons } from 'shared/ui/icons';
 import tw from 'tailwind-styled-components';
 
 export const StyledInput = tw.input`
   w-full p-2 bg-secordary-dark !text-white
-  placeholder-neutral-400 focus:outline-none rounded-sm
+  placeholder-neutral-400 focus:outline-none focus:border-secondary-4 rounded-sm
   border border-secordary-500
   [&::-webkit-outer-spin-button]:appearance-none
   [&::-webkit-inner-spin-button]:appearance-none
@@ -11,7 +12,7 @@ export const StyledInput = tw.input`
 `;
 
 export const Container = tw.div`
-  relative w-full sm:max-w-88
+  relative w-full sm:max-w-100 !text-white
 `;
 
 export const SearchIcon = tw(Icons.search)`
@@ -30,3 +31,6 @@ export const ArrowButton = tw.button`
   text-white text-xs hover:text-primary focus:outline-none
 `;
 
+export const EndButtonIcon = tw(Button)`
+absolute right-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-neutral-400
+`;
