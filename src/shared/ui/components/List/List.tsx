@@ -3,6 +3,7 @@ import { ListProps } from './List.def';
 import { Table, TableBody, TableContainer, TableHead } from './List.styles';
 import { ListBody } from './ListBody';
 import { ListHeader } from './ListHeader';
+import { MobileList } from './Mobile';
 
 export const List: FC<ListProps> = ({
   data,
@@ -15,6 +16,7 @@ export const List: FC<ListProps> = ({
 }) => {
   return (
     <TableContainer>
+      {/* Desktop */}
       <Table $loading={isLoading || error || !data.count}>
         <TableHead>
           <ListHeader cols={data.items} {...props} />
@@ -31,6 +33,16 @@ export const List: FC<ListProps> = ({
           />
         </TableBody>
       </Table>
+      {/* Mobile */}
+        <MobileList
+          isLoading={isLoading}
+          error={error}
+          onError={onError}
+          data={data}
+          emptyText={emptyText}
+          viewPath={viewPath}
+          {...props}
+        />
     </TableContainer>
   );
 };

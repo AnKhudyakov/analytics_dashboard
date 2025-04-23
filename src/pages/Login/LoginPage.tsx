@@ -7,8 +7,8 @@ export const LoginPage = () => {
     <Wrapper>
       <Container>
         <WelcomeTitle
-          title="Welcome "
-          subtitle="to Analytics Dashboard"
+          title="Welcome to"
+          subtitle="Analytics Dashboard"
           body="Login in to your account to continue"
         />
         <LoginForm />

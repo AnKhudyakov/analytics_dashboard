@@ -49,7 +49,7 @@ export const Pagination: FC<PaginationProps> = ({
       </PaginationInfo>
       <PaginationControls>
         <div>
-          <label htmlFor="rows-per-page" className="text-sm mr-2">
+          <label htmlFor="rows-per-page" className="text-xs sm:text-sm mr-2">
             Rows per page:
           </label>
           <RowsPerPageSelect

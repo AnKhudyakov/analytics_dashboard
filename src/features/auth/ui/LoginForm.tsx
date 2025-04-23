@@ -88,11 +88,12 @@ export const LoginForm = () => {
           <Button type="submit" disabled={isLoading}>
             {isLoading ? <ButtonLoader width={20} height={20} /> : 'Login'}
           </Button>
-          <div className='flex items-end gap-1'>
-          <Typography variant="body">Don’t have an account?</Typography>
-          <Link to={'/signup'}>Signup</Link>
+          <div className="flex items-end gap-1">
+            <Typography variant="body" className="text-neutral-500">
+              Don’t have an account?
+            </Typography>
+            <Link to={'/signup'}>Signup</Link>
           </div>
-
         </Form>
       </Card>
     </Container>

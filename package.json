@@ -33,6 +33,7 @@
     "react-loading-skeleton": "^3.5.0",
     "react-redux": "^9.2.0",
     "react-router-dom": "^7.2.0",
+    "react-swipeable": "^7.0.2",
     "recharts": "^2.15.2",
     "styled-components": "^6.1.15",
     "tailwind-styled-components": "^2.2.0",

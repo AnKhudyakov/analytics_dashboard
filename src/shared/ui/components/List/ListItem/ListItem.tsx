@@ -4,20 +4,16 @@ import { hoverEffect } from 'shared/ui/effects';
 import { ListItemProps } from './ListItem.def';
 import { TableCell, TableRow } from './ListItem.styles';
 
-export const ListItem: FC<ListItemProps> = ({
-  items,
-  path,
-  rowIndex
-}) => {
+export const ListItem: FC<ListItemProps> = ({ items, path, rowIndex }) => {
   const navigate = useNavigate();
 
   return (
-    <TableRow
-      className={hoverEffect}
-      onClick={() => navigate(path)}
-    >
+    <TableRow className={hoverEffect} onClick={() => navigate(path)}>
       {items.map((col) => (
-        <TableCell key={`${col.title}-${rowIndex}`}>
+        <TableCell
+          key={`${col.title}-${rowIndex}`}
+          className={col.key !== 'name' ? 'pl-11' : ''}
+        >
           {col.values[rowIndex]}
         </TableCell>
       ))}

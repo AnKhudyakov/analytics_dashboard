@@ -72,145 +72,83 @@ select:focus {
 }
 
 @layer utilities {
-  @keyframes shadow724 {
+  /* loader */
+  .loader-box {
+    @apply relative w-12 h-12 bg-secondary-4 text-white;
+    transform: rotateX(65deg) rotate(45deg);
+    animation: layers1 1s linear infinite alternate;
+  }
+
+  .loader-box::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.7);
+    animation: layerTr 1s linear infinite alternate;
+  }
+
+  @keyframes layers1 {
+    0% {
+      box-shadow: 0px 0px 0 0px;
+    }
+    90%,
+    100% {
+      box-shadow: 20px 20px 0 -4px;
+    }
+  }
+
+  @keyframes layerTr {
+    0% {
+      transform: translate(0, 0) scale(1);
+    }
+    100% {
+      transform: translate(-25px, -25px) scale(1);
+    }
+  }
+
+  .animate-layers1 {
+    animation: layers1 1s linear infinite alternate;
+  }
+
+  .animate-layerTr {
+    animation: layerTr 1s linear infinite alternate;
+  }
+  /* loader text */
+  .loader-text {
+    @apply relative inline-block text-white text-xl;
+  }
+
+  .loader-text::after {
+    content: '';
+    position: absolute;
+    bottom: 7px;
+    right: -10px;
+    width: 3px;
+    height: 3px;
+    background: currentColor;
+    box-sizing: border-box;
+    animation: animloaderDots 1s linear infinite;
+  }
+
+  @keyframes animloaderDots {
     0% {
       box-shadow:
-        0.1em 0.1em 0 0.1em black,
-        0.3em 0 0.3em rgba(0, 0, 0, 0.3);
-      animation-timing-function: ease-in;
+        10px 0 rgba(255, 255, 255, 0),
+        20px 0 rgba(255, 255, 255, 0);
     }
-    25% {
+    50% {
       box-shadow:
-        0.1em 0.1em 0 0.1em black,
-        0.8em 0 0.8em rgba(0, 0, 0, 0.5);
-      animation-timing-function: ease-out;
+        10px 0 white,
+        20px 0 rgba(255, 255, 255, 0);
     }
-    50%,
     100% {
       box-shadow:
-        0.1em 0.1em 0 0.1em black,
-        0.3em 0 0.3em rgba(0, 0, 0, 0.3);
+        10px 0 white,
+        20px 0 white;
     }
   }
 
-  @keyframes pushInOut1724 {
-    0% {
-      transform: translate(0, 0);
-      background-color: var(--bg);
-      animation-timing-function: ease-in;
-    }
-    25% {
-      transform: translate(-71%, -71%);
-      background-color: var(--primary2);
-      animation-timing-function: ease-out;
-    }
-    50%,
-    100% {
-      transform: translate(0, 0);
-      background-color: var(--bg);
-    }
-  }
-
-  @keyframes pushInOut2724 {
-    0% {
-      clip-path: polygon(0 75%, 100% 75%, 100% 100%, 0 100%);
-      background-color: var(--bg);
-      animation-timing-function: ease-in;
-    }
-    25% {
-      clip-path: polygon(0 25%, 100% 25%, 100% 100%, 0 100%);
-      background-color: var(--primary1);
-      animation-timing-function: ease-out;
-    }
-    50%,
-    100% {
-      clip-path: polygon(0 75%, 100% 75%, 100% 100%, 0 100%);
-      background-color: var(--bg);
-    }
-  }
-
-  .animate-shadow724 {
-    animation: shadow724 2s infinite;
-  }
-
-  .animate-pushInOut1724 {
-    animation: pushInOut1724 2s infinite;
-  }
-
-  .animate-pushInOut2724 {
-    animation: pushInOut2724 2s infinite;
-  }
-
-  .animation-delay-0 {
-    animation-delay: 0s;
-  }
-  .animation-delay-1 {
-    animation-delay: -0.1666666667s;
-  }
-  .animation-delay-2 {
-    animation-delay: -0.3333333333s;
-  }
-  .animation-delay-3 {
-    animation-delay: -0.5s;
-  }
-  .animation-delay-4 {
-    animation-delay: -0.6666666667s;
-  }
-  .animation-delay-5 {
-    animation-delay: -0.8333333333s;
-  }
-  .animation-delay-6 {
-    animation-delay: -1s;
-  }
-  .animation-delay-7 {
-    animation-delay: -1.1666666667s;
-  }
-  .animation-delay-8 {
-    animation-delay: -1.3333333333s;
-  }
-  .animation-delay-9 {
-    animation-delay: -1.5s;
-  }
-  .animation-delay-10 {
-    animation-delay: -1.6666666667s;
-  }
-  .animation-delay-11 {
-    animation-delay: -1.8333333333s;
-  }
-  .dot-transform-0 {
-    transform: rotate(0deg) translateX(5em) rotate(0deg);
-  }
-  .dot-transform-1 {
-    transform: rotate(-30deg) translateX(5em) rotate(30deg);
-  }
-  .dot-transform-2 {
-    transform: rotate(-60deg) translateX(5em) rotate(60deg);
-  }
-  .dot-transform-3 {
-    transform: rotate(-90deg) translateX(5em) rotate(90deg);
-  }
-  .dot-transform-4 {
-    transform: rotate(-120deg) translateX(5em) rotate(120deg);
-  }
-  .dot-transform-5 {
-    transform: rotate(-150deg) translateX(5em) rotate(150deg);
-  }
-  .dot-transform-6 {
-    transform: rotate(-180deg) translateX(5em) rotate(180deg);
-  }
-  .dot-transform-7 {
-    transform: rotate(-210deg) translateX(5em) rotate(210deg);
-  }
-  .dot-transform-8 {
-    transform: rotate(-240deg) translateX(5em) rotate(240deg);
-  }
-  .dot-transform-9 {
-    transform: rotate(-270deg) translateX(5em) rotate(270deg);
-  }
-  .dot-transform-10 {
-    transform: rotate(-300deg) translateX(5em) rotate(300deg);
-  }
-  .dot-transform-11 {
-    transform: rotate(-330deg) translateX(5em) rotate(330deg);
+  .animate-loader-dots {
+    animation: animloaderDots 1s linear infinite;
   }
 }

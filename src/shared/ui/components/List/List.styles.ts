@@ -1,7 +1,8 @@
 import tw from 'tailwind-styled-components';
 
 export const TableContainer = tw.div`
-  bg-secordary-dark rounded-xl shadow-md overflow-x-auto border border-secordary-500 h-full
+bg-secordary-dark rounded-xl shadow-md overflow-x-auto
+  border border-secordary-500 h-full
 `;
 
 interface TableProps {
@@ -9,7 +10,7 @@ interface TableProps {
 }
 
 export const Table = tw.table<TableProps>`
-  w-full border-collapse
+  w-full border-collapse hidden md:table
   ${({ $loading }) => $loading && `h-full`}
 `;
 

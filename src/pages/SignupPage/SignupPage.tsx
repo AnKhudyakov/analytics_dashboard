@@ -7,7 +7,7 @@ export const SignupPage = () => {
     <Wrapper>
       <Container>
         <WelcomeTitle
-          title="Roll the Carpet! "
+          title="Roll the Carpet!"
           body="Signup your account to continue"
         />
         <SingupForm />

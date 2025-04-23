@@ -5,7 +5,7 @@ export const PaginationContainer = tw.div`
 `;
 
 export const PaginationInfo = tw.div`
-  text-sm
+  text-xs sm:text-sm
 `;
 
 export const PaginationControls = tw.div`
@@ -13,9 +13,9 @@ export const PaginationControls = tw.div`
 `;
 
 export const RowsPerPageSelect = tw.select`
-  text-sm border rounded-md p-2 border-primary-dark bg-secordary-dark focus:outline-none focus:ring-0 focus:border-secordary-500
+  text-xs sm:text-sm border rounded-md p-2 border-primary-dark bg-secordary-dark focus:outline-none focus:ring-0 focus:border-secordary-500
 `;
 
 export const ArrowButton = tw.button`
-  text-neutral-400 p-2 focus:outline-none rounded-sm bg-secordary-dark disabled:bg-neutral-700
+  text-white p-2 rounded-sm bg-secordary-dark disabled:bg-neutral-700
 `;
