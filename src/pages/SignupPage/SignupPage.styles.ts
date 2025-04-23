@@ -5,12 +5,12 @@ export const Wrapper = tw.div`
 `;
 
 export const Container = tw.div`
-bg-neutral-800 h-screen text-neutral-100 w-full sm:max-w-6xl
+bg-neutral-800 h-screen text-base-font w-full sm:max-w-6xl
   flex flex-col sm:flex-row justify-center items-center
 `;
 
 export const LoadingText = tw.p`
-  text-center text-neutral-400
+  text-center text-secondary-font
 `;
 
 export const ChannelsContent = tw.div`

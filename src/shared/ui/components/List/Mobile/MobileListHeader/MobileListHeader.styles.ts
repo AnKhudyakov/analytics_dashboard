@@ -3,7 +3,7 @@ import tw from 'tailwind-styled-components';
 
 export const Header = tw.div`
   h-18.5 !text-sm flex justify-between items-center px-4 py-2
-text-white font-semibold bg-secordary-dark sticky top-0 z-99 gap-2
+text-base-font font-semibold bg-secondary-dark sticky top-0 z-99 gap-2
 `;
 
 export const SwipeControls = tw.div`
@@ -12,7 +12,7 @@ export const SwipeControls = tw.div`
 `;
 
 export const ArrowButton = tw.button`
-text-white p-2 rounded-sm disabled:bg-neutral-700
+text-base-font p-2 rounded-sm disabled:bg-neutral-700
 hover:text-neutral-500 hover:cursor-pointer
 `;
 
@@ -25,6 +25,6 @@ interface FilterIconProps {
 }
 
 export const FilterIcon = tw(Icons.filter)<FilterIconProps>`
-  hover:text-neutral-500 text-white hover:cursor-pointer transition-colors
-  ${({ hasFilter }) => !hasFilter && `text-secordary-500`}
+  hover:text-neutral-500 text-base-font hover:cursor-pointer transition-colors
+  ${({ hasFilter }) => !hasFilter && `text-secondary-500`}
 `;

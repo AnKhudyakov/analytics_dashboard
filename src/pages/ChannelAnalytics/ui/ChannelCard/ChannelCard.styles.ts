@@ -21,7 +21,7 @@ export const Banner = tw.img`
 `;
 
 export const Avatar = tw.img`
-  w-16 h-16 rounded-full border border-secordary-500
+  w-16 h-16 rounded-full border border-secondary-500
 `;
 
 export const TitleLink = tw.a`

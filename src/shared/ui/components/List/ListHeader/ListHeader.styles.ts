@@ -6,7 +6,7 @@ export const HeaderRow = tw.tr`
 `;
 
 export const TableHeader = tw.th`
-  p-3 text-left font-semibold text-white w-1/5 relative
+  p-3 text-left font-semibold text-base-font w-1/5 relative
 `;
 
 export const HeaderContent = tw.div`
@@ -14,7 +14,7 @@ export const HeaderContent = tw.div`
 `;
 
 export const HeaderTitle = tw.div`
-  hover:cursor-pointer hover:text-secordary-500 transition-colors
+  hover:cursor-pointer hover:text-secondary-500 transition-colors
 `;
 
 interface FilterIconProps {
@@ -22,6 +22,6 @@ interface FilterIconProps {
 }
 
 export const FilterIcon = tw(Icons.filter)<FilterIconProps>`
-  hover:text-neutral-500 text-white hover:cursor-pointer transition-colors
-  ${({ hasFilter }) => !hasFilter && `text-secordary-500`}
+  hover:text-neutral-500 text-base-font hover:cursor-pointer transition-colors
+  ${({ hasFilter }) => !hasFilter && `text-secondary-500`}
 `;

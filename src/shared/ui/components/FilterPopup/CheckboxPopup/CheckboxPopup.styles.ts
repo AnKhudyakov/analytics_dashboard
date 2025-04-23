@@ -13,7 +13,7 @@ export const FilterRow = tw.div`
 `;
 
 export const Label = tw.label`
-  font-semibold text-white flex items-start gap-2 hover:cursor-pointer w-fit
+  font-semibold text-base-font flex items-start gap-2 hover:cursor-pointer w-fit
 `;
 
 export const Footer = tw.div`

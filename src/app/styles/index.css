@@ -1,20 +1,23 @@
 @import 'tailwindcss';
 
 @theme {
-  --color-primary-dark: #081028;
-  --color-secordary-dark: #0b1739;
-  --color-secordary-500: #343b4f;
+  --color-primary-dark: #d9e1fa;
+  --color-secondary-dark: #ffffff;
+  --color-secondary-500: #343b4f;
   --color-secondary-2: #8951ff;
   --color-secondary-3: #21c3fc;
   --color-secondary-4: #3c87e9;
-  --color-neutral-100: #fff;
-  --color-neutral-200: #d9e1fa;
-  --color-neutral-300: #d1dbf9;
-  --color-neutral-400: #aeb9e1;
-  --color-neutral-500: #7e89ac;
-  --color-neutral-600: #37446b;
-  --color-neutral-700: #212c4d;
-  --color-neutral-800: #081028;
+  /* --color-neutral-100: #fff; */
+  /* --color-neutral-200: #d9e1fa; */
+  /* --color-neutral-300: #d1dbf9; */
+  --color-neutral-400: #d9e1fa;
+  --color-neutral-500: #d1dbf9;
+  /* --color-neutral-600: #37446b; */
+  --color-neutral-700: #aeb9e1;
+  --color-neutral-800: #eff2fc;
+  --color-base-font: #000a12;
+  --color-secondary-font: #808080;
+  --color-icon: #000a12;
   --color-custom-1: rgba(185, 248, 207, 0.2);
   --color-custom-2: rgba(185, 248, 207, 0.3);
   --color-custom-3: rgba(251, 44, 54, 0.2);
@@ -27,6 +30,28 @@
   --text-base: 0.75rem;
   --animation-spin-slow: spin 2s infinite linear;
 }
+/* text-secondary-font */
+.dark {
+  --color-primary-dark: #081028;
+  --color-secondary-dark: #0b1739;
+  --color-secondary-500: #343b4f;
+  --color-secondary-2: #8951ff;
+  --color-secondary-3: #21c3fc;
+  --color-secondary-4: #3c87e9;
+  --color-neutral-400: #aeb9e1;
+  --color-neutral-500: #7e89ac;
+  --color-neutral-700: #212c4d;
+  --color-neutral-800: #081028;
+  --color-base-font: #fff;
+  --color-secondary-font: #aeb9e1;
+  --color-icon: #fff;
+  --drop-shadow-sidebar: 0 8px 28px rgba(1, 5, 11, 0.3);
+  --drop-shadow-msidebar: 0 8px 3px rgba(1, 5, 11, 0.8);
+  --shadow-msidebar: 0 8px 28px rgba(1, 5, 11, 0.3);
+  --drop-shadow-button: 0 8px 3px rgba(1, 5, 11, 0.7);
+}
+
+@custom-variant dark (&:where(.dark, .dark *));
 
 body {
   font-family: var(--font-sans);
@@ -59,9 +84,9 @@ textarea:-webkit-autofill:focus,
 select:-webkit-autofill,
 select:-webkit-autofill:hover,
 select:-webkit-autofill:focus {
-  border: 1px solid var(--color-secordary-500);
+  border: 1px solid var(--color-secondary-500);
   -webkit-text-fill-color: var(--color-neutral-400) !important;
-  -webkit-box-shadow: 0 0 0px 1000px var(--color-secordary-dark) inset;
+  -webkit-box-shadow: 0 0 0px 1000px var(--color-secondary-dark) inset;
   transition: background-color 5000s ease-in-out 0s;
 }
 
@@ -74,7 +99,7 @@ select:focus {
 @layer utilities {
   /* loader */
   .loader-box {
-    @apply relative w-12 h-12 bg-secondary-4 text-white;
+    @apply relative w-12 h-12 bg-secondary-4 text-base-font;
     transform: rotateX(65deg) rotate(45deg);
     animation: layers1 1s linear infinite alternate;
   }
@@ -115,7 +140,7 @@ select:focus {
   }
   /* loader text */
   .loader-text {
-    @apply relative inline-block text-white text-xl;
+    @apply relative inline-block text-base-font text-xl;
   }
 
   .loader-text::after {

@@ -49,7 +49,10 @@ export const SingupForm = () => {
           <Typography variant="subtitle" className="w-full">
             Singup
           </Typography>
-          <Typography variant="body" className="w-full text-neutral-400 mb-2">
+          <Typography
+            variant="body"
+            className="w-full text-secondary-font mb-2"
+          >
             Just some details to get you in.!
           </Typography>
           <Input type="text" placeholder="Username" {...register('username')} />
@@ -97,7 +100,7 @@ export const SingupForm = () => {
             {isLoading ? <ButtonLoader width={20} height={20} /> : 'Signup'}
           </Button>
           <div className="flex items-end gap-1">
-            <Typography variant="body" className="text-neutral-400">
+            <Typography variant="body" className="text-secondary-font">
               Already Registered?
             </Typography>
             <Link to={'/login'}>Login</Link>

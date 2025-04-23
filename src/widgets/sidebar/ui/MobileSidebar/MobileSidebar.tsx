@@ -40,7 +40,7 @@ export const MobileSidebar = () => {
       <MobileHeader>
         <HeaderLeft>
           <Button icon onClick={handleMenu.bind(this, true)}>
-            <Icons.menu className="text-white fill-white" />
+            <Icons.menu className="text-base-font fill-white" />
           </Button>
           <Typography variant="title">YouTube Analytics</Typography>
         </HeaderLeft>

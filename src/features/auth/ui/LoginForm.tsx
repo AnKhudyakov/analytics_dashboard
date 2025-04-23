@@ -55,7 +55,10 @@ export const LoginForm = () => {
           <Typography variant="subtitle" className="w-full">
             Login
           </Typography>
-          <Typography variant="body" className="w-full text-neutral-400 mb-2">
+          <Typography
+            variant="body"
+            className="w-full text-secondary-font mb-2"
+          >
             Please enter you’re credentials
           </Typography>
           <Input type="text" placeholder="Username" {...register('username')} />
@@ -89,7 +92,7 @@ export const LoginForm = () => {
             {isLoading ? <ButtonLoader width={20} height={20} /> : 'Login'}
           </Button>
           <div className="flex items-end gap-1">
-            <Typography variant="body" className="text-neutral-400">
+            <Typography variant="body" className="text-secondary-font">
               Don’t have an account?
             </Typography>
             <Link to={'/signup'}>Signup</Link>

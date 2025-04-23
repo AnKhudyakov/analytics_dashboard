@@ -13,9 +13,9 @@ export const PaginationControls = tw.div`
 `;
 
 export const RowsPerPageSelect = tw.select`
-  text-xs sm:text-sm border rounded-md p-2 border-primary-dark bg-secordary-dark focus:outline-none focus:ring-0 focus:border-secordary-500
+  text-xs sm:text-sm border rounded-md p-2 border-primary-dark bg-secondary-dark focus:outline-none focus:ring-0 focus:border-secondary-500
 `;
 
 export const ArrowButton = tw.button`
-  text-white p-2 rounded-sm bg-secordary-dark disabled:bg-neutral-700
+  text-base-font p-2 rounded-sm bg-secondary-dark disabled:bg-neutral-700
 `;

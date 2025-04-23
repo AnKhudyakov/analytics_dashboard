@@ -1,8 +1,8 @@
 import tw from 'tailwind-styled-components';
 
 export const TableContainer = tw.div`
-bg-secordary-dark rounded-xl shadow-md overflow-x-auto
-  border border-secordary-500 h-full
+bg-secondary-dark rounded-xl shadow-md overflow-x-auto
+  border border-secondary-500 h-full
 `;
 
 interface TableProps {
@@ -15,7 +15,7 @@ export const Table = tw.table<TableProps>`
 `;
 
 export const TableHead = tw.thead`
-  bg-secordary-dark sticky top-0 drop-shadow-lg z-99
+  bg-secondary-dark sticky top-0 drop-shadow-lg z-99
 `;
 
 export const TableBody = tw.tbody`

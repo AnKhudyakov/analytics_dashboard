@@ -272,7 +272,7 @@ export const MenuIcon: FC<React.SVGProps<SVGSVGElement>> = ({
   <svg
     width={width}
     height={height}
-    className="text-white hover:text-neutral-500 hover:cursor-pointer"
+    className="text-base-font hover:text-neutral-500 hover:cursor-pointer"
     viewBox="0 -5 32 32"
     version="1.1"
     xmlns="http://www.w3.org/2000/svg"
@@ -497,7 +497,7 @@ export const CloseIcon: FC<React.SVGProps<SVGSVGElement>> = ({
   <svg
     width={width}
     height={height}
-    className="text-white hover:text-neutral-500 hover:cursor-pointer"
+    className="text-base-font hover:text-neutral-500 hover:cursor-pointer"
     viewBox="0 0 13 13"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
@@ -526,7 +526,7 @@ export const HidePasswordIcon: FC<React.SVGProps<SVGSVGElement>> = ({
   <svg
     width={width}
     height={height}
-    className="text-white hover:text-neutral-500 hover:cursor-pointer"
+    className="text-base-font hover:text-neutral-500 hover:cursor-pointer"
     viewBox="0 0 18 19"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
@@ -545,7 +545,7 @@ export const ShowPasswordIcon: FC<React.SVGProps<SVGSVGElement>> = ({
   <svg
     width={width}
     height={height}
-    className="text-white hover:text-neutral-500 hover:cursor-pointer"
+    className="text-base-font hover:text-neutral-500 hover:cursor-pointer"
     viewBox="0 0 24 24"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"

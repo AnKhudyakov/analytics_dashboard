@@ -13,7 +13,7 @@ export const FilterRow = tw.div`
 `;
 
 export const Label = tw.label`
-  font-semibold text-white
+  font-semibold text-base-font
 `;
 
 export const Input = tw.input`
