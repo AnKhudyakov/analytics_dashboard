@@ -1,4 +1,3 @@
-import { Card } from 'shared/ui/components/Card';
 import tw from 'tailwind-styled-components';
 
 export const Container = tw.div`
@@ -6,7 +5,7 @@ export const Container = tw.div`
 `;
 
 export const InfoWrapper = tw.div`
-  p-6
+  p-6 flex sm:flex-col gap-6 sm:gap-3
 `;
 
 export const BannerWrapper = tw.div`
@@ -18,7 +17,7 @@ export const FlexContainer = tw(Container)`
 `;
 
 export const Banner = tw.img`
-  w-full object-cover max-w-200 rounded-l-lg max-h-80 h-70
+  w-full object-cover max-w-200 rounded-t-lg sm:rounded-l-lg max-h-80 h-37.5 sm:h-70
 `;
 
 export const Avatar = tw.img`

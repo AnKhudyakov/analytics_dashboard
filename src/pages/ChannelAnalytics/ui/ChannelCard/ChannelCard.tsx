@@ -20,7 +20,7 @@ export const ChannelCard: React.FC<ChannelCardProps> = ({
   customUrl,
 }) => {
   return (
-    <Card flex>
+    <Card flex className='flex-col sm:flex-row'>
       {banner && (
         <BannerWrapper>
           <Banner
@@ -43,7 +43,7 @@ export const ChannelCard: React.FC<ChannelCardProps> = ({
             >
               <Typography variant="subtitle">{title}</Typography>
             </TitleLink>
-            <Typography variant="body" className="line-clamp-7">
+            <Typography variant="body" className="line-clamp-3 sm:line-clamp-7 break-all sm:break-words">
               {description}
             </Typography>
           </div>
