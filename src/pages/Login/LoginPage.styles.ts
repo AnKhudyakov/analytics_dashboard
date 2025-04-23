@@ -8,11 +8,3 @@ export const Container = tw.div`
 bg-neutral-800 h-screen text-neutral-100 w-full sm:max-w-6xl
   flex flex-col sm:flex-row justify-center items-center
 `;
-
-export const LoadingText = tw.p`
-  text-center text-neutral-400
-`;
-
-export const ChannelsContent = tw.div`
-h-[calc(100vh-190px)]
-`;

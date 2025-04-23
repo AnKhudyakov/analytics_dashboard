@@ -13,5 +13,5 @@ export const ErrorText = tw.p`
 `;
 
 export const ChannelsContent = tw.div`
-  h-[calc(100vh-250px)] lg:h-[calc(100vh-190px)]
+  h-[calc(100vh-300px)] sm:h-[calc(100vh-250px)] lg:h-[calc(100vh-190px)]
 `;

@@ -97,7 +97,7 @@ export const SingupForm = () => {
             {isLoading ? <ButtonLoader width={20} height={20} /> : 'Signup'}
           </Button>
           <div className="flex items-end gap-1">
-            <Typography variant="body" className="text-neutral-500">
+            <Typography variant="body" className="text-neutral-400">
               Already Registered?
             </Typography>
             <Link to={'/login'}>Login</Link>

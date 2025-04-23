@@ -89,7 +89,7 @@ export const LoginForm = () => {
             {isLoading ? <ButtonLoader width={20} height={20} /> : 'Login'}
           </Button>
           <div className="flex items-end gap-1">
-            <Typography variant="body" className="text-neutral-500">
+            <Typography variant="body" className="text-neutral-400">
               Don’t have an account?
             </Typography>
             <Link to={'/signup'}>Signup</Link>

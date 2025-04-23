@@ -1,6 +1,7 @@
 import { FC, useState } from 'react';
 import { useSwipeable } from 'react-swipeable';
 import { MobileListProps } from './MobileList.def';
+import { Container, Swipeable } from './MobileList.styles';
 import { MobileListBody } from './MobileListBody/MobileListBody';
 import { MobileListHeader } from './MobileListHeader/MobileListHeader';
 
@@ -32,7 +33,7 @@ export const MobileList: FC<MobileListProps> = ({
   });
 
   return (
-    <div className="block md:hidden h-[calc(100%-8rem)]">
+    <Container>
       <MobileListHeader
         activeIndex={activeIndex}
         setActiveIndex={setActiveIndex}
@@ -40,7 +41,7 @@ export const MobileList: FC<MobileListProps> = ({
         {...props}
       />
 
-      <div {...swipeHandlers} className='h-full'>
+      <Swipeable {...swipeHandlers}>
         <MobileListBody
           isLoading={isLoading}
           error={error}
@@ -51,7 +52,7 @@ export const MobileList: FC<MobileListProps> = ({
           viewPath={viewPath}
           onFilter={props.onFilter}
         />
-      </div>
-    </div>
+      </Swipeable>
+    </Container>
   );
 };

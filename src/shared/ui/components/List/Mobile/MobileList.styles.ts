@@ -1,5 +1,9 @@
 import tw from 'tailwind-styled-components';
 
+export const Container = tw.div`
+   md:hidden h-full flex flex-col
+`;
+
 export const Header = tw.div`
     h-18.5 !text-sm flex justify-between items-center px-4 py-2 border-b
   border-secordary-dark text-white font-semibold
@@ -23,4 +27,8 @@ export const SwipeControls = tw.div`
 export const ArrowButton = tw.button`
   text-white p-2 rounded-sm disabled:bg-neutral-700
   hover:text-neutral-500 hover:cursor-pointer
+`;
+
+export const Swipeable = tw.div`
+  flex-1 overflow-auto
 `;
