@@ -6,7 +6,8 @@ import { Loader } from 'shared/ui/components/Loader';
 import { hoverEffect } from 'shared/ui/effects';
 import { EmptyList } from '../../EmptyList';
 import { ListItem } from '../../ListItem/ListItem.def';
-import { Cell, Row } from './MobileListBody.styles';
+import { Cell, Row, Wrapper } from './MobileListBody.styles';
+import { useTranslation } from 'react-i18next';
 
 interface MobileListBodyProps {
   isLoading: boolean;
@@ -29,30 +30,31 @@ export const MobileListBody: FC<MobileListBodyProps> = ({
   emptyText,
   onFilter,
 }) => {
+  const { t } = useTranslation();
   const navigate = useNavigate();
   const cols = data.items;
 
   if (isLoading) {
     return (
-      <div className="py-6 flex justify-center h-full">
+      <Wrapper>
         <Loader />
-      </div>
+      </Wrapper>
     );
   }
 
   if (error) {
     return (
-      <div className="py-6 flex justify-center h-full">
-        <Error text="Error data loading" onError={onError} />
-      </div>
+      <Wrapper>
+        <Error text={t('shared.errorLoading')} onError={onError} />
+      </Wrapper>
     );
   }
 
   if (!data.count) {
     return (
-      <div className="py-6 flex justify-center h-full">
+      <Wrapper>
         <EmptyList text={emptyText} onClear={() => onFilter({})} />
-      </div>
+      </Wrapper>
     );
   }
 

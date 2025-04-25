@@ -33,7 +33,12 @@ export const Input: FC<InputProps> = ({
         className={endIcon ? 'pr-10' : ''}
       />
       {endIcon && (
-        <EndButtonIcon type="button" icon onClick={onEndIconClick}>
+        <EndButtonIcon
+          type="button"
+          data-testid={placeholder}
+          icon
+          onClick={onEndIconClick}
+        >
           {endIcon}
         </EndButtonIcon>
       )}

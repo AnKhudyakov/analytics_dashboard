@@ -32,12 +32,6 @@ export const CustomBarChart: FC<CustomBarChartProps> = ({
   return (
     <ResponsiveContainer width="100%" height={300}>
       <BarChart data={data}>
-        <defs>
-          <linearGradient id="colorBar" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="30%" stopColor="#36C1F5" />
-            <stop offset="100%" stopColor="#3C87E9" />
-          </linearGradient>
-        </defs>
         <XAxis
           dataKey="date"
           stroke="#AAA"
@@ -60,7 +54,7 @@ export const CustomBarChart: FC<CustomBarChartProps> = ({
             key={dataKey.field}
             type="monotone"
             dataKey={dataKey.field}
-            fill={index ? dataKey.color : 'url(#colorBar)'}
+            fill={dataKey.color}
             barSize={12}
             minPointSize={3}
             stackId="a"

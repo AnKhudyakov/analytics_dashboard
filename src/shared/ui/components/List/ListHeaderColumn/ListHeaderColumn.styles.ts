@@ -6,7 +6,7 @@ export const HeaderContent = tw.div`
 `;
 
 export const HeaderTitle = tw.div`
-  hover:cursor-pointer hover:text-secordary-500 transition-colors
+  hover:cursor-pointer hover:text-secondary-1 transition-colors
   text-right md:text-left max-w-20 sm:max-w-full
 `;
 
@@ -15,6 +15,6 @@ interface FilterIconProps {
 }
 
 export const FilterIcon = tw(Icons.filter)<FilterIconProps>`
-  hover:text-neutral-500 text-white hover:cursor-pointer transition-colors
-  ${({ hasFilter }) => !hasFilter && `text-secordary-500`}
+  hover:opacity-80 text-base-font hover:cursor-pointer transition-colors
+  ${({ hasFilter }) => !hasFilter && `opacity-20`}
 `;

@@ -5,6 +5,7 @@ import { Pagination } from 'shared/ui/components/Pagination';
 import { ChannelsContent, Container } from './VideosPage.styles';
 import { formatVideos } from './lib/helpers';
 import { useVideosData } from './lib/hooks';
+import { useTranslation } from 'react-i18next';
 
 export const VideosPage = () => {
   const {
@@ -25,10 +26,12 @@ export const VideosPage = () => {
     refetch,
   } = useVideosData();
 
+  const { t } = useTranslation();
+
   return (
     <Container>
       <PageHeader
-        content="Top 50 Videos"
+        content={t('videos.title')}
         search={search}
         setSearch={setSearch}
       />
@@ -38,7 +41,7 @@ export const VideosPage = () => {
           isLoading={isLoading}
           error={!!error}
           onError={() => refetch()}
-          emptyText="No videos found"
+          emptyText={t('videos.empty')}
           viewPath="/videos"
           onSort={(column) => {
             if (column === sortBy) {

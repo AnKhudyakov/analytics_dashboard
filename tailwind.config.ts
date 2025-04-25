@@ -6,6 +6,7 @@ export default {
     './node_modules/tailwind-styled-components/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
+
     extend: {
       colors: {
         primary: '#000',

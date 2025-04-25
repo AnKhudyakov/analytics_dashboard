@@ -5,5 +5,5 @@ export const TableRow = tw.tr`
 `;
 
 export const TableCell = tw.td`
-  p-3 text-neutral-400 align-middle text-start max-h-10
+  p-3 text-secondary-font align-middle text-start max-h-10
 `;

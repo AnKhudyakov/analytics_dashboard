@@ -19,7 +19,7 @@ export const MetricInfo: FC<MetricInfoProps> = ({
 }) => {
   return (
     <Container className={className}>
-      <Typography variant="body">{title}</Typography>
+      <Typography variant="subtitle" className='!text-lg'>{title}</Typography>
       <Content>
         <Typography variant="title">{metric}</Typography>
         {isPositive ? (

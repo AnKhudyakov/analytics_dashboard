@@ -1,4 +1,5 @@
 import { useGetChannelAnalyticsQuery } from 'entities/channel';
+import { useTranslation } from 'react-i18next';
 import { useParams } from 'react-router-dom';
 import { Card } from 'shared/ui/components/Card';
 import { Error } from 'shared/ui/components/Error';
@@ -17,15 +18,16 @@ export const ChannelAnalyticsPage = () => {
   } = useGetChannelAnalyticsQuery(channelId, {
     skip: Boolean(!channelId),
   });
+  const { t } = useTranslation();
 
-  if (isFetching) return <ChannelAnalyticsSkeleton />;
+  if (!isFetching) return <ChannelAnalyticsSkeleton />;
 
   return (
     <Container>
       {error || !channel ? (
         <Card className="py-10">
           <Error
-            text="Error loading data"
+            text={t('shared.errorLoading')}
             onError={() => refetch()}
             disabled={isFetching}
           />

@@ -15,13 +15,13 @@ export const SearchIcon: FC<React.SVGProps<SVGSVGElement>> = ({
   >
     <path
       d="M7.2593 12.9445C10.5321 12.9445 13.1852 10.2914 13.1852 7.01858C13.1852 3.74578 10.5321 1.09265 7.2593 1.09265C3.9865 1.09265 1.33337 3.74578 1.33337 7.01858C1.33337 10.2914 3.9865 12.9445 7.2593 12.9445Z"
-      stroke="#AEB9E1"
+      stroke="currentColor"
       strokeLinecap="round"
       strokeLinejoin="round"
     />
     <path
       d="M14.6666 14.426L11.4444 11.2037"
-      stroke="#AEB9E1"
+      stroke="currentColor"
       strokeLinecap="round"
       strokeLinejoin="round"
     />
@@ -272,7 +272,7 @@ export const MenuIcon: FC<React.SVGProps<SVGSVGElement>> = ({
   <svg
     width={width}
     height={height}
-    className="text-white hover:text-neutral-500 hover:cursor-pointer"
+    className="text-base-font hover:text-neutral-500 hover:cursor-pointer"
     viewBox="0 -5 32 32"
     version="1.1"
     xmlns="http://www.w3.org/2000/svg"
@@ -328,21 +328,21 @@ export const ExitIcon: FC<React.SVGProps<SVGSVGElement>> = ({
     />
     <path
       d="M18 26H15.3333C14.9797 26 14.6406 25.8595 14.3905 25.6095C14.1405 25.3594 14 25.0203 14 24.6667V15.3333C14 14.9797 14.1405 14.6406 14.3905 14.3905C14.6406 14.1405 14.9797 14 15.3333 14H18"
-      stroke="#fff"
+      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
     />
     <path
       d="M22.6665 23.3327L25.9998 19.9993L22.6665 16.666"
-      stroke="#fff"
+      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
     />
     <path
       d="M26 20H18"
-      stroke="#fff"
+      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -366,7 +366,7 @@ export const SortDESCIcon: FC<React.SVGProps<SVGSVGElement>> = ({
     <g opacity="0.8">
       <path
         d="M2 3.76172L4 5.76172L6 3.76172"
-        stroke="#fff"
+        stroke="currentColor"
         strokeWidth="0.8"
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -391,7 +391,7 @@ export const SortASCIcon: FC<React.SVGProps<SVGSVGElement>> = ({
     <g opacity="0.8">
       <path
         d="M6 5.09375L4 3.09375L2 5.09375"
-        stroke="#fff"
+        stroke="currentColor"
         strokeWidth="0.8"
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -483,7 +483,7 @@ export const UncheckedIcon: FC<React.SVGProps<SVGSVGElement>> = ({
       width="11.6"
       height="11.6"
       rx="1.8"
-      fill="#0B1739"
+      fill="currentColor"
       stroke="#7E89AC"
       strokeWidth="0.4"
     />
@@ -497,7 +497,7 @@ export const CloseIcon: FC<React.SVGProps<SVGSVGElement>> = ({
   <svg
     width={width}
     height={height}
-    className="text-white hover:text-neutral-500 hover:cursor-pointer"
+    className="text-base-font hover:text-neutral-500 hover:cursor-pointer"
     viewBox="0 0 13 13"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
@@ -526,7 +526,7 @@ export const HidePasswordIcon: FC<React.SVGProps<SVGSVGElement>> = ({
   <svg
     width={width}
     height={height}
-    className="text-white hover:text-neutral-500 hover:cursor-pointer"
+    className="text-base-font hover:text-neutral-500 hover:cursor-pointer"
     viewBox="0 0 18 19"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
@@ -545,7 +545,7 @@ export const ShowPasswordIcon: FC<React.SVGProps<SVGSVGElement>> = ({
   <svg
     width={width}
     height={height}
-    className="text-white hover:text-neutral-500 hover:cursor-pointer"
+    className="text-base-font hover:text-neutral-500 hover:cursor-pointer"
     viewBox="0 0 24 24"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
@@ -563,6 +563,55 @@ export const ShowPasswordIcon: FC<React.SVGProps<SVGSVGElement>> = ({
       strokeWidth="1.5"
       strokeLinecap="round"
       strokeLinejoin="round"
+    />
+  </svg>
+);
+
+export const SunIcon: FC<React.SVGProps<SVGSVGElement>> = ({
+  width = 20,
+  height = 20,
+  className,
+}) => (
+  <svg
+    width={width}
+    height={height}
+    className={className}
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M17 12C17 14.7614 14.7614 17 12 17C9.23858 17 7 14.7614 7 12C7 9.23858 9.23858 7 12 7C14.7614 7 17 9.23858 17 12Z"
+      fill="currentColor"
+    />
+    <path
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M12 1.25C12.4142 1.25 12.75 1.58579 12.75 2V4C12.75 4.41421 12.4142 4.75 12 4.75C11.5858 4.75 11.25 4.41421 11.25 4V2C11.25 1.58579 11.5858 1.25 12 1.25ZM3.66865 3.71609C3.94815 3.41039 4.42255 3.38915 4.72825 3.66865L6.95026 5.70024C7.25596 5.97974 7.2772 6.45413 6.9977 6.75983C6.7182 7.06553 6.2438 7.08677 5.9381 6.80727L3.71609 4.77569C3.41039 4.49619 3.38915 4.02179 3.66865 3.71609ZM20.3314 3.71609C20.6109 4.02179 20.5896 4.49619 20.2839 4.77569L18.0619 6.80727C17.7562 7.08677 17.2818 7.06553 17.0023 6.75983C16.7228 6.45413 16.744 5.97974 17.0497 5.70024L19.2718 3.66865C19.5775 3.38915 20.0518 3.41039 20.3314 3.71609ZM1.25 12C1.25 11.5858 1.58579 11.25 2 11.25H4C4.41421 11.25 4.75 11.5858 4.75 12C4.75 12.4142 4.41421 12.75 4 12.75H2C1.58579 12.75 1.25 12.4142 1.25 12ZM19.25 12C19.25 11.5858 19.5858 11.25 20 11.25H22C22.4142 11.25 22.75 11.5858 22.75 12C22.75 12.4142 22.4142 12.75 22 12.75H20C19.5858 12.75 19.25 12.4142 19.25 12ZM17.0255 17.0252C17.3184 16.7323 17.7933 16.7323 18.0862 17.0252L20.3082 19.2475C20.6011 19.5404 20.601 20.0153 20.3081 20.3082C20.0152 20.6011 19.5403 20.601 19.2475 20.3081L17.0255 18.0858C16.7326 17.7929 16.7326 17.3181 17.0255 17.0252ZM6.97467 17.0253C7.26756 17.3182 7.26756 17.7931 6.97467 18.086L4.75244 20.3082C4.45955 20.6011 3.98468 20.6011 3.69178 20.3082C3.39889 20.0153 3.39889 19.5404 3.69178 19.2476L5.91401 17.0253C6.2069 16.7324 6.68177 16.7324 6.97467 17.0253ZM12 19.25C12.4142 19.25 12.75 19.5858 12.75 20V22C12.75 22.4142 12.4142 22.75 12 22.75C11.5858 22.75 11.25 22.4142 11.25 22V20C11.25 19.5858 11.5858 19.25 12 19.25Z"
+      fill="currentColor"
+    />
+  </svg>
+);
+
+export const MoonIcon: FC<React.SVGProps<SVGSVGElement>> = ({
+  width = 20,
+  height = 20,
+  className,
+}) => (
+  <svg
+    width={width}
+    height={height}
+    className={className}
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <rect width="24" height="24" fill="none" />
+    <path
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M8.23129 2.24048C9.24338 1.78695 10.1202 2.81145 9.80357 3.70098C8.72924 6.71928 9.38932 10.1474 11.6193 12.3765C13.8606 14.617 17.3114 15.2755 20.3395 14.1819C21.2206 13.8637 22.2173 14.7319 21.7817 15.7199C21.7688 15.7491 21.7558 15.7782 21.7427 15.8074C20.9674 17.5266 19.7272 19.1434 18.1227 20.2274C16.4125 21.3828 14.3957 22.0001 12.3316 22.0001H12.3306C9.93035 21.9975 7.6057 21.1603 5.75517 19.6321C3.90463 18.1039 2.64345 15.9797 2.18793 13.6237C1.73241 11.2677 2.11094 8.82672 3.2586 6.71917C4.34658 4.72121 6.17608 3.16858 8.20153 2.25386L8.23129 2.24048Z"
+      fill="currentColor"
     />
   </svg>
 );

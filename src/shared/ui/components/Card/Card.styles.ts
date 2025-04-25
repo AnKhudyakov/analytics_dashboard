@@ -1,7 +1,8 @@
 import tw from 'tailwind-styled-components';
 
 export const Container = tw.div`
-  w-full h-fit p-2 bg-secordary-dark rounded-lg border border-secordary-500
+  w-full h-fit p-2 bg-secondary-dark rounded-lg
+  border border-neutral-400 dark:border-secondary-1
 `;
 
 export const FlexContainer = tw(Container)`

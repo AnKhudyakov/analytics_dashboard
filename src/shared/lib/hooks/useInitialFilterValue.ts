@@ -4,7 +4,11 @@ import { Filter, RangeValue } from 'shared/api/types';
 export const useInitialRangeFilterValue = (
   filter: Filter | null,
   key: keyof RangeValue
-): [number | undefined, (v: number | undefined) => void] => {
+): [
+  number | undefined,
+  (v: number | undefined) => void,
+  number | undefined,
+] => {
   const initValue = () => {
     if (!filter) return undefined;
     const filterValue = filter.filterValue;
@@ -13,14 +17,20 @@ export const useInitialRangeFilterValue = (
     } else return undefined;
   };
 
-  const [value, setValue] = useState<number | undefined>(initValue());
+  const initialValue = initValue();
 
-  return [value, setValue];
+  const [value, setValue] = useState<number | undefined>(initialValue);
+
+  return [value, setValue, initialValue];
 };
 
 export const useInitialCheckboxFilterValue = (
   filter: Filter | null
-): [boolean | undefined, (v: boolean | undefined) => void] => {
+): [
+  boolean | undefined,
+  (v: boolean | undefined) => void,
+  boolean | undefined,
+] => {
   const initValue = () => {
     if (!filter) return undefined;
     const filterValue = filter.filterValue;
@@ -29,7 +39,9 @@ export const useInitialCheckboxFilterValue = (
     } else return undefined;
   };
 
-  const [value, setValue] = useState<boolean | undefined>(initValue());
+  const initialValue = initValue();
 
-  return [value, setValue];
+  const [value, setValue] = useState<boolean | undefined>(initialValue);
+
+  return [value, setValue, initialValue];
 };

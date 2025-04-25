@@ -1,12 +1,12 @@
-import { ChangeEvent, FC, useRef } from 'react';
+import { ChangeEvent, FC, useCallback } from 'react';
 import { Filters } from 'shared/api/types';
 import { useInitialRangeFilterValue } from 'shared/lib/hooks/useInitialFilterValue';
-import { useOutsideClick } from 'shared/lib/hooks/useOutsideClick';
-import { Button } from 'shared/ui/components/Button';
 import { Input } from 'shared/ui/components/Input';
-import { hoverEffect } from 'shared/ui/effects';
+import { Popup } from 'shared/ui/components/Popup';
+import { PopupAction } from '../PopupAction';
 import { RangePopupProps } from './RangePopup.def';
-import { Container, FilterRow, Footer, Label } from './RangePopup.styles';
+import { FilterRow, Label } from './RangePopup.styles';
+import { useTranslation } from 'react-i18next';
 
 export const RangePopup: FC<RangePopupProps> = ({
   filterKey,
@@ -14,13 +14,10 @@ export const RangePopup: FC<RangePopupProps> = ({
   onFilter,
   onClose,
 }) => {
-  const popupRef = useRef<HTMLElement>(null);
-
-  const [valueFrom, setValueFrom] = useInitialRangeFilterValue(
-    filters?.[filterKey],
-    'valueFrom'
-  );
-  const [valueTo, setValueTo] = useInitialRangeFilterValue(
+  const { t } = useTranslation();
+  const [valueFrom, setValueFrom, initialValueFrom] =
+    useInitialRangeFilterValue(filters?.[filterKey], 'valueFrom');
+  const [valueTo, setValueTo, initialValueTo] = useInitialRangeFilterValue(
     filters?.[filterKey],
     'valueTo'
   );
@@ -32,7 +29,7 @@ export const RangePopup: FC<RangePopupProps> = ({
       setter(Number(num) || undefined);
     };
 
-  const handleApply = () => {
+  const handleApply = useCallback(() => {
     if (valueTo || valueFrom) {
       onFilter({
         ...filters,
@@ -43,14 +40,14 @@ export const RangePopup: FC<RangePopupProps> = ({
       });
     }
     onClose();
-  };
+  }, [valueTo, valueFrom, filters, filterKey]);
 
-  const handleClear = () => {
+  const handleClear = useCallback(() => {
     onFilter({ ...filters, [filterKey]: null });
     setValueFrom(undefined);
     setValueTo(undefined);
     onClose();
-  };
+  }, [filters, filterKey]);
 
   const handleValidateFrom = () => {
     if (valueFrom !== undefined) {
@@ -76,12 +73,10 @@ export const RangePopup: FC<RangePopupProps> = ({
     }
   };
 
-  useOutsideClick(popupRef, onClose);
-
   return (
-    <Container ref={popupRef}>
+    <Popup onClose={onClose}>
       <FilterRow>
-        <Label>From</Label>
+        <Label>{t('shared.from')}</Label>
         <Input
           type="number"
           placeholder="Min"
@@ -89,7 +84,7 @@ export const RangePopup: FC<RangePopupProps> = ({
           onChange={handleChange(setValueFrom)}
           onBlur={handleValidateFrom}
         />
-        <Label>To</Label>
+        <Label>{t('shared.to')}</Label>
         <Input
           type="number"
           placeholder="Max"
@@ -98,14 +93,14 @@ export const RangePopup: FC<RangePopupProps> = ({
           onBlur={handleValidateTo}
         />
       </FilterRow>
-      <Footer>
-        <Button className={hoverEffect} onClick={handleApply}>
-          Apply
-        </Button>
-        <Button className={hoverEffect} onClick={handleClear}>
-          Clear
-        </Button>
-      </Footer>
-    </Container>
+      <PopupAction
+        onApply={handleApply}
+        onClear={handleClear}
+        hasFilter={Boolean(initialValueFrom || initialValueTo)}
+        hasApply={Boolean(
+          initialValueFrom !== valueFrom || initialValueTo !== valueTo
+        )}
+      />
+    </Popup>
   );
 };

@@ -1,13 +1,13 @@
 import { FC } from 'react';
 import { hoverEffect } from 'shared/ui/effects';
 import { ButtonProps } from './Button.def';
-import { StyledButton } from './Button.styles';
+import { StyledButton, StyledButtonIcon } from './Button.styles';
 
 export const Button: FC<ButtonProps> = ({ icon, children, ...props }) => {
   return (
     <>
       {icon ? (
-        <button {...props}>{children}</button>
+        <StyledButtonIcon {...props}>{children}</StyledButtonIcon>
       ) : (
         <StyledButton {...props} className={hoverEffect}>
           {children}

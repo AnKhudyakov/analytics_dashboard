@@ -1,4 +1,5 @@
 import { FC } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Button } from 'shared/ui/components/Button';
 import { Icons } from 'shared/ui/icons';
 import { ListItem } from '../ListItem/ListItem.def';
@@ -25,6 +26,8 @@ export const ListHeaderColumn: FC<ListHeaderColumnProps> = ({
   sortOrder,
   onSort,
 }) => {
+  const { t } = useTranslation();
+
   return (
     <HeaderContent>
       {col.filterType && (
@@ -32,7 +35,9 @@ export const ListHeaderColumn: FC<ListHeaderColumnProps> = ({
           <FilterIcon width={24} height={24} hasFilter={hasFilter} />
         </Button>
       )}
-      <HeaderTitle onClick={onSort}>{col.title}</HeaderTitle>
+      <HeaderTitle onClick={onSort}>
+        {t(`shared.${col.title.toLowerCase()}`)}
+      </HeaderTitle>
       {sortBy === col.key && (
         <>
           {sortOrder === 'asc' ? (

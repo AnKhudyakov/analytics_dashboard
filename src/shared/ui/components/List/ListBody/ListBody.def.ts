@@ -13,4 +13,5 @@ export interface ListBodyProps {
   viewPath: string;
   emptyText?: string;
   onFilter: (updatedFilters: Filters) => void;
+  hasFilters: boolean;
 }

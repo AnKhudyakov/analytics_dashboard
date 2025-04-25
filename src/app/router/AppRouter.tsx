@@ -2,8 +2,8 @@ import { AppLayout } from 'app/providers/layout';
 import { ChannelAnalyticsPage } from 'pages/ChannelAnalytics/ChannelAnalyticsPage';
 import { ChannelsPage } from 'pages/Channels';
 import { LoginPage } from 'pages/Login';
-import { NotFoundPage } from 'pages/NotFoundPage';
-import { SignupPage } from 'pages/SignupPage';
+import { NotFoundPage } from 'pages/NotFound';
+import { SignupPage } from 'pages/Signup';
 import { VideosPage } from 'pages/Videos';
 import {
   createHashRouter,

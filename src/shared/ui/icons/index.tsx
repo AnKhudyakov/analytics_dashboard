@@ -10,12 +10,14 @@ import {
   HidePasswordIcon,
   HomeIcon,
   MenuIcon,
+  MoonIcon,
   NoIcon,
   SearchIcon,
   ShowPasswordIcon,
   SortASCIcon,
   SortDESCIcon,
   SpinnerIcon,
+  SunIcon,
   UncheckedIcon,
   VideosIcon,
   YesIcon,
@@ -41,5 +43,7 @@ export const Icons = {
   menu: MenuIcon,
   close: CloseIcon,
   showPassword: ShowPasswordIcon,
-  hidePassword: HidePasswordIcon
+  hidePassword: HidePasswordIcon,
+  sun: SunIcon,
+  moon: MoonIcon,
 };

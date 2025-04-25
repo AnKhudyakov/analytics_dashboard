@@ -1,6 +1,7 @@
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
+import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import { useSignupMutation } from 'shared/api/auth_api';
 import { Button } from 'shared/ui/components/Button';
@@ -17,6 +18,7 @@ export const SingupForm = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirm, setShowConfirm] = useState(false);
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   const {
     register,
@@ -47,18 +49,29 @@ export const SingupForm = () => {
       <Card className="max-w-100">
         <Form onSubmit={handleSubmit(onSubmit)}>
           <Typography variant="subtitle" className="w-full">
-            Singup
+            {t('singup.fromTitle')}
           </Typography>
-          <Typography variant="body" className="w-full text-neutral-400 mb-2">
-            Just some details to get you in.!
+          <Typography
+            variant="body"
+            className="w-full text-secondary-font mb-2"
+          >
+            {t('singup.fromSubtitle')}
           </Typography>
-          <Input type="text" placeholder="Username" {...register('username')} />
+          <Input
+            type="text"
+            placeholder={t('singup.plhUsername')}
+            {...register('username')}
+          />
           {errors.username ? (
             <ErrorText>{errors.username.message}</ErrorText>
           ) : (
             <Empty />
           )}
-          <Input type="text" placeholder="Email" {...register('email')} />
+          <Input
+            type="text"
+            placeholder={t('singup.plhEmail')}
+            {...register('email')}
+          />
           {errors.email ? (
             <ErrorText>{errors.email.message}</ErrorText>
           ) : (
@@ -66,7 +79,7 @@ export const SingupForm = () => {
           )}
           <Input
             type={showPassword ? 'text' : 'password'}
-            placeholder="Password"
+            placeholder={t('singup.plhPassword')}
             endIcon={
               showPassword ? <Icons.hidePassword /> : <Icons.showPassword />
             }
@@ -80,7 +93,7 @@ export const SingupForm = () => {
           )}
           <Input
             type={showConfirm ? 'text' : 'password'}
-            placeholder="Confirm Password"
+            placeholder={t('singup.plhConfirmPassword')}
             endIcon={
               showConfirm ? <Icons.hidePassword /> : <Icons.showPassword />
             }
@@ -92,15 +105,19 @@ export const SingupForm = () => {
           ) : (
             <Empty />
           )}
-          {error ? <ErrorText>Incorrect Singup</ErrorText> : <Empty />}
+          {error ? <ErrorText>{t('singup.error')}</ErrorText> : <Empty />}
           <Button type="submit" disabled={isLoading}>
-            {isLoading ? <ButtonLoader width={20} height={20} /> : 'Signup'}
+            {isLoading ? (
+              <ButtonLoader width={20} height={20} />
+            ) : (
+              t('singup.fromTitle')
+            )}
           </Button>
           <div className="flex items-end gap-1">
-            <Typography variant="body" className="text-neutral-400">
-              Already Registered?
+            <Typography variant="body" className="text-secondary-font">
+              {t('singup.haveAcc')}
             </Typography>
-            <Link to={'/login'}>Login</Link>
+            <Link to={'/login'}>{t('singup.linkSignup')}</Link>
           </div>
         </Form>
       </Card>

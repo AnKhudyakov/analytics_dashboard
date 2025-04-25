@@ -10,14 +10,20 @@ export const WelcomeTitle: FC<WelcomeTitleProps> = ({
 }) => {
   return (
     <Container>
-      <Typography className={'!text-3xl sm:!text-4xl md:!text-5xl lg:!text-6xl'} variant="title">
+      <Typography
+        className={'!text-3xl sm:!text-4xl md:!text-5xl lg:!text-6xl'}
+        variant="title"
+      >
         {title}
       </Typography>
-      <Typography className={'!text-3xl sm:!text-4xl md:!text-5xl lg:!text-6xl'} variant="title">
+      <Typography
+        className={'!text-3xl sm:!text-4xl md:!text-5xl lg:!text-6xl'}
+        variant="title"
+      >
         {subtitle}
       </Typography>
       <Typography
-        className={'sm:!text-lg  md:!text-xl lg:!text-2xl text-neutral-400'}
+        className={'sm:!text-lg  md:!text-xl lg:!text-2xl text-secondary-font'}
         variant="subtitle"
       >
         {body}

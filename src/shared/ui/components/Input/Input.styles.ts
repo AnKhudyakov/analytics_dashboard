@@ -3,20 +3,20 @@ import { Icons } from 'shared/ui/icons';
 import tw from 'tailwind-styled-components';
 
 export const StyledInput = tw.input`
-  w-full p-2 bg-secordary-dark !text-white
-  placeholder-neutral-400 focus:outline-none focus:border-secondary-4 rounded-sm
-  border border-secordary-500
+  w-full p-2 bg-secondary-dark !text-base-font
+  placeholder-secondary-font focus:outline-none focus:border-secondary-4 rounded-sm
+  border border-secondary-1
   [&::-webkit-outer-spin-button]:appearance-none
   [&::-webkit-inner-spin-button]:appearance-none
   [type='number']:appearance-textfield
 `;
 
 export const Container = tw.div`
-  relative w-full sm:max-w-100 !text-white
+  relative w-full sm:max-w-100 !text-base-font
 `;
 
 export const SearchIcon = tw(Icons.search)`
-absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-neutral-400
+absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-secondary-font
 `;
 
 export const StyledSearchInput = tw(StyledInput)`
@@ -28,9 +28,9 @@ export const ArrowsContainer = tw.div`
 `;
 
 export const ArrowButton = tw.button`
-  text-white text-xs hover:text-primary focus:outline-none
+  text-base-font text-xs hover:text-primary focus:outline-none
 `;
 
 export const EndButtonIcon = tw(Button)`
-absolute right-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-neutral-400
+absolute right-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-secondary-font
 `;
