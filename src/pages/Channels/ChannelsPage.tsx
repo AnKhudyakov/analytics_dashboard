@@ -1,10 +1,11 @@
 import { ColumnChannel } from 'entities/channel/model/types';
+import { useTranslation } from 'react-i18next';
 import { List } from 'shared/ui/components/List';
+import { PageHeader } from 'shared/ui/components/PageHeader';
 import { Pagination } from 'shared/ui/components/Pagination';
 import { ChannelsContent, Container } from './ChannelsPage.styles';
 import { formatChannels } from './lib/helpers';
 import { useChannelsData } from './lib/hooks';
-import { PageHeader } from 'shared/ui/components/PageHeader';
 
 export const ChannelsPage = () => {
   const {
@@ -25,10 +26,12 @@ export const ChannelsPage = () => {
     refetch,
   } = useChannelsData();
 
+  const { t } = useTranslation();
+
   return (
     <Container>
       <PageHeader
-        content="Top 50 Channels"
+        content={t('channels.title')}
         search={search}
         setSearch={setSearch}
       />
@@ -38,7 +41,7 @@ export const ChannelsPage = () => {
           isLoading={isLoading}
           error={!!error}
           onError={() => refetch()}
-          emptyText="No channels found"
+          emptyText={t('channels.empty')}
           viewPath="/channels"
           onSort={(column) => {
             if (column === sortBy) {

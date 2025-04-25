@@ -9,7 +9,7 @@ export const SidebarContainer = tw.aside`
 `;
 
 export const Nav = tw.nav`
-  w-full
+  w-full h-full
 `;
 
 export const FlexContainer = tw.div`

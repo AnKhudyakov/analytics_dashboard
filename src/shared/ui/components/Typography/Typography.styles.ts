@@ -9,5 +9,5 @@ export const Subtitle = tw.h2`
 `;
 
 export const Body = tw.p`
-  font-semibold
+  font-semibold text-secondary-font
 `;

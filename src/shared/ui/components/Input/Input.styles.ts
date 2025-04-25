@@ -4,8 +4,8 @@ import tw from 'tailwind-styled-components';
 
 export const StyledInput = tw.input`
   w-full p-2 bg-secondary-dark !text-base-font
-  placeholder-neutral-400 focus:outline-none focus:border-secondary-4 rounded-sm
-  border border-secondary-500
+  placeholder-secondary-font focus:outline-none focus:border-secondary-4 rounded-sm
+  border border-secondary-1
   [&::-webkit-outer-spin-button]:appearance-none
   [&::-webkit-inner-spin-button]:appearance-none
   [type='number']:appearance-textfield

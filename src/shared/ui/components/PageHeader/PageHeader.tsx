@@ -1,4 +1,5 @@
 import { ChangeEvent, FC } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Input } from 'shared/ui/components/Input';
 import { Typography } from 'shared/ui/components/Typography';
 import { PageHeaderProps } from './PageHeader.def';
@@ -13,12 +14,13 @@ export const PageHeader: FC<PageHeaderProps> = ({
     const search = e.target.value;
     setSearch(search);
   };
+  const { t } = useTranslation();
 
   return (
     <Header>
       <Typography variant="title">{content}</Typography>
       <Container>
-        <Input value={search} onChange={handleSearch} search />
+        <Input value={search} onChange={handleSearch} search placeholder={t('shared.search')} />
       </Container>
     </Header>
   );

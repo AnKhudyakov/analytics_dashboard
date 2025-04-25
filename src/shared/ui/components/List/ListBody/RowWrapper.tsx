@@ -1,5 +1,5 @@
 import { FC, ReactNode } from 'react';
-import { TableCell, TableRow } from './ListBody.styles';
+import { TableCell, TableRow } from './RowWrapper.styles';
 
 interface RowWrapperProps {
   children: ReactNode;

@@ -1,13 +1,12 @@
-import { FC, useRef } from 'react';
+import { FC } from 'react';
 import { Filters } from 'shared/api/types';
-import { BOOLEAN_FILTER_OPTIONS } from 'shared/constants/filters';
+import { BOOLEAN_FILTER_OPTIONS } from 'shared/constants';
 import { useInitialCheckboxFilterValue } from 'shared/lib/hooks/useInitialFilterValue';
-import { useOutsideClick } from 'shared/lib/hooks/useOutsideClick';
-import { Button } from 'shared/ui/components/Button';
 import { Input } from 'shared/ui/components/Input';
-import { hoverEffect } from 'shared/ui/effects';
+import { Popup } from 'shared/ui/components/Popup';
+import { PopupAction } from '../PopupAction';
 import { CheckboxPopupProps } from './CheckboxPopup.def';
-import { Container, FilterRow, Footer } from './CheckboxPopup.styles';
+import { FilterRow } from './CheckboxPopup.styles';
 
 export const CheckboxPopup: FC<CheckboxPopupProps> = ({
   filterKey,
@@ -15,9 +14,7 @@ export const CheckboxPopup: FC<CheckboxPopupProps> = ({
   onFilter,
   onClose,
 }) => {
-  const popupRef = useRef<HTMLElement>(null);
-
-  const [selected, setSelected] = useInitialCheckboxFilterValue(
+  const [selected, setSelected, initialValue] = useInitialCheckboxFilterValue(
     filters?.[filterKey]
   );
 
@@ -38,10 +35,8 @@ export const CheckboxPopup: FC<CheckboxPopupProps> = ({
     onClose();
   };
 
-  useOutsideClick(popupRef, onClose);
-
   return (
-    <Container ref={popupRef}>
+    <Popup onClose={onClose}>
       <FilterRow>
         {BOOLEAN_FILTER_OPTIONS.map(({ label, value }) => (
           <Input
@@ -53,14 +48,12 @@ export const CheckboxPopup: FC<CheckboxPopupProps> = ({
           />
         ))}
       </FilterRow>
-      <Footer>
-        <Button className={hoverEffect} onClick={handleApply}>
-          Apply
-        </Button>
-        <Button className={hoverEffect} onClick={handleClear}>
-          Clear
-        </Button>
-      </Footer>
-    </Container>
+      <PopupAction
+        onApply={handleApply}
+        onClear={handleClear}
+        hasFilter={initialValue !== undefined}
+        hasApply={Boolean(initialValue !== selected)}
+      />
+    </Popup>
   );
 };

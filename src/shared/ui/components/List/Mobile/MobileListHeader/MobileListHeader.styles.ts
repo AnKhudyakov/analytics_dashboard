@@ -12,19 +12,10 @@ export const SwipeControls = tw.div`
 `;
 
 export const ArrowButton = tw.button`
-text-base-font p-2 rounded-sm disabled:bg-neutral-700
+text-base-font p-2 rounded-sm disabled:bg-neutral-700 disabled:cursor-auto
 hover:text-neutral-500 hover:cursor-pointer
 `;
 
 export const Swiper = tw.div`
   w-1/2 flex items-center justify-end gap-2 relative
-`;
-
-interface FilterIconProps {
-  hasFilter?: boolean;
-}
-
-export const FilterIcon = tw(Icons.filter)<FilterIconProps>`
-  hover:text-neutral-500 text-base-font hover:cursor-pointer transition-colors
-  ${({ hasFilter }) => !hasFilter && `text-secondary-500`}
 `;

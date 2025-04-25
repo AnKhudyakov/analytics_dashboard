@@ -6,7 +6,7 @@ export const Container = tw.aside`
 `;
 
 export const MobileHeader = tw.div`
-  relative flex lg:hidden p-4 sm:p-6 gap-6 justify-between border-b border-secondary-dark
+  relative bg-neutral-800 flex lg:hidden p-4 sm:p-6 gap-6 justify-between border-b border-secondary-dark
   text-base-font shadow-msidebar
 `;
 
@@ -16,4 +16,8 @@ export const HeaderLeft = tw.div`
 
 export const Overlay = tw.div`
   fixed inset-0 bg-black/40 z-999 lg:hidden
+`;
+
+export const HeaderMenu = tw.div`
+  flex justify-between items-center
 `;

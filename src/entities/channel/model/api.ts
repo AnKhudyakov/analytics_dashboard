@@ -58,24 +58,3 @@ export const channelApi = youtubeApi.injectEndpoints({
 
   overrideExisting: false,
 });
-
-// export const channelAnalyticsApi = rapidApi.injectEndpoints({
-//   endpoints: (builder) => ({
-//     getChannelDetailStats: builder.query<ChannelStats[], string | undefined>({
-//       query: (username) => ({
-//         url: `/channel_stats`,
-//         params: {
-//           username,
-//           range: 'alltime',
-//           groupBy: 'daily',
-//           sortOrder: 'ASC',
-//           withRevenue: 'true',
-//           withEvents: 'false',
-//           withBreakdown: 'false',
-//           withToday: 'false',
-//         },
-//       }),
-//     }),
-//   }),
-//   overrideExisting: false,
-// });

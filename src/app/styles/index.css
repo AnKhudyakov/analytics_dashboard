@@ -1,9 +1,9 @@
 @import 'tailwindcss';
 
 @theme {
-  --color-primary-dark: #d9e1fa;
+  --color-primary-dark: #eff2fc;
   --color-secondary-dark: #ffffff;
-  --color-secondary-500: #343b4f;
+  --color-secondary-1: #343b4f;
   --color-secondary-2: #8951ff;
   --color-secondary-3: #21c3fc;
   --color-secondary-4: #3c87e9;
@@ -16,7 +16,7 @@
   --color-neutral-700: #aeb9e1;
   --color-neutral-800: #eff2fc;
   --color-base-font: #000a12;
-  --color-secondary-font: #808080;
+  --color-secondary-font: #a1a1a1;
   --color-icon: #000a12;
   --color-custom-1: rgba(185, 248, 207, 0.2);
   --color-custom-2: rgba(185, 248, 207, 0.3);
@@ -25,7 +25,7 @@
   --drop-shadow-sidebar: 0 8px 28px rgba(1, 5, 11, 0.3);
   --drop-shadow-msidebar: 0 8px 3px rgba(1, 5, 11, 0.8);
   --shadow-msidebar: 0 8px 28px rgba(1, 5, 11, 0.3);
-  --drop-shadow-button: 0 8px 3px rgba(1, 5, 11, 0.7);
+  --drop-shadow-button: 0 8px 5px rgba(1, 5, 11, 0.5);
   --font-sans: 'Mona Sans', sans-serif;
   --text-base: 0.75rem;
   --animation-spin-slow: spin 2s infinite linear;
@@ -34,7 +34,7 @@
 .dark {
   --color-primary-dark: #081028;
   --color-secondary-dark: #0b1739;
-  --color-secondary-500: #343b4f;
+  --color-secondary-1: #343b4f;
   --color-secondary-2: #8951ff;
   --color-secondary-3: #21c3fc;
   --color-secondary-4: #3c87e9;
@@ -48,7 +48,7 @@
   --drop-shadow-sidebar: 0 8px 28px rgba(1, 5, 11, 0.3);
   --drop-shadow-msidebar: 0 8px 3px rgba(1, 5, 11, 0.8);
   --shadow-msidebar: 0 8px 28px rgba(1, 5, 11, 0.3);
-  --drop-shadow-button: 0 8px 3px rgba(1, 5, 11, 0.7);
+  --drop-shadow-button: 4px 5px 5px rgba(255, 255, 255, 0.9);
 }
 
 @custom-variant dark (&:where(.dark, .dark *));
@@ -84,8 +84,8 @@ textarea:-webkit-autofill:focus,
 select:-webkit-autofill,
 select:-webkit-autofill:hover,
 select:-webkit-autofill:focus {
-  border: 1px solid var(--color-secondary-500);
-  -webkit-text-fill-color: var(--color-neutral-400) !important;
+  border: 1px solid var(--color-secondary-1);
+  -webkit-text-fill-color: var(--color-base-font) !important;
   -webkit-box-shadow: 0 0 0px 1000px var(--color-secondary-dark) inset;
   transition: background-color 5000s ease-in-out 0s;
 }
@@ -93,7 +93,7 @@ select:-webkit-autofill:focus {
 input:focus,
 textarea:focus,
 select:focus {
-  -webkit-text-fill-color: var(--color-neutral-400);
+  -webkit-text-fill-color: var(--color-secondary-font);
 }
 
 @layer utilities {
@@ -108,7 +108,7 @@ select:focus {
     content: '';
     position: absolute;
     inset: 0;
-    background: rgba(255, 255, 255, 0.7);
+    background: rgba(174, 185, 225, 0.4);
     animation: layerTr 1s linear infinite alternate;
   }
 
@@ -163,13 +163,13 @@ select:focus {
     }
     50% {
       box-shadow:
-        10px 0 white,
+        10px 0 var(--color-base-font),
         20px 0 rgba(255, 255, 255, 0);
     }
     100% {
       box-shadow:
-        10px 0 white,
-        20px 0 white;
+        10px 0 var(--color-base-font),
+        20px 0 var(--color-base-font);
     }
   }
 

@@ -9,5 +9,5 @@ export const FlexContainer = tw(Container)`
 `;
 
 export const Divider = tw.div`
-h-full w-0.25 bg-secondary-500
+h-full w-0.25 bg-secondary-1
 `;

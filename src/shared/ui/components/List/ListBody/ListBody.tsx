@@ -1,4 +1,5 @@
 import { FC } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Error } from 'shared/ui/components/Error';
 import { Loader } from 'shared/ui/components/Loader';
 import { EmptyList } from '../EmptyList';
@@ -14,7 +15,9 @@ export const ListBody: FC<ListBodyProps> = ({
   viewPath,
   emptyText,
   onFilter,
+  hasFilters,
 }) => {
+  const { t } = useTranslation();
   const colSpan = data.items.length;
 
   if (isLoading) {
@@ -29,7 +32,7 @@ export const ListBody: FC<ListBodyProps> = ({
     return (
       <RowWrapper colSpan={colSpan}>
         <Error
-          text="Error loading data"
+          text={t('shared.errorLoading')}
           onError={onError}
           disabled={isLoading}
         />
@@ -40,7 +43,11 @@ export const ListBody: FC<ListBodyProps> = ({
   if (!data.count) {
     return (
       <RowWrapper colSpan={colSpan}>
-        <EmptyList text={emptyText} onClear={() => onFilter({})} />
+        <EmptyList
+          text={emptyText}
+          onClear={() => onFilter({})}
+          disabled={!hasFilters}
+        />
       </RowWrapper>
     );
   }

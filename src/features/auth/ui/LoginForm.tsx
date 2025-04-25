@@ -1,6 +1,7 @@
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
+import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import { useLoginMutation } from 'shared/api/auth_api';
 import { Button } from 'shared/ui/components/Button';
@@ -16,6 +17,7 @@ export const LoginForm = () => {
   const [login, { isLoading, error }] = useLoginMutation();
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   const {
     register,
@@ -53,15 +55,19 @@ export const LoginForm = () => {
       <Card className="max-w-100">
         <Form onSubmit={handleSubmit(onSubmit)}>
           <Typography variant="subtitle" className="w-full">
-            Login
+            {t('login.fromTitle')}
           </Typography>
           <Typography
             variant="body"
             className="w-full text-secondary-font mb-2"
           >
-            Please enter you’re credentials
+            {t('login.fromSubtitle')}
           </Typography>
-          <Input type="text" placeholder="Username" {...register('username')} />
+          <Input
+            type="text"
+            placeholder={t('login.plhUsername')}
+            {...register('username')}
+          />
           {errors.username ? (
             <ErrorText>{errors.username.message}</ErrorText>
           ) : (
@@ -69,7 +75,7 @@ export const LoginForm = () => {
           )}
           <Input
             type={showPassword ? 'text' : 'password'}
-            placeholder="Password"
+            placeholder={t('login.plhPassword')}
             endIcon={
               showPassword ? <Icons.hidePassword /> : <Icons.showPassword />
             }
@@ -83,19 +89,23 @@ export const LoginForm = () => {
           )}
           <Input
             type="checkbox"
-            placeholder="Remember me"
+            placeholder={t('login.remember')}
             checked={watch('remember')}
             {...register('remember')}
           />
-          {error ? <ErrorText>Incorrect login</ErrorText> : <Empty />}
+          {error ? <ErrorText>{t('login.error')}</ErrorText> : <Empty />}
           <Button type="submit" disabled={isLoading}>
-            {isLoading ? <ButtonLoader width={20} height={20} /> : 'Login'}
+            {isLoading ? (
+              <ButtonLoader width={20} height={20} />
+            ) : (
+              t('login.fromTitle')
+            )}
           </Button>
           <div className="flex items-end gap-1">
             <Typography variant="body" className="text-secondary-font">
-              Don’t have an account?
+              {t('login.haveAcc')}
             </Typography>
-            <Link to={'/signup'}>Signup</Link>
+            <Link to={'/signup'}>{t('login.linkSignup')}</Link>
           </div>
         </Form>
       </Card>

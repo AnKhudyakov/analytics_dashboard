@@ -3,7 +3,7 @@ import tw from 'tailwind-styled-components';
 
 export const Container = tw.div`
   h-full border-t sm:border-l sm:border-r border-secondary-dark shadow-msidebar
-  sm:drop-shadow-sidebar p-4 lg:p-6 flex items-start sm:items-center justify-center w-full sm:min-w-90 sm:max-w-120
+  sm:shadow-sidebar p-4 lg:p-6 flex items-start sm:items-center justify-center w-full sm:min-w-90 sm:max-w-120
 `;
 
 export const Form = tw.form`

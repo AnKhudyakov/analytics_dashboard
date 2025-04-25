@@ -1,0 +1,243 @@
+{
+  "en": {
+    "translation": {
+      "login": {
+        "fromTitle": "Login",
+        "fromSubtitle": "Please enter you’re credentials",
+        "plhPassword": "Password",
+        "plhUsername": "Username",
+        "remember": "Remember me",
+        "haveAcc": "Don’t have an account?",
+        "linkSignup": "Signup",
+        "error": "Incorrect login",
+        "title": "Welcome to",
+        "subtitle": "YouTube Analytics",
+        "body": "Login in to your account to continue"
+      },
+      "singup": {
+        "fromTitle": "Signup",
+        "fromSubtitle": "Just some details to get you in!",
+        "plhPassword": "Password",
+        "plhConfirmPassword": "Confirm Password",
+        "plhUsername": "Username",
+        "plhEmail": "Email",
+        "haveAcc": "Already Registered?",
+        "linkSignup": "Login",
+        "error": "Incorrect singup",
+        "title": "Roll the Carpet!",
+        "body": "Signup your account to continue"
+      },
+      "validation": {
+        "required": "Field is required",
+        "min": "Must be at least {{min}} characters",
+        "invalidEmail": "Incorrect email",
+        "match": "Passwords must match"
+      },
+      "channels": {
+        "title": "Top 50 сhannels",
+        "empty": "No channels found"
+      },
+      "videos": {
+        "title": "Top 50 videos",
+        "empty": "No videos found"
+      },
+      "notFound": {
+        "subtitle": "Oops! We couldn’t find that page.",
+        "body": "It looks like the page you’re trying to reach doesn’t exist. Maybe check the URL or go back to the homepage.",
+        "home": "Home"
+      },
+      "shared": {
+        "search": "Search for...",
+        "name": "Name",
+        "subscribers": "Subscribers",
+        "views": "Views",
+        "hidden subscriber": "Hidden subscriber",
+        "videos": "Videos",
+        "likes": "Likes",
+        "comments": "Comments",
+        "favorites": "Videos",
+        "revenue": "Estimated Revenue",
+        "lowRevenue": "Low Revenue",
+        "highRevenue": "High Revenue",
+        "errorLoading": "Error loading data",
+        "reload": "Reload",
+        "from": "From",
+        "to": "To",
+        "apply": "Apply",
+        "clear": "Clear",
+        "clearAll": "Clear all filters",
+        "loading": "Loading",
+        "of": "of",
+        "perpage": "Rows per page"
+      },
+      "sidebar": {
+        "title": "YouTube Analytics",
+        "menu": "Menu",
+        "channels": "Channels",
+        "videos": "Videos"
+      }
+    }
+  },
+  "ru": {
+    "translation": {
+      "login": {
+        "fromTitle": "Вход",
+        "fromSubtitle": "Пожалуйста, введите ваши учетные данные",
+        "plhPassword": "Пароль",
+        "plhUsername": "Имя пользователя",
+        "remember": "Запомнить меня",
+        "haveAcc": "У вас нет учетной записи?",
+        "linkSignup": "Регистрация",
+        "error": "Неверные данные",
+        "title": "Добро пожаловать",
+        "subtitle": "YouTube Аналитика",
+        "body": "Войдите в свою учетную запись, чтобы продолжить"
+      },
+      "singup": {
+        "fromTitle": "Регистрация",
+        "fromSubtitle": "Немного подробностей, чтобы вас принять!",
+        "plhPassword": "Пароль",
+        "plhConfirmPassword": "Подтвердите пароль",
+        "plhUsername": "Имя пользователя",
+        "plhEmail": "Email",
+        "haveAcc": "Уже зарегистрированы?",
+        "linkSignup": "Вход",
+        "error": "Неудачная регистрация",
+        "title": "Расстелаем дорожку",
+        "body": "Зарегистрируйте свой аккаунт, чтобы продолжить"
+      },
+      "validation": {
+        "required": "Обязательное поле",
+        "min": "Должно быть больше {{min}} символов",
+        "invalidEmail": "Неверный email",
+        "match": "Пароли должны совпадать"
+      },
+      "channels": {
+        "title": "Топ 50 каналов",
+        "empty": "Каналы не найдены",
+        "videos": "Видео"
+      },
+      "videos": {
+        "title": "Топ 50 видео",
+        "empty": "Видео не найдены"
+      },
+      "analytics": {
+        "error": "Ошибка загрузки данных"
+      },
+      "notFound": {
+        "subtitle": "Упс! Мы не смогли найти эту страницу.",
+        "body": "Похоже, страница, на которую вы пытаетесь попасть, не существует. Возможно, стоит проверить URL или вернуться на домашнюю страницу.",
+        "home": "Домой"
+      },
+      "shared": {
+        "search": "Найти...",
+        "name": "Название",
+        "subscribers": "Подписчики",
+        "views": "Просмотры",
+        "hidden subscriber": "Cкрытый подписчик",
+        "videos": "Видео",
+        "likes": "Подписчики",
+        "comments": "Комментарии",
+        "favorites": "Избранное",
+        "revenue": "Предполагаемый доход",
+        "lowRevenue": "Минимальная оценка дохода",
+        "highRevenue": "Максимальная оценка дохода",
+        "errorLoading": "Ошибка загрузки данных",
+        "reload": "Перезагрузить",
+        "from": "От",
+        "to": "До",
+        "apply": "Применить",
+        "clear": "Очистить",
+        "clearAll": "Очистить все фильтры",
+        "loading": "Загрузка",
+        "of": "из",
+        "perpage": "Строк на странице"
+      },
+      "sidebar": {
+        "title": "YouTube Аналитика",
+        "menu": "Меню",
+        "channels": "Каналы",
+        "videos": "Видео"
+      }
+    }
+  },
+  "fr": {
+    "translation": {
+      "login": {
+        "fromTitle": "Connexion",
+        "fromSubtitle": "Veuillez entrer vos identifiants",
+        "plhPassword": "Mot de passe",
+        "plhUsername": "Nom d'utilisateur",
+        "remember": "Se souvenir de moi",
+        "haveAcc": "Pas encore de compte ?",
+        "linkSignup": "S'inscrire",
+        "error": "Identifiants incorrects",
+        "title": "Bienvenue sur",
+        "subtitle": "YouTube Analytics",
+        "body": "Connectez-vous à votre compte pour continuer"
+      },
+      "singup": {
+        "fromTitle": "Inscription",
+        "fromSubtitle": "Quelques détails pour commencer !",
+        "plhPassword": "Mot de passe",
+        "plhConfirmPassword": "Confirmer le mot de passe",
+        "plhUsername": "Nom d'utilisateur",
+        "plhEmail": "Email",
+        "haveAcc": "Déjà inscrit ?",
+        "linkSignup": "Connexion",
+        "error": "Erreur d'inscription",
+        "title": "Déroulez le tapis !",
+        "body": "Créez votre compte pour continuer"
+      },
+      "validation": {
+        "required": "Champ requis",
+        "min": "Doit contenir au moins {{min}} caractères",
+        "invalidEmail": "Email invalide",
+        "match": "Les mots de passe doivent correspondre"
+      },
+      "channels": {
+        "title": "Top 50 des chaînes",
+        "empty": "Aucune chaîne trouvée"
+      },
+      "videos": {
+        "title": "Top 50 des vidéos",
+        "empty": "Aucune vidéo trouvée"
+      },
+      "notFound": {
+        "subtitle": "Oups ! Nous n’avons pas trouvé cette page.",
+        "body": "Il semble que la page que vous essayez d’atteindre n’existe pas. Vérifiez l’URL ou retournez à l’accueil.",
+        "home": "Accueil"
+      },
+      "shared": {
+        "search": "Rechercher...",
+        "name": "Nom",
+        "subscribers": "Abonnés",
+        "views": "Vues",
+        "hidden subscriber": "Abonnés masqués",
+        "videos": "Vidéos",
+        "likes": "Likes",
+        "comments": "Commentaires",
+        "favorites": "Vidéos",
+        "revenue": "Revenus estimés",
+        "lowRevenue": "Revenus faibles",
+        "highRevenue": "Revenus élevés",
+        "errorLoading": "Erreur lors du chargement des données",
+        "reload": "Recharger",
+        "from": "De",
+        "to": "À",
+        "apply": "Appliquer",
+        "clear": "Effacer",
+        "clearAll": "Effacer tous les filtres",
+        "loading": "Chargement",
+        "of": "de",
+        "perpage": "Lignes par page"
+      },
+      "sidebar": {
+        "title": "YouTube Analytics",
+        "menu": "Menu",
+        "channels": "Chaînes",
+        "videos": "Vidéos"
+      }
+    }
+  }
+}

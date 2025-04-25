@@ -3,6 +3,7 @@ import {
   Dispatch,
   ReactNode,
   SetStateAction,
+  useContext,
   useEffect,
   useState,
 } from 'react';
@@ -21,9 +22,11 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
 
   useEffect(() => {
     if (mode === 'dark') {
+      document.documentElement.classList.remove('light');
       document.documentElement.classList.add('dark');
       localStorage.setItem('theme', 'dark');
     } else {
+      document.documentElement.classList.remove('dark');
       document.documentElement.classList.add('light');
       localStorage.setItem('theme', 'light');
     }
@@ -34,4 +37,12 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
       {children}
     </ThemeContext.Provider>
   );
+};
+
+export const useThemeContext = () => {
+  const context = useContext(ThemeContext);
+  if (!context) {
+    throw new Error('useThemeContext need use into ThemeProvider');
+  }
+  return context;
 };

@@ -8,7 +8,7 @@ export const Container = tw.div`
 
 export const Form = tw.form`
   flex flex-col gap-1 items-center
-  max-w-sm mx-auto p-2 py-6 sm:py-10 rounded
+  max-w-sm mx-auto p-2 py-2 sm:py-10 rounded
 `;
 
 export const ErrorText = tw.p`

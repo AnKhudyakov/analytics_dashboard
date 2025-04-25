@@ -1,24 +1,22 @@
-import { useGetChannelStatsQuery } from 'entities/channel';
 import { countPercent, formatMetric } from 'pages/ChannelAnalytics/lib/helpers';
 import { FC } from 'react';
-import { useParams } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { Card } from 'shared/ui/components/Card';
 import { Chart } from 'shared/ui/components/Chart';
 import { CustomBarChart } from 'shared/ui/components/CustomBarChart';
-import { Error } from 'shared/ui/components/Error';
-import { Loader } from 'shared/ui/components/Loader';
 import { MetricInfo } from 'shared/ui/components/MetricInfo';
 import { ChannelAnalyticsProps } from './ChannelAnalytics.def';
 import { Container, Divider, FlexContainer } from './ChannelAnalytics.styles';
 
-export const ChannelAnalytics: FC<ChannelAnalyticsProps> = ({analytics}) => {
+export const ChannelAnalytics: FC<ChannelAnalyticsProps> = ({ analytics }) => {
+  const { t } = useTranslation();
 
   return (
     <>
-      <Card className='sm:flex '>
+      <Card className="sm:flex ">
         <Container>
           <MetricInfo
-            title="Videos"
+            title={t('shared.videos')}
             metric={formatMetric(analytics, 'videoCount')}
             percent={countPercent(analytics, 'videoCount').value}
             isPositive={countPercent(analytics, 'videoCount').isPositive}
@@ -34,13 +32,13 @@ export const ChannelAnalytics: FC<ChannelAnalyticsProps> = ({analytics}) => {
         <Container>
           <FlexContainer>
             <MetricInfo
-              title="Subscribers"
+              title={t('shared.subscribers')}
               metric={formatMetric(analytics, 'subscriberCount')}
               percent={countPercent(analytics, 'subscriberCount').value}
               isPositive={countPercent(analytics, 'subscriberCount').isPositive}
             />
             <MetricInfo
-              title="Views"
+              title={t('shared.views')}
               metric={formatMetric(analytics, 'viewCount')}
               percent={countPercent(analytics, 'viewCount').value}
               isPositive={countPercent(analytics, 'viewCount').isPositive}
@@ -53,8 +51,8 @@ export const ChannelAnalytics: FC<ChannelAnalyticsProps> = ({analytics}) => {
               { field: 'viewCount', color: '#36C1F5' },
             ]}
             legendLabels={{
-              subscriberCount: 'Subscribers',
-              viewCount: 'Views',
+              subscriberCount: t('shared.subscribers'),
+              viewCount: t('shared.views'),
             }}
             biaxial
           />
@@ -62,7 +60,7 @@ export const ChannelAnalytics: FC<ChannelAnalyticsProps> = ({analytics}) => {
       </Card>
       <Card>
         <MetricInfo
-          title="Estimated Revenue"
+          title={t('shared.revenue')}
           metric={formatMetric(analytics, 'estimatedRevenueUsd')}
           percent={countPercent(analytics, 'estimatedRevenueUsd').value}
           isPositive={countPercent(analytics, 'estimatedRevenueUsd').isPositive}
@@ -75,9 +73,9 @@ export const ChannelAnalytics: FC<ChannelAnalyticsProps> = ({analytics}) => {
             { field: 'estimatedHighRevenueUsd', color: '#05C168' },
           ]}
           legendLabels={{
-            estimatedRevenueUsd: 'Revenue',
-            estimatedLowRevenueUsd: 'Low Revenue',
-            estimatedHighRevenueUsd: 'High Revenue',
+            estimatedRevenueUsd: t('shared.revenue'),
+            estimatedLowRevenueUsd: t('shared.lowRevenue'),
+            estimatedHighRevenueUsd: t('shared.highRevenue'),
           }}
         />
       </Card>

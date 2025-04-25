@@ -30,19 +30,20 @@ export const List: FC<ListProps> = ({
             emptyText={emptyText}
             viewPath={viewPath}
             onFilter={props.onFilter}
+            hasFilters={!!Object.keys(props.filters).length}
           />
         </TableBody>
       </Table>
       {/* Mobile */}
-        <MobileList
-          isLoading={isLoading}
-          error={error}
-          onError={onError}
-          data={data}
-          emptyText={emptyText}
-          viewPath={viewPath}
-          {...props}
-        />
+      <MobileList
+        isLoading={isLoading}
+        error={error}
+        onError={onError}
+        data={data}
+        emptyText={emptyText}
+        viewPath={viewPath}
+        {...props}
+      />
     </TableContainer>
   );
 };

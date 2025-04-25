@@ -5,6 +5,6 @@ export const Wrapper = tw.div`
 `;
 
 export const Container = tw.div`
-bg-neutral-800 h-screen text-base-font w-full sm:max-w-6xl
+bg-neutral-800 h-screen text-base-font w-full sm:max-w-7xl
   flex flex-col sm:flex-row justify-center items-center
 `;
