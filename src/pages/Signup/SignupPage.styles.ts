@@ -16,3 +16,11 @@ export const LoadingText = tw.p`
 export const ChannelsContent = tw.div`
 h-[calc(100vh-190px)]
 `;
+
+export const WrapperForm = tw.div`
+  h-full w-full sm:min-w-90 sm:max-w-120
+  border-t sm:border-l sm:border-r border-secondary-dark
+  shadow-msidebar sm:shadow-sidebar
+  px-4 lg:p-6
+  flex flex-col items-center justify-start sm:justify-between gap-1
+`;

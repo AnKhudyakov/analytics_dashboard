@@ -11,7 +11,7 @@ import { Input } from 'shared/ui/components/Input';
 import { Typography } from 'shared/ui/components/Typography';
 import { Icons } from 'shared/ui/icons';
 import { validationSchema } from '../lib/helpers';
-import { Container, Empty, ErrorText, Form, Link } from './LoginForm.styles';
+import { Empty, ErrorText, Form, Link } from './LoginForm.styles';
 
 export const LoginForm = () => {
   const [login, { isLoading, error }] = useLoginMutation();
@@ -51,64 +51,59 @@ export const LoginForm = () => {
   };
 
   return (
-    <Container>
-      <Card className="max-w-100">
-        <Form onSubmit={handleSubmit(onSubmit)}>
-          <Typography variant="subtitle" className="w-full">
-            {t('login.fromTitle')}
-          </Typography>
-          <Typography
-            variant="body"
-            className="w-full text-secondary-font mb-2"
-          >
-            {t('login.fromSubtitle')}
-          </Typography>
-          <Input
-            type="text"
-            placeholder={t('login.plhUsername')}
-            {...register('username')}
-          />
-          {errors.username ? (
-            <ErrorText>{errors.username.message}</ErrorText>
+    <Card className="max-w-100">
+      <Form onSubmit={handleSubmit(onSubmit)}>
+        <Typography variant="subtitle" className="w-full">
+          {t('login.fromTitle')}
+        </Typography>
+        <Typography variant="body" className="w-full text-secondary-font mb-2">
+          {t('login.fromSubtitle')}
+        </Typography>
+        <Input
+          type="text"
+          placeholder={t('login.plhUsername')}
+          {...register('username')}
+        />
+        {errors.username ? (
+          <ErrorText>{errors.username.message}</ErrorText>
+        ) : (
+          <Empty />
+        )}
+        <Input
+          type={showPassword ? 'text' : 'password'}
+          placeholder={t('login.plhPassword')}
+          endIcon={
+            showPassword ? <Icons.hidePassword /> : <Icons.showPassword />
+          }
+          onEndIconClick={() => setShowPassword((prev) => !prev)}
+          {...register('password')}
+        />
+        {errors.password ? (
+          <ErrorText>{errors.password.message}</ErrorText>
+        ) : (
+          <Empty />
+        )}
+        <Input
+          type="checkbox"
+          placeholder={t('login.remember')}
+          checked={watch('remember')}
+          {...register('remember')}
+        />
+        {error ? <ErrorText>{t('login.error')}</ErrorText> : <Empty />}
+        <Button type="submit" disabled={isLoading}>
+          {isLoading ? (
+            <ButtonLoader width={20} height={20} />
           ) : (
-            <Empty />
+            t('login.fromTitle')
           )}
-          <Input
-            type={showPassword ? 'text' : 'password'}
-            placeholder={t('login.plhPassword')}
-            endIcon={
-              showPassword ? <Icons.hidePassword /> : <Icons.showPassword />
-            }
-            onEndIconClick={() => setShowPassword((prev) => !prev)}
-            {...register('password')}
-          />
-          {errors.password ? (
-            <ErrorText>{errors.password.message}</ErrorText>
-          ) : (
-            <Empty />
-          )}
-          <Input
-            type="checkbox"
-            placeholder={t('login.remember')}
-            checked={watch('remember')}
-            {...register('remember')}
-          />
-          {error ? <ErrorText>{t('login.error')}</ErrorText> : <Empty />}
-          <Button type="submit" disabled={isLoading}>
-            {isLoading ? (
-              <ButtonLoader width={20} height={20} />
-            ) : (
-              t('login.fromTitle')
-            )}
-          </Button>
-          <div className="flex items-end gap-1">
-            <Typography variant="body" className="text-secondary-font">
-              {t('login.haveAcc')}
-            </Typography>
-            <Link to={'/signup'}>{t('login.linkSignup')}</Link>
-          </div>
-        </Form>
-      </Card>
-    </Container>
+        </Button>
+        <div className="flex items-end gap-1">
+          <Typography variant="body" className="text-secondary-font">
+            {t('login.haveAcc')}
+          </Typography>
+          <Link to={'/signup'}>{t('login.linkSignup')}</Link>
+        </div>
+      </Form>
+    </Card>
   );
 };

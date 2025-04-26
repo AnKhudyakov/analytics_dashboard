@@ -20,7 +20,7 @@ export const ChannelAnalyticsPage = () => {
   });
   const { t } = useTranslation();
 
-  if (!isFetching) return <ChannelAnalyticsSkeleton />;
+  if (isFetching) return <ChannelAnalyticsSkeleton />;
 
   return (
     <Container>
