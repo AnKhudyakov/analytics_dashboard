@@ -8,7 +8,7 @@ import {
   XAxis,
   YAxis,
 } from 'recharts';
-import { formatAxis, transformField } from 'shared/lib/helpers';
+import { convertBigNumbers, transformField } from 'shared/lib/helpers';
 import { CustomDateTick } from 'shared/ui/components/CustomDateTick';
 import { CustomBarChartProps } from './CustomBarChart.def';
 
@@ -16,6 +16,7 @@ export const CustomBarChart: FC<CustomBarChartProps> = ({
   data,
   dataKeys,
   legendLabels,
+  Yscale = 'log'
 }) => {
   const [opacity, setOpacity] = useState(transformField(dataKeys));
 
@@ -44,10 +45,10 @@ export const CustomBarChart: FC<CustomBarChartProps> = ({
           axisLine={false}
           tickLine={false}
           tick={{ fill: '#AAB7CF', fontSize: 12 }}
-          scale="log"
+          scale={Yscale}
           domain={[1, 'auto']}
           allowDataOverflow
-          tickFormatter={(value) => formatAxis(value)}
+          tickFormatter={(value) => convertBigNumbers(value)}
         />
         {dataKeys.map((dataKey, index) => (
           <Bar

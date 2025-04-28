@@ -43,7 +43,7 @@ export const useChannelsData = () => {
     }
   );
 
-  const filteredData = search ? searchData : data;
+  const filteredData = debouncedSearch ? searchData : data;
 
   return {
     statsData: filteredData,

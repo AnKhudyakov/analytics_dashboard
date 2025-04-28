@@ -1,9 +1,10 @@
 import { AppLayout } from 'app/providers/layout';
-import { ChannelAnalyticsPage } from 'pages/ChannelAnalytics/ChannelAnalyticsPage';
+import { ChannelAnalyticsPage } from 'pages/ChannelAnalytics';
 import { ChannelsPage } from 'pages/Channels';
 import { LoginPage } from 'pages/Login';
 import { NotFoundPage } from 'pages/NotFound';
 import { SignupPage } from 'pages/Signup';
+import { VideoAnalyticsPage } from 'pages/VideoAnalytics';
 import { VideosPage } from 'pages/Videos';
 import {
   createHashRouter,
@@ -35,6 +36,10 @@ const routes = createRoutesFromElements(
       <Route
         path={routerPaths.CHANNEL_PATH}
         element={<ChannelAnalyticsPage />}
+      />
+       <Route
+        path={routerPaths.VIDEO_PATH}
+        element={<VideoAnalyticsPage />}
       />
       <Route path={routerPaths.VIDEOS_PATH} element={<VideosPage />} />
     </Route>

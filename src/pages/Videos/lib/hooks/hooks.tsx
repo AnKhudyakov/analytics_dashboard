@@ -53,7 +53,7 @@ export const useVideosData = () => {
       }
     );
 
-  const filteredData = searchData ? searchData : data;
+  const filteredData = debouncedSearch ? searchData : data;
 
   return {
     filteredData,

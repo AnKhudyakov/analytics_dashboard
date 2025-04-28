@@ -34,11 +34,11 @@
         "match": "Passwords must match"
       },
       "channels": {
-        "title": "Top 50 сhannels",
+        "title": "Trending Channels",
         "empty": "No channels found"
       },
       "videos": {
-        "title": "Top 50 videos",
+        "title": "Trending Videos",
         "empty": "No videos found"
       },
       "notFound": {
@@ -55,10 +55,13 @@
         "videos": "Videos",
         "likes": "Likes",
         "comments": "Comments",
-        "favorites": "Videos",
+        "favorites": "Favorites",
         "revenue": "Estimated Revenue",
         "lowRevenue": "Low Revenue",
         "highRevenue": "High Revenue",
+        "rollingRevenue": "Текущий доход",
+        "rollingLowRevenue": "Минимальный текущий доход",
+        "rollingHighRevenue": "Максимальный текущий доход",
         "errorLoading": "Error loading data",
         "reload": "Reload",
         "from": "From",
@@ -90,7 +93,7 @@
         "linkSignup": "Регистрация",
         "error": "Неверные данные",
         "title": "Добро пожаловать",
-        "subtitle": "YouTube Аналитика",
+        "subtitle": "YouTube Analytics",
         "body": "Войдите в свою учетную запись, чтобы продолжить"
       },
       "singup": {
@@ -113,12 +116,12 @@
         "match": "Пароли должны совпадать"
       },
       "channels": {
-        "title": "Топ 50 каналов",
+        "title": "Популярные каналы",
         "empty": "Каналы не найдены",
         "videos": "Видео"
       },
       "videos": {
-        "title": "Топ 50 видео",
+        "title": "Популярные видео",
         "empty": "Видео не найдены"
       },
       "analytics": {
@@ -142,6 +145,9 @@
         "revenue": "Предполагаемый доход",
         "lowRevenue": "Минимальная оценка дохода",
         "highRevenue": "Максимальная оценка дохода",
+        "rollingRevenue": "Текущий доход",
+        "rollingLowRevenue": "Минимальный текущий доход",
+        "rollingHighRevenue": "Максимальный текущий доход",
         "errorLoading": "Ошибка загрузки данных",
         "reload": "Перезагрузить",
         "from": "От",
@@ -154,7 +160,7 @@
         "perpage": "Строк на странице"
       },
       "sidebar": {
-        "title": "YouTube Аналитика",
+        "title": "YouTube Analytics",
         "menu": "Меню",
         "channels": "Каналы",
         "videos": "Видео"
@@ -217,7 +223,7 @@
         "videos": "Vidéos",
         "likes": "Likes",
         "comments": "Commentaires",
-        "favorites": "Vidéos",
+        "favorites": "Favoris",
         "revenue": "Revenus estimés",
         "lowRevenue": "Revenus faibles",
         "highRevenue": "Revenus élevés",

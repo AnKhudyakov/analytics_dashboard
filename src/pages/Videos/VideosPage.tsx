@@ -1,11 +1,13 @@
 import { ColumnVideo } from 'entities/video/model/types';
+import { useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
+import { useSearchParams } from 'react-router-dom';
 import { List } from 'shared/ui/components/List';
 import { PageHeader } from 'shared/ui/components/PageHeader';
 import { Pagination } from 'shared/ui/components/Pagination';
 import { ChannelsContent, Container } from './VideosPage.styles';
 import { formatVideos } from './lib/helpers';
 import { useVideosData } from './lib/hooks';
-import { useTranslation } from 'react-i18next';
 
 export const VideosPage = () => {
   const {
@@ -25,6 +27,16 @@ export const VideosPage = () => {
     setFilters,
     refetch,
   } = useVideosData();
+
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  useEffect(() => {
+    const searchFromParams = searchParams.get('search') || '';
+    if (searchFromParams) {
+      setSearch(searchFromParams);
+      setSearchParams("")
+    }
+  }, []);
 
   const { t } = useTranslation();
 

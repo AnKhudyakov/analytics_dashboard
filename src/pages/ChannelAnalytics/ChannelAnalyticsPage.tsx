@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { useParams } from 'react-router-dom';
 import { Card } from 'shared/ui/components/Card';
 import { Error } from 'shared/ui/components/Error';
-import { ChannelAnalyticsSkeleton } from './ChannelAnalytics.skeleton';
+import { ChannelAnalyticsSkeleton } from './ChannelAnalyticsPage.skeleton';
 import { Container } from './ChannelAnalyticsPage.styles';
 import { ChannelAnalytics } from './ui/ChannelAnalytics';
 import { ChannelCard } from './ui/ChannelCard';
