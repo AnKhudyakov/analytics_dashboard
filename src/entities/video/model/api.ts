@@ -1,6 +1,6 @@
 import { youtubeApi } from 'shared/api';
 import { encodeFilters } from 'shared/lib/helpers';
-import { VideosDTO, VideosResponse, VideosSearchDTO } from './types';
+import { Video, VideosDTO, VideosResponse, VideosSearchDTO } from './types';
 
 export const videoApi = youtubeApi.injectEndpoints({
   endpoints: (builder) => ({
@@ -27,6 +27,15 @@ export const videoApi = youtubeApi.injectEndpoints({
           sortBy,
           sortOrder,
           filters: encodeFilters(filters),
+        },
+      }),
+    }),
+
+    getVideoAnalytics: builder.query<Video, string | undefined>({
+      query: (channelId) => ({
+        url: `/videos/analytics`,
+        params: {
+          id: channelId,
         },
       }),
     }),

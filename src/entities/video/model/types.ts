@@ -11,6 +11,21 @@ export interface Video {
     commentCount: number;
     likeCount: number;
   };
+  stats: VideoStats[];
+}
+
+export interface VideoStats {
+  id: string;
+  insertedAt: string;
+  viewCount: number;
+  viewCountDelta: number;
+  date: string;
+  estimatedLowRevenueUsd: number;
+  estimatedHighRevenueUsd: number;
+  estimatedRevenueUsd: number;
+  rollingRevenue: number;
+  rollingLowRevenue: number;
+  rollingHighRevenue: number;
 }
 
 export interface VideosResponse {

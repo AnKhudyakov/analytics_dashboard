@@ -8,7 +8,7 @@ import {
   XAxis,
   YAxis,
 } from 'recharts';
-import { formatAxis, transformField } from 'shared/lib/helpers';
+import { convertBigNumbers, transformField } from 'shared/lib/helpers';
 import { CustomDateTick } from 'shared/ui/components/CustomDateTick';
 import { ChartProps } from './Chart.def';
 
@@ -17,7 +17,7 @@ export const Chart: FC<ChartProps> = ({
   dataKeys,
   legendLabels,
   biaxial,
-  log,
+  Yscale = 'auto',
 }) => {
   const [opacity, setOpacity] = useState(transformField(dataKeys));
 
@@ -73,13 +73,13 @@ export const Chart: FC<ChartProps> = ({
         <YAxis
           stroke="#AAA"
           yAxisId="left"
-          scale={log ? 'log' : 'auto'}
+          scale={Yscale}
           allowDataOverflow
           domain={['auto', 'auto']}
           axisLine={false}
           tickLine={false}
           tick={{ fill: '#AAB7CF', fontSize: 12 }}
-          tickFormatter={(value) => formatAxis(value)}
+          tickFormatter={(value) => convertBigNumbers(value)}
         />
 
         {biaxial && (
@@ -90,10 +90,10 @@ export const Chart: FC<ChartProps> = ({
             axisLine={false}
             tickLine={false}
             tick={{ fill: '#AAB7CF', fontSize: 12 }}
-            tickFormatter={(value) => formatAxis(value)}
+            tickFormatter={(value) => convertBigNumbers(value)}
           />
         )}
-        {biaxial && (
+        {Object.keys(legendLabels).length > 1 && (
           <Legend
             formatter={(value) => legendLabels[value]}
             onMouseEnter={handleMouseEnter}

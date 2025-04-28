@@ -6,7 +6,7 @@ export const Container = tw.aside`
 `;
 
 export const MobileHeader = tw.div`
-  relative bg-neutral-800 flex lg:hidden p-4 sm:p-6 gap-6 justify-between border-b border-secondary-dark
+  fixed top-0 left-0 z-999 w-full bg-neutral-800 flex lg:hidden p-4 sm:p-6 gap-6 justify-between border-b border-secondary-dark
   text-base-font shadow-msidebar
 `;
 

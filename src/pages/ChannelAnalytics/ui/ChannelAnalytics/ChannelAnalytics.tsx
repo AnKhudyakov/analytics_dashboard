@@ -1,6 +1,6 @@
-import { countPercent, formatMetric } from 'pages/ChannelAnalytics/lib/helpers';
 import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
+import { countPercent, formatMetric } from 'shared/lib/helpers';
 import { Card } from 'shared/ui/components/Card';
 import { Chart } from 'shared/ui/components/Chart';
 import { CustomBarChart } from 'shared/ui/components/CustomBarChart';
@@ -25,7 +25,7 @@ export const ChannelAnalytics: FC<ChannelAnalyticsProps> = ({ analytics }) => {
             data={analytics.filter((el) => el.dayOfWeek === 'MONDAY')}
             dataKeys={[{ field: 'videoCount', color: '#36C1F5' }]}
             legendLabels={{ videoCount: 'Videos count' }}
-            log
+            Yscale = "auto"
           />
         </Container>
         <Divider />

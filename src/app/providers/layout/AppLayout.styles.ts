@@ -24,5 +24,5 @@ export const LayoutBody = tw.div`
 `;
 
 export const LayoutMain = tw.main`
-  w-full h-full lg:flex font-sans font-normal lg:pl-80 bg-primary-dark
+  w-full h-full lg:flex font-sans font-normal lg:pl-80 bg-primary-dark pt-16 sm:pt-20 lg:pt-0
 `;
