@@ -69,6 +69,7 @@ export const Chart: FC<ChartProps> = ({
           axisLine={false}
           tickLine={false}
           tick={<CustomDateTick />}
+          interval="preserveEnd"
         />
         <YAxis
           stroke="#AAA"
@@ -81,18 +82,15 @@ export const Chart: FC<ChartProps> = ({
           tick={{ fill: '#AAB7CF', fontSize: 12 }}
           tickFormatter={(value) => convertBigNumbers(value)}
         />
-
-        {biaxial && (
-          <YAxis
-            stroke="#AAA"
-            yAxisId="right"
-            orientation="right"
-            axisLine={false}
-            tickLine={false}
-            tick={{ fill: '#AAB7CF', fontSize: 12 }}
-            tickFormatter={(value) => convertBigNumbers(value)}
-          />
-        )}
+        <YAxis
+          stroke="#AAA"
+          yAxisId="right"
+          orientation="right"
+          axisLine={false}
+          tickLine={false}
+          tick={{ fill: '#AAB7CF', fontSize: 12 }}
+          tickFormatter={(value) => convertBigNumbers(value)}
+        />
         {Object.keys(legendLabels).length > 1 && (
           <Legend
             formatter={(value) => legendLabels[value]}
