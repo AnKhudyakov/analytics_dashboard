@@ -16,7 +16,7 @@ export const CustomBarChart: FC<CustomBarChartProps> = ({
   data,
   dataKeys,
   legendLabels,
-  Yscale = 'log'
+  Yscale = 'log',
 }) => {
   const [opacity, setOpacity] = useState(transformField(dataKeys));
 
@@ -39,6 +39,7 @@ export const CustomBarChart: FC<CustomBarChartProps> = ({
           axisLine={false}
           tickLine={false}
           tick={<CustomDateTick />}
+          interval="preserveEnd"
         />
         <YAxis
           stroke="#AAA"
@@ -48,6 +49,15 @@ export const CustomBarChart: FC<CustomBarChartProps> = ({
           scale={Yscale}
           domain={[1, 'auto']}
           allowDataOverflow
+          tickFormatter={(value) => convertBigNumbers(value)}
+        />
+        <YAxis
+          stroke="#AAA"
+          yAxisId="right"
+          orientation="right"
+          axisLine={false}
+          tickLine={false}
+          tick={{ fill: '#AAB7CF', fontSize: 12 }}
           tickFormatter={(value) => convertBigNumbers(value)}
         />
         {dataKeys.map((dataKey, index) => (

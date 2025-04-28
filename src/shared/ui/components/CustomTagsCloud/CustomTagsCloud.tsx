@@ -10,13 +10,16 @@ interface CustomTagsCloudProps {
 
 export const CustomTagsCloud: FC<CustomTagsCloudProps> = ({ tags }) => {
   const navigate = useNavigate();
+
   return (
     <Card>
       <StyledTagCloud
-        minSize={16}
-        maxSize={20}
+        minSize={12}
+        maxSize={16}
         tags={formatTags(tags)}
-        onClick={(tag) => navigate(`/videos?search=${encodeURIComponent(tag.value)}`)}
+        onClick={(tag) =>
+          navigate(`/videos?search=${encodeURIComponent(tag.value)}`)
+        }
         renderer={(tag, size) => {
           const color = colors[Math.floor(Math.random() * colors.length)];
           return (

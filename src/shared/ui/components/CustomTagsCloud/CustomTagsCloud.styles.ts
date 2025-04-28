@@ -2,7 +2,7 @@ import { TagCloud } from 'react-tagcloud';
 import tw from 'tailwind-styled-components';
 
 export const StyledTagCloud = tw(TagCloud)`
-  flex flex-wrap gap-2 justify-center
+  flex flex-wrap gap-2 justify-center g-1 sm:g-2
 `;
 
 export const colors = [
@@ -17,5 +17,5 @@ export const colors = [
 ];
 
 export const TagItem = tw.span`
-m-2 cursor-pointer transition-transform duration-300 ease-in-out hover:scale-105 hover:opacity-80
+  sm:m-2 cursor-pointer transition-transform duration-300 ease-in-out hover:scale-105 hover:opacity-80
 `
