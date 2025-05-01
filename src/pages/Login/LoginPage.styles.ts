@@ -10,9 +10,9 @@ bg-neutral-800 h-screen text-base-font w-full sm:max-w-7xl
 `;
 
 export const WrapperForm = tw.div`
-  h-full w-full sm:min-w-90 sm:max-w-120
+  h-full w-full sm:min-w-90 sm:max-w-120 sm:relative
   border-t sm:border-l sm:border-r border-secondary-dark
   shadow-msidebar sm:shadow-sidebar
-  px-4 lg:p-6
-  flex flex-col items-center justify-start sm:justify-between gap-1
+  p-3 md:p-6
+  flex flex-col items-center justify-start sm:justify-center gap-1
 `;

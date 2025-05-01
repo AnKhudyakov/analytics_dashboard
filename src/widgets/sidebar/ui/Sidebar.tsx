@@ -43,7 +43,6 @@ export const Sidebar: FC<SidebarProps> = () => {
             />
           </Nav>
         </Wrapper>
-        <Settings />
       </SidebarContainer>
     </>
   );

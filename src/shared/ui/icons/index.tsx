@@ -5,14 +5,18 @@ import {
   ArrowRightIcon,
   CheckedIcon,
   CloseIcon,
+  EnIcon,
   ExitIcon,
   FilterIcon,
+  FrIcon,
   HidePasswordIcon,
   HomeIcon,
   MenuIcon,
   MoonIcon,
   NoIcon,
+  RuIcon,
   SearchIcon,
+  SettingsIcon,
   ShowPasswordIcon,
   SortASCIcon,
   SortDESCIcon,
@@ -46,4 +50,14 @@ export const Icons = {
   hidePassword: HidePasswordIcon,
   sun: SunIcon,
   moon: MoonIcon,
+  settings: SettingsIcon,
+  en: EnIcon,
+  ru: RuIcon,
+  fr: FrIcon,
 };
+
+export const LangIconMap = {
+  en: <Icons.en />,
+  ru: <Icons.ru />,
+  fr: <Icons.fr />,
+} as const;

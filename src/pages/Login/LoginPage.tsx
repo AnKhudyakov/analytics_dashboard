@@ -16,9 +16,8 @@ export const LoginPage = () => {
           body={t('login.body')}
         />
         <WrapperForm>
-          <div></div>
-          <LoginForm />
           <Settings />
+          <LoginForm />
         </WrapperForm>
       </Container>
     </Wrapper>

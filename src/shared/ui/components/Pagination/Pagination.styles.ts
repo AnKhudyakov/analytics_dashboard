@@ -14,7 +14,9 @@ export const PaginationControls = tw.div`
 `;
 
 export const RowsPerPageSelect = tw.select`
-  text-xs sm:text-sm border rounded-md p-2 border-primary-dark bg-secondary-dark focus:outline-none focus:ring-0 focus:border-secondary-1
+  text-xs sm:text-sm border rounded-md p-1
+  border-primary-dark bg-secondary-dark
+  focus:outline-none focus:ring-0 focus:border-secondary-1
 `;
 
 export const ArrowButton = tw(StyledButtonIcon)`

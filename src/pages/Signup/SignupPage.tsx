@@ -12,9 +12,8 @@ export const SignupPage = () => {
       <Container>
         <WelcomeTitle title={t('singup.title')} body={t('singup.body')} />
         <WrapperForm>
-          <div></div>
-          <SingupForm />
           <Settings />
+          <SingupForm />
         </WrapperForm>
       </Container>
     </Wrapper>
