@@ -86,10 +86,10 @@ export const MobileListHeader: FC<MobileListHeaderProps> = ({
       </Header>
       <SwipeControls>
         <ArrowButton onClick={handlePrev}>
-          <Icons.arrowLeft width={15} height={15} />
+          <Icons.arrowLeft />
         </ArrowButton>
         <ArrowButton onClick={handleNext}>
-          <Icons.arrowRight width={15} height={15} />
+          <Icons.arrowRight />
         </ArrowButton>
       </SwipeControls>
     </>

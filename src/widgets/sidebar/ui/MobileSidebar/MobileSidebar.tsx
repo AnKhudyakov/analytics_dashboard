@@ -54,11 +54,9 @@ export const MobileSidebar = () => {
       {isOpen && <Overlay onClick={handleMenu.bind(this, false)} />}
 
       <Container className={isOpen ? 'translate-x-0' : '-translate-x-full'}>
+        <Settings />
         <HeaderMenu>
           <Typography variant="title">{t('sidebar.menu')}</Typography>
-          <Button icon onClick={handleMenu.bind(this, false)}>
-            <Icons.close />
-          </Button>
         </HeaderMenu>
         <div className="h-full">
           <SidebarItem
@@ -72,7 +70,11 @@ export const MobileSidebar = () => {
             label={t('sidebar.videos')}
           />
         </div>
-        <Settings />
+        <div className="text-right">
+          <Button icon onClick={handleMenu.bind(this, false)}>
+            <Icons.arrowLeft />
+          </Button>
+        </div>
       </Container>
     </>
   );

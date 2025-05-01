@@ -5,51 +5,30 @@ import { useThemeContext } from 'shared/context/ThemeContext';
 import { Button } from 'shared/ui/components/Button';
 import { Card } from 'shared/ui/components/Card';
 import { Popup } from 'shared/ui/components/Popup';
-import { Typography } from 'shared/ui/components/Typography';
-import { Icons } from 'shared/ui/icons';
+import { Icons, LangIconMap } from 'shared/ui/icons';
+import { LanguageItem } from './LanguageItem';
 import { Container, Option, Wrapper } from './Settings.styles';
 
 interface SettingsProps {}
 
 export const Settings: FC<SettingsProps> = () => {
   const { mode, setMode } = useThemeContext();
-  const [open, setOpen] = useState(false);
   const { i18n } = useTranslation();
-  const language =
+
+  const [isOpenLang, setIsOpenLang] = useState(false);
+
+  const selectedLang =
     LANGUAGES.find((l) => l.code === i18n.language) || LANGUAGES[0];
+  const options = LANGUAGES.filter((l) => l.code !== i18n.language);
+  const selectedCode = selectedLang.code as keyof typeof LangIconMap;
 
   const handleChangeLanguage = (code: string) => {
     i18n.changeLanguage(code);
-    setOpen(false);
+    setIsOpenLang(false);
   };
 
   return (
     <Container>
-      <div className="relative w-14">
-        <Button
-          icon
-          className={'hover:opacity-50'}
-          onClick={() => setOpen(!open)}
-        >
-          <Typography variant="subtitle">{language.label}</Typography>
-        </Button>
-        {open && (
-          <Wrapper>
-            <Card className="p-0">
-              <Popup onClose={() => setOpen(false)}>
-                {LANGUAGES.map(({ code, label }) => (
-                  <Option
-                    key={label}
-                    onClick={handleChangeLanguage.bind(this, code)}
-                  >
-                    <Typography variant="subtitle">{label}</Typography>
-                  </Option>
-                ))}
-              </Popup>
-            </Card>
-          </Wrapper>
-        )}
-      </div>
       <Button
         icon
         className={'hover:opacity-50'}
@@ -57,6 +36,32 @@ export const Settings: FC<SettingsProps> = () => {
       >
         {mode !== 'dark' ? <Icons.moon /> : <Icons.sun />}
       </Button>
+      <Button
+        icon
+        className={'hover:opacity-50'}
+        onClick={() => setIsOpenLang(!isOpenLang)}
+      >
+        <LanguageItem code={selectedCode} label={selectedLang.label} />
+      </Button>
+      {isOpenLang && (
+        <Wrapper>
+          <Card className="p-0">
+            <Popup onClose={() => setIsOpenLang(false)}>
+              {options.map(({ code, label }) => (
+                <Option
+                  key={label}
+                  onClick={handleChangeLanguage.bind(this, code)}
+                >
+                  <LanguageItem
+                    code={code as keyof typeof LangIconMap}
+                    label={label}
+                  />
+                </Option>
+              ))}
+            </Popup>
+          </Card>
+        </Wrapper>
+      )}
     </Container>
   );
 };

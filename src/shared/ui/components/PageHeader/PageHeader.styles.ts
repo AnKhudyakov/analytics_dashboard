@@ -5,5 +5,5 @@ export const Header = tw.div`
 `;
 
 export const Container = tw.div`
- sm:max-w-350 w-full flex-1
+ w-full flex-1 sm:max-w-80
 `;

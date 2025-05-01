@@ -51,7 +51,7 @@ export const LoginForm = () => {
   };
 
   return (
-    <Card className="max-w-100">
+    <Card className="max-w-100 sm:max-w-full">
       <Form onSubmit={handleSubmit(onSubmit)}>
         <Typography variant="subtitle" className="w-full">
           {t('login.fromTitle')}

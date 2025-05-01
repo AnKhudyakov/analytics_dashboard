@@ -52,9 +52,7 @@ export const Pagination: FC<PaginationProps> = ({
       </PaginationInfo>
       <PaginationControls>
         <div className="mr-2 sm:mr-4">
-          <Label htmlFor="rows-per-page" >
-            {t('shared.perpage')}
-          </Label>
+          <Label htmlFor="rows-per-page">{t('shared.perpage')}</Label>
           <RowsPerPageSelect
             id="rows-per-page"
             className={hoverEffect}
@@ -72,14 +70,14 @@ export const Pagination: FC<PaginationProps> = ({
             disabled={currentPage === 1}
             className={hoverEffect}
           >
-            <Icons.arrowLeft width={14} height={14} />
+            <Icons.arrowLeft />
           </ArrowButton>
           <ArrowButton
             onClick={handleNextClick}
             disabled={currentPage === Math.ceil(count / rowsPerPage)}
             className={hoverEffect}
           >
-            <Icons.arrowRight width={14} height={14} />
+            <Icons.arrowRight />
           </ArrowButton>
         </div>
       </PaginationControls>
