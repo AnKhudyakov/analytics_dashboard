@@ -9,9 +9,12 @@ import { Icons, LangIconMap } from 'shared/ui/icons';
 import { LanguageItem } from './LanguageItem';
 import { Container, Option, Wrapper } from './Settings.styles';
 
-interface SettingsProps {}
+interface SettingsProps {
+  row?: boolean;
+  position?: 'up' | 'down';
+}
 
-export const Settings: FC<SettingsProps> = () => {
+export const Settings: FC<SettingsProps> = ({ row, position }) => {
   const { mode, setMode } = useThemeContext();
   const { i18n } = useTranslation();
 
@@ -28,7 +31,7 @@ export const Settings: FC<SettingsProps> = () => {
   };
 
   return (
-    <Container>
+    <Container className={row ? 'flex-row' : 'flex-col-reverse'}>
       <Button
         icon
         className={'hover:opacity-50'}
@@ -44,7 +47,7 @@ export const Settings: FC<SettingsProps> = () => {
         <LanguageItem code={selectedCode} label={selectedLang.label} />
       </Button>
       {isOpenLang && (
-        <Wrapper>
+        <Wrapper className={position !== 'up' ? 'bottom-6' : 'top-6'}>
           <Card className="p-0">
             <Popup onClose={() => setIsOpenLang(false)}>
               {options.map(({ code, label }) => (

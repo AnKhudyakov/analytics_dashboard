@@ -4,13 +4,6 @@ export const Layout = tw.div`
 min-h-screen p-0 bg-primary-dark
 `;
 
-// export const Header = tw.header`
-// h-[30px]
-// sm:h-[30px]
-// md:h-[50px]
-// lg:h-[70px]
-// `;
-
 export const LayoutHeader = tw.div`
   flex justify-between align-middle h-full
 `;
@@ -24,9 +17,6 @@ export const LayoutBody = tw.div`
 `;
 
 export const LayoutMain = tw.main`
-  w-full h-full lg:flex font-sans font-normal lg:pl-64 bg-primary-dark pt-16 sm:pt-20 lg:pt-0
-`;
-
-export const SettingsWrapper = tw.div`
-  hidden lg:block
-`;
+  w-full h-full lg:flex font-sans font-normal bg-primary-dark pt-16 sm:pt-20 lg:pt-0
+  transition-all duration-300 ease-in-out
+  `;

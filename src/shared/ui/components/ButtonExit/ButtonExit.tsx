@@ -7,7 +7,7 @@ interface ButtonExitProps extends ButtonHTMLAttributes<HTMLButtonElement> {}
 export const ButtonExit: FC<ButtonExitProps> = (props) => {
   return (
     <Button icon {...props}>
-      <ExitIcon width={30} height={30} />
+      <ExitIcon width={34} height={34} />
     </Button>
   );
 };

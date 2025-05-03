@@ -29,8 +29,8 @@ export const SearchIcon: FC<React.SVGProps<SVGSVGElement>> = ({
 );
 
 export const HomeIcon: FC<React.SVGProps<SVGSVGElement>> = ({
-  width = 20,
-  height = 20,
+  width = 24,
+  height = 24,
   className,
 }) => (
   <svg
@@ -51,8 +51,8 @@ export const HomeIcon: FC<React.SVGProps<SVGSVGElement>> = ({
 );
 
 export const VideosIcon: FC<React.SVGProps<SVGSVGElement>> = ({
-  width = 20,
-  height = 20,
+  width = 24,
+  height = 24,
   className,
 }) => (
   <svg

@@ -2,7 +2,12 @@ import { LoginForm } from 'features/auth/ui/LoginForm';
 import { useTranslation } from 'react-i18next';
 import { WelcomeTitle } from 'shared/ui/components/WelcomeTitle/WelcomeTitle';
 import { Settings } from 'widgets/settings';
-import { Container, Wrapper, WrapperForm } from './LoginPage.styles';
+import {
+  Container,
+  SettingsWrapper,
+  Wrapper,
+  WrapperForm,
+} from './LoginPage.styles';
 
 export const LoginPage = () => {
   const { t } = useTranslation();
@@ -16,8 +21,10 @@ export const LoginPage = () => {
           body={t('login.body')}
         />
         <WrapperForm>
-          <Settings />
           <LoginForm />
+          <SettingsWrapper>
+            <Settings row position="up" />
+          </SettingsWrapper>
         </WrapperForm>
       </Container>
     </Wrapper>
