@@ -24,7 +24,7 @@ export const ChannelAnalytics: FC<ChannelAnalyticsProps> = ({ analytics }) => {
           <Chart
             data={analytics.filter((el) => el.dayOfWeek === 'MONDAY')}
             dataKeys={[{ field: 'videoCount', color: '#36C1F5' }]}
-            legendLabels={{ videoCount: 'Videos count' }}
+            legendLabels={{ videoCount: t('shared.videosCount') }}
             Yscale = "auto"
           />
         </Container>

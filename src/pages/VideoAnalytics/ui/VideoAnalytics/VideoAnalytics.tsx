@@ -74,7 +74,7 @@ export const VideoAnalytics: FC<VideoAnalyticsProps> = ({ analytics }) => {
         <Chart
           data={analytics}
           dataKeys={[{ field: 'viewCount', color: '#36C1F5' }]}
-          legendLabels={{ viewCount: 'View count' }}
+          legendLabels={{ viewCount: t('shared.views') }}
           Yscale="auto"
         />
       </Card>
