@@ -39,7 +39,7 @@ export const VideoAnalyticsPage = () => {
             title={video.snippet.title}
             description={video.snippet.description}
             banner={video.snippet.thumbnails.high.url}
-            customUrl={video.snippet.customUrl}
+            id={video.id}
           />
           <VideoAnalytics analytics={video.stats} />
           {video.snippet.tags && <CustomTagsCloud tags={video.snippet.tags} />}

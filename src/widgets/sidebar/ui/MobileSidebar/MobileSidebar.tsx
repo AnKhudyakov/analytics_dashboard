@@ -14,6 +14,7 @@ import {
   HeaderMenu,
   MobileHeader,
   Overlay,
+  SettingsWrapper,
 } from './MobileSidebar.styles';
 
 export const MobileSidebar = () => {
@@ -54,7 +55,6 @@ export const MobileSidebar = () => {
       {isOpen && <Overlay onClick={handleMenu.bind(this, false)} />}
 
       <Container className={isOpen ? 'translate-x-0' : '-translate-x-full'}>
-        <Settings />
         <HeaderMenu>
           <Typography variant="title">{t('sidebar.menu')}</Typography>
         </HeaderMenu>
@@ -70,11 +70,14 @@ export const MobileSidebar = () => {
             label={t('sidebar.videos')}
           />
         </div>
-        <div className="text-right">
+        <SettingsWrapper>
+          <div className="w-22">
+            <Settings row/>
+          </div>
           <Button icon onClick={handleMenu.bind(this, false)}>
             <Icons.arrowLeft />
           </Button>
-        </div>
+        </SettingsWrapper>
       </Container>
     </>
   );

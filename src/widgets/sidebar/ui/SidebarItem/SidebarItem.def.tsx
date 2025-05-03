@@ -4,4 +4,5 @@ export interface SidebarItemProps {
   icon: ReactNode;
   label: string;
   to: string;
+  collapsed?: boolean
 }

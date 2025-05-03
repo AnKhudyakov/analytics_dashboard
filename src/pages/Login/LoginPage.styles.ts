@@ -10,9 +10,13 @@ bg-neutral-800 h-screen text-base-font w-full sm:max-w-7xl
 `;
 
 export const WrapperForm = tw.div`
-  h-full w-full sm:min-w-90 sm:max-w-120 sm:relative
+  h-full w-full sm:min-w-90 sm:max-w-140 sm:relative
   border-t sm:border-l sm:border-r border-secondary-dark
   shadow-msidebar sm:shadow-sidebar
-  p-3 md:p-6
-  flex flex-col items-center justify-start sm:justify-center gap-1
+  p-3 py-6 md:p-6 lg:p-10
+  flex flex-col items-center justify-start sm:justify-center gap-1 overflow-auto
+`;
+
+export const SettingsWrapper = tw.div`
+   absolute top-4 right-3 md:right-6 lg:right-10 w-22
 `;

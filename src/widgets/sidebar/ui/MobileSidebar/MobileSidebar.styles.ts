@@ -1,8 +1,8 @@
 import tw from 'tailwind-styled-components';
 
 export const Container = tw.aside`
-  fixed top-0 left-0 z-999 w-64 h-full
-  bg-neutral-800 p-4 md:px-6 border-r border-secondary-dark flex flex-col gap-6
+  fixed top-0 left-0 z-999 w-66 h-full
+  bg-neutral-800 p-4 border-r border-secondary-dark flex flex-col gap-4
   transform transition-transform duration-300 ease-in-out lg:hidden
 `;
 
@@ -20,5 +20,9 @@ export const Overlay = tw.div`
 `;
 
 export const HeaderMenu = tw.div`
-  flex justify-between items-center
+  flex justify-start items-center
+`;
+
+export const SettingsWrapper = tw.div`
+   flex justify-between items-center relative
 `;

@@ -1,30 +1,19 @@
-import { FC } from 'react';
+import { FC, useState } from 'react';
 import { Outlet } from 'react-router-dom';
-import { Settings } from 'widgets/settings';
 import { Sidebar } from 'widgets/sidebar';
-import {
-  //Header,
-  Layout,
-  LayoutBody,
-  LayoutMain,
-  SettingsWrapper,
-} from './AppLayout.styles';
+import { Layout, LayoutBody, LayoutMain } from './AppLayout.styles';
+import { useCollapsedContext } from 'shared/context/CollapsedContext';
 
 interface AppLayoutProps {}
 
 export const AppLayout: FC<AppLayoutProps> = () => {
+  const { collapsed } = useCollapsedContext();
   return (
     <Layout>
-      {/* <Header>
-        <LayoutHeader></LayoutHeader>
-      </Header> */}
       <LayoutBody>
-        <LayoutMain>
+        <LayoutMain className={collapsed?"lg:pl-17":"lg:pl-66"}>
           <Sidebar />
           <Outlet />
-          <SettingsWrapper>
-            <Settings />
-          </SettingsWrapper>
         </LayoutMain>
       </LayoutBody>
     </Layout>
