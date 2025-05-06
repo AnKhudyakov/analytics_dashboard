@@ -59,7 +59,7 @@ export const Sidebar: FC<SidebarProps> = () => {
           </Nav>
         </Wrapper>
         <SettingsWrapper className={collapsed ? 'flex-col' : 'flex-row'}>
-          <div className={collapsed ?"":"w-22"}>
+          <div className={collapsed ? '' : 'w-22'}>
             <Settings row={collapsed ? false : true} />
           </div>
           <Button

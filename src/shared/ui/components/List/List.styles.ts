@@ -1,7 +1,7 @@
 import tw from 'tailwind-styled-components';
 
 export const TableContainer = tw.div`
-  h-full bg-secondary-dark rounded-xl shadow-md overflow-x-auto
+  h-full bg-secondary-dark rounded-xl overflow-x-auto
   border border-neutral-400 dark:border-secondary-1
 `;
 

@@ -1,31 +1,35 @@
 @import 'tailwindcss';
 
 @theme {
-  --color-primary-dark: #eff2fc;
+  --color-primary-dark: #fafafa;
   --color-secondary-dark: #ffffff;
-  --color-secondary-1: #343b4f;
+  --color-secondary-1: #c2c2c4;
   --color-secondary-2: #8951ff;
   --color-secondary-3: #21c3fc;
-  --color-secondary-4: #3c87e9;
+  /* --color-secondary-4: #3c87e9; */
+  --color-secondary-4: #f47c26;
+  --color-secondary-5: #ffb86a;
+  --color-neutral-6: #ffd6a8;
   /* --color-neutral-100: #fff; */
   /* --color-neutral-200: #d9e1fa; */
   /* --color-neutral-300: #d1dbf9; */
-  --color-neutral-400: #d9e1fa;
-  --color-neutral-500: #d1dbf9;
-  /* --color-neutral-600: #37446b; */
-  --color-neutral-700: #aeb9e1;
-  --color-neutral-800: #eff2fc;
+  --color-neutral-400: #c2c2c4;
+  --color-neutral-500: #ffedd4;
+  --color-neutral-600: #ffd6a8;
+  --color-neutral-700: #ffb86a;
+  --color-neutral-800: #fafafa;
   --color-base-font: #000a12;
-  --color-secondary-font: #a1a1a1;
+  --color-secondary-font: #515259;
   --color-icon: #000a12;
   --color-custom-1: rgba(185, 248, 207, 0.2);
   --color-custom-2: rgba(185, 248, 207, 0.3);
   --color-custom-3: rgba(251, 44, 54, 0.2);
   --color-custom-4: rgba(251, 44, 54, 0.3);
-  --drop-shadow-sidebar: 0 8px 28px rgba(1, 5, 11, 0.3);
-  --drop-shadow-msidebar: 0 8px 3px rgba(1, 5, 11, 0.8);
-  --shadow-msidebar: 0 8px 28px rgba(1, 5, 11, 0.3);
-  --drop-shadow-button: 0 8px 5px rgba(1, 5, 11, 0.5);
+  --color-shadow: rgba(160, 160, 160, 0.3);
+  --drop-shadow-sidebar: 0 8px 28px var(--color-shadow);
+  --drop-shadow-msidebar: 0 8px 3px var(--color-shadow);
+  --shadow-msidebar: 0 8px 28px var(--color-shadow);
+  --drop-shadow-button: 0 8px 5px var(--color-shadow);
   --font-sans: 'Mona Sans', sans-serif;
   --text-base: 0.75rem;
   --animation-spin-slow: spin 2s infinite linear;
@@ -38,16 +42,17 @@
   --color-secondary-2: #8951ff;
   --color-secondary-3: #21c3fc;
   --color-secondary-4: #3c87e9;
+  --color-secondary-5: #0b1739;
+  --color-neutral-6: #d1dbf9;
   --color-neutral-400: #aeb9e1;
   --color-neutral-500: #7e89ac;
+  --color-neutral-600: #aeb9e1;
   --color-neutral-700: #212c4d;
   --color-neutral-800: #081028;
   --color-base-font: #fff;
   --color-secondary-font: #aeb9e1;
   --color-icon: #fff;
-  --drop-shadow-sidebar: 0 8px 28px rgba(1, 5, 11, 0.3);
-  --drop-shadow-msidebar: 0 8px 3px rgba(1, 5, 11, 0.8);
-  --shadow-msidebar: 0 8px 28px rgba(1, 5, 11, 0.3);
+  --color-shadow: rgba(1, 5, 11, 0.3);
   --drop-shadow-button: 4px 5px 5px rgba(255, 255, 255, 0.9);
 }
 

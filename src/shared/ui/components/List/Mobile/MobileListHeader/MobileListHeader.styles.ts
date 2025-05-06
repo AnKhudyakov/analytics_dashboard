@@ -12,7 +12,7 @@ export const SwipeControls = tw.div`
 `;
 
 export const ArrowButton = tw.button`
-text-base-font p-2 rounded-sm disabled:bg-neutral-700 disabled:cursor-auto
+text-base-font p-2 rounded-sm disabled:bg-neutral-500 disabled:cursor-auto
 hover:text-neutral-500 hover:cursor-pointer
 `;
 
