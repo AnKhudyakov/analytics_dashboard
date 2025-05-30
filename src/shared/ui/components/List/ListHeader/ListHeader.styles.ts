@@ -1,8 +1,7 @@
-import { Icons } from 'shared/ui/icons';
 import tw from 'tailwind-styled-components';
 
 export const HeaderRow = tw.tr`
- even:bg-primary-dark h-[20px]
+ even:bg-primary h-[20px]
 `;
 
 export const TableHeader = tw.th`

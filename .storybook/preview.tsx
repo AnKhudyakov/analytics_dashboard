@@ -1,8 +1,7 @@
 import type { Preview } from '@storybook/react';
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import '../src/app/styles/index.css';
 import { ThemeProvider } from '../src/shared/context/ThemeContext';
-
 
 const withThemeProvider = (Story, context) => {
   const theme = context.globals.theme || 'light';
@@ -33,8 +32,8 @@ const preview: Preview = {
     backgrounds: {
       default: 'dark',
       values: [
-        { name: 'light', value: 'var(--color-primary-dark)' },
-        { name: 'dark', value: 'var(--color-primary-dark)' },
+        { name: 'light', value: 'var(--color-primary)' },
+        { name: 'dark', value: 'var(--color-primary)' },
       ],
     },
   },

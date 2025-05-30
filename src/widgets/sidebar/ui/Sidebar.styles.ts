@@ -3,7 +3,7 @@ import tw from 'tailwind-styled-components';
 export const SidebarContainer = tw.aside`
   fixed top-0 left-0 z-999 justify-between
   hidden lg:flex flex-col items-center
-  min-h-screen bg-neutral-800 p-4 border-r border-secondary-dark
+  min-h-screen bg-neutral-800 p-4 border-r border-secondary
   text-base-font drop-shadow-sidebar gap-6
   transition-all duration-300 ease-in-out
 `;

@@ -15,9 +15,9 @@ export const CheckboxInput: FC<CheckboxInputProps> = (props) => {
       <CustomCheckboxInput {...props} />
       <CustomCheckboxIcon>
         {props.checked ? (
-          <Icons.checked className='text-secondary-4'/>
+          <Icons.checked className="text-secondary-4" />
         ) : (
-          <Icons.unchecked className=" text-secondary-dark" />
+          <Icons.unchecked className=" text-secondary" />
         )}
       </CustomCheckboxIcon>
       {props.placeholder && (

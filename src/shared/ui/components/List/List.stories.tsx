@@ -13,6 +13,9 @@ const meta: Meta<typeof List> = {
       </MemoryRouter>
     ),
   ],
+  args: {
+    filters:{}
+  }
 };
 
 export default meta;
