@@ -2,6 +2,7 @@ import { Meta, StoryObj } from '@storybook/react';
 import { userEvent, within } from '@storybook/testing-library';
 import { MemoryRouter } from 'react-router-dom';
 import { Sidebar } from './Sidebar';
+import { AppContextProvider } from 'app/providers/context';
 
 const meta: Meta<typeof Sidebar> = {
   title: 'Widgets/Sidebar',
@@ -9,7 +10,9 @@ const meta: Meta<typeof Sidebar> = {
   decorators: [
     (Story) => (
       <MemoryRouter>
+        <AppContextProvider>
         <Story />
+        </AppContextProvider>
       </MemoryRouter>
     ),
   ],

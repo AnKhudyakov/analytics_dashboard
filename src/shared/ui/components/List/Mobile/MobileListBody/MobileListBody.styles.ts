@@ -1,7 +1,7 @@
 import tw from 'tailwind-styled-components';
 
 export const Row = tw.div`
-    flex text-base-font text-sm gap-2 even:bg-primary-dark
+    flex text-base-font text-sm gap-2 even:bg-primary
 `;
 
 export const Cell = tw.div`

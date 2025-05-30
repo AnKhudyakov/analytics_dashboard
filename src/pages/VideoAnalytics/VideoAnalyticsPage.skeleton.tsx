@@ -10,11 +10,12 @@ export const VideoAnalyticsSkeleton = () => {
     <ContainerSkeleton>
       <SkeletonTheme
         baseColor={mode === 'dark' ? '#0b1739' : '#fff'}
-        highlightColor={mode === 'dark' ? '#343b4f' : '#aeb9e1'}
+        highlightColor={mode === 'dark' ? '#343b4f' : '#ffb86a'}
       >
         <Skeleton height={280} borderRadius="0.5rem" />
-        <Skeleton height={406} borderRadius="0.5rem" />
-        <Skeleton height={392} borderRadius="0.5rem" />
+        <Skeleton height={418} borderRadius="0.5rem" />
+        <Skeleton height={418} borderRadius="0.5rem" />
+        <Skeleton height={195} borderRadius="0.5rem" />
       </SkeletonTheme>
     </ContainerSkeleton>
   );

@@ -45,7 +45,7 @@ export const HomeIcon: FC<React.SVGProps<SVGSVGElement>> = ({
       fillRule="evenodd"
       clipRule="evenodd"
       d="M15.1727 3.31095C13.3285 1.7969 10.6715 1.7969 8.82732 3.31095L3.46186 7.71593C2.53641 8.47571 2 9.61012 2 10.8075V18.0001C2 20.2092 3.79086 22.0001 6 22.0001H18C20.2091 22.0001 22 20.2092 22 18.0001V10.8075C22 9.61012 21.4636 8.47571 20.5381 7.71593L15.1727 3.31095Z"
-      fill="#D1DBF9"
+      fill="currentColor"
     />
   </svg>
 );
@@ -65,7 +65,7 @@ export const VideosIcon: FC<React.SVGProps<SVGSVGElement>> = ({
   >
     <path
       d="M16.19 2H7.81C4.17 2 2 4.17 2 7.81V16.18C2 19.83 4.17 22 7.81 22H16.18C19.82 22 21.99 19.83 21.99 16.19V7.81C22 4.17 19.83 2 16.19 2ZM14.66 13.73L13.38 14.47L12.1 15.21C10.45 16.16 9.1 15.38 9.1 13.48V12V10.52C9.1 8.61 10.45 7.84 12.1 8.79L13.38 9.53L14.66 10.27C16.31 11.22 16.31 12.78 14.66 13.73Z"
-      fill="#D1DBF9"
+      fill="currentColor"
     />
   </svg>
 );
@@ -439,8 +439,8 @@ export const CheckedIcon: FC<React.SVGProps<SVGSVGElement>> = ({
       width="11.4"
       height="11.4"
       rx="1.7"
-      fill="#AEB9E1"
-      stroke="#AEB9E1"
+      fill="currentColor"
+      stroke="#d9e1fa"
       strokeWidth="0.6"
     />
     <g clipPath="url(#clip0_4978_58540)">
@@ -484,7 +484,7 @@ export const UncheckedIcon: FC<React.SVGProps<SVGSVGElement>> = ({
       height="11.6"
       rx="1.8"
       fill="currentColor"
-      stroke="#7E89AC"
+      stroke="#d9e1fa"
       strokeWidth="0.4"
     />
   </svg>

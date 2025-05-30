@@ -19,7 +19,7 @@ h-[calc(100vh-190px)]
 
 export const WrapperForm = tw.div`
   h-full w-full sm:min-w-90 sm:max-w-140 sm:relative
-  border-t sm:border-l sm:border-r border-secondary-dark
+  border-t sm:border-l sm:border-r border-secondary
   shadow-msidebar sm:shadow-sidebar
   p-3 py-6 md:p-6 lg:p-10
   flex flex-col items-center justify-start sm:justify-center gap-1 overflow-auto

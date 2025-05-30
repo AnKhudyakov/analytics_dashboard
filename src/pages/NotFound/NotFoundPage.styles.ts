@@ -6,7 +6,7 @@ export const Container = tw.div`
 `;
 
 export const Content = tw.div`
-  w-full h-full max-h-60 max-w-120 text-center p-8 bg-secondary-dark rounded-lg
+  w-full h-full max-h-60 max-w-120 text-center p-8 bg-secondary rounded-lg
   border border-neutral-400 dark:border-secondary-1
   flex flex-col justify-center items-center gap-6
 `;

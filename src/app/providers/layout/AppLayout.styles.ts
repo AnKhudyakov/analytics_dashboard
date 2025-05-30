@@ -1,7 +1,7 @@
 import tw from 'tailwind-styled-components';
 
 export const Layout = tw.div`
-min-h-screen p-0 bg-primary-dark
+min-h-screen p-0 bg-primary
 `;
 
 export const LayoutHeader = tw.div`
@@ -17,6 +17,6 @@ export const LayoutBody = tw.div`
 `;
 
 export const LayoutMain = tw.main`
-  w-full h-full lg:flex font-sans font-normal bg-primary-dark pt-16 sm:pt-20 lg:pt-0
+  w-full h-full lg:flex font-sans font-normal bg-primary pt-16 sm:pt-20 lg:pt-0
   transition-all duration-300 ease-in-out
   `;

@@ -2,12 +2,12 @@ import tw from 'tailwind-styled-components';
 
 export const Container = tw.aside`
   fixed top-0 left-0 z-999 w-66 h-full
-  bg-neutral-800 p-4 border-r border-secondary-dark flex flex-col gap-4
+  bg-neutral-800 p-4 border-r border-secondary flex flex-col gap-4
   transform transition-transform duration-300 ease-in-out lg:hidden
 `;
 
 export const MobileHeader = tw.div`
-  fixed top-0 left-0 z-999 w-full bg-neutral-800 flex lg:hidden p-4 sm:p-6 gap-6 justify-between border-b border-secondary-dark
+  fixed top-0 left-0 z-999 w-full bg-neutral-800 flex lg:hidden p-4 sm:p-6 gap-6 justify-between border-b border-secondary
   text-base-font shadow-msidebar
 `;
 

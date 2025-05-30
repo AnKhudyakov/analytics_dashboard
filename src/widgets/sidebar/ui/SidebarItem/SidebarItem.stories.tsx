@@ -1,4 +1,5 @@
 import { Meta, StoryFn } from '@storybook/react';
+import { AppContextProvider } from 'app/providers/context';
 import { MemoryRouter } from 'react-router-dom';
 import { Icons } from 'shared/ui/icons';
 import { SidebarItem } from './SidebarItem';
@@ -10,7 +11,9 @@ const meta: Meta<typeof SidebarItem> = {
   decorators: [
     (Story) => (
       <MemoryRouter>
-        <Story />
+        <AppContextProvider>
+          <Story />
+        </AppContextProvider>
       </MemoryRouter>
     ),
   ],
