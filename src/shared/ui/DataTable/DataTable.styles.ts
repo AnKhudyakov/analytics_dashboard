@@ -1,12 +1,12 @@
 import tw from 'tailwind-styled-components';
 
-export const TableContainer = tw.div`panel-surface h-full overflow-x-auto rounded-xl border border-neutral-400 bg-secondary dark:border-secondary-1`;
+export const TableContainer = tw.div`glass-panel h-full overflow-x-auto rounded-2xl`;
 
 export const Table = tw.table<{
   $stretch?: boolean;
 }>`hidden w-full border-collapse md:table ${({ $stretch }) => ($stretch ? 'h-full' : '')} `;
 
-export const TableHead = tw.thead`sticky top-0 z-99 bg-secondary drop-shadow-lg`;
+export const TableHead = tw.thead`glass-strong sticky top-0 z-99 drop-shadow-lg`;
 
 export const HeaderRow = tw.tr`h-[20px]`;
 
@@ -14,7 +14,7 @@ export const HeaderCell = tw.th<{
   $first?: boolean;
 }>`relative p-3 text-left font-semibold text-base-font ${({ $first }) => ($first ? 'w-1/4' : 'w-1/5')} `;
 
-export const BodyRow = tw.tr`max-h-10 even:bg-primary`;
+export const BodyRow = tw.tr`max-h-10 even:bg-row-alt`;
 
 export const BodyCell = tw.td<{
   $first?: boolean;

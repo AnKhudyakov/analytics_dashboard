@@ -9,9 +9,10 @@ export interface ChartSeries {
 export const CHART_HEIGHT = 300;
 
 export const CHART_TOOLTIP_STYLE: CSSProperties = {
-  backgroundColor: 'var(--color-secondary)',
-  borderColor: 'var(--color-secondary-1)',
-  borderRadius: '8px',
+  backgroundColor: 'var(--glass-bg-strong)',
+  backdropFilter: 'blur(var(--glass-blur))',
+  borderColor: 'var(--glass-border)',
+  borderRadius: '12px',
   color: 'var(--color-base-font)',
 };
 
