@@ -36,6 +36,9 @@
   --color-chart-5: #f47c26;
   --color-chart-axis: #515259;
 
+  --color-skeleton-base: #e8eaf0;
+  --color-skeleton-highlight: #f7f8fb;
+
   --color-glass: rgba(255, 255, 255, 0.72);
   --gradient-page: linear-gradient(180deg, #ffffff 0%, #f2f3f7 100%);
   --gradient-surface: linear-gradient(180deg, #ffffff 0%, #f6f7fb 100%);
@@ -90,6 +93,9 @@
   --color-chart-4: #edb46d;
   --color-chart-5: #ff631d;
   --color-chart-axis: #909cd1;
+
+  --color-skeleton-base: #252e3a;
+  --color-skeleton-highlight: #444a5e;
 
   --color-glass: rgba(15, 17, 24, 0.72);
   --gradient-page: linear-gradient(180deg, #12161f 0%, #0b0e14 100%);
@@ -184,6 +190,34 @@ select:focus {
     background-image: none;
     box-shadow: none;
     filter: none;
+  }
+
+  .skeleton {
+    background-color: var(--color-skeleton-base);
+    background-image: linear-gradient(
+      90deg,
+      transparent 0%,
+      var(--color-skeleton-highlight) 50%,
+      transparent 100%
+    );
+    background-repeat: no-repeat;
+    background-size: 200% 100%;
+    animation: skeleton-shimmer 1.5s ease-in-out infinite;
+  }
+
+  @keyframes skeleton-shimmer {
+    0% {
+      background-position: -50% 0;
+    }
+    100% {
+      background-position: 150% 0;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .skeleton {
+      animation: none;
+    }
   }
 
   /* loader */

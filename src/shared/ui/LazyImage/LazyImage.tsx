@@ -1,5 +1,6 @@
 import { type FC, type ImgHTMLAttributes, useState } from 'react';
-import Skeleton from 'react-loading-skeleton';
+
+import { Skeleton } from 'shared/ui/Skeleton';
 
 import { ContainerSkeleton, Image } from './LazyImage.styles';
 
@@ -34,7 +35,7 @@ export const LazyImage: FC<LazyImageProps> = ({
           <Skeleton
             width={skeletonWidth}
             height={skeletonHeight}
-            borderRadius={borderRadius}
+            radius={borderRadius}
           />
         </ContainerSkeleton>
       )}
