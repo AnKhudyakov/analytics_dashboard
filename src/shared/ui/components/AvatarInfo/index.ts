@@ -1,1 +1,0 @@
-export { AvatarInfo } from './AvatarInfo';

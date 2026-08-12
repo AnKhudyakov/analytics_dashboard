@@ -26,6 +26,13 @@
   --color-custom-3: rgba(251, 44, 54, 0.2);
   --color-custom-4: rgba(251, 44, 54, 0.3);
 
+  --color-chart-1: #05c168;
+  --color-chart-2: #36c1f5;
+  --color-chart-3: #3c87e9;
+  --color-chart-4: #8951ff;
+  --color-chart-5: #f47c26;
+  --color-chart-axis: #515259;
+
   --color-shadow: rgba(160, 160, 160, 0.3);
   --drop-shadow-sidebar: 0 8px 28px var(--color-shadow);
   --drop-shadow-msidebar: 0 8px 3px var(--color-shadow);
@@ -57,6 +64,8 @@
   --color-secondary-font: #aeb9e1;
 
   --color-icon: #fff;
+
+  --color-chart-axis: #aab7cf;
 
   --color-shadow: rgba(1, 5, 11, 0.3);
   --drop-shadow-button: 4px 5px 5px rgba(255, 255, 255, 0.9);
@@ -113,7 +122,7 @@ select:focus {
 @layer utilities {
   /* loader */
   .loader-box {
-    @apply relative w-12 h-12 bg-secondary-4 text-base-font;
+    @apply relative h-12 w-12 bg-secondary-4 text-base-font;
     transform: rotateX(65deg) rotate(45deg);
     animation: layers1 1s linear infinite alternate;
   }
@@ -154,7 +163,7 @@ select:focus {
   }
   /* loader text */
   .loader-text {
-    @apply relative inline-block text-base-font text-xl;
+    @apply relative inline-block text-xl text-base-font;
   }
 
   .loader-text::after {

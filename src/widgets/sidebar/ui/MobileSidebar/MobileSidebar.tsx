@@ -1,13 +1,17 @@
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useLocation, useNavigate } from 'react-router-dom';
-import { removeToken } from 'shared/lib/helpers';
-import { Button } from 'shared/ui/components/Button';
-import { ButtonExit } from 'shared/ui/components/ButtonExit';
-import { Typography } from 'shared/ui/components/Typography';
+import { useLocation } from 'react-router-dom';
+
+import { useLogout } from 'features/auth';
+import { LanguageSwitcher } from 'features/language-switcher';
+import { ThemeSwitcher } from 'features/theme-switcher';
+import { Button } from 'shared/ui/Button';
+import { ButtonExit } from 'shared/ui/ButtonExit';
 import { Icons } from 'shared/ui/icons';
-import { Settings } from 'widgets/settings';
-import { SidebarItem } from '../SidebarItem';
+import { Toolbar } from 'shared/ui/Toolbar';
+import { Typography } from 'shared/ui/Typography';
+
+import { SidebarNav } from '../SidebarNav';
 import {
   Container,
   HeaderLeft,
@@ -19,63 +23,54 @@ import {
 
 export const MobileSidebar = () => {
   const { t } = useTranslation();
-  const navigate = useNavigate();
-  const location = useLocation();
-  const [isOpen, setIsOpen] = useState(false);
+  const { pathname } = useLocation();
+  const logout = useLogout();
+  const [isOpen, setOpen] = useState(false);
 
-  const handleExit = () => {
-    removeToken();
-    navigate('/login');
-  };
-
-  const handleMenu = (value: boolean) => {
-    setIsOpen(value);
-  };
-
-  useEffect(() => {
-    handleMenu(false);
-  }, [location.pathname]);
-
-  useEffect(() => {
-    handleMenu(false);
-  }, [location.pathname]);
+  useEffect(() => setOpen(false), [pathname]);
 
   return (
     <>
       <MobileHeader>
         <HeaderLeft>
-          <Button icon onClick={handleMenu.bind(this, true)}>
-            <Icons.menu className="text-base-font fill-white" />
+          <Button
+            icon
+            aria-label={t('sidebar.openMenu')}
+            aria-expanded={isOpen}
+            onClick={() => setOpen(true)}
+          >
+            <Icons.menu className="fill-white text-base-font" aria-hidden />
           </Button>
           <Typography variant="title">{t('sidebar.title')}</Typography>
         </HeaderLeft>
-        <ButtonExit onClick={handleExit} />
+        <ButtonExit label={t('sidebar.logout')} onClick={logout} />
       </MobileHeader>
 
-      {isOpen && <Overlay onClick={handleMenu.bind(this, false)} />}
+      {isOpen && <Overlay onClick={() => setOpen(false)} />}
 
-      <Container className={isOpen ? 'translate-x-0' : '-translate-x-full'}>
+      <Container
+        className={isOpen ? 'translate-x-0' : '-translate-x-full'}
+        aria-hidden={!isOpen}
+      >
         <HeaderMenu>
           <Typography variant="title">{t('sidebar.menu')}</Typography>
         </HeaderMenu>
-        <div className="h-full">
-          <SidebarItem
-            to="/channels"
-            icon={<Icons.home />}
-            label={t('sidebar.channels')}
-          />
-          <SidebarItem
-            to="/videos"
-            icon={<Icons.videos />}
-            label={t('sidebar.videos')}
-          />
-        </div>
+        <nav className="h-full" aria-label={t('sidebar.navigation')}>
+          <SidebarNav />
+        </nav>
         <SettingsWrapper>
           <div className="w-22">
-            <Settings row/>
+            <Toolbar>
+              <ThemeSwitcher />
+              <LanguageSwitcher />
+            </Toolbar>
           </div>
-          <Button icon onClick={handleMenu.bind(this, false)}>
-            <Icons.arrowLeft />
+          <Button
+            icon
+            aria-label={t('sidebar.closeMenu')}
+            onClick={() => setOpen(false)}
+          >
+            <Icons.arrowLeft aria-hidden />
           </Button>
         </SettingsWrapper>
       </Container>

@@ -1,25 +1,22 @@
-import { Filters, PageInfo, Snippet } from 'shared/api/types';
+import {
+  type PaginatedResponse,
+  type ResourceQuery,
+  type Snippet,
+} from 'shared/api';
 
-export interface Video {
-  id: string;
-  etag: string;
-  snippet: Snippet;
-  kind?: string;
-  statistics: {
-    favoriteCount: number;
-    viewCount: number;
-    commentCount: number;
-    likeCount: number;
-  };
-  stats: VideoStats[];
+export interface VideoStatistics {
+  favoriteCount: number;
+  viewCount: number;
+  commentCount: number;
+  likeCount: number;
 }
 
 export interface VideoStats {
   id: string;
   insertedAt: string;
+  date: string;
   viewCount: number;
   viewCountDelta: number;
-  date: string;
   estimatedLowRevenueUsd: number;
   estimatedHighRevenueUsd: number;
   estimatedRevenueUsd: number;
@@ -28,29 +25,17 @@ export interface VideoStats {
   rollingHighRevenue: number;
 }
 
-export interface VideosResponse {
-  items: Video[];
-  prevPageToken?: string;
-  nextPageToken?: string;
-  pageInfo: PageInfo;
+export interface Video {
+  id: string;
+  etag?: string;
+  kind?: string;
+  snippet: Snippet;
+  statistics: VideoStatistics;
+  stats: VideoStats[];
 }
 
-export interface VideosDTO {
-  page: number;
-  limit: number;
-  sortBy: string;
-  sortOrder: 'desc' | 'asc';
-  filters: Filters;
-}
+export type VideosResponse = PaginatedResponse<Video>;
 
-export interface VideosSearchDTO extends VideosDTO {
-  search: string;
-}
+export type VideosQuery = ResourceQuery;
 
-export enum ColumnVideo {
-  name = 'Name',
-  likeCount = 'Likes',
-  viewCount = 'Views',
-  commentCount = 'Comments',
-  favoriteCount = 'Favorites',
-}
+export const VIDEOS_DEFAULT_SORT = 'name';

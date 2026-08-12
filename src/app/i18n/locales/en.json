@@ -1,0 +1,112 @@
+{
+  "login": {
+    "title": "Welcome to",
+    "subtitle": "YouTube Analytics",
+    "body": "Login in to your account to continue",
+    "formTitle": "Login",
+    "formSubtitle": "Please enter your credentials",
+    "username": "Username",
+    "password": "Password",
+    "showPassword": "Show password",
+    "hidePassword": "Hide password",
+    "remember": "Remember me",
+    "noAccount": "Don’t have an account?",
+    "signupLink": "Signup",
+    "error": "Incorrect username or password"
+  },
+  "signup": {
+    "title": "Roll the Carpet!",
+    "body": "Signup your account to continue",
+    "formTitle": "Signup",
+    "formSubtitle": "Just some details to get you in!",
+    "username": "Username",
+    "email": "Email",
+    "password": "Password",
+    "confirmPassword": "Confirm password",
+    "haveAccount": "Already registered?",
+    "loginLink": "Login",
+    "error": "Signup failed"
+  },
+  "validation": {
+    "required": "Field is required",
+    "min": "Must be at least {{min}} characters",
+    "invalidEmail": "Incorrect email",
+    "match": "Passwords must match"
+  },
+  "channels": {
+    "title": "Trending Channels",
+    "empty": "No channels found"
+  },
+  "videos": {
+    "title": "Trending Videos",
+    "empty": "No videos found"
+  },
+  "notFound": {
+    "subtitle": "Oops! We couldn’t find that page.",
+    "body": "It looks like the page you’re trying to reach doesn’t exist. Maybe check the URL or go back to the homepage.",
+    "home": "Home"
+  },
+  "columns": {
+    "name": "Name",
+    "subscribers": "Subscribers",
+    "views": "Views",
+    "hiddenSubscribers": "Hidden subscribers",
+    "videos": "Videos",
+    "likes": "Likes",
+    "comments": "Comments",
+    "favorites": "Favorites"
+  },
+  "metrics": {
+    "videos": "Videos",
+    "videosCount": "Videos count",
+    "subscribers": "Subscribers",
+    "views": "Views",
+    "revenue": "Estimated revenue",
+    "lowRevenue": "Low revenue",
+    "highRevenue": "High revenue",
+    "rollingRevenue": "Rolling revenue",
+    "rollingLowRevenue": "Low rolling revenue",
+    "rollingHighRevenue": "High rolling revenue"
+  },
+  "shared": {
+    "search": "Search for...",
+    "errorLoading": "Error loading data",
+    "errorUnexpected": "Something went wrong",
+    "reload": "Reload",
+    "from": "From",
+    "to": "To",
+    "invalidRange": "“From” must not be greater than “To”",
+    "apply": "Apply",
+    "clear": "Clear",
+    "clearAll": "Clear all filters",
+    "loading": "Loading",
+    "of": "of",
+    "perpage": "Rows per page",
+    "yes": "Yes",
+    "no": "No",
+    "previousPage": "Previous page",
+    "nextPage": "Next page",
+    "previousColumn": "Previous column",
+    "nextColumn": "Next column",
+    "filterBy": "Filter by {{column}}",
+    "tableCaption": "Analytics table",
+    "totalResults": "{{count}} results found"
+  },
+  "sidebar": {
+    "title": "YouTube Analytics",
+    "menu": "Menu",
+    "navigation": "Main navigation",
+    "channels": "Channels",
+    "videos": "Videos",
+    "logout": "Log out",
+    "collapse": "Collapse sidebar",
+    "expand": "Expand sidebar",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
+  },
+  "settings": {
+    "darkMode": "Switch to dark theme",
+    "lightMode": "Switch to light theme",
+    "changeLanguage": "Change language"
+  }
+}

@@ -1,0 +1,112 @@
+{
+  "login": {
+    "title": "Bienvenue sur",
+    "subtitle": "YouTube Analytics",
+    "body": "Connectez-vous à votre compte pour continuer",
+    "formTitle": "Connexion",
+    "formSubtitle": "Veuillez entrer vos identifiants",
+    "username": "Nom d’utilisateur",
+    "password": "Mot de passe",
+    "showPassword": "Afficher le mot de passe",
+    "hidePassword": "Masquer le mot de passe",
+    "remember": "Se souvenir de moi",
+    "noAccount": "Pas encore de compte ?",
+    "signupLink": "S’inscrire",
+    "error": "Nom d’utilisateur ou mot de passe incorrect"
+  },
+  "signup": {
+    "title": "Déroulez le tapis !",
+    "body": "Créez votre compte pour continuer",
+    "formTitle": "Inscription",
+    "formSubtitle": "Quelques détails pour commencer !",
+    "username": "Nom d’utilisateur",
+    "email": "Email",
+    "password": "Mot de passe",
+    "confirmPassword": "Confirmer le mot de passe",
+    "haveAccount": "Déjà inscrit ?",
+    "loginLink": "Connexion",
+    "error": "Échec de l’inscription"
+  },
+  "validation": {
+    "required": "Champ requis",
+    "min": "Doit contenir au moins {{min}} caractères",
+    "invalidEmail": "Email invalide",
+    "match": "Les mots de passe doivent correspondre"
+  },
+  "channels": {
+    "title": "Chaînes en tendance",
+    "empty": "Aucune chaîne trouvée"
+  },
+  "videos": {
+    "title": "Vidéos en tendance",
+    "empty": "Aucune vidéo trouvée"
+  },
+  "notFound": {
+    "subtitle": "Oups ! Nous n’avons pas trouvé cette page.",
+    "body": "Il semble que la page que vous essayez d’atteindre n’existe pas. Vérifiez l’URL ou retournez à l’accueil.",
+    "home": "Accueil"
+  },
+  "columns": {
+    "name": "Nom",
+    "subscribers": "Abonnés",
+    "views": "Vues",
+    "hiddenSubscribers": "Abonnés masqués",
+    "videos": "Vidéos",
+    "likes": "Likes",
+    "comments": "Commentaires",
+    "favorites": "Favoris"
+  },
+  "metrics": {
+    "videos": "Vidéos",
+    "videosCount": "Nombre de vidéos",
+    "subscribers": "Abonnés",
+    "views": "Vues",
+    "revenue": "Revenus estimés",
+    "lowRevenue": "Revenus faibles",
+    "highRevenue": "Revenus élevés",
+    "rollingRevenue": "Revenus glissants",
+    "rollingLowRevenue": "Revenus glissants faibles",
+    "rollingHighRevenue": "Revenus glissants élevés"
+  },
+  "shared": {
+    "search": "Rechercher...",
+    "errorLoading": "Erreur lors du chargement des données",
+    "errorUnexpected": "Une erreur est survenue",
+    "reload": "Recharger",
+    "from": "De",
+    "to": "À",
+    "invalidRange": "« De » ne doit pas être supérieur à « À »",
+    "apply": "Appliquer",
+    "clear": "Effacer",
+    "clearAll": "Effacer tous les filtres",
+    "loading": "Chargement",
+    "of": "de",
+    "perpage": "Lignes par page",
+    "yes": "Oui",
+    "no": "Non",
+    "previousPage": "Page précédente",
+    "nextPage": "Page suivante",
+    "previousColumn": "Colonne précédente",
+    "nextColumn": "Colonne suivante",
+    "filterBy": "Filtrer par « {{column}} »",
+    "tableCaption": "Tableau analytique",
+    "totalResults": "{{count}} résultats trouvés"
+  },
+  "sidebar": {
+    "title": "YouTube Analytics",
+    "menu": "Menu",
+    "navigation": "Navigation principale",
+    "channels": "Chaînes",
+    "videos": "Vidéos",
+    "logout": "Se déconnecter",
+    "collapse": "Réduire le menu",
+    "expand": "Développer le menu",
+    "openMenu": "Ouvrir le menu",
+    "closeMenu": "Fermer le menu"
+  },
+  "settings": {
+    "darkMode": "Passer au thème sombre",
+    "lightMode": "Passer au thème clair",
+    "changeLanguage": "Changer de langue"
+  }
+}

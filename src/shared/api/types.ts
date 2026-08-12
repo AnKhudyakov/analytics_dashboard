@@ -1,3 +1,9 @@
+export interface Thumbnail {
+  url: string;
+  width?: number;
+  height?: number;
+}
+
 export interface Snippet {
   title: string;
   description: string;
@@ -30,31 +36,32 @@ export interface PageInfo {
   resultsPerPage: number;
 }
 
-interface Thumbnail {
-  url: string;
-  width?: number;
-  height?: number;
+export interface PaginatedResponse<T> {
+  items: T[];
+  prevPageToken?: string;
+  nextPageToken?: string;
+  pageInfo: PageInfo;
 }
 
-export interface Filters extends Record<string, Filter | null> {}
-
-export interface Filter {
-  filterType?: 'range' | 'checkbox';
-  filterValue?: boolean | RangeValue;
-}
+export type SortOrder = 'asc' | 'desc';
 
 export interface RangeValue {
   valueFrom?: number;
   valueTo?: number;
 }
 
-export interface Login {
-  username: string;
-  password: string;
+export interface Filter {
+  filterType: 'range' | 'checkbox';
+  filterValue: boolean | RangeValue;
 }
 
-export interface Signup {
-  username: string;
-  email: string;
-  password: string;
+export type Filters = Record<string, Filter | null>;
+
+export interface ResourceQuery {
+  page: number;
+  limit: number;
+  sortBy: string;
+  sortOrder: SortOrder;
+  search: string;
+  filters: Filters;
 }

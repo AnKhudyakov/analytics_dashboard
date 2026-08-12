@@ -1,18 +1,7 @@
-export function nonNull<T>(value: T, message: string): NonNullable<T> {
-  if (value === null || value === undefined) {
-    throw new Error(message);
-  } else {
-    return value!;
-  }
+const backendUrl = import.meta.env.VITE_API_URL;
+
+if (!backendUrl) {
+  throw new Error('Environment variable VITE_API_URL is not defined.');
 }
 
-function requireStringEnvVar(name: string) {
-  return nonNull(
-    import.meta.env[name],
-    `Environment variable ${name} is not defined.`
-  );
-}
-
-export const config = {
-  backendUrl: requireStringEnvVar('VITE_API_URL'),
-};
+export const config = { backendUrl };

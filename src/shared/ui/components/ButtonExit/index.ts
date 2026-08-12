@@ -1,1 +1,0 @@
-export { ButtonExit } from "./ButtonExit";
