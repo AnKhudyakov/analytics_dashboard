@@ -1,15 +1,16 @@
-import { channelApi } from './model/api';
-
-//export const { useGetChannelDetailStatsQuery } = channelAnalyticsApi;
-export const {
-  useSearchChannelsQuery,
+export {
+  channelApi,
+  useGetChannelAnalyticsQuery,
   useGetChannelsQuery,
   useGetChannelStatsQuery,
-  useGetChannelAnalyticsQuery,
-} = channelApi;
-
-export type {
-  Channel,
-  ChannelAnalytics,
-  ChannelsResponse,
+} from './api/channelApi';
+export {
+  type Channel,
+  type ChannelAnalytics,
+  CHANNELS_DEFAULT_SORT,
+  type ChannelsQuery,
+  type ChannelsResponse,
+  type ChannelStats,
 } from './model/types';
+export { ChannelCard } from './ui/ChannelCard';
+export { channelColumns } from './ui/channelColumns';

@@ -1,8 +1,14 @@
-import { videoApi } from './model/api';
-
-export const {
-  useSearchVideosQuery,
-  useGetTrendingVideosQuery,
+export {
   useGetVideoAnalyticsQuery,
-} = videoApi;
-export type { Video, VideosResponse } from './model/types';
+  useGetVideosQuery,
+  videoApi,
+} from './api/videoApi';
+export {
+  type Video,
+  VIDEOS_DEFAULT_SORT,
+  type VideosQuery,
+  type VideosResponse,
+  type VideoStats,
+} from './model/types';
+export { VideoCard } from './ui/VideoCard';
+export { videoColumns } from './ui/videoColumns';
