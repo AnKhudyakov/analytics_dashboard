@@ -1,13 +1,16 @@
-import { FC } from 'react';
+import { type FC } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useNavigate } from 'react-router-dom';
-import { useCollapsedContext } from 'shared/context/CollapsedContext';
-import { removeToken } from 'shared/lib/helpers';
-import { Button } from 'shared/ui/components/Button';
-import { ButtonExit } from 'shared/ui/components/ButtonExit';
-import { Typography } from 'shared/ui/components/Typography';
+
+import { useLogout } from 'features/auth';
+import { LanguageSwitcher } from 'features/language-switcher';
+import { ThemeSwitcher } from 'features/theme-switcher';
+import { Button } from 'shared/ui/Button';
+import { ButtonExit } from 'shared/ui/ButtonExit';
 import { Icons } from 'shared/ui/icons';
-import { Settings } from 'widgets/settings';
+import { Toolbar } from 'shared/ui/Toolbar';
+import { Typography } from 'shared/ui/Typography';
+
+import { useSidebar } from '../model/SidebarProvider';
 import { MobileSidebar } from './MobileSidebar';
 import {
   FlexContainer,
@@ -16,57 +19,46 @@ import {
   SidebarContainer,
   Wrapper,
 } from './Sidebar.styles';
-import { SidebarItem } from './SidebarItem';
+import { SidebarNav } from './SidebarNav';
 
-interface SidebarProps {}
-
-export const Sidebar: FC<SidebarProps> = () => {
-  const navigate = useNavigate();
+export const Sidebar: FC = () => {
   const { t } = useTranslation();
-  const { collapsed, setCollapsed } = useCollapsedContext();
-
-  const handleExit = () => {
-    removeToken();
-    navigate('/login');
-  };
-
-  const handleMenu = (value: boolean) => {
-    setCollapsed(value);
-  };
+  const { isCollapsed, toggleCollapsed } = useSidebar();
+  const logout = useLogout();
 
   return (
     <>
       <MobileSidebar />
-      <SidebarContainer className={collapsed ? 'w-17' : 'w-66'}>
+      <SidebarContainer className={isCollapsed ? 'w-17' : 'w-66'}>
         <Wrapper>
           <FlexContainer>
-            {!collapsed && (
+            {!isCollapsed && (
               <Typography variant="subtitle">{t('sidebar.title')}</Typography>
             )}
-            <ButtonExit onClick={handleExit} />
+            <ButtonExit label={t('sidebar.logout')} onClick={logout} />
           </FlexContainer>
-          <Nav>
-            <SidebarItem
-              to="/channels"
-              icon={<Icons.home />}
-              label={t('sidebar.channels')}
-            />
-            <SidebarItem
-              to="/videos"
-              icon={<Icons.videos />}
-              label={t('sidebar.videos')}
-            />
+          <Nav aria-label={t('sidebar.navigation')}>
+            <SidebarNav isCollapsed={isCollapsed} />
           </Nav>
         </Wrapper>
-        <SettingsWrapper className={collapsed ? 'flex-col' : 'flex-row'}>
-          <div className={collapsed ? '' : 'w-22'}>
-            <Settings row={collapsed ? false : true} />
+        <SettingsWrapper className={isCollapsed ? 'flex-col' : 'flex-row'}>
+          <div className={isCollapsed ? '' : 'w-22'}>
+            <Toolbar direction={isCollapsed ? 'column' : 'row'}>
+              <ThemeSwitcher />
+              <LanguageSwitcher />
+            </Toolbar>
           </div>
           <Button
             icon
-            onClick={handleMenu.bind(this, collapsed ? false : true)}
+            aria-label={t(isCollapsed ? 'sidebar.expand' : 'sidebar.collapse')}
+            aria-expanded={!isCollapsed}
+            onClick={toggleCollapsed}
           >
-            {collapsed ? <Icons.arrowRight /> : <Icons.arrowLeft />}
+            {isCollapsed ? (
+              <Icons.arrowRight aria-hidden />
+            ) : (
+              <Icons.arrowLeft aria-hidden />
+            )}
           </Button>
         </SettingsWrapper>
       </SidebarContainer>
