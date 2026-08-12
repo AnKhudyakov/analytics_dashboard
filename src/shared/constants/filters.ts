@@ -1,4 +1,4 @@
 export const BOOLEAN_FILTER_OPTIONS = [
-  { label: 'Yes', value: true },
-  { label: 'No', value: false },
-];
+  { labelKey: 'shared.yes', value: true },
+  { labelKey: 'shared.no', value: false },
+] as const;

@@ -1,1 +1,0 @@
-export { MetricInfo } from './MetricInfo';

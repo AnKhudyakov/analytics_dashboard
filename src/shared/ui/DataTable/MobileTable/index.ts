@@ -1,0 +1,1 @@
+export { MobileTable } from './MobileTable';

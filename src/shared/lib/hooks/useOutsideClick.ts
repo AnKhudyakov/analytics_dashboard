@@ -1,19 +1,33 @@
-import { RefObject, useEffect } from 'react';
+import { type RefObject, useEffect, useRef } from 'react';
 
-export const useOutsideClick = (
-  ref: RefObject<HTMLElement | null>,
-  callback: () => void
+export const useOutsideClick = <T extends HTMLElement>(
+  ref: RefObject<T | null>,
+  onOutsideClick: () => void
 ) => {
+  const callbackRef = useRef(onOutsideClick);
+  callbackRef.current = onOutsideClick;
 
   useEffect(() => {
-    const handleClick = (event: MouseEvent) => {
-      if (ref.current && !ref.current.contains(event.target as Node)) {
-        callback();
+    const handlePointerDown = (event: MouseEvent | TouchEvent) => {
+      const target = event.target;
+      if (!(target instanceof Node)) return;
+      if (ref.current && !ref.current.contains(target)) {
+        callbackRef.current();
       }
     };
-    document.addEventListener('mousedown', handleClick);
-    return () => {
-      document.removeEventListener('mousedown', handleClick);
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') callbackRef.current();
     };
-  }, [ref, callback]);
+
+    document.addEventListener('mousedown', handlePointerDown);
+    document.addEventListener('touchstart', handlePointerDown);
+    document.addEventListener('keydown', handleKeyDown);
+
+    return () => {
+      document.removeEventListener('mousedown', handlePointerDown);
+      document.removeEventListener('touchstart', handlePointerDown);
+      document.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [ref]);
 };
