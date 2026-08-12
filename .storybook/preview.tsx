@@ -1,52 +1,35 @@
-import type { Preview } from '@storybook/react';
-import { useEffect } from 'react';
+import '../src/app/i18n';
 import '../src/app/styles/index.css';
-import { ThemeProvider } from '../src/shared/context/ThemeContext';
+import './preview.css';
 
-const withThemeProvider = (Story, context) => {
-  const theme = context.globals.theme || 'light';
+import type { Decorator, Preview } from '@storybook/react';
 
-  useEffect(() => {
-    document.documentElement.classList.remove('light', 'dark');
-    document.documentElement.classList.add(theme);
-  }, [theme]);
+const withTheme: Decorator = (Story, context) => {
+  const theme = context.globals.theme === 'light' ? 'light' : 'dark';
+  const root = document.documentElement;
+  root.classList.remove('light', 'dark');
+  root.classList.add(theme);
+  root.style.colorScheme = theme;
 
   return (
-    <ThemeProvider>
+    <div className="bg-primary p-4 text-base-font">
       <Story />
-    </ThemeProvider>
+    </div>
   );
 };
 
-export const decorators = [withThemeProvider];
+export const decorators = [withTheme];
 
 const preview: Preview = {
   parameters: {
-    actions: { argTypesRegex: '^on[A-Z].*' },
-    controls: {
-      matchers: {
-        color: /(background|color)$/i,
-        date: /Date$/,
-      },
-    },
-    backgrounds: {
-      default: 'dark',
-      values: [
-        { name: 'light', value: 'var(--color-primary)' },
-        { name: 'dark', value: 'var(--color-primary)' },
-      ],
-    },
+    controls: { matchers: { color: /(background|color)$/i, date: /Date$/ } },
   },
   globalTypes: {
     theme: {
       name: 'Theme',
       description: 'Global theme',
       defaultValue: 'dark',
-      toolbar: {
-        icon: 'mirror',
-        items: ['light', 'dark'],
-        showName: true,
-      },
+      toolbar: { icon: 'mirror', items: ['light', 'dark'], showName: true },
     },
   },
 };
