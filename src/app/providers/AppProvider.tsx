@@ -1,15 +1,22 @@
-import { store } from 'app/store/store';
-import { Provider } from 'react-redux';
-import { AppRouter } from '../router';
-import { AppContextProvider } from './context';
-import './i18n';
+import '../i18n';
 
-export const AppProvider = () => {
-  return (
-    <AppContextProvider>
+import { Provider } from 'react-redux';
+
+import { ThemeProvider } from 'shared/lib/theme';
+import { SidebarProvider } from 'widgets/sidebar';
+
+import { AppRouter } from '../router';
+import { store } from '../store';
+import { ErrorBoundary } from './ErrorBoundary';
+
+export const AppProvider = () => (
+  <ErrorBoundary>
+    <ThemeProvider>
       <Provider store={store}>
-        <AppRouter />
+        <SidebarProvider>
+          <AppRouter />
+        </SidebarProvider>
       </Provider>
-    </AppContextProvider>
-  );
-};
+    </ThemeProvider>
+  </ErrorBoundary>
+);
