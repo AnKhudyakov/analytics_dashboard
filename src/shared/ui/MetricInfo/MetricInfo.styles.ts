@@ -8,10 +8,10 @@ export const StyledTypography = tw(Typography)`
   text-xs
 `;
 
-export const StatusPositive = tw.div`flex h-4.5 w-fit items-center gap-1 rounded-xs border border-custom-2 bg-custom-1 p-1 text-green-500`;
+export const StatusPositive = tw.div`flex h-4.5 w-fit items-center gap-1 rounded-xs border border-custom-2 bg-custom-1 p-1 text-success`;
 
 export const StatusNegative = tw(StatusPositive)`
-  bg-custom-3 border border-custom-4 text-red-400
+  bg-custom-3 border border-custom-4 text-danger
 `;
 
 export const Content = tw.div`flex h-fit w-full items-center gap-4`;

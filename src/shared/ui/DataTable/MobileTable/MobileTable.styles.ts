@@ -10,7 +10,7 @@ export const Swiper = tw.div`relative flex w-1/2 items-center justify-end gap-2`
 
 export const SwipeControls = tw.div`sticky top-18.5 z-90 flex items-center justify-between gap-2 bg-primary p-2 shadow-xl`;
 
-export const ArrowButton = tw.button`rounded-sm p-2 text-base-font hover:cursor-pointer hover:text-neutral-500 focus-visible:outline focus-visible:outline-secondary-4`;
+export const ArrowButton = tw.button`rounded-sm p-2 text-base-font hover:cursor-pointer hover:text-secondary-4 focus-visible:outline focus-visible:outline-secondary-4`;
 
 export const Swipeable = tw.div`flex-1 overflow-auto`;
 

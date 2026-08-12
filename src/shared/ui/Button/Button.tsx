@@ -1,7 +1,5 @@
 import { type ButtonHTMLAttributes, type FC, type ReactNode } from 'react';
 
-import { hoverEffect } from 'shared/ui/effects';
-
 import { StyledButton, StyledButtonIcon } from './Button.styles';
 
 type NativeButtonProps = ButtonHTMLAttributes<HTMLButtonElement>;
@@ -27,11 +25,7 @@ export const Button: FC<ButtonProps> = ({
   }
 
   return (
-    <StyledButton
-      type={type}
-      className={[hoverEffect, className].filter(Boolean).join(' ')}
-      {...props}
-    >
+    <StyledButton type={type} className={className} {...props}>
       {children}
     </StyledButton>
   );

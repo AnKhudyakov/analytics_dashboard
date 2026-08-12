@@ -1,6 +1,6 @@
 import tw from 'tailwind-styled-components';
 
-export const TableContainer = tw.div`h-full overflow-x-auto rounded-xl border border-neutral-400 bg-secondary dark:border-secondary-1`;
+export const TableContainer = tw.div`panel-surface h-full overflow-x-auto rounded-xl border border-neutral-400 bg-secondary dark:border-secondary-1`;
 
 export const Table = tw.table<{
   $stretch?: boolean;
