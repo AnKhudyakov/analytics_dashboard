@@ -70,7 +70,7 @@ export const Input = ({
           </EndIconSlot>
         )}
       </Container>
-      <ErrorText id={errorId}>{error}</ErrorText>
+      {!search && <ErrorText id={errorId}>{error}</ErrorText>}
     </Field>
   );
 };
