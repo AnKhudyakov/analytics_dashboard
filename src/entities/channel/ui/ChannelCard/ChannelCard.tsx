@@ -26,23 +26,15 @@ export const ChannelCard: FC<ChannelCardProps> = ({ channel }) => {
     <Card flex className="flex-col sm:flex-row">
       {banner && (
         <BannerWrapper>
-          <LazyImage
-            skeletonHeight={278}
-            src={proxiedImageUrl(banner)}
-            alt=""
-            className="rounded-t-lg sm:rounded-t-none sm:rounded-l-lg"
-          />
+          <LazyImage src={proxiedImageUrl(banner)} alt="" />
         </BannerWrapper>
       )}
       <Container>
         <InfoWrapper>
           <LazyImage
-            skeletonHeight="4rem"
-            skeletonWidth="4rem"
-            borderRadius="50%"
             src={proxiedImageUrl(avatar)}
             alt=""
-            className="h-16 w-16 rounded-full border border-secondary-1"
+            className="h-16 w-16 shrink-0 rounded-full border border-secondary-1"
           />
           <div>
             {snippet.customUrl ? (

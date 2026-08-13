@@ -24,12 +24,7 @@ export const VideoCard: FC<VideoCardProps> = ({ video }) => {
   return (
     <Card flex className="flex-col sm:flex-row">
       <BannerWrapper>
-        <LazyImage
-          skeletonHeight={278}
-          src={proxiedImageUrl(banner)}
-          alt=""
-          className="rounded-t-lg sm:rounded-t-none sm:rounded-l-lg"
-        />
+        <LazyImage src={proxiedImageUrl(banner)} alt="" />
       </BannerWrapper>
       <Container>
         <InfoWrapper>
