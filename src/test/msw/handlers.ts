@@ -106,6 +106,9 @@ export const handlers = [
       pageInfo: { totalResults: 1, resultsPerPage: 10 },
     })
   ),
+  http.get(`${API_URL}/auth/providers`, () =>
+    HttpResponse.json({ google: false, linkedin: false, facebook: false })
+  ),
   http.post(`${API_URL}/login`, async ({ request }) => {
     const body = (await request.json()) as { username?: string };
     if (body.username !== 'demo') {

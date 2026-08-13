@@ -1,7 +1,12 @@
 import { screen } from '@testing-library/react';
+import { http, HttpResponse } from 'msw';
 import { useLocation } from 'react-router-dom';
+import { makeToken } from 'test/msw/handlers';
+import { server } from 'test/msw/server';
 import { renderWithProviders } from 'test/renderWithProviders';
 import { describe, expect, it } from 'vitest';
+
+import { config } from 'shared/config';
 
 import { LoginForm } from './LoginForm';
 
@@ -136,5 +141,61 @@ describe('LoginForm', () => {
     expect(
       await screen.findByText('Password recovery is not connected yet')
     ).toBeInTheDocument();
+  });
+  it('sends a wired provider to the api and leaves the rest inert', async () => {
+    server.use(
+      http.get(`${config.backendUrl}/auth/providers`, () =>
+        HttpResponse.json({ google: true, linkedin: false, facebook: false })
+      )
+    );
+
+    renderWithProviders(<LoginForm />, { route: '/login' });
+
+    expect(
+      await screen.findByRole('link', { name: 'Continue with Google' })
+    ).toHaveAttribute('href', `${config.backendUrl}/auth/google`);
+    expect(
+      screen.getByRole('button', { name: 'Continue with LinkedIn' })
+    ).toBeInTheDocument();
+  });
+
+  it('explains that a provider without credentials is not connected', async () => {
+    const { user } = renderWithProviders(<LoginForm />, { route: '/login' });
+
+    await user.click(
+      screen.getByRole('button', { name: 'Continue with Google' })
+    );
+
+    expect(
+      screen.getByText('Social sign-in is not connected yet')
+    ).toBeInTheDocument();
+  });
+
+  it('opens a session from the token the provider redirect carries', async () => {
+    const { store } = renderWithProviders(
+      <>
+        <LoginForm />
+        <CurrentPath />
+      </>,
+      { route: `/login?token=${makeToken()}` }
+    );
+
+    expect(await screen.findByText('/overview')).toBeInTheDocument();
+    expect(store.getState().session.token).not.toBeNull();
+  });
+
+  it('reports a failed provider redirect and drops the error from the url', async () => {
+    renderWithProviders(
+      <>
+        <LoginForm />
+        <CurrentPath />
+      </>,
+      { route: '/login?error=state' }
+    );
+
+    expect(
+      await screen.findByText(/Social sign-in did not go through/)
+    ).toBeInTheDocument();
+    expect(screen.getByText('/login')).toBeInTheDocument();
   });
 });

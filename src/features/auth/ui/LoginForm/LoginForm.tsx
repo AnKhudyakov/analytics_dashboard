@@ -1,5 +1,5 @@
 import { yupResolver } from '@hookform/resolvers/yup';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
@@ -11,6 +11,8 @@ import { Icons } from 'shared/ui/icons';
 import { Input } from 'shared/ui/Input';
 import { Typography } from 'shared/ui/Typography';
 
+import { useGetOAuthProvidersQuery } from '../../api/authApi';
+import { oauthStartUrl, useOAuthResult } from '../../model/oauth';
 import { useLogin } from '../../model/useLogin';
 import { type LoginFormValues, loginSchema } from '../../model/validation';
 import {
@@ -21,6 +23,7 @@ import {
   InlineButton,
   NoticeText,
   ProviderButton,
+  ProviderLink,
   ProviderRow,
   TextLink,
 } from './LoginForm.styles';
@@ -43,8 +46,14 @@ export const LoginForm = () => {
   const { t } = useTranslation();
   const navigate = useNavigate();
   const { login, isLoading, hasFailed } = useLogin();
+  const { data: providers } = useGetOAuthProvidersQuery();
+  const { hasSession, hasFailed: oauthFailed } = useOAuthResult();
   const [isPasswordVisible, setPasswordVisible] = useState(false);
   const [notice, setNotice] = useState('');
+
+  useEffect(() => {
+    if (hasSession) void navigate(routerPaths.OVERVIEW, { replace: true });
+  }, [hasSession, navigate]);
 
   const {
     register,
@@ -102,8 +111,15 @@ export const LoginForm = () => {
         </InlineButton>
       </div>
 
-      <NoticeText role="alert" $tone={hasFailed ? 'danger' : 'muted'}>
-        {hasFailed ? t('login.error') : notice}
+      <NoticeText
+        role="alert"
+        $tone={hasFailed || oauthFailed ? 'danger' : 'muted'}
+      >
+        {hasFailed
+          ? t('login.error')
+          : oauthFailed
+            ? t('login.socialError')
+            : notice}
       </NoticeText>
 
       <Button type="submit" fullWidth disabled={isLoading}>
@@ -119,16 +135,26 @@ export const LoginForm = () => {
       </Divider>
 
       <ProviderRow>
-        {PROVIDERS.map(({ id, labelKey, Icon }) => (
-          <ProviderButton
-            key={id}
-            type="button"
-            aria-label={t(labelKey)}
-            onClick={() => setNotice(t('login.providersUnavailable'))}
-          >
-            <Icon aria-hidden />
-          </ProviderButton>
-        ))}
+        {PROVIDERS.map(({ id, labelKey, Icon }) =>
+          providers?.[id] ? (
+            <ProviderLink
+              key={id}
+              href={oauthStartUrl(id)}
+              aria-label={t(labelKey)}
+            >
+              <Icon aria-hidden />
+            </ProviderLink>
+          ) : (
+            <ProviderButton
+              key={id}
+              type="button"
+              aria-label={t(labelKey)}
+              onClick={() => setNotice(t('login.providersUnavailable'))}
+            >
+              <Icon aria-hidden />
+            </ProviderButton>
+          )
+        )}
       </ProviderRow>
 
       <FooterText>
