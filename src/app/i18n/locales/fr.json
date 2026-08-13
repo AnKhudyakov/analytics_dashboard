@@ -18,7 +18,8 @@
     "continueWithLinkedin": "Continuer avec LinkedIn",
     "continueWithFacebook": "Continuer avec Facebook",
     "recoveryUnavailable": "Récupération du mot de passe non branchée",
-    "providersUnavailable": "Connexion sociale non branchée"
+    "providersUnavailable": "Connexion sociale non branchée",
+    "socialError": "La connexion via le réseau social a échoué, réessayez"
   },
   "signup": {
     "title": "Déroulez le tapis !",

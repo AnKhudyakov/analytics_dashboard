@@ -18,7 +18,8 @@
     "continueWithLinkedin": "Continue with LinkedIn",
     "continueWithFacebook": "Continue with Facebook",
     "recoveryUnavailable": "Password recovery is not connected yet",
-    "providersUnavailable": "Social sign-in is not connected yet"
+    "providersUnavailable": "Social sign-in is not connected yet",
+    "socialError": "Social sign-in did not go through, please try again"
   },
   "signup": {
     "title": "Roll the Carpet!",

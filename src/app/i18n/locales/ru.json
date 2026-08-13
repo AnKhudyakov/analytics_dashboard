@@ -18,7 +18,8 @@
     "continueWithLinkedin": "Войти через LinkedIn",
     "continueWithFacebook": "Войти через Facebook",
     "recoveryUnavailable": "Восстановление пароля пока не подключено",
-    "providersUnavailable": "Вход через соцсети пока не подключён"
+    "providersUnavailable": "Вход через соцсети пока не подключён",
+    "socialError": "Вход через соцсеть не удался, попробуйте ещё раз"
   },
   "signup": {
     "title": "Расстелаем дорожку",

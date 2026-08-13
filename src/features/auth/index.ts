@@ -1,4 +1,16 @@
-export { authApi, useLoginMutation, useSignupMutation } from './api/authApi';
+export {
+  authApi,
+  useGetOAuthProvidersQuery,
+  useLoginMutation,
+  useSignupMutation,
+} from './api/authApi';
+export {
+  OAUTH_PROVIDERS,
+  type OAuthProvider,
+  type OAuthProviders,
+  oauthStartUrl,
+  useOAuthResult,
+} from './model/oauth';
 export {
   selectExpiresAt,
   selectIsAuthenticated,

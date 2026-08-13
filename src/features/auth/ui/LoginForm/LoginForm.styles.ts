@@ -22,6 +22,8 @@ export const DividerLabel = tw.span`text-xs font-semibold text-secondary-font`;
 
 export const ProviderRow = tw.div`flex w-full items-center justify-center gap-3`;
 
+export const ProviderLink = tw.a`glass-field flex h-10 flex-1 cursor-pointer items-center justify-center rounded-md border border-secondary-1 hover:brightness-95 focus-visible:outline focus-visible:outline-secondary-4`;
+
 export const ProviderButton = tw.button`glass-field flex h-10 flex-1 cursor-pointer items-center justify-center rounded-md border border-secondary-1 transition-[filter] duration-150 hover:brightness-95 focus-visible:outline focus-visible:outline-secondary-4`;
 
 export const FooterText = tw.p`mt-2 w-full text-center text-xs font-semibold text-secondary-font`;

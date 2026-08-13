@@ -1,5 +1,7 @@
 import { baseApi } from 'shared/api';
 
+import { type OAuthProviders } from '../model/oauth';
+
 export interface LoginRequest {
   username: string;
   password: string;
@@ -24,10 +26,17 @@ export const authApi = baseApi.injectEndpoints({
         { type: 'VideoList', id: 'LIST' },
       ],
     }),
+    getOAuthProviders: builder.query<OAuthProviders, void>({
+      query: () => ({ url: '/auth/providers' }),
+    }),
     signup: builder.mutation<void, SignupRequest>({
       query: (body) => ({ url: '/signup', method: 'POST', body }),
     }),
   }),
 });
 
-export const { useLoginMutation, useSignupMutation } = authApi;
+export const {
+  useGetOAuthProvidersQuery,
+  useLoginMutation,
+  useSignupMutation,
+} = authApi;
