@@ -8,7 +8,7 @@ describe('App', () => {
     render(<App />);
 
     expect(
-      await screen.findByRole('heading', { name: 'Login' })
+      await screen.findByRole('heading', { name: 'Login' }, { timeout: 4000 })
     ).toBeInTheDocument();
     expect(screen.getByLabelText('Username')).toBeInTheDocument();
   });

@@ -19,12 +19,7 @@
     <script>
       (() => {
         const stored = localStorage.getItem('theme');
-        const mode =
-          stored === 'light' || stored === 'dark'
-            ? stored
-            : window.matchMedia('(prefers-color-scheme: light)').matches
-              ? 'light'
-              : 'dark';
+        const mode = stored === 'light' || stored === 'dark' ? stored : 'dark';
         document.documentElement.classList.add(mode);
         document.documentElement.style.colorScheme = mode;
       })();
@@ -32,8 +27,8 @@
 
     <style>
       :root {
-        --boot-bg: #1268c9;
-        --boot-fg: #ffffff;
+        --boot-bg: #e9eef8;
+        --boot-fg: #55637a;
       }
 
       html.dark {

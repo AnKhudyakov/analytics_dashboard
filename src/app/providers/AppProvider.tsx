@@ -7,6 +7,7 @@ import { SidebarProvider } from 'widgets/sidebar';
 
 import { AppRouter } from '../router';
 import { store } from '../store';
+import { BootGate } from './BootGate';
 import { ErrorBoundary } from './ErrorBoundary';
 
 export const AppProvider = () => (
@@ -14,7 +15,9 @@ export const AppProvider = () => (
     <ThemeProvider>
       <Provider store={store}>
         <SidebarProvider>
-          <AppRouter />
+          <BootGate>
+            <AppRouter />
+          </BootGate>
         </SidebarProvider>
       </Provider>
     </ThemeProvider>
