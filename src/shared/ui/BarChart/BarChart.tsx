@@ -14,7 +14,8 @@ import { compactNumber } from 'shared/lib/formatters';
 import {
   CHART_AXIS_STROKE,
   CHART_AXIS_TICK,
-  CHART_HEIGHT,
+  CHART_AXIS_WIDTH,
+  CHART_LEGEND_STYLE,
   CHART_TOOLTIP_STYLE,
   type ChartSeries,
   formatTooltipValue,
@@ -26,12 +27,16 @@ interface BarChartProps<T> {
   data: readonly T[];
   series: readonly ChartSeries[];
   yScale?: ScaleType;
+  xAxisKey?: string;
+  xAxisTick?: 'date' | 'label';
 }
 
 export const BarChart = <T,>({
   data,
   series,
   yScale = 'log',
+  xAxisKey = 'date',
+  xAxisTick = 'date',
 }: BarChartProps<T>) => {
   const [dimmed, setDimmed] = useState<string | null>(null);
   const labels = seriesLabels(series);
@@ -44,17 +49,18 @@ export const BarChart = <T,>({
   const handleLegendLeave = useCallback(() => setDimmed(null), []);
 
   return (
-    <ResponsiveContainer width="100%" height={CHART_HEIGHT}>
+    <ResponsiveContainer width="100%" height="100%">
       <RechartsBarChart data={data as T[]}>
         <XAxis
-          dataKey="date"
+          dataKey={xAxisKey}
           stroke={CHART_AXIS_STROKE}
           axisLine={false}
           tickLine={false}
-          tick={<DateTick />}
+          tick={xAxisTick === 'date' ? <DateTick /> : CHART_AXIS_TICK}
           interval="preserveEnd"
         />
         <YAxis
+          width={CHART_AXIS_WIDTH}
           stroke={CHART_AXIS_STROKE}
           axisLine={false}
           tickLine={false}
@@ -84,6 +90,7 @@ export const BarChart = <T,>({
           ]}
         />
         <Legend
+          wrapperStyle={CHART_LEGEND_STYLE}
           formatter={(value: string) => labels[value] ?? value}
           onMouseEnter={handleLegendEnter}
           onMouseLeave={handleLegendLeave}

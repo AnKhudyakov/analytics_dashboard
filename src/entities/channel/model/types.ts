@@ -73,3 +73,16 @@ export type ChannelsResponse = PaginatedResponse<Channel>;
 export type ChannelsQuery = ResourceQuery;
 
 export const CHANNELS_DEFAULT_SORT = 'name';
+
+export interface AudienceSlice {
+  label: string;
+  share: number;
+}
+
+export interface ChannelAudience {
+  channelId: string;
+  trafficSources: AudienceSlice[];
+  devices: AudienceSlice[];
+  ageGroups: AudienceSlice[];
+  genders: AudienceSlice[];
+}

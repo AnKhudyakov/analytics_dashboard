@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="fav.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#081028" />
+    <meta name="theme-color" content="#1268c9" />
     <meta
       name="description"
       content="YouTube analytics dashboard: channel and video metrics, revenue estimates and trends."
@@ -19,12 +19,7 @@
     <script>
       (() => {
         const stored = localStorage.getItem('theme');
-        const mode =
-          stored === 'light' || stored === 'dark'
-            ? stored
-            : window.matchMedia('(prefers-color-scheme: light)').matches
-              ? 'light'
-              : 'dark';
+        const mode = stored === 'light' || stored === 'dark' ? stored : 'dark';
         document.documentElement.classList.add(mode);
         document.documentElement.style.colorScheme = mode;
       })();
@@ -32,13 +27,18 @@
 
     <style>
       :root {
-        --boot-bg: #fafafa;
-        --boot-fg: #000a12;
+        --boot-bg: #e9eef8;
+        --boot-fg: #55637a;
       }
 
       html.dark {
-        --boot-bg: #081028;
-        --boot-fg: #ffffff;
+        --boot-bg: #0b0e14;
+        --boot-fg: #c7ceec;
+      }
+
+      html.dark .boot-screen,
+      html.dark body {
+        background: var(--boot-bg);
       }
 
       body {

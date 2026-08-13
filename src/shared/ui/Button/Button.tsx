@@ -1,20 +1,19 @@
 import { type ButtonHTMLAttributes, type FC, type ReactNode } from 'react';
 
-import { hoverEffect } from 'shared/ui/effects';
-
 import { StyledButton, StyledButtonIcon } from './Button.styles';
 
 type NativeButtonProps = ButtonHTMLAttributes<HTMLButtonElement>;
 
-export type ButtonProps = NativeButtonProps & { children: ReactNode } & (
-    | { icon: true; 'aria-label': string }
-    | { icon?: false }
-  );
+export type ButtonProps = NativeButtonProps & {
+  children: ReactNode;
+  fullWidth?: boolean;
+} & ({ icon: true; 'aria-label': string } | { icon?: false });
 
 export const Button: FC<ButtonProps> = ({
   icon,
   children,
   className,
+  fullWidth,
   type = 'button',
   ...props
 }) => {
@@ -29,7 +28,8 @@ export const Button: FC<ButtonProps> = ({
   return (
     <StyledButton
       type={type}
-      className={[hoverEffect, className].filter(Boolean).join(' ')}
+      className={className}
+      $fullWidth={fullWidth}
       {...props}
     >
       {children}

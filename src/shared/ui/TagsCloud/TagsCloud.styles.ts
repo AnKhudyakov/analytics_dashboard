@@ -1,14 +1,13 @@
 import tw from 'tailwind-styled-components';
 
 export const TAG_COLORS = [
-  'text-blue-500',
-  'text-red-400',
-  'text-green-600',
-  'text-purple-500',
-  'text-pink-400',
-  'text-yellow-500',
-  'text-indigo-500',
-  'text-teal-400',
+  'text-chart-2',
+  'text-chart-1',
+  'text-chart-3',
+  'text-chart-4',
+  'text-chart-5',
+  'text-secondary-2',
+  'text-secondary-3',
 ] as const;
 
 export const TagList = tw.ul`flex flex-wrap items-center justify-center gap-2 p-2 sm:gap-3`;

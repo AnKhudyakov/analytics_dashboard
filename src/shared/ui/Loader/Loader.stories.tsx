@@ -13,3 +13,7 @@ type Story = StoryObj<typeof Loader>;
 export const Loading: Story = {
   args: {},
 };
+
+export const FullScreen: Story = {
+  args: { fullScreen: true },
+};

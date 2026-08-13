@@ -41,6 +41,7 @@ const setup = (overrides: Partial<DataTableProps<Row>> = {}) => {
     sortOrder: 'asc',
     onSortChange: vi.fn(),
     filters: {},
+    scrollResetKey: 'page-1',
     onFiltersChange: vi.fn(),
     ...overrides,
   };
@@ -51,6 +52,18 @@ const setup = (overrides: Partial<DataTableProps<Row>> = {}) => {
 const desktopTable = () => screen.getByRole('table');
 
 describe('DataTable', () => {
+  it('sends the scroller back to the top when the list params change', () => {
+    const { props, rerender } = setup();
+    const body = within(desktopTable()).getAllByRole('rowgroup')[1];
+
+    if (!body) throw new Error('DataTable rendered no body');
+
+    body.scrollTop = 400;
+    rerender(<DataTable {...props} scrollResetKey="page-2" />);
+
+    expect(body.scrollTop).toBe(0);
+  });
+
   it('renders one row per item with a link to the details page', () => {
     setup();
 

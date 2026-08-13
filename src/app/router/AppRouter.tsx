@@ -6,7 +6,7 @@ import { Loader } from 'shared/ui/Loader';
 import { router } from './routes';
 
 export const AppRouter = () => (
-  <Suspense fallback={<Loader />}>
+  <Suspense fallback={<Loader fullScreen />}>
     <RouterProvider router={router} />
   </Suspense>
 );

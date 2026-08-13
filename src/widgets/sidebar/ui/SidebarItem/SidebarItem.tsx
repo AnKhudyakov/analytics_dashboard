@@ -19,8 +19,9 @@ export const SidebarItem: FC<SidebarItemProps> = ({
 }) => (
   <Item
     to={to}
+    $collapsed={isCollapsed}
     title={isCollapsed ? label : undefined}
-    className={`${hoverEffect} ${isCollapsed ? 'p-1.25' : 'p-2'}`}
+    className={hoverEffect}
   >
     {icon}
     {isCollapsed ? (

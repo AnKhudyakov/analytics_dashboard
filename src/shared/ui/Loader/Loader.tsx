@@ -8,11 +8,15 @@ import {
   LoaderWrapper,
 } from './Loader.styles';
 
-export const Loader: FC = () => {
+export interface LoaderProps {
+  fullScreen?: boolean;
+}
+
+export const Loader: FC<LoaderProps> = ({ fullScreen }) => {
   const { t } = useTranslation();
 
   return (
-    <LoaderContainer role="status" aria-live="polite">
+    <LoaderContainer role="status" aria-live="polite" $fullScreen={fullScreen}>
       <LoaderWrapper>
         <LoaderContent aria-hidden />
       </LoaderWrapper>

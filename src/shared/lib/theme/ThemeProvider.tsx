@@ -20,12 +20,11 @@ interface ThemeContextValue {
 
 const ThemeContext = createContext<ThemeContextValue | null>(null);
 
+const DEFAULT_THEME: ThemeMode = 'dark';
+
 export const readStoredTheme = (): ThemeMode => {
   const stored = localStorage.getItem(THEME_STORAGE_KEY);
-  if (stored === 'light' || stored === 'dark') return stored;
-  return window.matchMedia('(prefers-color-scheme: light)').matches
-    ? 'light'
-    : 'dark';
+  return stored === 'light' || stored === 'dark' ? stored : DEFAULT_THEME;
 };
 
 const applyTheme = (mode: ThemeMode) => {

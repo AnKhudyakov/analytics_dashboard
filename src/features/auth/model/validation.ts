@@ -15,7 +15,6 @@ yup.setLocale({
 export const loginSchema = yup.object({
   username: yup.string().required(),
   password: yup.string().required().min(6),
-  remember: yup.boolean().required(),
 });
 
 export const signupSchema = yup.object({

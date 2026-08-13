@@ -39,6 +39,15 @@ export const ResourceTable = <T,>({
   const [searchInput, setSearchInput] = useState(params.search);
   const debouncedSearch = useDebounce(searchInput);
 
+  const scrollResetKey = [
+    params.page,
+    params.limit,
+    params.sortBy,
+    params.sortOrder,
+    params.search,
+    JSON.stringify(params.filters),
+  ].join('|');
+
   useEffect(() => {
     if (debouncedSearch !== params.search) setSearch(debouncedSearch);
   }, [debouncedSearch, params.search, setSearch]);
@@ -66,6 +75,7 @@ export const ResourceTable = <T,>({
           onSortChange={toggleSort}
           filters={params.filters}
           onFiltersChange={setFilters}
+          scrollResetKey={scrollResetKey}
         />
         <Pagination
           total={total}

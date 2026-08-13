@@ -5,12 +5,17 @@ import {
   ArrowRightIcon,
   CheckedIcon,
   CloseIcon,
+  CompareIcon,
   EnIcon,
   ExitIcon,
+  FacebookIcon,
   FilterIcon,
   FrIcon,
+  GoogleIcon,
   HidePasswordIcon,
   HomeIcon,
+  LinkedinIcon,
+  ListIcon,
   MenuIcon,
   MoonIcon,
   NoIcon,
@@ -23,6 +28,7 @@ import {
   SpinnerIcon,
   SunIcon,
   UncheckedIcon,
+  UserIcon,
   VideosIcon,
   YesIcon,
 } from './Icons';
@@ -54,6 +60,12 @@ export const Icons = {
   en: EnIcon,
   ru: RuIcon,
   fr: FrIcon,
+  compare: CompareIcon,
+  list: ListIcon,
+  user: UserIcon,
+  google: GoogleIcon,
+  linkedin: LinkedinIcon,
+  facebook: FacebookIcon,
 };
 
 export const LangIconMap = {

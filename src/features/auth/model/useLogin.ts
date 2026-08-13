@@ -10,10 +10,10 @@ export const useLogin = () => {
   const [loginRequest, { isLoading, isError }] = useLoginMutation();
 
   const login = useCallback(
-    async ({ username, password, remember }: LoginFormValues) => {
+    async ({ username, password }: LoginFormValues) => {
       try {
         const { token } = await loginRequest({ username, password }).unwrap();
-        dispatch(sessionEstablished({ token, remember }));
+        dispatch(sessionEstablished(token));
         return true;
       } catch {
         return false;

@@ -14,13 +14,10 @@ const slice = createSlice({
   name: 'session',
   initialState: (): SessionState => readPersistedSession(),
   reducers: {
-    sessionEstablished: (
-      state,
-      { payload }: PayloadAction<{ token: string; remember: boolean }>
-    ) => {
-      persistToken(payload.token, payload.remember);
-      state.token = payload.token;
-      state.expiresAt = readTokenExpiry(payload.token);
+    sessionEstablished: (state, { payload }: PayloadAction<string>) => {
+      persistToken(payload);
+      state.token = payload;
+      state.expiresAt = readTokenExpiry(payload);
     },
     sessionCleared: (state) => {
       clearPersistedToken();

@@ -11,7 +11,7 @@ import { VideoAnalytics } from 'widgets/video-analytics';
 
 import { Container } from './VideoAnalyticsPage.styles';
 
-const SKELETON_HEIGHTS = [280, 418, 418, 195];
+const SKELETON_HEIGHTS = [282, 412, 396, 120];
 
 export const VideoAnalyticsPage = () => {
   const { t } = useTranslation();
@@ -19,11 +19,12 @@ export const VideoAnalyticsPage = () => {
   const {
     data: video,
     isFetching,
+    isLoading,
     isError,
     refetch,
   } = useGetVideoAnalyticsQuery(videoId ?? '', { skip: !videoId });
 
-  if (isFetching) return <SkeletonStack heights={SKELETON_HEIGHTS} />;
+  if (isLoading) return <SkeletonStack heights={SKELETON_HEIGHTS} />;
 
   return (
     <Container>
@@ -38,7 +39,7 @@ export const VideoAnalyticsPage = () => {
       ) : (
         <>
           <VideoCard video={video} />
-          <VideoAnalytics stats={video.stats} />
+          <VideoAnalytics videoId={video.id} stats={video.stats} />
           {video.snippet.tags && video.snippet.tags.length > 0 && (
             <TagsCloud
               tags={video.snippet.tags}

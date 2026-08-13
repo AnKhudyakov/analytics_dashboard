@@ -28,6 +28,15 @@ const LoginPage = lazy(() =>
 const SignupPage = lazy(() =>
   import('pages/signup').then((module) => ({ default: module.SignupPage }))
 );
+const OverviewPage = lazy(() =>
+  import('pages/overview').then((module) => ({ default: module.OverviewPage }))
+);
+const ComparePage = lazy(() =>
+  import('pages/compare').then((module) => ({ default: module.ComparePage }))
+);
+const ProfilePage = lazy(() =>
+  import('pages/profile').then((module) => ({ default: module.ProfilePage }))
+);
 const NotFoundPage = lazy(() =>
   import('pages/not-found').then((module) => ({ default: module.NotFoundPage }))
 );
@@ -43,12 +52,15 @@ export const router = createHashRouter([
         children: [
           {
             path: routerPaths.MAIN,
-            element: <Navigate to={routerPaths.CHANNELS} replace />,
+            element: <Navigate to={routerPaths.OVERVIEW} replace />,
           },
+          { path: routerPaths.OVERVIEW, element: <OverviewPage /> },
+          { path: routerPaths.COMPARE, element: <ComparePage /> },
           { path: routerPaths.CHANNELS, element: <ChannelsPage /> },
           { path: routerPaths.CHANNEL, element: <ChannelAnalyticsPage /> },
           { path: routerPaths.VIDEOS, element: <VideosPage /> },
           { path: routerPaths.VIDEO, element: <VideoAnalyticsPage /> },
+          { path: routerPaths.PROFILE, element: <ProfilePage /> },
         ],
       },
     ],

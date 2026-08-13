@@ -21,7 +21,7 @@ export const Checkbox = ({ label, checked, ...props }: CheckboxProps) => (
       {checked ? (
         <Icons.checked className="text-secondary-4" />
       ) : (
-        <Icons.unchecked className="text-secondary" />
+        <Icons.unchecked className="text-icon" />
       )}
     </CheckboxIcon>
     <Typography variant="body">{label}</Typography>

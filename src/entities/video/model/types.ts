@@ -39,3 +39,13 @@ export type VideosResponse = PaginatedResponse<Video>;
 export type VideosQuery = ResourceQuery;
 
 export const VIDEOS_DEFAULT_SORT = 'name';
+
+export interface VideoEngagement {
+  id: string;
+  steps: { key: string; value: number }[];
+  rates: {
+    likeRate: number;
+    commentRate: number;
+    engagementRate: number;
+  };
+}

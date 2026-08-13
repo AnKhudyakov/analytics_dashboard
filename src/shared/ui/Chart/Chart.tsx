@@ -16,7 +16,8 @@ import { DateTick } from 'shared/ui/DateTick';
 import {
   CHART_AXIS_STROKE,
   CHART_AXIS_TICK,
-  CHART_HEIGHT,
+  CHART_AXIS_WIDTH,
+  CHART_LEGEND_STYLE,
   CHART_TOOLTIP_STYLE,
   type ChartSeries,
   formatTooltipValue,
@@ -28,15 +29,15 @@ export type { ChartSeries };
 interface ChartProps<T> {
   data: readonly T[];
   series: readonly ChartSeries[];
-  biaxial?: boolean;
   yScale?: ScaleType;
+  hideValueAxis?: boolean;
 }
 
 export const Chart = <T,>({
   data,
   series,
-  biaxial,
   yScale = 'auto',
+  hideValueAxis,
 }: ChartProps<T>) => {
   const [dimmed, setDimmed] = useState<string | null>(null);
   const labels = seriesLabels(series);
@@ -49,7 +50,7 @@ export const Chart = <T,>({
   const handleLegendLeave = useCallback(() => setDimmed(null), []);
 
   return (
-    <ResponsiveContainer width="100%" height={CHART_HEIGHT}>
+    <ResponsiveContainer width="100%" height="100%">
       <AreaChart data={data as T[]}>
         <defs>
           {series.map(({ field, color }) => (
@@ -67,10 +68,9 @@ export const Chart = <T,>({
           ))}
         </defs>
 
-        {series.map(({ field, color }, index) => (
+        {series.map(({ field, color }) => (
           <Area
             key={field}
-            yAxisId={index > 0 && biaxial ? 'right' : 'left'}
             type="linear"
             dataKey={field}
             stroke={color}
@@ -90,7 +90,8 @@ export const Chart = <T,>({
           interval="preserveEnd"
         />
         <YAxis
-          yAxisId="left"
+          hide={hideValueAxis}
+          width={CHART_AXIS_WIDTH}
           stroke={CHART_AXIS_STROKE}
           scale={yScale}
           allowDataOverflow
@@ -100,19 +101,9 @@ export const Chart = <T,>({
           tick={CHART_AXIS_TICK}
           tickFormatter={compactNumber}
         />
-        {biaxial && (
-          <YAxis
-            yAxisId="right"
-            orientation="right"
-            stroke={CHART_AXIS_STROKE}
-            axisLine={false}
-            tickLine={false}
-            tick={CHART_AXIS_TICK}
-            tickFormatter={compactNumber}
-          />
-        )}
         {series.length > 1 && (
           <Legend
+            wrapperStyle={CHART_LEGEND_STYLE}
             formatter={(value: string) => labels[value] ?? value}
             onMouseEnter={handleLegendEnter}
             onMouseLeave={handleLegendLeave}

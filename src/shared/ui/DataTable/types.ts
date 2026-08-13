@@ -26,4 +26,5 @@ export interface DataTableProps<T> {
   onSortChange: (columnKey: string) => void;
   filters: Filters;
   onFiltersChange: (filters: Filters) => void;
+  scrollResetKey: string;
 }
