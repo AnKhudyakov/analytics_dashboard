@@ -1,4 +1,4 @@
-import { type FC, useMemo, useState } from 'react';
+import { type FC, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { type CompareMetric, useCompareChannelsQuery } from 'entities/insights';
@@ -28,8 +28,6 @@ import {
   CardValue,
   Dot,
   Grid,
-  MetricButton,
-  MetricRow,
   Notice,
   Panel,
   Row,
@@ -41,24 +39,18 @@ import { ChannelCompareSkeleton } from './ChannelCompareSkeleton';
 
 const PERIOD_DAYS = 90;
 
-const METRICS = [
-  { key: 'subscriberCount', labelKey: 'metrics.subscribers' },
-  { key: 'viewCount', labelKey: 'metrics.views' },
-  { key: 'videoCount', labelKey: 'metrics.videos' },
-  { key: 'estimatedRevenueUsd', labelKey: 'metrics.revenue' },
-] as const satisfies readonly { key: CompareMetric; labelKey: string }[];
-
 export interface ChannelCompareProps {
   channels: readonly TrackedChannel[];
+  metric: CompareMetric;
   ownId?: string | null;
 }
 
 export const ChannelCompare: FC<ChannelCompareProps> = ({
   channels,
+  metric,
   ownId,
 }) => {
   const { t } = useTranslation();
-  const [metric, setMetric] = useState<CompareMetric>('subscriberCount');
 
   const ids = useMemo(() => channels.map((channel) => channel.id), [channels]);
 
@@ -184,20 +176,6 @@ export const ChannelCompare: FC<ChannelCompareProps> = ({
 
   return (
     <Grid>
-      <MetricRow role="group" aria-label={t('compare.metric')}>
-        {METRICS.map(({ key, labelKey }) => (
-          <MetricButton
-            key={key}
-            type="button"
-            $active={key === metric}
-            aria-pressed={key === metric}
-            onClick={() => setMetric(key)}
-          >
-            {t(labelKey)}
-          </MetricButton>
-        ))}
-      </MetricRow>
-
       <CardRow aria-label={t('compare.cards')}>
         {rows.map((row) => (
           <Card key={row.id}>

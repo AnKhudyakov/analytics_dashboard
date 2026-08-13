@@ -2,17 +2,6 @@ import tw from 'tailwind-styled-components';
 
 export const Grid = tw.div`flex w-full flex-col gap-4 sm:gap-6`;
 
-export const MetricRow = tw.div`flex flex-wrap gap-2`;
-
-export const MetricButton = tw.button<{
-  $active?: boolean;
-}>`rounded-md border px-3 py-1.5 text-xs font-semibold transition-colors focus-visible:outline focus-visible:outline-secondary-4 ${({
-  $active,
-}) =>
-  $active
-    ? 'border-transparent bg-secondary-5 text-base-font'
-    : 'border-secondary-1 text-secondary-font hover:text-base-font'} `;
-
 export const CardRow = tw.ul`grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4 xl:grid-cols-4`;
 
 export const Card = tw.li`glass-panel flex min-w-0 flex-col gap-1 rounded-panel p-3 sm:p-4`;

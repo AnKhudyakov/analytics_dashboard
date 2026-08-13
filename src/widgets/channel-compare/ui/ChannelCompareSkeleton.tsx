@@ -8,7 +8,6 @@ import {
   Card,
   CardRow,
   Grid,
-  MetricRow,
   Panel,
   Row,
   SkeletonPie,
@@ -19,9 +18,7 @@ import {
   WidePanel,
 } from './ChannelCompare.styles';
 
-const METRIC_COUNT = 4;
 const DEFAULT_CHANNELS = 4;
-const BUTTON_HEIGHT = 30;
 const TITLE_HEIGHT = 20;
 const HINT_HEIGHT = 16;
 const NARROW_HINT_HEIGHT = 32;
@@ -44,17 +41,6 @@ export const ChannelCompareSkeleton: FC<ChannelCompareSkeletonProps> = ({
 
   return (
     <Grid role="status" aria-label={t('shared.loading')}>
-      <MetricRow>
-        {range(METRIC_COUNT).map((index) => (
-          <Skeleton
-            key={index}
-            width={92}
-            height={BUTTON_HEIGHT}
-            radius="0.375rem"
-          />
-        ))}
-      </MetricRow>
-
       <CardRow>
         {range(count).map((index) => (
           <Card key={index}>

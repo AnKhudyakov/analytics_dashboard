@@ -52,7 +52,13 @@ const mockCompare = () =>
 describe('ChannelCompare', () => {
   it('shows a card per channel with the period growth', async () => {
     mockCompare();
-    renderWithProviders(<ChannelCompare channels={CHANNELS} ownId="mine" />);
+    renderWithProviders(
+      <ChannelCompare
+        channels={CHANNELS}
+        metric="subscriberCount"
+        ownId="mine"
+      />
+    );
 
     const cards = within(
       await screen.findByRole('list', { name: 'Compared channels' })
@@ -67,7 +73,13 @@ describe('ChannelCompare', () => {
 
   it('splits the field into your share and everyone elses', async () => {
     mockCompare();
-    renderWithProviders(<ChannelCompare channels={CHANNELS} ownId="mine" />);
+    renderWithProviders(
+      <ChannelCompare
+        channels={CHANNELS}
+        metric="subscriberCount"
+        ownId="mine"
+      />
+    );
 
     const share = within(
       await screen.findByRole('list', { name: 'Your share of the field' })
@@ -77,7 +89,7 @@ describe('ChannelCompare', () => {
     expect(share.getByText('400K')).toBeInTheDocument();
   });
 
-  it('refetches the comparison when another metric is picked', async () => {
+  it('asks the api for the metric it was given', async () => {
     const requested: string[] = [];
     server.use(
       http.get(`${config.backendUrl}/insights/compare`, ({ request }) => {
@@ -86,11 +98,21 @@ describe('ChannelCompare', () => {
       })
     );
 
-    const { user } = renderWithProviders(
-      <ChannelCompare channels={CHANNELS} ownId="mine" />
+    const { rerender } = renderWithProviders(
+      <ChannelCompare
+        channels={CHANNELS}
+        metric="subscriberCount"
+        ownId="mine"
+      />
     );
 
-    await user.click(await screen.findByRole('button', { name: 'Views' }));
+    await screen.findByRole('list', { name: 'Compared channels' });
+
+    rerender(
+      <ChannelCompare channels={CHANNELS} metric="viewCount" ownId="mine" />
+    );
+
+    await screen.findByRole('list', { name: 'Compared channels' });
 
     expect(requested).toContain('subscriberCount');
     expect(requested).toContain('viewCount');
@@ -104,7 +126,13 @@ describe('ChannelCompare', () => {
       })
     );
 
-    renderWithProviders(<ChannelCompare channels={CHANNELS} ownId="mine" />);
+    renderWithProviders(
+      <ChannelCompare
+        channels={CHANNELS}
+        metric="subscriberCount"
+        ownId="mine"
+      />
+    );
 
     const placeholders = within(
       screen.getByRole('status', { name: 'Loading' })
