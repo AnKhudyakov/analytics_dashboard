@@ -58,7 +58,7 @@ export const LoginForm = () => {
   const onSubmit = handleSubmit(async (values) => {
     setNotice('');
     const succeeded = await login(values);
-    if (succeeded) void navigate(routerPaths.CHANNELS, { replace: true });
+    if (succeeded) void navigate(routerPaths.OVERVIEW, { replace: true });
   });
 
   return (

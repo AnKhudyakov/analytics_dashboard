@@ -1,8 +1,11 @@
 import { screen } from '@testing-library/react';
+import { useLocation } from 'react-router-dom';
 import { renderWithProviders } from 'test/renderWithProviders';
 import { describe, expect, it } from 'vitest';
 
 import { LoginForm } from './LoginForm';
+
+const CurrentPath = () => <p>{useLocation().pathname}</p>;
 
 const fillCredentials = async (
   user: ReturnType<typeof renderWithProviders>['user'],
@@ -14,6 +17,21 @@ const fillCredentials = async (
 };
 
 describe('LoginForm', () => {
+  it('lands on the overview once the session is established', async () => {
+    const { user } = renderWithProviders(
+      <>
+        <LoginForm />
+        <CurrentPath />
+      </>,
+      { route: '/login' }
+    );
+
+    await fillCredentials(user, 'demo', 'secret123');
+    await user.click(screen.getByRole('button', { name: 'Login' }));
+
+    expect(await screen.findByText('/overview')).toBeInTheDocument();
+  });
+
   it('labels every field for assistive tech', () => {
     renderWithProviders(<LoginForm />);
 
