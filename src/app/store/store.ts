@@ -7,13 +7,21 @@ import { setupListeners } from '@reduxjs/toolkit/query';
 
 import {
   sessionCleared,
+  sessionEstablished,
   sessionReducer,
   sessionSliceName,
 } from 'features/auth';
 import { baseApi, UNAUTHORIZED_STATUS } from 'shared/api';
 
-const createUnauthorizedListener = () => {
+const createSessionListener = () => {
   const listener = createListenerMiddleware();
+
+  listener.startListening({
+    actionCreator: sessionEstablished,
+    effect: (_action, listenerApi) => {
+      listenerApi.dispatch(baseApi.util.resetApiState());
+    },
+  });
 
   listener.startListening({
     matcher: isRejectedWithValue,
@@ -41,7 +49,7 @@ export const createAppStore = () =>
     },
     middleware: (getDefaultMiddleware) =>
       getDefaultMiddleware()
-        .prepend(createUnauthorizedListener().middleware)
+        .prepend(createSessionListener().middleware)
         .concat(baseApi.middleware),
   });
 

@@ -1,22 +1,21 @@
 import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 
-import { selectExpiresAt, sessionCleared } from './sessionSlice';
+import { useRefreshMutation } from '../api/authApi';
+import { selectExpiresAt } from './sessionSlice';
+
+const REFRESH_MARGIN = 60_000;
 
 export const useSessionExpiry = () => {
-  const dispatch = useDispatch();
   const expiresAt = useSelector(selectExpiresAt);
+  const [refresh] = useRefreshMutation();
 
   useEffect(() => {
     if (expiresAt === null) return;
 
-    const timeLeft = expiresAt - Date.now();
-    if (timeLeft <= 0) {
-      dispatch(sessionCleared());
-      return;
-    }
+    const delay = Math.max(expiresAt - Date.now() - REFRESH_MARGIN, 0);
+    const timer = setTimeout(() => void refresh(), delay);
 
-    const timer = setTimeout(() => dispatch(sessionCleared()), timeLeft);
     return () => clearTimeout(timer);
-  }, [expiresAt, dispatch]);
+  }, [expiresAt, refresh]);
 };

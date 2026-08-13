@@ -9,13 +9,13 @@ Tailwind 4 · Recharts · Vitest · Storybook
 
 ## Screens
 
-| Route                  | What it does                                                   |
-| ---------------------- | -------------------------------------------------------------- |
-| `/login`, `/signup`    | JWT auth, "remember me" chooses session vs persistent storage  |
-| `/channels`            | Channel table: search, sort, range/boolean filters, pagination |
-| `/channels/:channelId` | Channel card + subscriber/view/revenue charts                  |
-| `/videos`              | Video table with the same table toolkit                        |
-| `/videos/:videoId`     | Video card, rolling-revenue charts, tag cloud                  |
+| Route                  | What it does                                                    |
+| ---------------------- | --------------------------------------------------------------- |
+| `/login`, `/signup`    | Password or social sign-in, refresh token in an httpOnly cookie |
+| `/channels`            | Channel table: search, sort, range/boolean filters, pagination  |
+| `/channels/:channelId` | Channel card + subscriber/view/revenue charts                   |
+| `/videos`              | Video table with the same table toolkit                         |
+| `/videos/:videoId`     | Video card, rolling-revenue charts, tag cloud                   |
 
 All list state (search, page, page size, sort, filters) lives in the query
 string, so any table view is a shareable link and the back button works.
@@ -47,17 +47,21 @@ Notable decisions:
   their column definitions (`entities/channel/ui/channelColumns.tsx`), so the
   table itself has no domain knowledge.
 - **Access token in memory.** `shared/api/accessToken.ts` holds the token for
-  outgoing requests; `features/auth` owns persistence and expiry. A listener
-  middleware clears the session on any `401`, and a timer clears it at `exp`.
+  outgoing requests; `features/auth` owns persistence and expiry. A `401` sends
+  the base query through a single-flight refresh and replays the request, a timer
+  renews the token a minute before it expires, and a listener middleware clears
+  the session once a refresh is refused.
 - **Theme via CSS custom properties** declared in `src/app/styles/index.css`,
   including chart colors — charts are readable in both themes without JS.
 
-### Known limitation
+### Session handling
 
-The demo backend issues a long-lived JWT and exposes no refresh endpoint, so the
-token is persisted in `localStorage`/`sessionStorage`. With a refresh endpoint
-the access token would stay in memory only, with the refresh token in an
-httpOnly cookie and a single-flight refresh on `401`.
+The API issues a fifteen minute access token in the response body and a rotating
+refresh token in an httpOnly, `Secure`, `SameSite=None` cookie scoped to
+`/api/auth`. The access token is still mirrored in `localStorage` so a reload
+keeps the session without a round trip; the refresh token is never reachable
+from JavaScript. Reusing a rotated refresh token is rejected, and signing out
+revokes it on the server.
 
 ## Getting started
 

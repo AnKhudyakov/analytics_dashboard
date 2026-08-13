@@ -1,5 +1,7 @@
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit';
 
+import { sessionRefreshed } from 'shared/api';
+
 import {
   clearPersistedToken,
   persistToken,
@@ -24,6 +26,13 @@ const slice = createSlice({
       state.token = null;
       state.expiresAt = null;
     },
+  },
+  extraReducers: (builder) => {
+    builder.addCase(sessionRefreshed, (state, { payload }) => {
+      persistToken(payload);
+      state.token = payload;
+      state.expiresAt = readTokenExpiry(payload);
+    });
   },
   selectors: {
     selectToken: (state) => state.token,
