@@ -8,7 +8,12 @@ import { ThemeSwitcher } from 'features/theme-switcher';
 import { Button } from 'shared/ui/Button';
 import { ButtonExit } from 'shared/ui/ButtonExit';
 import { Icons } from 'shared/ui/icons';
-import { Toolbar } from 'shared/ui/Toolbar';
+import {
+  SettingsField,
+  SettingsLabel,
+  SettingsPopover,
+  SettingsRow,
+} from 'shared/ui/SettingsPopover';
 import { Typography } from 'shared/ui/Typography';
 
 import { SidebarNav } from '../SidebarNav';
@@ -39,7 +44,7 @@ export const MobileSidebar = () => {
             aria-expanded={isOpen}
             onClick={() => setOpen(true)}
           >
-            <Icons.menu className="fill-white text-base-font" aria-hidden />
+            <Icons.menu className="text-base-font" aria-hidden />
           </Button>
           <Typography variant="title">{t('sidebar.title')}</Typography>
         </HeaderLeft>
@@ -59,12 +64,16 @@ export const MobileSidebar = () => {
           <SidebarNav />
         </nav>
         <SettingsWrapper>
-          <div className="w-22">
-            <Toolbar>
+          <SettingsPopover label={t('settings.title')} placement="up">
+            <SettingsRow>
+              <SettingsLabel>{t('settings.theme')}</SettingsLabel>
               <ThemeSwitcher />
-              <LanguageSwitcher />
-            </Toolbar>
-          </div>
+            </SettingsRow>
+            <SettingsField>
+              <SettingsLabel>{t('settings.language')}</SettingsLabel>
+              <LanguageSwitcher inline />
+            </SettingsField>
+          </SettingsPopover>
           <Button
             icon
             aria-label={t('sidebar.closeMenu')}

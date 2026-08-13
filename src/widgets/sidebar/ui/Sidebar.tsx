@@ -7,7 +7,12 @@ import { ThemeSwitcher } from 'features/theme-switcher';
 import { Button } from 'shared/ui/Button';
 import { ButtonExit } from 'shared/ui/ButtonExit';
 import { Icons } from 'shared/ui/icons';
-import { Toolbar } from 'shared/ui/Toolbar';
+import {
+  SettingsField,
+  SettingsLabel,
+  SettingsPopover,
+  SettingsRow,
+} from 'shared/ui/SettingsPopover';
 import { Typography } from 'shared/ui/Typography';
 
 import { useSidebar } from '../model/SidebarProvider';
@@ -42,12 +47,16 @@ export const Sidebar: FC = () => {
           </Nav>
         </Wrapper>
         <SettingsWrapper className={isCollapsed ? 'flex-col' : 'flex-row'}>
-          <div className={isCollapsed ? '' : 'w-22'}>
-            <Toolbar direction={isCollapsed ? 'column' : 'row'}>
+          <SettingsPopover label={t('settings.title')} placement="up">
+            <SettingsRow>
+              <SettingsLabel>{t('settings.theme')}</SettingsLabel>
               <ThemeSwitcher />
-              <LanguageSwitcher />
-            </Toolbar>
-          </div>
+            </SettingsRow>
+            <SettingsField>
+              <SettingsLabel>{t('settings.language')}</SettingsLabel>
+              <LanguageSwitcher inline />
+            </SettingsField>
+          </SettingsPopover>
           <Button
             icon
             aria-label={t(isCollapsed ? 'sidebar.expand' : 'sidebar.collapse')}
