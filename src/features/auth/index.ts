@@ -2,6 +2,8 @@ export {
   authApi,
   useGetOAuthProvidersQuery,
   useLoginMutation,
+  useLogoutMutation,
+  useRefreshMutation,
   useSignupMutation,
 } from './api/authApi';
 export {
