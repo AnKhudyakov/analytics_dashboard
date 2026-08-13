@@ -38,6 +38,7 @@ const meta = {
     ),
   ],
   args: {
+    scrollResetKey: 'page-1',
     columns,
     rows,
     total: rows.length,

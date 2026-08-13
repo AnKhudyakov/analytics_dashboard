@@ -12,7 +12,7 @@ export const SwipeControls = tw.div`glass-strong sticky top-18.5 z-90 flex items
 
 export const ArrowButton = tw.button`rounded-sm p-2 text-base-font hover:cursor-pointer hover:text-secondary-4 focus-visible:outline focus-visible:outline-secondary-4`;
 
-export const Swipeable = tw.div`flex-1 overflow-auto`;
+export const Swipeable = tw.div`scroll-area flex-1`;
 
 export const Row = tw.div`flex gap-2 text-sm text-base-font even:bg-row-alt`;
 

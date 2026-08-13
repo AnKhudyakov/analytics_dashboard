@@ -1,4 +1,4 @@
-import { type ReactNode, useState } from 'react';
+import { type ReactNode, useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { useSwipeable } from 'react-swipeable';
@@ -34,6 +34,7 @@ interface MobileTableProps<T> {
   onSortChange: (columnKey: string) => void;
   filters: Filters;
   onFiltersChange: (filters: Filters) => void;
+  scrollResetKey: string;
 }
 
 export const MobileTable = <T,>({
@@ -48,10 +49,16 @@ export const MobileTable = <T,>({
   onSortChange,
   filters,
   onFiltersChange,
+  scrollResetKey,
 }: MobileTableProps<T>) => {
   const { t } = useTranslation();
   const [activeIndex, setActiveIndex] = useState(1);
   const [openFilterKey, setOpenFilterKey] = useState<string | null>(null);
+  const scrollerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (scrollerRef.current) scrollerRef.current.scrollTop = 0;
+  }, [scrollResetKey]);
 
   const secondaryCount = Math.max(1, columns.length - 1);
   const step = (delta: number) =>
@@ -117,7 +124,13 @@ export const MobileTable = <T,>({
         </ArrowButton>
       </SwipeControls>
 
-      <Swipeable {...swipeHandlers}>
+      <Swipeable
+        {...swipeHandlers}
+        ref={(node) => {
+          scrollerRef.current = node;
+          swipeHandlers.ref(node);
+        }}
+      >
         {status ? (
           <StatusWrapper>{statusNode}</StatusWrapper>
         ) : (

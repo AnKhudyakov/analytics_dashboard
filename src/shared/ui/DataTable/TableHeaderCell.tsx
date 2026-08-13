@@ -9,6 +9,7 @@ import {
   FilterIcon,
   HeaderContent,
   SortButton,
+  SortLabel,
 } from './TableHeaderCell.styles';
 import { type Column } from './types';
 
@@ -50,13 +51,27 @@ export const TableHeaderCell = <T,>({
           <FilterIcon width={24} height={24} $active={hasFilter} aria-hidden />
         </Button>
       )}
-      <SortButton type="button" onClick={() => onSortChange(column.key)}>
-        {title}
+      <SortButton
+        type="button"
+        title={title}
+        onClick={() => onSortChange(column.key)}
+      >
+        <SortLabel>{title}</SortLabel>
         {isSorted &&
           (sortOrder === 'asc' ? (
-            <Icons.sortASC width={20} height={20} aria-hidden />
+            <Icons.sortASC
+              width={20}
+              height={20}
+              className="shrink-0"
+              aria-hidden
+            />
           ) : (
-            <Icons.sortDESC width={20} height={20} aria-hidden />
+            <Icons.sortDESC
+              width={20}
+              height={20}
+              className="shrink-0"
+              aria-hidden
+            />
           ))}
       </SortButton>
       {column.filterType && isFilterOpen && (

@@ -1,8 +1,8 @@
 import { type FC } from 'react';
 
-import { Typography } from 'shared/ui/Typography';
+import { LazyImage } from 'shared/ui/LazyImage';
 
-import { Avatar, Container } from './AvatarInfo.styles';
+import { Avatar, Container, Name } from './AvatarInfo.styles';
 
 export interface AvatarInfoProps {
   src: string;
@@ -11,7 +11,9 @@ export interface AvatarInfoProps {
 
 export const AvatarInfo: FC<AvatarInfoProps> = ({ src, name }) => (
   <Container>
-    <Avatar src={src} alt="" loading="lazy" decoding="async" aria-hidden />
-    <Typography variant="body">{name}</Typography>
+    <Avatar>
+      <LazyImage src={src} alt="" aria-hidden />
+    </Avatar>
+    <Name title={name}>{name}</Name>
   </Container>
 );

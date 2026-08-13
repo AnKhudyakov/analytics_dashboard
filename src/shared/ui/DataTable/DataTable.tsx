@@ -1,4 +1,4 @@
-import { memo, useState } from 'react';
+import { memo, useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 
@@ -10,7 +10,9 @@ import {
   HeaderCell,
   HeaderRow,
   StatusCell,
+  StatusRow,
   Table,
+  TableBody,
   TableContainer,
   TableHead,
 } from './DataTable.styles';
@@ -49,9 +51,15 @@ export const DataTable = <T,>({
   onSortChange,
   filters,
   onFiltersChange,
+  scrollResetKey,
 }: DataTableProps<T>) => {
   const { t } = useTranslation();
   const [openFilterKey, setOpenFilterKey] = useState<string | null>(null);
+  const bodyRef = useRef<HTMLTableSectionElement>(null);
+
+  useEffect(() => {
+    if (bodyRef.current) bodyRef.current.scrollTop = 0;
+  }, [scrollResetKey]);
 
   const status = statusOf({ isLoading, isError, isEmpty: rows.length === 0 });
   const activeFilterCount = Object.values(filters).filter(Boolean).length;
@@ -68,13 +76,14 @@ export const DataTable = <T,>({
 
   return (
     <TableContainer>
-      <Table $stretch={Boolean(status)}>
+      <Table role="table">
         <caption className="sr-only">{t('shared.tableCaption')}</caption>
-        <TableHead>
-          <HeaderRow>
+        <TableHead role="rowgroup">
+          <HeaderRow role="row">
             {columns.map((column, index) => (
               <HeaderCell
                 key={column.key}
+                role="columnheader"
                 scope="col"
                 $first={index === 0}
                 aria-sort={
@@ -99,11 +108,13 @@ export const DataTable = <T,>({
             ))}
           </HeaderRow>
         </TableHead>
-        <tbody>
+        <TableBody ref={bodyRef} role="rowgroup">
           {statusNode ? (
-            <tr>
-              <StatusCell colSpan={columns.length}>{statusNode}</StatusCell>
-            </tr>
+            <StatusRow role="row">
+              <StatusCell role="cell" colSpan={columns.length}>
+                {statusNode}
+              </StatusCell>
+            </StatusRow>
           ) : (
             rows.map((row) => (
               <TableBodyRow
@@ -114,7 +125,7 @@ export const DataTable = <T,>({
               />
             ))
           )}
-        </tbody>
+        </TableBody>
       </Table>
 
       <MobileTable
@@ -129,6 +140,7 @@ export const DataTable = <T,>({
         onSortChange={onSortChange}
         filters={filters}
         onFiltersChange={onFiltersChange}
+        scrollResetKey={scrollResetKey}
       />
       <span className="sr-only" aria-live="polite">
         {t('shared.totalResults', { count: total })}
@@ -148,9 +160,9 @@ const TableBodyRowComponent = <T,>({
   columns,
   href,
 }: TableBodyRowProps<T>) => (
-  <BodyRow className={hoverEffect}>
+  <BodyRow role="row" className={hoverEffect}>
     {columns.map((column, index) => (
-      <BodyCell key={column.key} $first={index === 0}>
+      <BodyCell key={column.key} role="cell" $first={index === 0}>
         {index === 0 ? (
           <Link to={href} className="block">
             {column.renderCell(row)}
