@@ -22,10 +22,6 @@ export const authApi = baseApi.injectEndpoints({
   endpoints: (builder) => ({
     login: builder.mutation<LoginResponse, LoginRequest>({
       query: (body) => ({ url: '/login', method: 'POST', body }),
-      invalidatesTags: [
-        { type: 'ChannelList', id: 'LIST' },
-        { type: 'VideoList', id: 'LIST' },
-      ],
     }),
     refresh: builder.mutation<LoginResponse, void>({
       query: () => ({ url: '/auth/refresh', method: 'POST' }),
