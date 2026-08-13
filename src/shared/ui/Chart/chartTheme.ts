@@ -21,6 +21,14 @@ export const CHART_AXIS_TICK = {
 
 export const CHART_AXIS_STROKE = 'var(--color-chart-axis)';
 
+export const CHART_AXIS_WIDTH = 46;
+
+export const CHART_LEGEND_STYLE: CSSProperties = {
+  fontSize: '0.75rem',
+  lineHeight: 1.2,
+  paddingTop: 4,
+};
+
 export const DONUT_COLORS = [
   'var(--color-chart-1)',
   'var(--color-chart-2)',

@@ -14,6 +14,8 @@ import { compactNumber } from 'shared/lib/formatters';
 import {
   CHART_AXIS_STROKE,
   CHART_AXIS_TICK,
+  CHART_AXIS_WIDTH,
+  CHART_LEGEND_STYLE,
   CHART_TOOLTIP_STYLE,
   type ChartSeries,
   formatTooltipValue,
@@ -58,6 +60,7 @@ export const BarChart = <T,>({
           interval="preserveEnd"
         />
         <YAxis
+          width={CHART_AXIS_WIDTH}
           stroke={CHART_AXIS_STROKE}
           axisLine={false}
           tickLine={false}
@@ -87,6 +90,7 @@ export const BarChart = <T,>({
           ]}
         />
         <Legend
+          wrapperStyle={CHART_LEGEND_STYLE}
           formatter={(value: string) => labels[value] ?? value}
           onMouseEnter={handleLegendEnter}
           onMouseLeave={handleLegendLeave}

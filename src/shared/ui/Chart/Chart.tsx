@@ -16,6 +16,8 @@ import { DateTick } from 'shared/ui/DateTick';
 import {
   CHART_AXIS_STROKE,
   CHART_AXIS_TICK,
+  CHART_AXIS_WIDTH,
+  CHART_LEGEND_STYLE,
   CHART_TOOLTIP_STYLE,
   type ChartSeries,
   formatTooltipValue,
@@ -89,6 +91,7 @@ export const Chart = <T,>({
         />
         <YAxis
           hide={hideValueAxis}
+          width={CHART_AXIS_WIDTH}
           stroke={CHART_AXIS_STROKE}
           scale={yScale}
           allowDataOverflow
@@ -100,6 +103,7 @@ export const Chart = <T,>({
         />
         {series.length > 1 && (
           <Legend
+            wrapperStyle={CHART_LEGEND_STYLE}
             formatter={(value: string) => labels[value] ?? value}
             onMouseEnter={handleLegendEnter}
             onMouseLeave={handleLegendLeave}
