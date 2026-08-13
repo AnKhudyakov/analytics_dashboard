@@ -3,6 +3,7 @@ import { serializeFilters } from 'shared/lib/filters';
 
 import {
   type Video,
+  type VideoEngagement,
   type VideosQuery,
   type VideosResponse,
 } from '../model/types';
@@ -30,6 +31,16 @@ export const videoApi = baseApi.injectEndpoints({
       ],
     }),
 
+    getVideoEngagement: builder.query<VideoEngagement, string>({
+      query: (videoId) => ({
+        url: '/videos/engagement',
+        params: { id: videoId },
+      }),
+      providesTags: (_result, _error, videoId) => [
+        { type: 'Video', id: videoId },
+      ],
+    }),
+
     getVideoAnalytics: builder.query<Video, string>({
       query: (videoId) => ({
         url: '/videos/analytics',
@@ -42,4 +53,8 @@ export const videoApi = baseApi.injectEndpoints({
   }),
 });
 
-export const { useGetVideosQuery, useGetVideoAnalyticsQuery } = videoApi;
+export const {
+  useGetVideoAnalyticsQuery,
+  useGetVideoEngagementQuery,
+  useGetVideosQuery,
+} = videoApi;

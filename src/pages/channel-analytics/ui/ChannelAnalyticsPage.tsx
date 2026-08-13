@@ -9,7 +9,7 @@ import { ChannelAnalytics } from 'widgets/channel-analytics';
 
 import { Container } from './ChannelAnalyticsPage.styles';
 
-const SKELETON_HEIGHTS = [280, 406, 392];
+const SKELETON_HEIGHTS = [282, 412, 396];
 
 export const ChannelAnalyticsPage = () => {
   const { t } = useTranslation();
@@ -17,11 +17,12 @@ export const ChannelAnalyticsPage = () => {
   const {
     data: channel,
     isFetching,
+    isLoading,
     isError,
     refetch,
   } = useGetChannelAnalyticsQuery(channelId ?? '', { skip: !channelId });
 
-  if (isFetching) return <SkeletonStack heights={SKELETON_HEIGHTS} />;
+  if (isLoading) return <SkeletonStack heights={SKELETON_HEIGHTS} />;
 
   return (
     <Container>
@@ -36,7 +37,7 @@ export const ChannelAnalyticsPage = () => {
       ) : (
         <>
           <ChannelCard channel={channel} />
-          <ChannelAnalytics stats={channel.stats} />
+          <ChannelAnalytics channelId={channel.id} stats={channel.stats} />
         </>
       )}
     </Container>

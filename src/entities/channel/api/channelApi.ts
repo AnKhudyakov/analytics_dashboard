@@ -3,6 +3,7 @@ import { serializeFilters } from 'shared/lib/filters';
 
 import {
   type ChannelAnalytics,
+  type ChannelAudience,
   type ChannelsQuery,
   type ChannelsResponse,
   type ChannelStats,
@@ -41,6 +42,16 @@ export const channelApi = baseApi.injectEndpoints({
       ],
     }),
 
+    getChannelAudience: builder.query<ChannelAudience, string>({
+      query: (channelId) => ({
+        url: '/channels/audience',
+        params: { id: channelId },
+      }),
+      providesTags: (_result, _error, channelId) => [
+        { type: 'Channel', id: channelId },
+      ],
+    }),
+
     getChannelStats: builder.query<ChannelStats[], string>({
       query: (channelId) => ({
         url: '/channels/stats',
@@ -54,6 +65,7 @@ export const channelApi = baseApi.injectEndpoints({
 });
 
 export const {
+  useGetChannelAudienceQuery,
   useGetChannelsQuery,
   useGetChannelAnalyticsQuery,
   useGetChannelStatsQuery,

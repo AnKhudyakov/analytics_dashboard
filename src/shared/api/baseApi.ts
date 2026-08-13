@@ -15,6 +15,6 @@ export const baseApi = createApi({
       return headers;
     },
   }),
-  tagTypes: ['Channel', 'ChannelList', 'Video', 'VideoList'],
+  tagTypes: ['Channel', 'ChannelList', 'Profile', 'Video', 'VideoList'],
   endpoints: () => ({}),
 });
