@@ -1,10 +1,10 @@
 import tw from 'tailwind-styled-components';
 
-export const Wrapper = tw.div`flex w-full flex-col gap-4 sm:flex-row sm:items-center`;
+export const Wrapper = tw.div`flex w-full min-w-0 flex-1 flex-col gap-4`;
 
-export const ChartBox = tw.div`w-full shrink-0 sm:w-40`;
+export const ChartBox = tw.div`flex min-h-40 w-full flex-1 items-center justify-center`;
 
-export const Legend = tw.ul`flex min-w-0 flex-1 flex-col gap-2`;
+export const Legend = tw.ul`flex w-full min-w-0 flex-col gap-2`;
 
 export const LegendRow = tw.li`flex items-center gap-2`;
 

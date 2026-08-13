@@ -22,16 +22,11 @@ export interface DonutSlice {
 interface DonutChartProps {
   slices: readonly DonutSlice[];
   caption: string;
-  height?: number;
 }
 
-export const DonutChart = ({
-  slices,
-  caption,
-  height = 180,
-}: DonutChartProps) => (
+export const DonutChart = ({ slices, caption }: DonutChartProps) => (
   <Wrapper>
-    <ChartBox style={{ height }} aria-hidden>
+    <ChartBox aria-hidden>
       <ResponsiveContainer width="100%" height="100%">
         <PieChart>
           <Pie
