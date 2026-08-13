@@ -15,7 +15,7 @@ export const SkeletonStack: FC<SkeletonStackProps> = ({ heights }) => {
   return (
     <Container role="status" aria-label={t('shared.loading')}>
       {heights.map((height, index) => (
-        <Skeleton key={index} height={height} />
+        <Skeleton key={index} height={height} radius="var(--radius-panel)" />
       ))}
     </Container>
   );

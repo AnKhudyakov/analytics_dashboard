@@ -2,23 +2,17 @@ import { type FC, type ImgHTMLAttributes, useState } from 'react';
 
 import { Skeleton } from 'shared/ui/Skeleton';
 
-import { ContainerSkeleton, Image } from './LazyImage.styles';
+import { Frame, Image } from './LazyImage.styles';
 
 export interface LazyImageProps
   extends Omit<ImgHTMLAttributes<HTMLImageElement>, 'loading'> {
   src: string;
   alt: string;
-  skeletonHeight?: string | number;
-  skeletonWidth?: string | number;
-  borderRadius?: string | number;
 }
 
 export const LazyImage: FC<LazyImageProps> = ({
   src,
   alt,
-  skeletonHeight = '100%',
-  skeletonWidth = '100%',
-  borderRadius = '0.5rem',
   className,
   ...props
 }) => {
@@ -29,15 +23,9 @@ export const LazyImage: FC<LazyImageProps> = ({
   if (status === 'failed') return null;
 
   return (
-    <>
+    <Frame className={className}>
       {status === 'loading' && (
-        <ContainerSkeleton>
-          <Skeleton
-            width={skeletonWidth}
-            height={skeletonHeight}
-            radius={borderRadius}
-          />
-        </ContainerSkeleton>
+        <Skeleton className="absolute inset-0" height="100%" radius="inherit" />
       )}
       <Image
         {...props}
@@ -47,13 +35,8 @@ export const LazyImage: FC<LazyImageProps> = ({
         decoding="async"
         onLoad={() => setStatus('loaded')}
         onError={() => setStatus('failed')}
-        className={[
-          status === 'loaded' ? 'opacity-100' : 'opacity-0',
-          className,
-        ]
-          .filter(Boolean)
-          .join(' ')}
+        $loaded={status === 'loaded'}
       />
-    </>
+    </Frame>
   );
 };

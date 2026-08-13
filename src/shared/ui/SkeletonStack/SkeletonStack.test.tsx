@@ -17,12 +17,23 @@ describe('SkeletonStack', () => {
     renderWithProviders(<SkeletonStack heights={[120, 240]} />);
 
     const blocks = Array.from(
-      screen.getByRole('status').querySelectorAll('.skeleton')
+      screen.getByRole('status').querySelectorAll<HTMLElement>('.skeleton')
     );
 
-    expect(blocks.map((block) => block.getAttribute('style'))).toEqual([
-      'width: 100%; height: 120px; border-radius: 0.5rem;',
-      'width: 100%; height: 240px; border-radius: 0.5rem;',
+    expect(blocks.map((block) => block.style.height)).toEqual([
+      '120px',
+      '240px',
     ]);
+    expect(blocks.every((block) => block.style.width === '100%')).toBe(true);
+  });
+
+  it('rounds every block with the shared panel radius so it matches the cards', () => {
+    renderWithProviders(<SkeletonStack heights={[120, 240]} />);
+
+    const radii = Array.from(
+      screen.getByRole('status').querySelectorAll<HTMLElement>('.skeleton')
+    ).map((block) => block.style.borderRadius);
+
+    expect(new Set(radii)).toEqual(new Set(['var(--radius-panel)']));
   });
 });

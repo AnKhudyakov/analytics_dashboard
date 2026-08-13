@@ -2,7 +2,9 @@ import tw from 'tailwind-styled-components';
 
 import { Typography } from '../Typography';
 
-export const Container = tw.div`flex h-fit w-fit flex-col gap-2 p-2`;
+export const Container = tw.div<{
+  $compact?: boolean;
+}>`flex h-fit flex-col p-2 ${({ $compact }) => ($compact ? 'w-full min-w-0 gap-1' : 'w-fit gap-2')} `;
 
 export const StyledTypography = tw(Typography)`
   text-xs
@@ -14,4 +16,4 @@ export const StatusNegative = tw(StatusPositive)`
   bg-custom-3 border border-custom-4 text-danger
 `;
 
-export const Content = tw.div`flex h-fit w-full items-center gap-4`;
+export const Content = tw.div`flex h-fit w-full flex-wrap items-center gap-x-3 gap-y-1`;

@@ -36,6 +36,7 @@
   "dependencies": {
     "@hookform/resolvers": "^5.0.1",
     "@reduxjs/toolkit": "^2.6.1",
+    "d3-geo": "^3.1.1",
     "i18next": "^25.0.1",
     "i18next-browser-languagedetector": "^8.0.5",
     "jwt-decode": "^4.0.0",
@@ -48,6 +49,8 @@
     "react-swipeable": "^7.0.2",
     "recharts": "^2.15.2",
     "tailwind-styled-components": "^2.2.0",
+    "topojson-client": "^3.1.0",
+    "world-atlas": "^2.0.2",
     "yup": "^1.6.1"
   },
   "devDependencies": {
@@ -67,8 +70,10 @@
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.2.0",
     "@testing-library/user-event": "^14.6.1",
+    "@types/d3-geo": "^3.1.1",
     "@types/react": "^19.0.10",
     "@types/react-dom": "^19.0.4",
+    "@types/topojson-client": "^3.1.5",
     "@vitejs/plugin-react-swc": "^3.8.0",
     "@vitest/coverage-v8": "^3.0.8",
     "eslint": "^9.21.0",
