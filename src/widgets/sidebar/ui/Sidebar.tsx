@@ -38,7 +38,9 @@ export const Sidebar: FC = () => {
         <Wrapper>
           <FlexContainer>
             {!isCollapsed && (
-              <Typography variant="subtitle">{t('sidebar.title')}</Typography>
+              <Typography variant="subtitle" className="whitespace-nowrap">
+                {t('sidebar.title')}
+              </Typography>
             )}
             <ButtonExit label={t('sidebar.logout')} onClick={logout} />
           </FlexContainer>
