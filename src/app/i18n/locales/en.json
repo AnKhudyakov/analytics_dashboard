@@ -32,7 +32,8 @@
     "confirmPassword": "Confirm password",
     "haveAccount": "Already registered?",
     "loginLink": "Login",
-    "error": "Signup failed"
+    "error": "Signup failed",
+    "taken": "That username or email is already registered"
   },
   "validation": {
     "required": "Field is required",

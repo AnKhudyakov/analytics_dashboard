@@ -20,10 +20,18 @@ import {
   TextLink,
 } from '../LoginForm/LoginForm.styles';
 
+const CONFLICT_STATUS = 409;
+
+const isTaken = (error: unknown) =>
+  typeof error === 'object' &&
+  error !== null &&
+  'status' in error &&
+  error.status === CONFLICT_STATUS;
+
 export const SignupForm = () => {
   const { t } = useTranslation();
   const navigate = useNavigate();
-  const [signup, { isLoading, isError }] = useSignupMutation();
+  const [signup, { isLoading, isError, error }] = useSignupMutation();
   const [isPasswordVisible, setPasswordVisible] = useState(false);
   const [isConfirmVisible, setConfirmVisible] = useState(false);
 
@@ -105,7 +113,9 @@ export const SignupForm = () => {
         {...register('passwordConfirmation')}
       />
 
-      <ErrorText role="alert">{isError ? t('signup.error') : ''}</ErrorText>
+      <ErrorText role="alert">
+        {isError ? t(isTaken(error) ? 'signup.taken' : 'signup.error') : ''}
+      </ErrorText>
 
       <Button type="submit" fullWidth disabled={isLoading}>
         {isLoading ? (

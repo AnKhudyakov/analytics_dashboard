@@ -32,7 +32,8 @@
     "confirmPassword": "Confirmer le mot de passe",
     "haveAccount": "Déjà inscrit ?",
     "loginLink": "Connexion",
-    "error": "Échec de l’inscription"
+    "error": "Échec de l’inscription",
+    "taken": "Ce nom ou cet e-mail est déjà enregistré"
   },
   "validation": {
     "required": "Champ requis",

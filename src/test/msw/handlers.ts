@@ -116,6 +116,16 @@ export const handlers = [
   http.get(`${API_URL}/auth/providers`, () =>
     HttpResponse.json({ google: false, linkedin: false, facebook: false })
   ),
+  http.post(`${API_URL}/signup`, async ({ request }) => {
+    const body = (await request.json()) as { username?: string };
+
+    return body.username === 'taken'
+      ? HttpResponse.json(
+          { message: 'Username or email is taken' },
+          { status: 409 }
+        )
+      : HttpResponse.json({ username: body.username }, { status: 201 });
+  }),
   http.post(`${API_URL}/login`, async ({ request }) => {
     const body = (await request.json()) as { username?: string };
     if (body.username !== 'demo') {
