@@ -9,10 +9,16 @@
     "password": "Mot de passe",
     "showPassword": "Afficher le mot de passe",
     "hidePassword": "Masquer le mot de passe",
-    "remember": "Se souvenir de moi",
-    "noAccount": "Pas encore de compte ?",
-    "signupLink": "S’inscrire",
-    "error": "Nom d’utilisateur ou mot de passe incorrect"
+    "noAccount": "Vous n’avez pas encore de compte ?",
+    "signupLink": "Inscrivez-vous gratuitement",
+    "error": "Nom d’utilisateur ou mot de passe incorrect",
+    "forgotPassword": "Mot de passe oublié ?",
+    "orContinueWith": "ou continuer avec",
+    "continueWithGoogle": "Continuer avec Google",
+    "continueWithLinkedin": "Continuer avec LinkedIn",
+    "continueWithFacebook": "Continuer avec Facebook",
+    "recoveryUnavailable": "Récupération du mot de passe non branchée",
+    "providersUnavailable": "Connexion sociale non branchée"
   },
   "signup": {
     "title": "Déroulez le tapis !",
@@ -66,7 +72,16 @@
     "highRevenue": "Revenus élevés",
     "rollingRevenue": "Revenus glissants",
     "rollingLowRevenue": "Revenus glissants faibles",
-    "rollingHighRevenue": "Revenus glissants élevés"
+    "rollingHighRevenue": "Revenus glissants élevés",
+    "weekdayActivity": "Vues par jour",
+    "viewsGained": "Vues gagnées",
+    "trafficSources": "Sources de trafic",
+    "devices": "Appareils",
+    "ageGroups": "Tranches d’âge",
+    "likes": "Likes",
+    "comments": "Commentaires",
+    "engagementRate": "Taux d’engagement",
+    "engagement": "Entonnoir d’engagement"
   },
   "shared": {
     "search": "Rechercher...",
@@ -102,11 +117,77 @@
     "collapse": "Réduire le menu",
     "expand": "Développer le menu",
     "openMenu": "Ouvrir le menu",
-    "closeMenu": "Fermer le menu"
+    "closeMenu": "Fermer le menu",
+    "profile": "Profil",
+    "overview": "Vue d’ensemble",
+    "compare": "Comparer"
   },
   "settings": {
     "darkMode": "Passer au thème sombre",
     "lightMode": "Passer au thème clair",
-    "changeLanguage": "Changer de langue"
+    "changeLanguage": "Changer de langue",
+    "title": "Paramètres",
+    "theme": "Thème",
+    "language": "Langue"
+  },
+  "weekdays": {
+    "monday": "Lun",
+    "tuesday": "Mar",
+    "wednesday": "Mer",
+    "thursday": "Jeu",
+    "friday": "Ven",
+    "saturday": "Sam",
+    "sunday": "Dim"
+  },
+  "profile": {
+    "title": "Profil",
+    "account": "Compte",
+    "displayName": "Nom affiché",
+    "email": "Email",
+    "role": "Rôle",
+    "myChannel": "Ma chaîne",
+    "noChannel": "Aucune chaîne liée",
+    "competitors": "Concurrents suivis",
+    "competitorsHint": "Chaînes auxquelles vous vous comparez.",
+    "noCompetitors": "Aucun suivi pour l’instant",
+    "addCompetitor": "Suivre une chaîne",
+    "channelIdPlaceholder": "ID de chaîne, ex. UC…",
+    "addCompetitorError": "Impossible de suivre cette chaîne",
+    "browseChannels": "Parcourir les chaînes pour trouver un ID",
+    "untrack": "Ne plus suivre {{channel}}"
+  },
+  "overview": {
+    "title": "Vue d’ensemble",
+    "you": "vous",
+    "noChannel": "Liez votre chaîne dans le profil pour voir vos chiffres ici.",
+    "subscribersTrend": "Abonnés dans le temps",
+    "shareOfVoice": "Part de voix",
+    "shareOfVoiceHint": "Les abonnés de votre chaîne à côté de ceux que vous suivez.",
+    "noCompetitors": "Suivez des concurrents dans le profil pour comparer.",
+    "channelsTracked": "Chaînes suivies",
+    "videosTracked": "Vidéos suivies",
+    "competitors": "Concurrents",
+    "map": "Où sont vos concurrents",
+    "mapHint": "Survolez ou sélectionnez un repère pour voir la chaîne et ouvrir ses statistiques.",
+    "mapUnplaced": "Pays non renseigné",
+    "mapOpen": "Ouvrir les statistiques de la chaîne",
+    "byCountry": "Chaînes par pays",
+    "topCategories": "Meilleures catégories par vues",
+    "otherCategories": "Autres catégories",
+    "topCategoriesHint": "Part des vues sur tout le catalogue suivi."
+  },
+  "compare": {
+    "title": "Comparer",
+    "indexed": "Croissance ramenée au début de période",
+    "indexedHint": "Chaque chaîne démarre à 100, donc des chaînes de tailles différentes restent comparables sur un axe.",
+    "metric": "Métrique",
+    "needCompetitors": "Ajoutez au moins un concurrent dans le profil.",
+    "period": "sur 90 jours",
+    "share": "Votre part parmi les chaînes suivies",
+    "shareHint": "Votre chaîne face à toutes celles que vous suivez, sur la métrique choisie.",
+    "perVideo": "Vues par vidéo",
+    "perVideoHint": "Vues totales divisées par le nombre de vidéos.",
+    "perChannel": "Chaque chaîne à son échelle",
+    "cards": "Chaînes comparées"
   }
 }

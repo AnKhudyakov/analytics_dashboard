@@ -9,10 +9,16 @@
     "password": "Пароль",
     "showPassword": "Показать пароль",
     "hidePassword": "Скрыть пароль",
-    "remember": "Запомнить меня",
-    "noAccount": "У вас нет учётной записи?",
-    "signupLink": "Регистрация",
-    "error": "Неверное имя пользователя или пароль"
+    "noAccount": "Ещё нет аккаунта?",
+    "signupLink": "Зарегистрируйтесь бесплатно",
+    "error": "Неверное имя пользователя или пароль",
+    "forgotPassword": "Забыли пароль?",
+    "orContinueWith": "или войти через",
+    "continueWithGoogle": "Войти через Google",
+    "continueWithLinkedin": "Войти через LinkedIn",
+    "continueWithFacebook": "Войти через Facebook",
+    "recoveryUnavailable": "Восстановление пароля пока не подключено",
+    "providersUnavailable": "Вход через соцсети пока не подключён"
   },
   "signup": {
     "title": "Расстелаем дорожку",
@@ -66,7 +72,16 @@
     "highRevenue": "Макс. оценка дохода",
     "rollingRevenue": "Текущий доход",
     "rollingLowRevenue": "Мин. текущий доход",
-    "rollingHighRevenue": "Макс. текущий доход"
+    "rollingHighRevenue": "Макс. текущий доход",
+    "weekdayActivity": "Просмотры по дням недели",
+    "viewsGained": "Прирост просмотров",
+    "trafficSources": "Источники трафика",
+    "devices": "Устройства",
+    "ageGroups": "Возрастные группы",
+    "likes": "Лайки",
+    "comments": "Комментарии",
+    "engagementRate": "Вовлечённость",
+    "engagement": "Воронка вовлечения"
   },
   "shared": {
     "search": "Найти...",
@@ -102,11 +117,77 @@
     "collapse": "Свернуть меню",
     "expand": "Развернуть меню",
     "openMenu": "Открыть меню",
-    "closeMenu": "Закрыть меню"
+    "closeMenu": "Закрыть меню",
+    "profile": "Профиль",
+    "overview": "Обзор",
+    "compare": "Сравнение"
   },
   "settings": {
     "darkMode": "Переключить на тёмную тему",
     "lightMode": "Переключить на светлую тему",
-    "changeLanguage": "Сменить язык"
+    "changeLanguage": "Сменить язык",
+    "title": "Настройки",
+    "theme": "Тема",
+    "language": "Язык"
+  },
+  "weekdays": {
+    "monday": "Пн",
+    "tuesday": "Вт",
+    "wednesday": "Ср",
+    "thursday": "Чт",
+    "friday": "Пт",
+    "saturday": "Сб",
+    "sunday": "Вс"
+  },
+  "profile": {
+    "title": "Профиль",
+    "account": "Аккаунт",
+    "displayName": "Отображаемое имя",
+    "email": "Email",
+    "role": "Роль",
+    "myChannel": "Мой канал",
+    "noChannel": "Канал ещё не привязан",
+    "competitors": "Отслеживаемые конкуренты",
+    "competitorsHint": "Каналы, с которыми сравнивается ваш.",
+    "noCompetitors": "Пока никого не отслеживаете",
+    "addCompetitor": "Добавить канал",
+    "channelIdPlaceholder": "ID канала, например UC…",
+    "addCompetitorError": "Не удалось добавить канал",
+    "browseChannels": "Найти ID в списке каналов",
+    "untrack": "Перестать отслеживать {{channel}}"
+  },
+  "overview": {
+    "title": "Обзор",
+    "you": "вы",
+    "noChannel": "Привяжите свой канал в профиле, чтобы увидеть здесь свои показатели.",
+    "subscribersTrend": "Подписчики со временем",
+    "shareOfVoice": "Доля внимания",
+    "shareOfVoiceHint": "Подписчики вашего канала рядом с отслеживаемыми.",
+    "noCompetitors": "Добавьте конкурентов в профиле, чтобы сравнивать.",
+    "channelsTracked": "Каналов отслеживается",
+    "videosTracked": "Видео отслеживается",
+    "competitors": "Конкуренты",
+    "map": "География конкурентов",
+    "mapHint": "Наведите или сфокусируйтесь на метке, чтобы увидеть канал и открыть его аналитику.",
+    "mapUnplaced": "Страна не указана",
+    "mapOpen": "Открыть аналитику канала",
+    "byCountry": "Каналы по странам",
+    "topCategories": "Топ категорий по просмотрам",
+    "otherCategories": "Прочие категории",
+    "topCategoriesHint": "Доля просмотров по всему отслеживаемому каталогу."
+  },
+  "compare": {
+    "title": "Сравнение",
+    "indexed": "Рост, приведённый к началу периода",
+    "indexedHint": "Все каналы стартуют со 100, поэтому каналы разного размера сравнимы на одной оси.",
+    "metric": "Метрика",
+    "needCompetitors": "Добавьте хотя бы одного конкурента в профиле.",
+    "period": "за 90 дней",
+    "share": "Ваша доля среди отслеживаемых",
+    "shareHint": "Ваш канал против всех отслеживаемых по выбранной метрике.",
+    "perVideo": "Просмотров на видео",
+    "perVideoHint": "Все просмотры канала, поделённые на число видео.",
+    "perChannel": "Каждый канал в своём масштабе",
+    "cards": "Сравниваемые каналы"
   }
 }

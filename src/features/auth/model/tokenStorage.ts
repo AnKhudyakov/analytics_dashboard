@@ -20,22 +20,18 @@ export const readTokenExpiry = (token: string): number | null => {
   }
 };
 
-export const persistToken = (token: string, remember: boolean): void => {
-  clearPersistedToken();
-  const storage = remember ? localStorage : sessionStorage;
-  storage.setItem(TOKEN_KEY, token);
+export const persistToken = (token: string): void => {
+  localStorage.setItem(TOKEN_KEY, token);
   setAccessToken(token);
 };
 
 export const clearPersistedToken = (): void => {
   localStorage.removeItem(TOKEN_KEY);
-  sessionStorage.removeItem(TOKEN_KEY);
   setAccessToken(null);
 };
 
 export const readPersistedSession = (): StoredSession => {
-  const token =
-    sessionStorage.getItem(TOKEN_KEY) ?? localStorage.getItem(TOKEN_KEY);
+  const token = localStorage.getItem(TOKEN_KEY);
   if (!token) return EMPTY_SESSION;
 
   const expiresAt = readTokenExpiry(token);

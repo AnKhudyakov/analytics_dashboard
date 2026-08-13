@@ -9,10 +9,16 @@
     "password": "Password",
     "showPassword": "Show password",
     "hidePassword": "Hide password",
-    "remember": "Remember me",
-    "noAccount": "Don’t have an account?",
-    "signupLink": "Signup",
-    "error": "Incorrect username or password"
+    "noAccount": "Don’t have an account yet?",
+    "signupLink": "Register for free",
+    "error": "Incorrect username or password",
+    "forgotPassword": "Forgot Password?",
+    "orContinueWith": "or continue with",
+    "continueWithGoogle": "Continue with Google",
+    "continueWithLinkedin": "Continue with LinkedIn",
+    "continueWithFacebook": "Continue with Facebook",
+    "recoveryUnavailable": "Password recovery is not connected yet",
+    "providersUnavailable": "Social sign-in is not connected yet"
   },
   "signup": {
     "title": "Roll the Carpet!",
@@ -66,7 +72,16 @@
     "highRevenue": "High revenue",
     "rollingRevenue": "Rolling revenue",
     "rollingLowRevenue": "Low rolling revenue",
-    "rollingHighRevenue": "High rolling revenue"
+    "rollingHighRevenue": "High rolling revenue",
+    "weekdayActivity": "Views by weekday",
+    "viewsGained": "Views gained",
+    "trafficSources": "Traffic sources",
+    "devices": "Devices",
+    "ageGroups": "Age groups",
+    "likes": "Likes",
+    "comments": "Comments",
+    "engagementRate": "Engagement rate",
+    "engagement": "Engagement funnel"
   },
   "shared": {
     "search": "Search for...",
@@ -102,11 +117,77 @@
     "collapse": "Collapse sidebar",
     "expand": "Expand sidebar",
     "openMenu": "Open menu",
-    "closeMenu": "Close menu"
+    "closeMenu": "Close menu",
+    "profile": "Profile",
+    "overview": "Overview",
+    "compare": "Compare"
   },
   "settings": {
     "darkMode": "Switch to dark theme",
     "lightMode": "Switch to light theme",
-    "changeLanguage": "Change language"
+    "changeLanguage": "Change language",
+    "title": "Settings",
+    "theme": "Theme",
+    "language": "Language"
+  },
+  "weekdays": {
+    "monday": "Mon",
+    "tuesday": "Tue",
+    "wednesday": "Wed",
+    "thursday": "Thu",
+    "friday": "Fri",
+    "saturday": "Sat",
+    "sunday": "Sun"
+  },
+  "profile": {
+    "title": "Profile",
+    "account": "Account",
+    "displayName": "Display name",
+    "email": "Email",
+    "role": "Role",
+    "myChannel": "My channel",
+    "noChannel": "No channel linked yet",
+    "competitors": "Tracked competitors",
+    "competitorsHint": "Channels you compare your own against.",
+    "noCompetitors": "Nothing tracked yet",
+    "addCompetitor": "Track a channel",
+    "channelIdPlaceholder": "Channel ID, e.g. UC…",
+    "addCompetitorError": "Could not track this channel",
+    "browseChannels": "Browse channels to find an ID",
+    "untrack": "Stop tracking {{channel}}"
+  },
+  "overview": {
+    "title": "Overview",
+    "you": "you",
+    "noChannel": "Link your channel on the profile page to see your numbers here.",
+    "subscribersTrend": "Subscribers over time",
+    "shareOfVoice": "Share of voice",
+    "shareOfVoiceHint": "Subscribers of your channel next to the ones you track.",
+    "noCompetitors": "Track competitors on the profile page to compare.",
+    "channelsTracked": "Channels tracked",
+    "videosTracked": "Videos tracked",
+    "competitors": "Competitors",
+    "map": "Where your competitors are",
+    "mapHint": "Hover or focus a marker to see the channel and open its analytics.",
+    "mapUnplaced": "No country in the data",
+    "mapOpen": "Open channel analytics",
+    "byCountry": "Channels by country",
+    "topCategories": "Top categories by views",
+    "otherCategories": "Other categories",
+    "topCategoriesHint": "Share of views across the tracked catalogue."
+  },
+  "compare": {
+    "title": "Compare",
+    "indexed": "Growth indexed to the period start",
+    "indexedHint": "Every channel starts at 100, so channels of different size stay comparable on one axis.",
+    "metric": "Metric",
+    "needCompetitors": "Add at least one competitor on the profile page to compare.",
+    "period": "over 90 days",
+    "share": "Your share of the field",
+    "shareHint": "Your channel next to everyone you track, on the selected metric.",
+    "perVideo": "Views per video",
+    "perVideoHint": "Lifetime views divided by the number of videos.",
+    "perChannel": "Each channel on its own scale",
+    "cards": "Compared channels"
   }
 }

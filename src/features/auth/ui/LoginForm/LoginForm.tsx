@@ -7,32 +7,56 @@ import { useNavigate } from 'react-router-dom';
 import { routerPaths } from 'shared/constants';
 import { Button } from 'shared/ui/Button';
 import { ButtonLoader } from 'shared/ui/ButtonLoader';
-import { Checkbox } from 'shared/ui/Checkbox';
 import { Icons } from 'shared/ui/icons';
 import { Input } from 'shared/ui/Input';
 import { Typography } from 'shared/ui/Typography';
 
 import { useLogin } from '../../model/useLogin';
 import { type LoginFormValues, loginSchema } from '../../model/validation';
-import { ErrorText, Form, TextLink } from './LoginForm.styles';
+import {
+  Divider,
+  DividerLabel,
+  FooterText,
+  Form,
+  InlineButton,
+  NoticeText,
+  ProviderButton,
+  ProviderRow,
+  TextLink,
+} from './LoginForm.styles';
+
+const PROVIDERS = [
+  { id: 'google', labelKey: 'login.continueWithGoogle', Icon: Icons.google },
+  {
+    id: 'linkedin',
+    labelKey: 'login.continueWithLinkedin',
+    Icon: Icons.linkedin,
+  },
+  {
+    id: 'facebook',
+    labelKey: 'login.continueWithFacebook',
+    Icon: Icons.facebook,
+  },
+] as const;
 
 export const LoginForm = () => {
   const { t } = useTranslation();
   const navigate = useNavigate();
   const { login, isLoading, hasFailed } = useLogin();
   const [isPasswordVisible, setPasswordVisible] = useState(false);
+  const [notice, setNotice] = useState('');
 
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors },
   } = useForm<LoginFormValues>({
     resolver: yupResolver(loginSchema),
-    defaultValues: { username: '', password: '', remember: true },
+    defaultValues: { username: '', password: '' },
   });
 
   const onSubmit = handleSubmit(async (values) => {
+    setNotice('');
     const succeeded = await login(values);
     if (succeeded) void navigate(routerPaths.CHANNELS, { replace: true });
   });
@@ -68,15 +92,21 @@ export const LoginForm = () => {
         onEndIconClick={() => setPasswordVisible((visible) => !visible)}
         {...register('password')}
       />
-      <Checkbox
-        label={t('login.remember')}
-        checked={watch('remember')}
-        {...register('remember')}
-      />
 
-      <ErrorText role="alert">{hasFailed ? t('login.error') : ''}</ErrorText>
+      <div className="w-full">
+        <InlineButton
+          type="button"
+          onClick={() => setNotice(t('login.recoveryUnavailable'))}
+        >
+          {t('login.forgotPassword')}
+        </InlineButton>
+      </div>
 
-      <Button type="submit" disabled={isLoading}>
+      <NoticeText role="alert" $tone={hasFailed ? 'danger' : 'muted'}>
+        {hasFailed ? t('login.error') : notice}
+      </NoticeText>
+
+      <Button type="submit" fullWidth disabled={isLoading}>
         {isLoading ? (
           <ButtonLoader width={20} height={20} aria-hidden />
         ) : (
@@ -84,12 +114,27 @@ export const LoginForm = () => {
         )}
       </Button>
 
-      <div className="flex items-end gap-1">
-        <Typography variant="body" className="text-secondary-font">
-          {t('login.noAccount')}
-        </Typography>
+      <Divider>
+        <DividerLabel>{t('login.orContinueWith')}</DividerLabel>
+      </Divider>
+
+      <ProviderRow>
+        {PROVIDERS.map(({ id, labelKey, Icon }) => (
+          <ProviderButton
+            key={id}
+            type="button"
+            aria-label={t(labelKey)}
+            onClick={() => setNotice(t('login.providersUnavailable'))}
+          >
+            <Icon aria-hidden />
+          </ProviderButton>
+        ))}
+      </ProviderRow>
+
+      <FooterText>
+        {t('login.noAccount')}{' '}
         <TextLink to={routerPaths.SIGNUP}>{t('login.signupLink')}</TextLink>
-      </div>
+      </FooterText>
     </Form>
   );
 };

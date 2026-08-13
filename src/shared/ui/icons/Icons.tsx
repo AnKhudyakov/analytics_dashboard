@@ -315,16 +315,9 @@ export const ExitIcon: FC<React.SVGProps<SVGSVGElement>> = ({
       height="39"
       rx="6"
       ry="6"
-      fill="currentColor"
-    />
-    <rect
-      x="0.5"
-      y="0.5"
-      width="39"
-      height="39"
-      rx="6"
-      ry="6"
-      stroke="#343b4f"
+      fill="none"
+      stroke="currentColor"
+      strokeOpacity="0.3"
     />
     <path
       d="M18 26H15.3333C14.9797 26 14.6406 25.8595 14.3905 25.6095C14.1405 25.3594 14 25.0203 14 24.6667V15.3333C14 14.9797 14.1405 14.6406 14.3905 14.3905C14.6406 14.1405 14.9797 14 15.3333 14H18"
@@ -736,5 +729,152 @@ export const FrIcon: FC<React.SVGProps<SVGSVGElement>> = ({
       d="M22 60.3c3.1 1.1 6.5 1.7 10 1.7s6.9-.6 10-1.7V3.7C38.9 2.6 35.5 2 32 2s-6.9.6-10 1.7v56.6z"
       fill="#f9f9f9"
     ></path>
+  </svg>
+);
+
+export const GoogleIcon: FC<React.SVGProps<SVGSVGElement>> = ({
+  width = 20,
+  height = 20,
+  className,
+}) => (
+  <svg
+    width={width}
+    height={height}
+    className={className}
+    viewBox="0 0 24 24"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M23.49 12.27c0-.79-.07-1.54-.19-2.27H12v4.51h6.47a5.54 5.54 0 0 1-2.4 3.58v3h3.86c2.26-2.09 3.56-5.17 3.56-8.82z"
+      fill="#4285F4"
+    />
+    <path
+      d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.86-3c-1.08.72-2.45 1.16-4.07 1.16-3.13 0-5.78-2.11-6.73-4.96H1.29v3.09A11.99 11.99 0 0 0 12 24z"
+      fill="#34A853"
+    />
+    <path
+      d="M5.27 14.29a7.19 7.19 0 0 1 0-4.58V6.62H1.29a11.99 11.99 0 0 0 0 10.76l3.98-3.09z"
+      fill="#FBBC05"
+    />
+    <path
+      d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.7 0 3.99 2.47 1.29 6.62l3.98 3.09C6.22 6.86 8.87 4.75 12 4.75z"
+      fill="#EA4335"
+    />
+  </svg>
+);
+
+export const LinkedinIcon: FC<React.SVGProps<SVGSVGElement>> = ({
+  width = 20,
+  height = 20,
+  className,
+}) => (
+  <svg
+    width={width}
+    height={height}
+    className={className}
+    viewBox="0 0 24 24"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.22.79 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.73V1.73C24 .77 23.2 0 22.22 0zM7.12 20.45H3.56V9h3.56v11.45zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.41v1.56h.05a3.74 3.74 0 0 1 3.37-1.85c3.6 0 4.27 2.37 4.27 5.45v6.29z"
+      fill="#0A66C2"
+    />
+  </svg>
+);
+
+export const FacebookIcon: FC<React.SVGProps<SVGSVGElement>> = ({
+  width = 20,
+  height = 20,
+  className,
+}) => (
+  <svg
+    width={width}
+    height={height}
+    className={className}
+    viewBox="0 0 24 24"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M24 12a12 12 0 1 0-13.88 11.85v-8.38H7.08V12h3.04V9.36c0-3 1.79-4.67 4.53-4.67 1.31 0 2.68.24 2.68.24v2.95h-1.51c-1.49 0-1.95.92-1.95 1.87V12h3.32l-.53 3.47h-2.79v8.38A12 12 0 0 0 24 12z"
+      fill="#1877F2"
+    />
+  </svg>
+);
+
+export const CompareIcon: FC<React.SVGProps<SVGSVGElement>> = ({
+  width = 24,
+  height = 24,
+  className,
+}) => (
+  <svg
+    width={width}
+    height={height}
+    className={className}
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M4 20V10M10 20V4M16 20V13M22 20H2"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
+
+export const ListIcon: FC<React.SVGProps<SVGSVGElement>> = ({
+  width = 24,
+  height = 24,
+  className,
+}) => (
+  <svg
+    width={width}
+    height={height}
+    className={className}
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M9 6h11M9 12h11M9 18h11M4 6h.01M4 12h.01M4 18h.01"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
+
+export const UserIcon: FC<React.SVGProps<SVGSVGElement>> = ({
+  width = 24,
+  height = 24,
+  className,
+}) => (
+  <svg
+    width={width}
+    height={height}
+    className={className}
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <circle
+      cx="12"
+      cy="7"
+      r="4"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
   </svg>
 );

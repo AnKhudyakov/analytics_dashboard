@@ -4,15 +4,16 @@ import { StyledButton, StyledButtonIcon } from './Button.styles';
 
 type NativeButtonProps = ButtonHTMLAttributes<HTMLButtonElement>;
 
-export type ButtonProps = NativeButtonProps & { children: ReactNode } & (
-    | { icon: true; 'aria-label': string }
-    | { icon?: false }
-  );
+export type ButtonProps = NativeButtonProps & {
+  children: ReactNode;
+  fullWidth?: boolean;
+} & ({ icon: true; 'aria-label': string } | { icon?: false });
 
 export const Button: FC<ButtonProps> = ({
   icon,
   children,
   className,
+  fullWidth,
   type = 'button',
   ...props
 }) => {
@@ -25,7 +26,12 @@ export const Button: FC<ButtonProps> = ({
   }
 
   return (
-    <StyledButton type={type} className={className} {...props}>
+    <StyledButton
+      type={type}
+      className={className}
+      $fullWidth={fullWidth}
+      {...props}
+    >
       {children}
     </StyledButton>
   );

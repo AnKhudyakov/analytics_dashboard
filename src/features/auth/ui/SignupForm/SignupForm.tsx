@@ -13,7 +13,12 @@ import { Typography } from 'shared/ui/Typography';
 
 import { useSignupMutation } from '../../api/authApi';
 import { type SignupFormValues, signupSchema } from '../../model/validation';
-import { ErrorText, Form, TextLink } from '../LoginForm/LoginForm.styles';
+import {
+  ErrorText,
+  FooterText,
+  Form,
+  TextLink,
+} from '../LoginForm/LoginForm.styles';
 
 export const SignupForm = () => {
   const { t } = useTranslation();
@@ -102,7 +107,7 @@ export const SignupForm = () => {
 
       <ErrorText role="alert">{isError ? t('signup.error') : ''}</ErrorText>
 
-      <Button type="submit" disabled={isLoading}>
+      <Button type="submit" fullWidth disabled={isLoading}>
         {isLoading ? (
           <ButtonLoader width={20} height={20} aria-hidden />
         ) : (
@@ -110,12 +115,10 @@ export const SignupForm = () => {
         )}
       </Button>
 
-      <div className="flex items-end gap-1">
-        <Typography variant="body" className="text-secondary-font">
-          {t('signup.haveAccount')}
-        </Typography>
+      <FooterText>
+        {t('signup.haveAccount')}{' '}
         <TextLink to={routerPaths.LOGIN}>{t('signup.loginLink')}</TextLink>
-      </div>
+      </FooterText>
     </Form>
   );
 };

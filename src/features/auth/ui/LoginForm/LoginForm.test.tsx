@@ -19,7 +19,6 @@ describe('LoginForm', () => {
 
     expect(screen.getByLabelText('Username')).toBeInTheDocument();
     expect(screen.getByLabelText('Password')).toBeInTheDocument();
-    expect(screen.getByLabelText('Remember me')).toBeInTheDocument();
   });
 
   it('blocks submission and reports validation errors', async () => {
@@ -61,22 +60,6 @@ describe('LoginForm', () => {
     );
   });
 
-  it('keeps the token out of localStorage when "remember me" is off', async () => {
-    const { user, store } = renderWithProviders(<LoginForm />);
-
-    await user.click(screen.getByLabelText('Remember me'));
-    await fillCredentials(user, 'demo', 'password');
-    await user.click(screen.getByRole('button', { name: 'Login' }));
-
-    await expect
-      .poll(() => store.getState().session.token)
-      .toEqual(expect.any(String));
-    expect(localStorage.getItem('token')).toBeNull();
-    expect(sessionStorage.getItem('token')).toEqual(
-      store.getState().session.token
-    );
-  });
-
   it('surfaces a rejected login without storing a session', async () => {
     const { user, store } = renderWithProviders(<LoginForm />);
 
@@ -98,5 +81,42 @@ describe('LoginForm', () => {
     );
     await user.click(screen.getByRole('button', { name: 'Show password' }));
     expect(screen.getByLabelText('Password')).toHaveAttribute('type', 'text');
+  });
+
+  it('names every identity provider it offers', () => {
+    renderWithProviders(<LoginForm />);
+
+    expect(
+      screen.getByRole('button', { name: 'Continue with Google' })
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole('button', { name: 'Continue with LinkedIn' })
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole('button', { name: 'Continue with Facebook' })
+    ).toBeInTheDocument();
+  });
+
+  it('says so instead of failing silently while a provider is not wired up', async () => {
+    const { user, store } = renderWithProviders(<LoginForm />);
+
+    await user.click(
+      screen.getByRole('button', { name: 'Continue with Google' })
+    );
+
+    expect(
+      await screen.findByText('Social sign-in is not connected yet')
+    ).toBeInTheDocument();
+    expect(store.getState().session.token).toBeNull();
+  });
+
+  it('says so instead of failing silently on password recovery', async () => {
+    const { user } = renderWithProviders(<LoginForm />);
+
+    await user.click(screen.getByRole('button', { name: 'Forgot Password?' }));
+
+    expect(
+      await screen.findByText('Password recovery is not connected yet')
+    ).toBeInTheDocument();
   });
 });
