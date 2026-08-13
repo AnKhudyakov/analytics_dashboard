@@ -4,7 +4,7 @@ import { Frame } from './ChartFrame.styles';
 
 interface ChartFrameProps {
   children: ReactNode;
-  size?: 'sm' | 'md';
+  size?: 'sm' | 'md' | 'fill';
 }
 
 export const ChartFrame: FC<ChartFrameProps> = ({ children, size = 'md' }) => (

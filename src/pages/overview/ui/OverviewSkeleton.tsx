@@ -84,7 +84,7 @@ export const OverviewSkeleton = () => {
         {range(CHART_COUNT).map((index) => (
           <Panel key={index}>
             <Skeleton width="60%" height={TITLE_HEIGHT} />
-            <ChartFrame>
+            <ChartFrame size="sm">
               <Skeleton height="100%" radius="0.75rem" />
             </ChartFrame>
           </Panel>

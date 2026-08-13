@@ -261,7 +261,7 @@ export const OverviewPage = () => {
           <ChartRow>
             <Panel>
               <CardTitle>{t('overview.subscribersTrend')}</CardTitle>
-              <ChartFrame>
+              <ChartFrame size="sm">
                 <Chart
                   data={stats}
                   series={[
@@ -277,7 +277,7 @@ export const OverviewPage = () => {
 
             <Panel>
               <CardTitle>{t('metrics.weekdayActivity')}</CardTitle>
-              <ChartFrame>
+              <ChartFrame size="sm">
                 <BarChart
                   data={weekdays}
                   yScale="auto"
@@ -296,7 +296,7 @@ export const OverviewPage = () => {
 
             <Panel>
               <CardTitle>{t('overview.byCountry')}</CardTitle>
-              <ChartFrame>
+              <ChartFrame size="sm">
                 <BarChart
                   data={countryBars}
                   yScale="auto"

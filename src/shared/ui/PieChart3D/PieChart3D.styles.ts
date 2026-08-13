@@ -2,7 +2,9 @@ import tw from 'tailwind-styled-components';
 
 export const Frame = tw.div`flex w-full min-w-0 flex-col gap-3`;
 
-export const Svg = tw.svg`h-auto w-full max-w-80 self-center`;
+export const Svg = tw.svg<{
+  $compact?: boolean;
+}>`h-auto w-full max-w-80 self-center ${({ $compact }) => ($compact ? 'max-h-28' : '')} `;
 
 export const Legend = tw.ul`flex w-full flex-col gap-1`;
 

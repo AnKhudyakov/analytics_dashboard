@@ -209,7 +209,7 @@ export const ChannelCompare: FC<ChannelCompareProps> = ({
         <WidePanel>
           <CardTitle>{t('compare.indexed')}</CardTitle>
           <Notice>{t('compare.indexedHint')}</Notice>
-          <ChartFrame>
+          <ChartFrame size="fill">
             <Chart
               data={indexed}
               series={rows.map((row) => ({
@@ -225,7 +225,11 @@ export const ChannelCompare: FC<ChannelCompareProps> = ({
           <CardTitle>{t('compare.share')}</CardTitle>
           <Notice>{t('compare.shareHint')}</Notice>
           {shareSlices.length > 0 ? (
-            <PieChart3D slices={shareSlices} caption={t('compare.share')} />
+            <PieChart3D
+              compact
+              slices={shareSlices}
+              caption={t('compare.share')}
+            />
           ) : (
             <Notice>{t('overview.noChannel')}</Notice>
           )}

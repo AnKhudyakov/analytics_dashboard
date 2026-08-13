@@ -82,12 +82,14 @@ export interface PieChart3DProps {
   slices: readonly Pie3DSlice[];
   caption: string;
   formatValue?: (value: number) => string;
+  compact?: boolean;
 }
 
 export const PieChart3D: FC<PieChart3DProps> = ({
   slices,
   caption,
   formatValue = compactNumber,
+  compact,
 }) => {
   const [active, setActive] = useState<string | null>(null);
   const shadowId = useId().replace(/[^a-zA-Z0-9]/g, '');
@@ -123,7 +125,12 @@ export const PieChart3D: FC<PieChart3DProps> = ({
 
   return (
     <Frame>
-      <Svg viewBox={`0 0 ${WIDTH} ${HEIGHT}`} role="img" aria-label={caption}>
+      <Svg
+        viewBox={`0 0 ${WIDTH} ${HEIGHT}`}
+        role="img"
+        aria-label={caption}
+        $compact={compact}
+      >
         <defs>
           <radialGradient id={shadowId}>
             <stop offset="55%" stopColor="#000" stopOpacity={0.22} />

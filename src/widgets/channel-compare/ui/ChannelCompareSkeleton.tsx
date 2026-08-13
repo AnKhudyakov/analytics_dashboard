@@ -56,7 +56,7 @@ export const ChannelCompareSkeleton: FC<ChannelCompareSkeletonProps> = ({
         <WidePanel>
           <Skeleton width="45%" height={TITLE_HEIGHT} />
           <Skeleton width="80%" height={HINT_HEIGHT} />
-          <ChartFrame>
+          <ChartFrame size="fill">
             <Skeleton height="100%" radius="0.75rem" />
           </ChartFrame>
         </WidePanel>
